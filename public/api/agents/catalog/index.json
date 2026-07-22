@@ -1,12 +1,12 @@
 {
-  "$schema": "https://x402.wtf/schema/clawdAgentCatalog.v1.json",
+  "$schema": "https://cheshireterminal.ai/schema/clawdAgentCatalog.v1.json",
   "apiVersion": "1.0",
-  "generatedAt": "2026-07-22T16:26:41.207Z",
+  "generatedAt": "2026-07-22T16:27:24.881Z",
   "hub": {
-    "gallery": "https://x402.wtf/agents",
-    "mint": "https://x402.wtf/agents/mint",
-    "registry": "https://x402.wtf/api/agents/registry",
-    "api": "https://x402.wtf/api/agents"
+    "gallery": "https://cheshireterminal.ai/agents",
+    "mint": "https://cheshireterminal.ai/agents/mint",
+    "registry": "https://cheshireterminal.ai/api/agents/registry",
+    "api": "https://cheshireterminal.ai/api/agents"
   },
   "stats": {
     "totalAgents": 137,
@@ -3842,7 +3842,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:activistpinch",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aactivistpinch",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aactivistpinch",
         "createdAt": null,
         "oneShot": false,
         "featured": false,
@@ -3908,7 +3908,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:airdrop-hunter",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aairdrop-hunter",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aairdrop-hunter",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -3976,7 +3976,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:alpha-leak-detector",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aalpha-leak-detector",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aalpha-leak-detector",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -4043,7 +4043,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:apy-vs-apr-educator",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aapy-vs-apr-educator",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aapy-vs-apr-educator",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -4110,7 +4110,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:bridge-security-analyst",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Abridge-security-analyst",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Abridge-security-analyst",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -4181,7 +4181,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:cheshire-terminal",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Acheshire-terminal",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Acheshire-terminal",
         "createdAt": null,
         "oneShot": false,
         "featured": false,
@@ -4253,7 +4253,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-agents-perps-runtime",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime",
         "createdAt": "2026-07-21",
         "oneShot": false,
         "featured": false,
@@ -4323,7 +4323,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-bridge-assistant",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-bridge-assistant",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-bridge-assistant",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -4395,7 +4395,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-firecrawl",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-firecrawl",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-firecrawl",
         "createdAt": "2026-04-19",
         "oneShot": false,
         "featured": false,
@@ -4470,7 +4470,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-formal-verification",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-formal-verification",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-formal-verification",
         "createdAt": "2026-06-10",
         "oneShot": false,
         "featured": false,
@@ -4545,7 +4545,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-gateway-runtime",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-gateway-runtime",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-gateway-runtime",
         "createdAt": "2026-06-10",
         "oneShot": false,
         "featured": false,
@@ -4617,7 +4617,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-governance-guide",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-governance-guide",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-governance-guide",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -4690,7 +4690,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-grok-runtime",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-grok-runtime",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-grok-runtime",
         "createdAt": "2026-06-10",
         "oneShot": false,
         "featured": false,
@@ -4763,7 +4763,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-liquidity-strategist",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-liquidity-strategist",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-liquidity-strategist",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -4832,7 +4832,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-livekit-voice",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-livekit-voice",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-livekit-voice",
         "createdAt": "2026-07-21",
         "oneShot": false,
         "featured": false,
@@ -4911,7 +4911,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-mayhem-mode",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-mayhem-mode",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-mayhem-mode",
         "createdAt": "2026-04-16",
         "oneShot": false,
         "featured": false,
@@ -4991,7 +4991,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-onboarding-guide",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-onboarding-guide",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-onboarding-guide",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -5063,7 +5063,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-operator-runtime",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-operator-runtime",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-operator-runtime",
         "createdAt": "2026-06-10",
         "oneShot": false,
         "featured": false,
@@ -5135,7 +5135,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-portfolio-tracker",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-portfolio-tracker",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-portfolio-tracker",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -5207,7 +5207,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-pump-runtime",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-pump-runtime",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-pump-runtime",
         "createdAt": "2026-06-10",
         "oneShot": false,
         "featured": false,
@@ -5279,7 +5279,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-pumpfun-official",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-pumpfun-official",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-pumpfun-official",
         "createdAt": "2026-04-16",
         "oneShot": false,
         "featured": false,
@@ -5349,7 +5349,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-risk-monitor",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-risk-monitor",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-risk-monitor",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -5421,7 +5421,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-router-runtime",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-router-runtime",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-router-runtime",
         "createdAt": "2026-06-10",
         "oneShot": false,
         "featured": false,
@@ -5496,7 +5496,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-web3-domain-agent",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-web3-domain-agent",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-web3-domain-agent",
         "createdAt": "2026-05-06",
         "oneShot": false,
         "featured": false,
@@ -5569,7 +5569,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawd-yield-aggregator",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-yield-aggregator",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawd-yield-aggregator",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -5639,7 +5639,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:clawdex",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawdex",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aclawdex",
         "createdAt": "2026-05-14",
         "oneShot": false,
         "featured": false,
@@ -5708,7 +5708,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:crypto-news-analyst",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Acrypto-news-analyst",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Acrypto-news-analyst",
         "createdAt": "2026-01-03",
         "oneShot": false,
         "featured": false,
@@ -5776,7 +5776,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:crypto-tax-strategist",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Acrypto-tax-strategist",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Acrypto-tax-strategist",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -5844,7 +5844,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:defi-insurance-advisor",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Adefi-insurance-advisor",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Adefi-insurance-advisor",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -5912,7 +5912,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:defi-onboarding-mentor",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -5979,7 +5979,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:defi-protocol-comparator",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Adefi-protocol-comparator",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Adefi-protocol-comparator",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -6046,7 +6046,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:defi-risk-scoring-engine",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Adefi-risk-scoring-engine",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Adefi-risk-scoring-engine",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -6113,7 +6113,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:defi-yield-farmer",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Adefi-yield-farmer",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Adefi-yield-farmer",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -6180,7 +6180,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:dex-aggregator-optimizer",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Adex-aggregator-optimizer",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Adex-aggregator-optimizer",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -6246,7 +6246,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:disruptiveshell",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Adisruptiveshell",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Adisruptiveshell",
         "createdAt": null,
         "oneShot": false,
         "featured": false,
@@ -6312,7 +6312,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:gas-optimization-expert",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Agas-optimization-expert",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Agas-optimization-expert",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -6380,7 +6380,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:governance-proposal-analyst",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -6447,7 +6447,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:impermanent-loss-calculator",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -6512,7 +6512,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:latticeclaw",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Alatticeclaw",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Alatticeclaw",
         "createdAt": null,
         "oneShot": false,
         "featured": false,
@@ -6578,7 +6578,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:layer2-comparison-guide",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Alayer2-comparison-guide",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Alayer2-comparison-guide",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -6645,7 +6645,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:liquidation-risk-manager",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aliquidation-risk-manager",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aliquidation-risk-manager",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -6711,7 +6711,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:liquidity-pool-analyzer",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,
@@ -6781,7 +6781,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:mechaplex-mech-builder",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Amechaplex-mech-builder",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Amechaplex-mech-builder",
         "createdAt": "2026-07-21",
         "oneShot": false,
         "featured": false,
@@ -6852,7 +6852,7 @@
       "rawCatalog": {
         "identifier": "cheshire-terminal-solana-agents:mev-protection-advisor",
         "author": "openclawd",
-        "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Amev-protection-advisor",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Amev-protection-advisor",
         "createdAt": "2024-12-16",
         "oneShot": false,
         "featured": false,

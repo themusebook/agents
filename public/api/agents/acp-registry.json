@@ -1,13 +1,13 @@
 {
   "schemaVersion": "openclawd.acp.registry.v1",
   "protocol": "Agent Commerce Protocol",
-  "generatedAt": "2026-07-22T16:26:41.207Z",
-  "host": "https://x402.wtf",
+  "generatedAt": "2026-07-22T16:27:24.881Z",
+  "host": "https://cheshireterminal.ai",
   "discover": {
-    "catalog": "https://x402.wtf/api/agents/catalog",
-    "registry": "https://x402.wtf/api/agents/registry",
-    "templates": "https://x402.wtf/api/agents/templates",
-    "wellKnown": "https://x402.wtf/.well-known/acp.json"
+    "catalog": "https://cheshireterminal.ai/api/agents/catalog",
+    "registry": "https://cheshireterminal.ai/api/agents/registry",
+    "templates": "https://cheshireterminal.ai/api/agents/templates",
+    "wellKnown": "https://cheshireterminal.ai/.well-known/acp.json"
   },
   "chain": {
     "namespace": "solana",
@@ -148,17 +148,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal.json"
         }
       ]
     },
@@ -177,17 +177,17 @@
       "oneShot": false,
       "featured": true,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/clawd-agents-perps-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/clawd-agents-perps-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=clawd-agents-perps-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/clawd-agents-perps-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/clawd-agents-perps-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=clawd-agents-perps-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:clawd-agents-perps-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/clawd-agents-perps-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawd-agents-perps-runtime.json"
         }
       ]
     },
@@ -210,17 +210,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/clawd-formal-verification.json",
-        "registration": "https://x402.wtf/api/agents/registry/clawd-formal-verification.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=clawd-formal-verification"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/clawd-formal-verification.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/clawd-formal-verification.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=clawd-formal-verification"
       },
       "registrations": [
         {
           "agentId": "openclawd:clawd-formal-verification",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/clawd-formal-verification.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawd-formal-verification.json"
         }
       ]
     },
@@ -242,17 +242,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/clawd-gateway-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/clawd-gateway-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=clawd-gateway-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/clawd-gateway-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/clawd-gateway-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=clawd-gateway-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:clawd-gateway-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/clawd-gateway-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawd-gateway-runtime.json"
         }
       ]
     },
@@ -274,17 +274,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/clawd-grok-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/clawd-grok-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=clawd-grok-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/clawd-grok-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/clawd-grok-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=clawd-grok-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:clawd-grok-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/clawd-grok-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawd-grok-runtime.json"
         }
       ]
     },
@@ -301,17 +301,17 @@
       "oneShot": false,
       "featured": true,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/clawd-livekit-voice.json",
-        "registration": "https://x402.wtf/api/agents/registry/clawd-livekit-voice.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=clawd-livekit-voice"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/clawd-livekit-voice.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/clawd-livekit-voice.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=clawd-livekit-voice"
       },
       "registrations": [
         {
           "agentId": "openclawd:clawd-livekit-voice",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/clawd-livekit-voice.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawd-livekit-voice.json"
         }
       ]
     },
@@ -332,17 +332,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/clawd-operator-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/clawd-operator-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=clawd-operator-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/clawd-operator-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/clawd-operator-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=clawd-operator-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:clawd-operator-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/clawd-operator-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawd-operator-runtime.json"
         }
       ]
     },
@@ -364,17 +364,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/clawd-pump-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/clawd-pump-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=clawd-pump-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/clawd-pump-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/clawd-pump-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=clawd-pump-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:clawd-pump-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/clawd-pump-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawd-pump-runtime.json"
         }
       ]
     },
@@ -396,17 +396,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/clawd-router-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/clawd-router-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=clawd-router-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/clawd-router-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/clawd-router-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=clawd-router-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:clawd-router-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/clawd-router-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawd-router-runtime.json"
         }
       ]
     },
@@ -419,17 +419,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/clawdex.json",
-        "registration": "https://x402.wtf/api/agents/registry/clawdex.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=clawdex"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/clawdex.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/clawdex.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=clawdex"
       },
       "registrations": [
         {
           "agentId": "openclawd:clawdex",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/clawdex.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawdex.json"
         }
       ]
     },
@@ -451,17 +451,17 @@
       "oneShot": false,
       "featured": true,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/mechaplex-mech-builder.json",
-        "registration": "https://x402.wtf/api/agents/registry/mechaplex-mech-builder.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=mechaplex-mech-builder"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/mechaplex-mech-builder.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/mechaplex-mech-builder.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=mechaplex-mech-builder"
       },
       "registrations": [
         {
           "agentId": "openclawd:mechaplex-mech-builder",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/mechaplex-mech-builder.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/mechaplex-mech-builder.json"
         }
       ]
     },
@@ -485,17 +485,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/robinhood-agent-forge.json",
-        "registration": "https://x402.wtf/api/agents/registry/robinhood-agent-forge.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=robinhood-agent-forge"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/robinhood-agent-forge.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/robinhood-agent-forge.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=robinhood-agent-forge"
       },
       "registrations": [
         {
           "agentId": "openclawd:robinhood-agent-forge",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/robinhood-agent-forge.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/robinhood-agent-forge.json"
         }
       ]
     },
@@ -508,17 +508,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-agent-orchestrator.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-agent-orchestrator.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-agent-orchestrator"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-agent-orchestrator.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-agent-orchestrator.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-agent-orchestrator"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-agent-orchestrator",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-agent-orchestrator.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-agent-orchestrator.json"
         }
       ]
     },
@@ -531,17 +531,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-airdrop-farmer.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-airdrop-farmer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-airdrop-farmer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-airdrop-farmer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-airdrop-farmer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-airdrop-farmer"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-airdrop-farmer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-airdrop-farmer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-airdrop-farmer.json"
         }
       ]
     },
@@ -554,17 +554,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-alpha-aggregator.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-alpha-aggregator.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-alpha-aggregator"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-alpha-aggregator.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-alpha-aggregator.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-alpha-aggregator"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-alpha-aggregator",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-alpha-aggregator.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-alpha-aggregator.json"
         }
       ]
     },
@@ -577,17 +577,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-anchor-developer.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-anchor-developer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-anchor-developer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-anchor-developer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-anchor-developer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-anchor-developer"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-anchor-developer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-anchor-developer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-anchor-developer.json"
         }
       ]
     },
@@ -600,17 +600,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-anomaly-detector.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-anomaly-detector.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-anomaly-detector"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-anomaly-detector.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-anomaly-detector.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-anomaly-detector"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-anomaly-detector",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-anomaly-detector.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-anomaly-detector.json"
         }
       ]
     },
@@ -623,17 +623,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-arbitrage-scanner.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-arbitrage-scanner.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-arbitrage-scanner"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-arbitrage-scanner.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-arbitrage-scanner.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-arbitrage-scanner"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-arbitrage-scanner",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-arbitrage-scanner.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-arbitrage-scanner.json"
         }
       ]
     },
@@ -646,17 +646,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-autonomous-trader.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-autonomous-trader.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-autonomous-trader"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-autonomous-trader.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-autonomous-trader.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-autonomous-trader"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-autonomous-trader",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-autonomous-trader.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-autonomous-trader.json"
         }
       ]
     },
@@ -669,17 +669,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-bot-architect.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-bot-architect.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-bot-architect"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-bot-architect.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-bot-architect.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-bot-architect"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-bot-architect",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-bot-architect.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-bot-architect.json"
         }
       ]
     },
@@ -692,17 +692,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-chart-pattern-ai.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-chart-pattern-ai.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-chart-pattern-ai"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-chart-pattern-ai.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-chart-pattern-ai.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-chart-pattern-ai"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-chart-pattern-ai",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-chart-pattern-ai.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-chart-pattern-ai.json"
         }
       ]
     },
@@ -715,17 +715,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-clawd-cost-planner.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-clawd-cost-planner.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-clawd-cost-planner"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-clawd-cost-planner.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-cost-planner.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-clawd-cost-planner"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-clawd-cost-planner",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-clawd-cost-planner.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-cost-planner.json"
         }
       ]
     },
@@ -738,17 +738,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-clawd-mail-concierge.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-clawd-mail-concierge.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-clawd-mail-concierge"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-clawd-mail-concierge.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-mail-concierge.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-clawd-mail-concierge"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-clawd-mail-concierge",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-clawd-mail-concierge.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-mail-concierge.json"
         }
       ]
     },
@@ -761,17 +761,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-clawd-payment-debugger.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-clawd-payment-debugger.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-clawd-payment-debugger"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-clawd-payment-debugger.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-payment-debugger.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-clawd-payment-debugger"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-clawd-payment-debugger",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-clawd-payment-debugger.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-payment-debugger.json"
         }
       ]
     },
@@ -784,17 +784,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-clawd-payment-gateway.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-clawd-payment-gateway.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-clawd-payment-gateway"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-clawd-payment-gateway.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-payment-gateway.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-clawd-payment-gateway"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-clawd-payment-gateway",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-clawd-payment-gateway.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-payment-gateway.json"
         }
       ]
     },
@@ -807,17 +807,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-clawd-provider-scorer.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-clawd-provider-scorer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-clawd-provider-scorer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-clawd-provider-scorer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-provider-scorer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-clawd-provider-scorer"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-clawd-provider-scorer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-clawd-provider-scorer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-provider-scorer.json"
         }
       ]
     },
@@ -830,17 +830,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-clawd-quote-relay.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-clawd-quote-relay.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-clawd-quote-relay"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-clawd-quote-relay.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-quote-relay.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-clawd-quote-relay"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-clawd-quote-relay",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-clawd-quote-relay.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-quote-relay.json"
         }
       ]
     },
@@ -853,17 +853,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-clawd-usdc-allocator.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-clawd-usdc-allocator.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-clawd-usdc-allocator"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-clawd-usdc-allocator.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-usdc-allocator.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-clawd-usdc-allocator"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-clawd-usdc-allocator",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-clawd-usdc-allocator.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-usdc-allocator.json"
         }
       ]
     },
@@ -876,17 +876,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-clawd-wallet-guardian.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-clawd-wallet-guardian.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-clawd-wallet-guardian"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-clawd-wallet-guardian.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-wallet-guardian.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-clawd-wallet-guardian"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-clawd-wallet-guardian",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-clawd-wallet-guardian.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-wallet-guardian.json"
         }
       ]
     },
@@ -899,17 +899,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-cross-chain-bridge.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-cross-chain-bridge.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-cross-chain-bridge"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-cross-chain-bridge.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-cross-chain-bridge.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-cross-chain-bridge"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-cross-chain-bridge",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-cross-chain-bridge.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-cross-chain-bridge.json"
         }
       ]
     },
@@ -922,17 +922,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-dark-ralph-mail-briefing.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-dark-ralph-mail-briefing.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-dark-ralph-mail-briefing"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-dark-ralph-mail-briefing.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-dark-ralph-mail-briefing.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-dark-ralph-mail-briefing"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-dark-ralph-mail-briefing",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-dark-ralph-mail-briefing.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-dark-ralph-mail-briefing.json"
         }
       ]
     },
@@ -945,17 +945,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-data-pipeline.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-data-pipeline.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-data-pipeline"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-data-pipeline.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-data-pipeline.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-data-pipeline"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-data-pipeline",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-data-pipeline.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-data-pipeline.json"
         }
       ]
     },
@@ -968,17 +968,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-dex-aggregator.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-dex-aggregator.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-dex-aggregator"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-dex-aggregator.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-dex-aggregator.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-dex-aggregator"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-dex-aggregator",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-dex-aggregator.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-dex-aggregator.json"
         }
       ]
     },
@@ -991,17 +991,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-dexter-mail-operator.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-dexter-mail-operator.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-dexter-mail-operator"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-dexter-mail-operator.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-dexter-mail-operator.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-dexter-mail-operator"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-dexter-mail-operator",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-dexter-mail-operator.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-dexter-mail-operator.json"
         }
       ]
     },
@@ -1014,17 +1014,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-funding-rate-arb.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-funding-rate-arb.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-funding-rate-arb"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-funding-rate-arb.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-funding-rate-arb.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-funding-rate-arb"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-funding-rate-arb",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-funding-rate-arb.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-funding-rate-arb.json"
         }
       ]
     },
@@ -1037,17 +1037,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-helius-specialist.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-helius-specialist.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-helius-specialist"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-helius-specialist.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-helius-specialist.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-helius-specialist"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-helius-specialist",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-helius-specialist.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-helius-specialist.json"
         }
       ]
     },
@@ -1060,17 +1060,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-hermes-mail-settlement.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-hermes-mail-settlement.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-hermes-mail-settlement"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-hermes-mail-settlement.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-hermes-mail-settlement.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-hermes-mail-settlement"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-hermes-mail-settlement",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-hermes-mail-settlement.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-hermes-mail-settlement.json"
         }
       ]
     },
@@ -1083,17 +1083,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-impermanent-loss-calc.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-impermanent-loss-calc.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-impermanent-loss-calc"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-impermanent-loss-calc.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-impermanent-loss-calc.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-impermanent-loss-calc"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-impermanent-loss-calc",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-impermanent-loss-calc.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-impermanent-loss-calc.json"
         }
       ]
     },
@@ -1106,17 +1106,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-lending-strategist.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-lending-strategist.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-lending-strategist"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-lending-strategist.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-lending-strategist.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-lending-strategist"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-lending-strategist",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-lending-strategist.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-lending-strategist.json"
         }
       ]
     },
@@ -1129,17 +1129,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-liquidation-bot.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-liquidation-bot.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-liquidation-bot"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-liquidation-bot.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-liquidation-bot.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-liquidation-bot"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-liquidation-bot",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-liquidation-bot.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-liquidation-bot.json"
         }
       ]
     },
@@ -1152,17 +1152,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-lsd-analyst.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-lsd-analyst.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-lsd-analyst"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-lsd-analyst.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-lsd-analyst.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-lsd-analyst"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-lsd-analyst",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-lsd-analyst.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-lsd-analyst.json"
         }
       ]
     },
@@ -1175,17 +1175,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-macro-analyst.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-macro-analyst.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-macro-analyst"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-macro-analyst.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-macro-analyst.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-macro-analyst"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-macro-analyst",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-macro-analyst.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-macro-analyst.json"
         }
       ]
     },
@@ -1198,17 +1198,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-market-maker.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-market-maker.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-market-maker"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-market-maker.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-market-maker.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-market-maker"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-market-maker",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-market-maker.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-market-maker.json"
         }
       ]
     },
@@ -1221,17 +1221,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-memecoin-analyst.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-memecoin-analyst.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-memecoin-analyst"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-memecoin-analyst.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-memecoin-analyst.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-memecoin-analyst"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-memecoin-analyst",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-memecoin-analyst.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-memecoin-analyst.json"
         }
       ]
     },
@@ -1244,17 +1244,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-mev-protector.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-mev-protector.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-mev-protector"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-mev-protector.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-mev-protector.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-mev-protector"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-mev-protector",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-mev-protector.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-mev-protector.json"
         }
       ]
     },
@@ -1267,17 +1267,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-nanoclawd-cache-keeper.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-nanoclawd-cache-keeper.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-nanoclawd-cache-keeper"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-nanoclawd-cache-keeper.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-nanoclawd-cache-keeper.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-nanoclawd-cache-keeper"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-nanoclawd-cache-keeper",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-nanoclawd-cache-keeper.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-nanoclawd-cache-keeper.json"
         }
       ]
     },
@@ -1290,17 +1290,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-nanoclawd-microtransaction.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-nanoclawd-microtransaction.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-nanoclawd-microtransaction"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-nanoclawd-microtransaction.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-nanoclawd-microtransaction.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-nanoclawd-microtransaction"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-nanoclawd-microtransaction",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-nanoclawd-microtransaction.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-nanoclawd-microtransaction.json"
         }
       ]
     },
@@ -1313,17 +1313,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-nanoclawd-sandbox-runner.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-nanoclawd-sandbox-runner.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-nanoclawd-sandbox-runner"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-nanoclawd-sandbox-runner.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-nanoclawd-sandbox-runner.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-nanoclawd-sandbox-runner"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-nanoclawd-sandbox-runner",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-nanoclawd-sandbox-runner.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-nanoclawd-sandbox-runner.json"
         }
       ]
     },
@@ -1336,17 +1336,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-narrative-tracker.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-narrative-tracker.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-narrative-tracker"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-narrative-tracker.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-narrative-tracker.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-narrative-tracker"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-narrative-tracker",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-narrative-tracker.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-narrative-tracker.json"
         }
       ]
     },
@@ -1359,17 +1359,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-nemoclawd-defi-router.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-nemoclawd-defi-router.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-nemoclawd-defi-router"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-nemoclawd-defi-router.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-nemoclawd-defi-router.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-nemoclawd-defi-router"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-nemoclawd-defi-router",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-nemoclawd-defi-router.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-nemoclawd-defi-router.json"
         }
       ]
     },
@@ -1382,17 +1382,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-nemoclawd-settlement-ops.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-nemoclawd-settlement-ops.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-nemoclawd-settlement-ops"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-nemoclawd-settlement-ops.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-nemoclawd-settlement-ops.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-nemoclawd-settlement-ops"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-nemoclawd-settlement-ops",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-nemoclawd-settlement-ops.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-nemoclawd-settlement-ops.json"
         }
       ]
     },
@@ -1405,17 +1405,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-nemoclawd-yield-treasurer.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-nemoclawd-yield-treasurer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-nemoclawd-yield-treasurer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-nemoclawd-yield-treasurer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-nemoclawd-yield-treasurer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-nemoclawd-yield-treasurer"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-nemoclawd-yield-treasurer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-nemoclawd-yield-treasurer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-nemoclawd-yield-treasurer.json"
         }
       ]
     },
@@ -1428,17 +1428,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-nft-floor-trader.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-nft-floor-trader.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-nft-floor-trader"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-nft-floor-trader.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-nft-floor-trader.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-nft-floor-trader"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-nft-floor-trader",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-nft-floor-trader.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-nft-floor-trader.json"
         }
       ]
     },
@@ -1451,17 +1451,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-onchain-metrics.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-onchain-metrics.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-onchain-metrics"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-onchain-metrics.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-onchain-metrics.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-onchain-metrics"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-onchain-metrics",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-onchain-metrics.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-onchain-metrics.json"
         }
       ]
     },
@@ -1474,17 +1474,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-onchain-sleuth.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-onchain-sleuth.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-onchain-sleuth"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-onchain-sleuth.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-onchain-sleuth.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-onchain-sleuth"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-onchain-sleuth",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-onchain-sleuth.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-onchain-sleuth.json"
         }
       ]
     },
@@ -1508,17 +1508,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-openclawd-agent-staking.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-openclawd-agent-staking.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-openclawd-agent-staking"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-openclawd-agent-staking.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-agent-staking.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-openclawd-agent-staking"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-openclawd-agent-staking",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-openclawd-agent-staking.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-agent-staking.json"
         }
       ]
     },
@@ -1531,17 +1531,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-openclawd-orchestrator.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-openclawd-orchestrator.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-openclawd-orchestrator"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-openclawd-orchestrator.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-orchestrator.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-openclawd-orchestrator"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-openclawd-orchestrator",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-openclawd-orchestrator.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-orchestrator.json"
         }
       ]
     },
@@ -1554,17 +1554,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-openclawd-pulse-monitor.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-openclawd-pulse-monitor.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-openclawd-pulse-monitor"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-openclawd-pulse-monitor.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-pulse-monitor.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-openclawd-pulse-monitor"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-openclawd-pulse-monitor",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-openclawd-pulse-monitor.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-pulse-monitor.json"
         }
       ]
     },
@@ -1577,17 +1577,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-openclawd-shell-auditor.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-openclawd-shell-auditor.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-openclawd-shell-auditor"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-openclawd-shell-auditor.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-shell-auditor.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-openclawd-shell-auditor"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-openclawd-shell-auditor",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-openclawd-shell-auditor.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-shell-auditor.json"
         }
       ]
     },
@@ -1600,17 +1600,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-openclawd-skill-router.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-openclawd-skill-router.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-openclawd-skill-router"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-openclawd-skill-router.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-skill-router.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-openclawd-skill-router"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-openclawd-skill-router",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-openclawd-skill-router.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-skill-router.json"
         }
       ]
     },
@@ -1623,17 +1623,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-openclawd-spawn-manager.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-openclawd-spawn-manager.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-openclawd-spawn-manager"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-openclawd-spawn-manager.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-spawn-manager.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-openclawd-spawn-manager"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-openclawd-spawn-manager",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-openclawd-spawn-manager.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-spawn-manager.json"
         }
       ]
     },
@@ -1646,17 +1646,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-order-flow-analyst.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-order-flow-analyst.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-order-flow-analyst"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-order-flow-analyst.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-order-flow-analyst.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-order-flow-analyst"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-order-flow-analyst",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-order-flow-analyst.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-order-flow-analyst.json"
         }
       ]
     },
@@ -1669,17 +1669,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-perpetuals-trader.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-perpetuals-trader.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-perpetuals-trader"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-perpetuals-trader.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-perpetuals-trader.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-perpetuals-trader"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-perpetuals-trader",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-perpetuals-trader.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-perpetuals-trader.json"
         }
       ]
     },
@@ -1692,17 +1692,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-portfolio-risk.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-portfolio-risk.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-portfolio-risk"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-portfolio-risk.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-portfolio-risk.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-portfolio-risk"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-portfolio-risk",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-portfolio-risk.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-portfolio-risk.json"
         }
       ]
     },
@@ -1715,17 +1715,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-position-sizer.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-position-sizer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-position-sizer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-position-sizer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-position-sizer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-position-sizer"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-position-sizer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-position-sizer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-position-sizer.json"
         }
       ]
     },
@@ -1738,17 +1738,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-prediction-market.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-prediction-market.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-prediction-market"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-prediction-market.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-prediction-market.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-prediction-market"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-prediction-market",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-prediction-market.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-prediction-market.json"
         }
       ]
     },
@@ -1761,17 +1761,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-price-predictor.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-price-predictor.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-price-predictor"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-price-predictor.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-price-predictor.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-price-predictor"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-price-predictor",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-price-predictor.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-price-predictor.json"
         }
       ]
     },
@@ -1784,17 +1784,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-protocol-auditor.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-protocol-auditor.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-protocol-auditor"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-protocol-auditor.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-protocol-auditor.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-protocol-auditor"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-protocol-auditor",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-protocol-auditor.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-protocol-auditor.json"
         }
       ]
     },
@@ -1807,17 +1807,17 @@
       "oneShot": true,
       "featured": true,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-pumpfun-bot.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-pumpfun-bot.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-pumpfun-bot"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-pumpfun-bot.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-pumpfun-bot.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-pumpfun-bot"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-pumpfun-bot",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-pumpfun-bot.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-pumpfun-bot.json"
         }
       ]
     },
@@ -1830,17 +1830,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-quant-researcher.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-quant-researcher.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-quant-researcher"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-quant-researcher.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-quant-researcher.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-quant-researcher"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-quant-researcher",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-quant-researcher.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-quant-researcher.json"
         }
       ]
     },
@@ -1853,17 +1853,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-regulatory-advisor.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-regulatory-advisor.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-regulatory-advisor"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-regulatory-advisor.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-regulatory-advisor.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-regulatory-advisor"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-regulatory-advisor",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-regulatory-advisor.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-regulatory-advisor.json"
         }
       ]
     },
@@ -1876,17 +1876,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-risk-sentinel.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-risk-sentinel.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-risk-sentinel"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-risk-sentinel.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-risk-sentinel.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-risk-sentinel"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-risk-sentinel",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-risk-sentinel.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-risk-sentinel.json"
         }
       ]
     },
@@ -1899,17 +1899,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-rpc-optimizer.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-rpc-optimizer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-rpc-optimizer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-rpc-optimizer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-rpc-optimizer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-rpc-optimizer"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-rpc-optimizer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-rpc-optimizer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-rpc-optimizer.json"
         }
       ]
     },
@@ -1922,17 +1922,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-sentiment-analyzer.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-sentiment-analyzer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-sentiment-analyzer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-sentiment-analyzer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-sentiment-analyzer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-sentiment-analyzer"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-sentiment-analyzer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-sentiment-analyzer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-sentiment-analyzer.json"
         }
       ]
     },
@@ -1945,17 +1945,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-spot-trader.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-spot-trader.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-spot-trader"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-spot-trader.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-spot-trader.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-spot-trader"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-spot-trader",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-spot-trader.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-spot-trader.json"
         }
       ]
     },
@@ -1968,17 +1968,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-stablecoin-strategist.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-stablecoin-strategist.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-stablecoin-strategist"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-stablecoin-strategist.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-stablecoin-strategist.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-stablecoin-strategist"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-stablecoin-strategist",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-stablecoin-strategist.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-stablecoin-strategist.json"
         }
       ]
     },
@@ -1991,17 +1991,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-technical-analyst.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-technical-analyst.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-technical-analyst"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-technical-analyst.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-technical-analyst.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-technical-analyst"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-technical-analyst",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-technical-analyst.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-technical-analyst.json"
         }
       ]
     },
@@ -2014,17 +2014,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-token-launcher.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-token-launcher.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-token-launcher"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-token-launcher.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-token-launcher.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-token-launcher"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-token-launcher",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-token-launcher.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-token-launcher.json"
         }
       ]
     },
@@ -2037,17 +2037,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-tokenomics-analyst.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-tokenomics-analyst.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-tokenomics-analyst"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-tokenomics-analyst.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-tokenomics-analyst.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-tokenomics-analyst"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-tokenomics-analyst",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-tokenomics-analyst.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-tokenomics-analyst.json"
         }
       ]
     },
@@ -2060,17 +2060,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-vc-deal-analyzer.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-vc-deal-analyzer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-vc-deal-analyzer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-vc-deal-analyzer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-vc-deal-analyzer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-vc-deal-analyzer"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-vc-deal-analyzer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-vc-deal-analyzer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-vc-deal-analyzer.json"
         }
       ]
     },
@@ -2083,17 +2083,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-volatility-analyst.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-volatility-analyst.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-volatility-analyst"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-volatility-analyst.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-volatility-analyst.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-volatility-analyst"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-volatility-analyst",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-volatility-analyst.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-volatility-analyst.json"
         }
       ]
     },
@@ -2117,17 +2117,17 @@
       "oneShot": false,
       "featured": true,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-vulcan-clawd-autonomous-perps.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-vulcan-clawd-autonomous-perps"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-vulcan-clawd-autonomous-perps.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-vulcan-clawd-autonomous-perps"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-vulcan-clawd-autonomous-perps",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json"
         }
       ]
     },
@@ -2140,17 +2140,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-whale-tracker.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-whale-tracker.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-whale-tracker"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-whale-tracker.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-whale-tracker.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-whale-tracker"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-whale-tracker",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-whale-tracker.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-whale-tracker.json"
         }
       ]
     },
@@ -2163,17 +2163,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-whitepaper-analyst.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-whitepaper-analyst.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-whitepaper-analyst"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-whitepaper-analyst.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-whitepaper-analyst.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-whitepaper-analyst"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-whitepaper-analyst",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-whitepaper-analyst.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-whitepaper-analyst.json"
         }
       ]
     },
@@ -2186,17 +2186,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-x402-market-data-buyer.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-x402-market-data-buyer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-x402-market-data-buyer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-x402-market-data-buyer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-x402-market-data-buyer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-x402-market-data-buyer"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-x402-market-data-buyer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-x402-market-data-buyer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-x402-market-data-buyer.json"
         }
       ]
     },
@@ -2209,17 +2209,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-x402-provider-author.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-x402-provider-author.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-x402-provider-author"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-x402-provider-author.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-x402-provider-author.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-x402-provider-author"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-x402-provider-author",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-x402-provider-author.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-x402-provider-author.json"
         }
       ]
     },
@@ -2232,17 +2232,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-x402-provider-catalog.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-x402-provider-catalog.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-x402-provider-catalog"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-x402-provider-catalog.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-x402-provider-catalog.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-x402-provider-catalog"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-x402-provider-catalog",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-x402-provider-catalog.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-x402-provider-catalog.json"
         }
       ]
     },
@@ -2255,17 +2255,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-x402-research-broker.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-x402-research-broker.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-x402-research-broker"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-x402-research-broker.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-x402-research-broker.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-x402-research-broker"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-x402-research-broker",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-x402-research-broker.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-x402-research-broker.json"
         }
       ]
     },
@@ -2278,17 +2278,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-x402-signal-monetizer.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-x402-signal-monetizer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-x402-signal-monetizer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-x402-signal-monetizer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-x402-signal-monetizer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-x402-signal-monetizer"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-x402-signal-monetizer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-x402-signal-monetizer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-x402-signal-monetizer.json"
         }
       ]
     },
@@ -2301,17 +2301,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-x402-solana-rpc-broker.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-x402-solana-rpc-broker.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-x402-solana-rpc-broker"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-x402-solana-rpc-broker.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-x402-solana-rpc-broker.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-x402-solana-rpc-broker"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-x402-solana-rpc-broker",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-x402-solana-rpc-broker.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-x402-solana-rpc-broker.json"
         }
       ]
     },
@@ -2324,17 +2324,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-x402-webhook-settlement.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-x402-webhook-settlement.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-x402-webhook-settlement"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-x402-webhook-settlement.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-x402-webhook-settlement.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-x402-webhook-settlement"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-x402-webhook-settlement",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-x402-webhook-settlement.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-x402-webhook-settlement.json"
         }
       ]
     },
@@ -2347,17 +2347,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/solana-yield-optimizer.json",
-        "registration": "https://x402.wtf/api/agents/registry/solana-yield-optimizer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=solana-yield-optimizer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/solana-yield-optimizer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/solana-yield-optimizer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=solana-yield-optimizer"
       },
       "registrations": [
         {
           "agentId": "openclawd:solana-yield-optimizer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/solana-yield-optimizer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-yield-optimizer.json"
         }
       ]
     },
@@ -2382,17 +2382,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/staking-unstaking-solana-metaplex-core.json",
-        "registration": "https://x402.wtf/api/agents/registry/staking-unstaking-solana-metaplex-core.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=staking-unstaking-solana-metaplex-core"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/staking-unstaking-solana-metaplex-core.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/staking-unstaking-solana-metaplex-core.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=staking-unstaking-solana-metaplex-core"
       },
       "registrations": [
         {
           "agentId": "openclawd:staking-unstaking-solana-metaplex-core",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/staking-unstaking-solana-metaplex-core.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/staking-unstaking-solana-metaplex-core.json"
         }
       ]
     },
@@ -2405,17 +2405,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aactivistpinch.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aactivistpinch.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aactivistpinch"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aactivistpinch.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aactivistpinch.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aactivistpinch"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:activistpinch",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aactivistpinch.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aactivistpinch.json"
         }
       ]
     },
@@ -2428,17 +2428,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aairdrop-hunter.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aairdrop-hunter.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aairdrop-hunter"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aairdrop-hunter.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aairdrop-hunter.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aairdrop-hunter"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:airdrop-hunter",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aairdrop-hunter.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aairdrop-hunter.json"
         }
       ]
     },
@@ -2451,17 +2451,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aalpha-leak-detector"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aalpha-leak-detector"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:alpha-leak-detector",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json"
         }
       ]
     },
@@ -2474,17 +2474,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aapy-vs-apr-educator.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aapy-vs-apr-educator.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aapy-vs-apr-educator"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aapy-vs-apr-educator.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aapy-vs-apr-educator.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aapy-vs-apr-educator"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:apy-vs-apr-educator",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aapy-vs-apr-educator.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aapy-vs-apr-educator.json"
         }
       ]
     },
@@ -2497,17 +2497,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Abridge-security-analyst.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Abridge-security-analyst.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Abridge-security-analyst"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Abridge-security-analyst.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Abridge-security-analyst.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Abridge-security-analyst"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:bridge-security-analyst",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Abridge-security-analyst.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Abridge-security-analyst.json"
         }
       ]
     },
@@ -2520,17 +2520,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Acheshire-terminal.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Acheshire-terminal.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Acheshire-terminal"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Acheshire-terminal.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Acheshire-terminal.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Acheshire-terminal"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:cheshire-terminal",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Acheshire-terminal.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Acheshire-terminal.json"
         }
       ]
     },
@@ -2543,17 +2543,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-agents-perps-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime.json"
         }
       ]
     },
@@ -2566,17 +2566,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-bridge-assistant.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-bridge-assistant.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-bridge-assistant"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-bridge-assistant.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-bridge-assistant.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-bridge-assistant"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-bridge-assistant",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-bridge-assistant.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-bridge-assistant.json"
         }
       ]
     },
@@ -2589,17 +2589,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-firecrawl.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-firecrawl.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-firecrawl"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-firecrawl.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-firecrawl.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-firecrawl"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-firecrawl",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-firecrawl.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-firecrawl.json"
         }
       ]
     },
@@ -2615,17 +2615,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-formal-verification.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-formal-verification.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-formal-verification"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-formal-verification.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-formal-verification.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-formal-verification"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-formal-verification",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-formal-verification.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-formal-verification.json"
         }
       ]
     },
@@ -2640,17 +2640,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-gateway-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-gateway-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-gateway-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-gateway-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-gateway-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-gateway-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-gateway-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-gateway-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-gateway-runtime.json"
         }
       ]
     },
@@ -2663,17 +2663,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-governance-guide.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-governance-guide.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-governance-guide"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-governance-guide.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-governance-guide.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-governance-guide"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-governance-guide",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-governance-guide.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-governance-guide.json"
         }
       ]
     },
@@ -2688,17 +2688,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-grok-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-grok-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-grok-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-grok-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-grok-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-grok-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-grok-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-grok-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-grok-runtime.json"
         }
       ]
     },
@@ -2711,17 +2711,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-liquidity-strategist.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-liquidity-strategist.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-liquidity-strategist"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-liquidity-strategist.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-liquidity-strategist.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-liquidity-strategist"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-liquidity-strategist",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-liquidity-strategist.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-liquidity-strategist.json"
         }
       ]
     },
@@ -2734,17 +2734,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-livekit-voice.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-livekit-voice.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-livekit-voice"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-livekit-voice.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-livekit-voice.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-livekit-voice"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-livekit-voice",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-livekit-voice.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-livekit-voice.json"
         }
       ]
     },
@@ -2764,17 +2764,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-mayhem-mode.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-mayhem-mode.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-mayhem-mode"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-mayhem-mode.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-mayhem-mode.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-mayhem-mode"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-mayhem-mode",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-mayhem-mode.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-mayhem-mode.json"
         }
       ]
     },
@@ -2787,17 +2787,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-onboarding-guide.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-onboarding-guide.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-onboarding-guide"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-onboarding-guide.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-onboarding-guide.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-onboarding-guide"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-onboarding-guide",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-onboarding-guide.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-onboarding-guide.json"
         }
       ]
     },
@@ -2812,17 +2812,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-operator-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-operator-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-operator-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-operator-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-operator-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-operator-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-operator-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-operator-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-operator-runtime.json"
         }
       ]
     },
@@ -2835,17 +2835,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-portfolio-tracker.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-portfolio-tracker.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-portfolio-tracker"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-portfolio-tracker.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-portfolio-tracker.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-portfolio-tracker"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-portfolio-tracker",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-portfolio-tracker.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-portfolio-tracker.json"
         }
       ]
     },
@@ -2860,17 +2860,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-pump-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-pump-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-pump-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-pump-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-pump-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-pump-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-pump-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-pump-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-pump-runtime.json"
         }
       ]
     },
@@ -2883,17 +2883,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-pumpfun-official.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-pumpfun-official.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-pumpfun-official"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-pumpfun-official.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-pumpfun-official.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-pumpfun-official"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-pumpfun-official",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-pumpfun-official.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-pumpfun-official.json"
         }
       ]
     },
@@ -2906,17 +2906,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-risk-monitor.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-risk-monitor.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-risk-monitor"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-risk-monitor.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-risk-monitor.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-risk-monitor"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-risk-monitor",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-risk-monitor.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-risk-monitor.json"
         }
       ]
     },
@@ -2931,17 +2931,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-router-runtime.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-router-runtime.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-router-runtime"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-router-runtime.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-router-runtime.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-router-runtime"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-router-runtime",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-router-runtime.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-router-runtime.json"
         }
       ]
     },
@@ -2957,17 +2957,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-web3-domain-agent.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-web3-domain-agent.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-web3-domain-agent"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-web3-domain-agent.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-web3-domain-agent.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-web3-domain-agent"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-web3-domain-agent",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-web3-domain-agent.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-web3-domain-agent.json"
         }
       ]
     },
@@ -2980,17 +2980,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-yield-aggregator.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-yield-aggregator.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-yield-aggregator"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-yield-aggregator.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-yield-aggregator.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawd-yield-aggregator"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-yield-aggregator",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-yield-aggregator.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-yield-aggregator.json"
         }
       ]
     },
@@ -3003,17 +3003,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawdex.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawdex.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aclawdex"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawdex.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawdex.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aclawdex"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:clawdex",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawdex.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aclawdex.json"
         }
       ]
     },
@@ -3026,17 +3026,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Acrypto-news-analyst.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Acrypto-news-analyst.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Acrypto-news-analyst"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Acrypto-news-analyst.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Acrypto-news-analyst.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Acrypto-news-analyst"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:crypto-news-analyst",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Acrypto-news-analyst.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Acrypto-news-analyst.json"
         }
       ]
     },
@@ -3049,17 +3049,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Acrypto-tax-strategist.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Acrypto-tax-strategist.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Acrypto-tax-strategist"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Acrypto-tax-strategist.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Acrypto-tax-strategist.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Acrypto-tax-strategist"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:crypto-tax-strategist",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Acrypto-tax-strategist.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Acrypto-tax-strategist.json"
         }
       ]
     },
@@ -3072,17 +3072,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-insurance-advisor.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-insurance-advisor.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Adefi-insurance-advisor"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-insurance-advisor.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-insurance-advisor.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Adefi-insurance-advisor"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:defi-insurance-advisor",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-insurance-advisor.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-insurance-advisor.json"
         }
       ]
     },
@@ -3095,17 +3095,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Adefi-onboarding-mentor"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Adefi-onboarding-mentor"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:defi-onboarding-mentor",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json"
         }
       ]
     },
@@ -3118,17 +3118,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-protocol-comparator.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-protocol-comparator.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Adefi-protocol-comparator"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-protocol-comparator.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-protocol-comparator.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Adefi-protocol-comparator"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:defi-protocol-comparator",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-protocol-comparator.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-protocol-comparator.json"
         }
       ]
     },
@@ -3141,17 +3141,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-risk-scoring-engine.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-risk-scoring-engine.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Adefi-risk-scoring-engine"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-risk-scoring-engine.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-risk-scoring-engine.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Adefi-risk-scoring-engine"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:defi-risk-scoring-engine",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-risk-scoring-engine.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-risk-scoring-engine.json"
         }
       ]
     },
@@ -3164,17 +3164,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-yield-farmer.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-yield-farmer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Adefi-yield-farmer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-yield-farmer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-yield-farmer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Adefi-yield-farmer"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:defi-yield-farmer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-yield-farmer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-yield-farmer.json"
         }
       ]
     },
@@ -3187,17 +3187,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Adex-aggregator-optimizer.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adex-aggregator-optimizer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Adex-aggregator-optimizer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Adex-aggregator-optimizer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adex-aggregator-optimizer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Adex-aggregator-optimizer"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:dex-aggregator-optimizer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adex-aggregator-optimizer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adex-aggregator-optimizer.json"
         }
       ]
     },
@@ -3210,17 +3210,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Adisruptiveshell.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adisruptiveshell.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Adisruptiveshell"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Adisruptiveshell.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adisruptiveshell.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Adisruptiveshell"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:disruptiveshell",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adisruptiveshell.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adisruptiveshell.json"
         }
       ]
     },
@@ -3233,17 +3233,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Agas-optimization-expert.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Agas-optimization-expert.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Agas-optimization-expert"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Agas-optimization-expert.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agas-optimization-expert.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Agas-optimization-expert"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:gas-optimization-expert",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Agas-optimization-expert.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agas-optimization-expert.json"
         }
       ]
     },
@@ -3256,17 +3256,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Agovernance-proposal-analyst"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Agovernance-proposal-analyst"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:governance-proposal-analyst",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
         }
       ]
     },
@@ -3279,17 +3279,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:impermanent-loss-calculator",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator.json"
         }
       ]
     },
@@ -3302,17 +3302,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Alatticeclaw.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Alatticeclaw.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Alatticeclaw"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Alatticeclaw.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Alatticeclaw.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Alatticeclaw"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:latticeclaw",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Alatticeclaw.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Alatticeclaw.json"
         }
       ]
     },
@@ -3325,17 +3325,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Alayer2-comparison-guide"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Alayer2-comparison-guide"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:layer2-comparison-guide",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json"
         }
       ]
     },
@@ -3348,17 +3348,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aliquidation-risk-manager"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aliquidation-risk-manager"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:liquidation-risk-manager",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json"
         }
       ]
     },
@@ -3371,17 +3371,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:liquidity-pool-analyzer",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json"
         }
       ]
     },
@@ -3397,17 +3397,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Amechaplex-mech-builder"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Amechaplex-mech-builder"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:mechaplex-mech-builder",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json"
         }
       ]
     },
@@ -3420,17 +3420,17 @@
       "oneShot": false,
       "featured": false,
       "endpoints": {
-        "catalog": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Amev-protection-advisor.json",
-        "registration": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Amev-protection-advisor.json",
-        "a2a": "https://x402.wtf/api/agents/a2a",
-        "mint": "https://x402.wtf/agents/mint?template=cheshire-terminal-solana-agents%3Amev-protection-advisor"
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Amev-protection-advisor.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Amev-protection-advisor.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=cheshire-terminal-solana-agents%3Amev-protection-advisor"
       },
       "registrations": [
         {
           "agentId": "openclawd:cheshire-terminal-solana-agents:mev-protection-advisor",
           "agentRegistry": "solana:mainnet:metaplex-agent-registry",
           "status": "pending-onchain-registration",
-          "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Amev-protection-advisor.json"
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Amev-protection-advisor.json"
         }
       ]
     }

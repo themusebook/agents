@@ -3,11 +3,11 @@
   "protocol": "metaplex-agent-registry",
   "name": "Whitepaper & Docs Analyst",
   "description": "Deep analysis of protocol whitepapers, docs, and technical architectures",
-  "image": "https://x402.wtf/nich.jpg",
-  "external_url": "https://x402.wtf/agents/solana-whitepaper-analyst",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/solana-whitepaper-analyst",
   "active": true,
   "createdAt": "2026-03-15",
-  "updatedAt": "2026-07-22T16:26:41.207Z",
+  "updatedAt": "2026-07-22T16:27:24.881Z",
   "tags": [
     "whitepaper",
     "research",
@@ -20,7 +20,7 @@
   ],
   "owner": {
     "organization": "OpenClawd",
-    "website": "https://x402.wtf",
+    "website": "https://cheshireterminal.ai",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -30,20 +30,20 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/solana-whitepaper-analyst"
+      "endpoint": "https://cheshireterminal.ai/agents/solana-whitepaper-analyst"
     },
     {
       "name": "A2A",
-      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/solana-whitepaper-analyst.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/solana-whitepaper-analyst.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/solana-whitepaper-analyst.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/solana-whitepaper-analyst.json"
     }
   ],
   "registrations": [
@@ -51,7 +51,7 @@
       "agentId": "openclawd:solana-whitepaper-analyst",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/solana-whitepaper-analyst.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-whitepaper-analyst.json"
     }
   ],
   "supportedTrust": [

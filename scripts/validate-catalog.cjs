@@ -6,8 +6,8 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const EXPECTED_TOTAL = 137;
 const EXPECTED_ONE_SHOTS = ['solana-pumpfun-bot'];
-const EXPECTED_FEATURED = ['solana-pumpfun-bot', 'solana-vulcan-clawd-autonomous-perps'];
-const CANONICAL_API = 'https://cheshireterminal.ai/api/clawd/browser-agents';
+const EXPECTED_FEATURED = ['clawd-agents-perps-runtime', 'clawd-livekit-voice', 'mechaplex-mech-builder', 'solana-pumpfun-bot', 'solana-vulcan-clawd-autonomous-perps'];
+const CANONICAL_API = 'https://cheshireterminal.ai/api/agents';
 const FORBIDDEN_PATTERNS = [/www\.x402\.wtf/, /clawd\.click/];
 
 function readJson(relativePath) {

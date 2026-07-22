@@ -4,10 +4,10 @@
   "name": "DeFi Beginner Onboarding Mentor",
   "description": "Cheshire Terminal agent: Guide complete beginners through their first DeFi experiences",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor",
+  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor",
   "active": true,
   "createdAt": "2024-12-16",
-  "updatedAt": "2026-07-22T16:26:41.207Z",
+  "updatedAt": "2026-07-22T16:27:24.881Z",
   "tags": [
     "education",
     "beginner",
@@ -22,7 +22,7 @@
   ],
   "owner": {
     "organization": "OpenClawd",
-    "website": "https://x402.wtf",
+    "website": "https://cheshireterminal.ai",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -32,20 +32,20 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor"
+      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor"
     },
     {
       "name": "A2A",
-      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json"
     }
   ],
   "registrations": [
@@ -53,7 +53,7 @@
       "agentId": "openclawd:cheshire-terminal-solana-agents:defi-onboarding-mentor",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adefi-onboarding-mentor.json"
     }
   ],
   "supportedTrust": [

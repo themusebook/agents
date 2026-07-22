@@ -4,10 +4,10 @@
   "name": "Crypto Alpha & Signal Detector",
   "description": "Cheshire Terminal agent: Identify trading alpha and early signals in DeFi markets",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aalpha-leak-detector",
+  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aalpha-leak-detector",
   "active": true,
   "createdAt": "2024-12-16",
-  "updatedAt": "2026-07-22T16:26:41.207Z",
+  "updatedAt": "2026-07-22T16:27:24.881Z",
   "tags": [
     "alpha",
     "trading",
@@ -22,7 +22,7 @@
   ],
   "owner": {
     "organization": "OpenClawd",
-    "website": "https://x402.wtf",
+    "website": "https://cheshireterminal.ai",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -32,20 +32,20 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aalpha-leak-detector"
+      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aalpha-leak-detector"
     },
     {
       "name": "A2A",
-      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json"
     }
   ],
   "registrations": [
@@ -53,7 +53,7 @@
       "agentId": "openclawd:cheshire-terminal-solana-agents:alpha-leak-detector",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aalpha-leak-detector.json"
     }
   ],
   "supportedTrust": [

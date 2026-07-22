@@ -3,11 +3,11 @@
   "protocol": "metaplex-agent-registry",
   "name": "Alpha Signal Aggregator",
   "description": "Aggregates and ranks alpha signals from multiple data sources into actionable trade ideas",
-  "image": "https://x402.wtf/nich.jpg",
-  "external_url": "https://x402.wtf/agents/solana-alpha-aggregator",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/solana-alpha-aggregator",
   "active": true,
   "createdAt": "2026-03-15",
-  "updatedAt": "2026-07-22T16:26:41.207Z",
+  "updatedAt": "2026-07-22T16:27:24.881Z",
   "tags": [
     "alpha",
     "signals",
@@ -20,7 +20,7 @@
   ],
   "owner": {
     "organization": "OpenClawd",
-    "website": "https://x402.wtf",
+    "website": "https://cheshireterminal.ai",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -30,20 +30,20 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/solana-alpha-aggregator"
+      "endpoint": "https://cheshireterminal.ai/agents/solana-alpha-aggregator"
     },
     {
       "name": "A2A",
-      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/solana-alpha-aggregator.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/solana-alpha-aggregator.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/solana-alpha-aggregator.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/solana-alpha-aggregator.json"
     }
   ],
   "registrations": [
@@ -51,7 +51,7 @@
       "agentId": "openclawd:solana-alpha-aggregator",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/solana-alpha-aggregator.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-alpha-aggregator.json"
     }
   ],
   "supportedTrust": [

@@ -3,11 +3,11 @@
   "protocol": "metaplex-agent-registry",
   "name": "Cheshire Terminal Solana Agents Pulse Monitor",
   "description": "Tracks spend velocity, pulse timing, and health across the Cheshire Terminal Solana Agents fleet.",
-  "image": "https://x402.wtf/nich.jpg",
-  "external_url": "https://x402.wtf/agents/solana-openclawd-pulse-monitor",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/solana-openclawd-pulse-monitor",
   "active": true,
   "createdAt": "2026-05-12",
-  "updatedAt": "2026-07-22T16:26:41.207Z",
+  "updatedAt": "2026-07-22T16:27:24.881Z",
   "tags": [
     "solana",
     "cheshire-terminal-solana-agents",
@@ -22,7 +22,7 @@
   ],
   "owner": {
     "organization": "OpenClawd",
-    "website": "https://x402.wtf",
+    "website": "https://cheshireterminal.ai",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -32,20 +32,20 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/solana-openclawd-pulse-monitor"
+      "endpoint": "https://cheshireterminal.ai/agents/solana-openclawd-pulse-monitor"
     },
     {
       "name": "A2A",
-      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/solana-openclawd-pulse-monitor.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/solana-openclawd-pulse-monitor.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/solana-openclawd-pulse-monitor.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-pulse-monitor.json"
     }
   ],
   "registrations": [
@@ -53,7 +53,7 @@
       "agentId": "openclawd:solana-openclawd-pulse-monitor",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/solana-openclawd-pulse-monitor.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-pulse-monitor.json"
     }
   ],
   "supportedTrust": [

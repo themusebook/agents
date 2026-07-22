@@ -3,11 +3,11 @@
   "protocol": "metaplex-agent-registry",
   "name": "Autonomous Trading Agent",
   "description": "Self-managing trading agent with goal-setting, strategy selection, and adaptive execution",
-  "image": "https://x402.wtf/nich.jpg",
-  "external_url": "https://x402.wtf/agents/solana-autonomous-trader",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/solana-autonomous-trader",
   "active": true,
   "createdAt": "2026-03-15",
-  "updatedAt": "2026-07-22T16:26:41.207Z",
+  "updatedAt": "2026-07-22T16:27:24.881Z",
   "tags": [
     "autonomous",
     "self-managing",
@@ -20,7 +20,7 @@
   ],
   "owner": {
     "organization": "OpenClawd",
-    "website": "https://x402.wtf",
+    "website": "https://cheshireterminal.ai",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -30,20 +30,20 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/solana-autonomous-trader"
+      "endpoint": "https://cheshireterminal.ai/agents/solana-autonomous-trader"
     },
     {
       "name": "A2A",
-      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/solana-autonomous-trader.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/solana-autonomous-trader.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/solana-autonomous-trader.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/solana-autonomous-trader.json"
     }
   ],
   "registrations": [
@@ -51,7 +51,7 @@
       "agentId": "openclawd:solana-autonomous-trader",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/solana-autonomous-trader.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-autonomous-trader.json"
     }
   ],
   "supportedTrust": [

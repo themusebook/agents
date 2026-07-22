@@ -4,10 +4,10 @@
   "name": "DAO Governance Proposal Analyst",
   "description": "Cheshire Terminal agent: Analyze and explain DAO governance proposals and their implications",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst",
+  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst",
   "active": true,
   "createdAt": "2024-12-16",
-  "updatedAt": "2026-07-22T16:26:41.207Z",
+  "updatedAt": "2026-07-22T16:27:24.881Z",
   "tags": [
     "governance",
     "dao",
@@ -22,7 +22,7 @@
   ],
   "owner": {
     "organization": "OpenClawd",
-    "website": "https://x402.wtf",
+    "website": "https://cheshireterminal.ai",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -32,20 +32,20 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst"
+      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst"
     },
     {
       "name": "A2A",
-      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
     }
   ],
   "registrations": [
@@ -53,7 +53,7 @@
       "agentId": "openclawd:cheshire-terminal-solana-agents:governance-proposal-analyst",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
     }
   ],
   "supportedTrust": [
