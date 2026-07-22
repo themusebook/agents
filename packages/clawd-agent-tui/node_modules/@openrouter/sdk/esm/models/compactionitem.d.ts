@@ -1,0 +1,26 @@
+import * as z from "zod/v4";
+import { ClosedEnum } from "../types/enums.js";
+export declare const CompactionItemType: {
+    readonly Compaction: "compaction";
+};
+export type CompactionItemType = ClosedEnum<typeof CompactionItemType>;
+/**
+ * A context compaction marker with encrypted summary
+ */
+export type CompactionItem = {
+    encryptedContent: string;
+    id?: string | null | undefined;
+    type: CompactionItemType;
+};
+/** @internal */
+export declare const CompactionItemType$outboundSchema: z.ZodEnum<typeof CompactionItemType>;
+/** @internal */
+export type CompactionItem$Outbound = {
+    encrypted_content: string;
+    id?: string | null | undefined;
+    type: string;
+};
+/** @internal */
+export declare const CompactionItem$outboundSchema: z.ZodType<CompactionItem$Outbound, CompactionItem>;
+export declare function compactionItemToJSON(compactionItem: CompactionItem): string;
+//# sourceMappingURL=compactionitem.d.ts.map

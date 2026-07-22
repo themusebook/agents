@@ -1,0 +1,16 @@
+{
+  "name": "@cheshire/layerzero-omnichain",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cheshire LayerZero omnichain notes and interface stubs (Solana ↔ Robinhood). Canonical OApp/OFT implementations live in my-lz-oapp/.",
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "contracts",
+    "foundry.toml",
+    "layerzero.config.ts"
+  ],
+  "scripts": {
+    "check:structure": "node -e \"const fs=require('fs'); for (const f of ['README.md','foundry.toml','layerzero.config.ts']) { if (!fs.existsSync(f)) { console.error('missing', f); process.exit(1);} } console.log('ok');\""
+  }
+}

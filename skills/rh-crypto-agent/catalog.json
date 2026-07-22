@@ -1,0 +1,194 @@
+[
+  {
+    "slug": "copy-trade",
+    "name": "copy-trade",
+    "description": "This skill should be used when the user asks to \"copy trades from\" a wallet, \"mirror a wallet\", \"follow this address\", set up \"copy trading\", \"track and replicate a trader\", or mirror another account's swaps bounded by guardrails. Watches a target wallet and mirrors its trades, filtered by chain, asset match, position size, and the follower's own portfolio state.",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "dca-bot",
+    "name": "dca-bot",
+    "description": "This skill should be used when the user wants to \"dca into\" a token, \"buy X every day\", set up a \"recurring buy\", \"dollar cost average\" into an asset, \"schedule a buy\", or \"auto-buy on a dip\". Buys a fixed amount into a token on a schedule, optionally only when a condition holds (for example only when ETH is below a price threshold). The host agent's scheduler wakes the skill on a cadence; each wa",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "deployer",
+    "name": "deployer",
+    "description": "Deploy CCA (Continuous Clearing Auction) smart contracts using the Factory pattern. Use when user says \"deploy auction\", \"deploy cca\", \"factory deployment\", or wants to deploy a configured auction.",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "index-bot",
+    "name": "index-bot",
+    "description": "This skill should be used when the user asks to \"create an index\", \"build a basket of top assets\", \"buy a weighted basket\", \"make a portfolio of assets\", \"equal-weight basket\", \"rebalance my portfolio\", \"track the top N tokens\", or wants an automated, weighted multi-asset basket that buys in one pass and rebalances on a cadence. Builds the basket spec, delegates each buy and rebalance swap to the ",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "liquidity-planner",
+    "name": "liquidity-planner",
+    "description": "This skill should be used when the user asks to \"provide liquidity\", \"create LP position\", \"add liquidity to pool\", \"become a liquidity provider\", \"create v3 position\", \"create v4 position\", \"concentrated liquidity\", \"set price range\", or mentions providing liquidity, LP positions, or liquidity pools on Uniswap. Generates deep links to create positions in the Uniswap interface.",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "lp-integration",
+    "name": "lp-integration",
+    "description": "Integrate Uniswap liquidity provisioning (LP) into applications via the LP REST API. Use when the user says \"LP API\", \"liquidity provisioning API\", \"provide liquidity programmatically\", \"create LP position via API\", \"add liquidity via API\", \"increase liquidity\", \"decrease liquidity\", \"remove liquidity\", \"claim LP fees\", \"collect LP fees\", \"manage LP positions in code\", or mentions building a backe",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "pay-with-any-token",
+    "name": "pay-with-any-token",
+    "description": "Pay HTTP 402 payment challenges using tokens via the Tempo CLI and Uniswap Trading API. Use when the user encounters a 402 Payment Required response, needs to fulfill a machine payment, mentions \"MPP\", \"Tempo payment\", \"pay for API access\", \"HTTP 402\", \"x402\", \"machine payment protocol\", \"pay-with-any-token\", \"use tempo\", \"tempo request\", or \"tempo wallet\".",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "pay-with-app",
+    "name": "pay-with-app",
+    "description": "Pay HTTP 402 payment challenges issued by OKX's Agent Payments Protocol (APP) on X Layer using tokens from any chain via the Uniswap Trading API. Use this skill whenever the user encounters a 402 challenge whose network resolves to X Layer (chain 196), mentions \"APP\", \"Agent Payments Protocol\", \"OKX agent payment\", \"OKX Onchain OS\", \"OKX agentic wallet\", \"x402 on X Layer\", \"USDT0\", \"x42\", \"Instant",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "rh-bonded-launch",
+    "name": "rh-bonded-launch",
+    "description": "Launch a permissionless bonding-curve token on Robinhood Chain (4663) via the live BondingCurveLaunchpad, or guide a user/agent to do so on ClawdCode /launch or Cheshire /rh-launch. Use when the user says \"launch a token\", \"create token on Robinhood\", \"bonded launch\", \"createToken\", \"fair launch on RH\", \"pump style on robinhood\", \"open a curve\", or brings an agent to clawdcode.net to launch. Does ",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "rh-launchpad-v3",
+    "name": "rh-launchpad-v3",
+    "description": "Launch a permissionless bonding-curve token on Robinhood Chain (4663) via BondingCurveLaunchpadV3 \u2014 graduates into a Uniswap V3 pool (not V2). Use for bots, agents, Telegram, \"launch with V3 pool\", createToken on LaunchpadV3, curve-v3 rail, or ClawdCode /api/launchpad/v3. Distinct from legacy V2 BondingCurveLaunchpad and from NOXA Fun instant V3.",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "swap-integration",
+    "name": "swap-integration",
+    "description": "Integrate Uniswap swaps into applications. Use when user says \"integrate swaps\", \"uniswap\", \"trading api\", \"add swap functionality\", \"build a swap frontend\", \"create a swap script\", \"smart contract swap integration\", \"use Universal Router\", \"Trading API\", or mentions swapping tokens via Uniswap.",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "swap-planner",
+    "name": "swap-planner",
+    "description": "This skill should be used when the user asks to \"swap tokens\", \"trade ETH for USDC\", \"exchange tokens on Uniswap\", \"buy tokens\", \"sell tokens\", \"convert ETH to stablecoins\", \"find memecoins\", \"discover tokens\", \"research tokens\", \"tokens to buy\", \"find tokens to swap\", \"what should I buy\", or mentions swapping, trading, researching, discovering, buying, or exchanging tokens on any Uniswap-supporte",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "v4-hook-generator",
+    "name": "v4-hook-generator",
+    "description": "Generate Uniswap v4 hook contracts via OpenZeppelin MCP. Use when building custom swap logic, async swaps, hook-owned liquidity, custom curves, dynamic fees, MEV protection, limit orders, or oracle hooks.",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "v4-sdk-integration",
+    "name": "v4-sdk-integration",
+    "description": "App-layer SDK guide for building swap and liquidity experiences directly with the Uniswap v4 SDK. Use when user asks about \"v4 sdk\", \"uniswap v4\", \"v4 swap\", \"v4 liquidity\", \"PoolManager\", \"V4Planner\", \"StateView\", \"PositionManager\", \"pool state\", \"v4 position\", \"uniswap sdk\", or when building swap/liquidity UX directly with SDKs rather than via the Trading API.",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "v4-security-foundations",
+    "name": "v4-security-foundations",
+    "description": "Security-first Uniswap v4 hook development. Use when user mentions \"v4 hooks\", \"hook security\", \"PoolManager\", \"beforeSwap\", \"afterSwap\", or asks about V4 hook best practices, vulnerabilities, or audit requirements.",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  },
+  {
+    "slug": "viem-integration",
+    "name": "viem-integration",
+    "description": "Integrate EVM blockchains using viem. Use when user says \"read blockchain data\", \"send transaction\", \"interact with smart contract\", \"connect to Ethereum\", \"use viem\", \"use wagmi\", \"wallet integration\", \"viem setup\", or mentions blockchain/EVM development with TypeScript.",
+    "category": "Robinhood / EVM",
+    "tags": [
+      "robinhood",
+      "evm",
+      "open-source",
+      "crypto-agent"
+    ]
+  }
+]

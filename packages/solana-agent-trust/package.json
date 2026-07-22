@@ -1,0 +1,17 @@
+{
+  "name": "@cheshire/solana-agent-trust",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Anchor program for Solana-native reputation and validation records for MPL Core Cheshire agent identities (not deployed; placeholder program id).",
+  "license": "MIT",
+  "files": [
+    "README.md",
+    "Anchor.toml",
+    "Cargo.toml",
+    "Cargo.lock",
+    "programs"
+  ],
+  "scripts": {
+    "check:structure": "node -e \"const fs=require('fs'); for (const f of ['README.md','Anchor.toml','Cargo.toml','programs/cheshire-agent-trust/src/lib.rs']) { if (!fs.existsSync(f)) { console.error('missing', f); process.exit(1);} } console.log('ok');\""
+  }
+}

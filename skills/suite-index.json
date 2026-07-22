@@ -1,0 +1,31 @@
+{
+  "name": "Cheshire Robinhood Agents skill suite",
+  "id": "cheshire-robinhood-agents-skills",
+  "version": 1,
+  "description": "First-class agent skills for Robinhood Chain registries, Agent Forge, dual-rail omni mint (Solana+RH+zk-omni), bonded launch, Launchpad V3, and zk-omni messaging. Hosted under robinhood-agents/skills and served via /api/skills when the monorepo is scanned.",
+  "product": {
+    "hub": "https://cheshireterminal.ai/agents",
+    "forge": "https://cheshireterminal.ai/agents/forge",
+    "registry": "https://cheshireterminal.ai/agent-registry",
+    "rhLaunch": "https://cheshireterminal.ai/rh-launch",
+    "funpump": "https://funpump.ai"
+  },
+  "skills": [
+    "cheshire-agent-registries",
+    "cheshire-agent-identity-registry",
+    "cheshire-agent-reputation-registry",
+    "cheshire-agent-validation-registry",
+    "cheshire-omni-mint",
+    "cheshire-zk-omni",
+    "zk-omni-messaging",
+    "robinhood-agent-forge",
+    "rh-bonded-launch",
+    "rh-launchpad-v3",
+    "rh-crypto-agent"
+  ],
+  "skillCount": 11,
+  "notes": {
+    "rh-crypto-agent": "Pack root (pack-index.json + nested skills); not a single SKILL.md. Nested skills are scanned recursively.",
+    "canonicalPath": "robinhood-agents/skills/<skill-id>/SKILL.md"
+  }
+}

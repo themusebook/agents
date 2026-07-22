@@ -1,0 +1,42 @@
+{
+  "name": "Robinhood Crypto Agent Open Stack",
+  "id": "rh-crypto-agent",
+  "version": 1,
+  "description": "Open-source Robinhood Chain / Uniswap EVM skill pack anyone can use with clawdbot-go. Covers bonded launch, LaunchpadV3, swaps, LP, DCA, copy-trade, payments, viem, and Cheshire agent registry skills.",
+  "license": "MIT",
+  "anyoneCanUse": true,
+  "skillCount": 21,
+  "skills": [
+    "cheshire-agent-identity-registry",
+    "cheshire-agent-registries",
+    "cheshire-agent-reputation-registry",
+    "cheshire-agent-validation-registry",
+    "cheshire-zk-omni",
+    "copy-trade",
+    "dca-bot",
+    "deployer",
+    "index-bot",
+    "liquidity-planner",
+    "lp-integration",
+    "pay-with-any-token",
+    "pay-with-app",
+    "rh-bonded-launch",
+    "rh-launchpad-v3",
+    "swap-integration",
+    "swap-planner",
+    "v4-hook-generator",
+    "v4-sdk-integration",
+    "v4-security-foundations",
+    "viem-integration"
+  ],
+  "source": {
+    "upstream": "ClawdBrowser/go-bot/skills",
+    "upstreamPath": "/Users/8bit/ClawdBrowser/go-bot/skills",
+    "upstreamId": "rh-crypto-agent",
+    "vendoredInto": "cheshire-terminal-agents/skills/rh-crypto-agent",
+    "syncScriptClawdBrowser": "scripts/sync-go-bot-rh-skills-to-robinhood-agents.mjs",
+    "syncScriptPackage": "scripts/sync-rh-skill-pack.mjs",
+    "syncedAt": "2026-07-20T17:01:23.240Z"
+  },
+  "clawdbotSkillsDirHint": "skills/rh-crypto-agent"
+}

@@ -1,0 +1,14 @@
+/Users/8bit/cheshire-terminal/packages/solana-agent-trust/target/debug/deps/serde-ed990e02ffc3847a.d: /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /Users/8bit/cheshire-terminal/packages/solana-agent-trust/target/debug/build/serde-57f8091608013940/out/private.rs
+
+/Users/8bit/cheshire-terminal/packages/solana-agent-trust/target/debug/deps/libserde-ed990e02ffc3847a.rlib: /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /Users/8bit/cheshire-terminal/packages/solana-agent-trust/target/debug/build/serde-57f8091608013940/out/private.rs
+
+/Users/8bit/cheshire-terminal/packages/solana-agent-trust/target/debug/deps/libserde-ed990e02ffc3847a.rmeta: /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs /Users/8bit/cheshire-terminal/packages/solana-agent-trust/target/debug/build/serde-57f8091608013940/out/private.rs
+
+/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/lib.rs:
+/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/integer128.rs:
+/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/mod.rs:
+/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/de.rs:
+/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.229/src/private/ser.rs:
+/Users/8bit/cheshire-terminal/packages/solana-agent-trust/target/debug/build/serde-57f8091608013940/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/8bit/cheshire-terminal/packages/solana-agent-trust/target/debug/build/serde-57f8091608013940/out

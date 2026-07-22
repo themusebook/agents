@@ -1,0 +1,44 @@
+{
+  "name": "@cheshire/clawd-agent-tui",
+  "version": "0.1.0",
+  "description": "Clawd ZK Shark agent TUI — OpenRouter harness with nullifier, Groth16, and attestation tools for one-shot and interactive use",
+  "type": "module",
+  "private": true,
+  "bin": {
+    "clawd-agent-tui": "./src/cli.ts",
+    "zk-shark-tui": "./src/cli.ts"
+  },
+  "scripts": {
+    "start": "tsx src/cli.ts",
+    "dev": "tsx watch src/cli.ts",
+    "oneshot": "tsx src/cli.ts --oneshot",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test src/**/*.test.ts",
+    "demo": "tsx src/cli.ts --demo"
+  },
+  "keywords": [
+    "clawd",
+    "cheshire",
+    "zk",
+    "zk-shark",
+    "openrouter",
+    "agent-tui",
+    "solana",
+    "nullifier",
+    "groth16"
+  ],
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@openrouter/agent": "^0.4.0",
+    "glob": "^13.0.6",
+    "tsx": "^4.21.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.7.0"
+  }
+}
