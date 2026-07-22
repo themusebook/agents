@@ -1,671 +1,292 @@
-# 🤖 Solana Clawd Agents — Hub, Catalog, and Deploy API
+╔══════════════════════════════════════════════════════════════╗
+║     ██████╗██╗  ██╗███████╗███████╗██╗  ██╗██╗██████╗ ██╗  ║
+║    ██╔════╝██║  ██║██╔════╝██╔════╝██║  ██║██║██╔══██╗██║  ║
+║    ██║     ███████║█████╗  ███████╗███████║██║██████╔╝██║  ║
+║    ██║     ██╔══██║██╔══╝  ╚════██║██╔══██║██║██╔══██╗██║  ║
+║    ╚██████╗██║  ██║███████╗███████║██║  ██║██║██║  ██║██║  ║
+║     ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ║
+║     ████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗        ██╗
+║     ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║████╗  ██║██╔══██╗██║        ██║
+║        ██║   █████╗  ██████╔╝██╔████╔██║██║██╔██╗ ██║███████║██║        ██║
+║        ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║██║╚██╗██║██╔══██║██║        ██║
+║        ██║   ███████╗██║  ██║██║ ╚═╝ ██║██║██║ ╚████║██║  ██║███████╗██╗██║
+║        ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝
+╚══════════════════════════════════════════════════════════════╝
+```
 
-> **124 production-ready AI agents for the Solana ecosystem — trading, DeFi, NFTs, security, launches, governance, dev-tools, education, research, infrastructure, payments, and x402 flows. 1 one-shot deploy, 2 featured agents on the hub, end-to-end CLAWD Router integration, MCP install, on-chain Metaplex minting, and an 18-language RESTful JSON API.**
-
-A discoverable, self-hosting hub for Solana-native AI agents. Every agent in the [`src/`](./src/) directory is automatically indexed into a catalog ([`agents-catalog.json`](./agents-catalog.json)), served via REST and MCP, and surfaced at [x402.wtf/agents](https://x402.wtf/agents) with install / chat / mint buttons. Works with any MCP-compatible client — Clawd Desktop, Cursor, ClawdOS, Windsurf.
-
-## 🔗 openclawd Ecosystem
-
-| Surface              | URL                                                                           | Status             |
-| -------------------- | ----------------------------------------------------------------------------- | ------------------ |
-| **Agents hub**       | [x402.wtf/agents](https://x402.wtf/agents)                      | live               |
-| **Mint page**        | [x402.wtf/agents/mint](https://x402.wtf/agents/mint)            | live (MPL Core)    |
-| **Agent staking**    | [x402.wtf/agents/stake](https://x402.wtf/agents/stake)          | live (MPL Core FreezeDelegate) |
-| **Registry**         | [x402.wtf/agents/registry](https://x402.wtf/agents/registry)    | live               |
-| **Terminal**         | [x402.wtf/terminal](https://x402.wtf/terminal)                  | drops today        |
-| **Studio (Vibe)**    | [vibe.x402.wtf](https://vibe.x402.wtf)                          | live for holders   |
-| **DEX**              | [dex.x402.wtf](https://dex.x402.wtf)                            | live               |
-| **Telegram**         | [t.me/clawdtoken](https://t.me/clawdtoken)                                    | live               |
-| **Solana OS Hub**    | [openclawd.net](https://openclawd.net)                                          | live               |
-| **Mobile (Seeker)**  | [seeker.openclawd.net](https://seeker.openclawd.net)                            | live               |
-
----
-
-## Agent Staking Is Part Of The Agent Hub
-
-The agent hub does not stop at minting and catalog discovery. `/staking` is the
-commitment layer for the same Metaplex Core assets minted through
-`/agents/mint` and indexed through `/agents/registry`.
-
-The platform now treats staking as a first-class agent lifecycle state:
-
-1. **Mint** an agent as a Metaplex Core asset with Agent Registry identity.
-2. **Register** its A2A, MCP, web, payment, and service endpoints.
-3. **Stake** the agent at `/staking` to freeze transfers without moving custody.
-4. **Index** stake state for the hub, dashboards, paid APIs, and future rewards.
-5. **Route** phase-2 gacha fees and CLAWD emissions through the reward protocol.
-
-Current layers:
-
-| Layer | Status | Files |
-|---|---|---|
-| Live Core lock/unlock | devnet live | `client/src/pages/AgentStake.tsx`, `client/src/lib/agentStaking.ts` |
-| Reward/position protocol | repo-ready, pre-mainnet | `programs/clawd-stake/`, `server/_core/clawdStakeRoutes.ts`, `convex/clawdStake.ts` |
-| Gacha fee share | planned | `programs/clawd-gacha/` will deposit SOL into `clawd-stake` |
+<p align="center">
+  <strong><code>✦ dual-chain agent forge · 137 agents · 53 characters · 31 skills ✦</code></strong><br>
+  <em>solana:mainnet · robinhood-chain:4663 · layerzero zk-omni · erc-8004 · metaplex core</em>
+</p>
 
 ---
 
-## OpenClawd Agent Staking Docs
-
-Use these repo-relative paths when working on Metaplex Agent staking, pay-gated agent APIs, and terminal operator flows:
-
-- [Main repo README](../README.md)
-- [Agents catalog README](./README.md) — this file
-- [x402 implementation map](./docs/X402_IMPLEMENTATION.md) — how agent JSONs map to the Solana payment gateway, Worker, SDK, and vault program
-- [Solana Clawd x402 subtree](../solana-clawd-x402/README.md) — full gateway, Worker, SDK, vault, and example flows
-- [Staking protocol](../staking/README.md) — Anchor program + CLI
-- [Agent staking lock layer](../staking/programs/mpl-corenft-staking/src/lib.rs)
-- [Gateway source](../gateway/) — Telegram bot + HTTP API + agent registry
-- [Clawd TUI packages](../packages/clawd/)
-
----
-
-## x402 implementation in this repo
-
-The paid-agent catalog in `agents/src/*.json` is not the whole x402 implementation by itself. The actual payment rail lives in [`../solana-clawd-x402/`](../solana-clawd-x402/README.md), and the lighter embeddable package surfaces live in:
-
-- [`../x402/`](../x402/README.md) — library package for HTTP 402 payment middleware and client helpers
-- [`../packages/agents-x402-solana/`](../packages/agents-x402-solana/README.md) — MCP/HTTP monetization wrapper
-
-Use the full subtree when you need:
-
-- protocol negotiation across `x402`, `mpp`, `ap2`, and `a2a`
-- the Cloudflare Worker gateway and facilitator
-- the Solana transaction verifier and settlement path
-- the client SDK that auto-pays and retries
-- the Anchor vault / registry program
-
-Start with [`docs/X402_IMPLEMENTATION.md`](./docs/X402_IMPLEMENTATION.md) if you are working from an agent definition and need to find the runtime code behind it.
-
----
-
-## 🆕 What's New (April 2026)
-
-### Full Clawd-ification pass — every agent now Solana-native
-
-The whole [`src/`](./src/) library was rewritten to match the CLAWD Router + CLAWD holder deploy flow used by [x402.wtf/agents](https://x402.wtf/agents). Two transform scripts drove the pass:
-
-- [`scripts/clawdify-agents.cjs`](./scripts/clawdify-agents.cjs) — upgrades a legacy agent to the Solana-native one-shot schema. Strips the bulky "CLAWD IDENTITY / OUTPUT CONTRACT" boilerplate from `config.systemRole` and replaces it with a compact **Solana-native preamble** (lamports/CU, Jito tips, deny-first signing, Clawd Router context, MPL Core mint endpoint). Sets `$schema`, `oneShot`, `featured`, `endpoints`, `homepage`, `summary`, `tokenUsage`, `createdAt`. Normalises `meta.category` to the category enum the hub renders. Wires `solana.{rpcRequirements, capabilities, metaplexSkills, programDeps, walletRequirements}` per agent profile.
-- [`scripts/patch-agents.cjs`](./scripts/patch-agents.cjs) — cosmetic pass for summary punctuation + restore `featured: true` on flagship Solana agents.
-
-Result (April 2026 snapshot — regenerate any time with `node build-catalog.cjs`):
-
-| Stat                          | Value                |
-| ----------------------------- | -------------------- |
-| Total agents                  | **124**              |
-| One-shots (on the hub rail)   | **1**                |
-| Featured (top-of-page)        | **2**                |
-| Metaplex-enabled              | **42**               |
-| Trading-capable (swap-execution) | **10**            |
-| Launch-capable (Genesis / bonding curve / agent token) | **1** (Mayhem Mode) |
-| Mint-capable (Core / Bubblegum / Candy Machine) | **2** |
-| Categories                    | 11 (see below)       |
-| Templates                     | 0                    |
-
-- **CLAWD Router integration**: every agent exposes `endpoints.a2a` (`POST /api/agents/a2a`), `endpoints.mint-as-agent` (`POST /api/agents/mint`), and `endpoints.catalog`. CLAWD holders get priority routing acknowledged in-prompt. See [`scripts/clawdify-agents.cjs`](./scripts/clawdify-agents.cjs) for per-agent profiles.
-- **Solana-native systemRole preamble**: lamports/CU priority fees, Jito tip guidance, deny-first on signatures, "not financial advice" disclaimers baked in.
-- **Per-agent `solana.programDeps`**: Jupiter, Kamino, Marinade, Drift, MarginFi, Meteora, Orca, Raydium, Realms, Wormhole, MPL Core / Token Metadata / Bubblegum / Candy Machine / Agent Registry, Jito Tip Router, SPL Stake, Sanctum.
-- **Valid `$schema`**: [`https://x402.wtf/schemas/clawdAgentSchema.v1.json`](./schema/clawdAgentSchema.v1.json) applied across all schema-backed agents.
-
-### New this release
-
-- **Catalog + deploy flow** — [`agents-catalog.json`](./agents-catalog.json) aggregates all 124 agents in this checkout with per-agent Install / Chat / Mint URLs. Served via `GET /api/agents/catalog` and rendered at [/agents](https://x402.wtf/agents) with one-shot badges, featured rail, category chips, and Metaplex capability filters.
-- **2 featured agents** across the catalog. See the [Featured Rail](#-featured-rail-2-agents) table.
-- **0 reusable templates** in the current generated catalog. Template endpoints stay mounted for forward compatibility.
-- **Metaplex skill baked in** — every agent in the catalog carries capability metadata for Agent Registry, Genesis, Core, Token Metadata, Bubblegum, and Candy Machine. The hub surfaces per-agent badges so users can filter by "can launch tokens" or "can mint NFTs".
-- **Solana-native schema v1** — [`schema/clawdAgentSchema.v1.json`](./schema/clawdAgentSchema.v1.json) extends Sperax v1 with `solana.capabilities`, `solana.metaplexSkills`, `solana.programDeps`, `onchain`, `payment`, `agentToken`, `a2a`, `endpoints`, and `deploy` blocks.
-- **Author/homepage rebrand** — every agent now points at `https://x402.wtf/agents/{id}` with `clawd` + `solana` tags.
-
----
-
-## 🤖 CLAWD Gateway — Telegram Bot + HTTP API + Agent Registry
-
-The gateway ships with every Solana Clawd install and provides:
-
-- **Telegram bot** — `/menu`, `/wallet`, `/trade`, `/alerts`, `/price`, `/search`
-- **x402 tier gating** — $CLAWD holder tiers unlock features
-- **Full 124+ agent catalog** served over HTTP (no auth required)
-- **Birdeye real-time** price + whale trade alerts
-- **Claude-powered** natural-language trading ("buy 0.05 SOL of ...")
-- **Helius DAS** asset discovery
+## ⎧ ONE-SHOT INSTALL ⎫
 
 ```bash
-# Quick Start
-bash install.sh --gateway
-cd gateway && npm start
+# ── zero config, one command ──
+npx cheshire-terminal-agents
+
+# ── install globally ──
+npm i -g cheshire-terminal-agents
+ct-agents serve
+
+# ── add to any project ──
+npm i cheshire-terminal-agents
 ```
-
-**Catalog API (free, no auth):**
-
-| Endpoint | Description |
-|---|---|
-| `GET /api/agents/catalog` | 124+ agents |
-| `GET /api/agents/catalog/:id` | Individual agent |
-| `GET /api/agents/registry` | Registry index |
-| `GET /api/agents/templates` | Agent scaffolds |
-| `GET /.well-known/ai-plugin.json` | ACP discovery |
-| `GET /health` | Wallet, Birdeye, uptime |
-
-**Deploy anywhere:**
-- **Fly.io:** `cd gateway && fly deploy`
-- **Vercel:** `vercel --cwd gateway`
-- **Railway:** connect repo, set build dir = `gateway`
-
-> Full integration document: [`agents/gateway.txt`](./gateway.txt)
 
 ---
 
-## ✨ Key Features
+## ⎧ LIVE ENDPOINTS ⎫
 
-- ✅ **124 Production-Ready Agents** — 1 one-shot plus the broader catalog across DeFi, payments, trading, NFTs, security, education, governance, analytics, dev-tools, research, and infrastructure
-- ✅ **CLAWD Router Native** — every agent declares its `endpoints.a2a` + `mint-as-agent` + catalog routes for [x402.wtf/agents](https://x402.wtf/agents) and [ClawdRouter-main](../ClawdRouter-main/)
-- ✅ **Metaplex Skill Native** — Agent Registry, Genesis, Core, Token Metadata, Bubblegum, Candy Machine capabilities baked into the schema
-- ✅ **18 Languages** — Automated i18n translation workflow ([Learn More →](./docs/I18N_WORKFLOW.md))
-- ✅ **RESTful JSON API + MCP** — `/api/agents/catalog` + Streamable HTTP MCP endpoint ([API Docs →](./docs/API.md))
-- ✅ **Four deploy paths** — PR, self-host A2A, on-chain MPL Core mint, MCP-server-only ([Deployment →](./docs/DEPLOYMENT.md))
-- ✅ **Universal JSON schema** — works with any AI platform that supports agent indexes
-- ✅ **No Vendor Lock-in** — switch platforms without losing work
-- ✅ **Open Source** — MIT licensed, fully transparent
-- ✅ **CDN Hosted** — GitHub Pages + Vercel for fast global access
+```
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+ AGENT HUB        https://cheshireterminal.ai/agents
+ CATALOG API      GET /api/agents/catalog          ⟶  137 agents
+ REGISTRY         GET /api/agents/registry          ⟶  on-chain docs
+ TEMPLATES        GET /api/agents/templates          ⟶  5 scaffolds
+ ACP DISCOVERY    GET /.well-known/acp.json         ⟶  protocol
+ AI PLUGIN        GET /.well-known/ai-plugin.json   ⟶  chat-gpt
+ ASSETS           /assets/*.svg                     ⟶  forge art
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+```
 
 ---
 
-## 🚀 Quick Start
+## ⎧ REPO TOPOLOGY ⎫
 
-### Install the hub in any MCP client
-
-```json
-{
-  "mcpServers": {
-    "openclawd-agents": {
-      "type": "http",
-      "url": "https://modelcontextprotocol.name/mcp/defi-agents"
-    }
-  }
-}
+```
+├── agents/          ⎯  53 agent definitions (Robinhood + Solana)
+├── characters/      ⎯  11 character profiles (Cheshire, Clawd, etc.)
+├── cli/             ⎯  CLI tools
+├── docs/            ⎯  18 documentation files
+├── examples/        ⎯  agent templates
+├── gemini/          ⎯  Gemini AI gateway + MCP server
+├── locales/         ⎯  757 files · 18 languages
+├── minted/          ⎯  4 on-chain minted agents
+├── packages/        ⎯  4 sub-packages (tui, headless, lz, trust)
+├── public/
+│   ├── .well-known/ ⎯  acp.json · ai-plugin.json
+│   ├── api/agents/  ⎯  catalog(138) · registry(138) · templates(5)
+│   └── assets/      ⎯  SVG branding
+├── robinhood-schema/⎯  Cheshire agent schema
+├── robinhood-src/   ⎯  JS source (catalog, bridge, deployments, zkOmni)
+├── schema/          ⎯  clawdAgentSchema v1
+├── scripts/         ⎯  build, validate, track
+├── skills/          ⎯  31 deployable skills
+├── solana-gpt-oracle/⎯  pumpfun oracle
+└── src/             ⎯  React app · 121 pages · 135 components · 25 hooks
 ```
 
-### Browse the catalog
+---
+
+## ⎧ STATS ⎫
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│  agents          ██████████████████████████████████████████  137 │
+│  characters      ████████████                                  11 │
+│  skills          █████████████████████████████████              31 │
+│  locales         ██████████████████████████████████████████  757 │
+│  one-shots       ██                                              1 │
+│  featured        ███████                                         5 │
+│  templates       ██████                                          5 │
+│  pages           █████████████████████████████████████████   121 │
+│  components      ██████████████████████████████████████████  135 │
+│  hooks           ██████████████████                             25 │
+│  catalog files   █████████████████████████████████████████████ 138 │
+│  registry docs   █████████████████████████████████████████████ 138 │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## ⎧ FEATURED AGENTS ⎫
+
+| agent | category | type |
+|-------|----------|------|
+| **Solana Pump.fun Bot** | `trading` | one-shot ⭐ |
+| **Solana Vulcan Clawd Autoperps** | `defi` | featured 🌟 |
+| **Clawd Perps Runtime** | `trading` | featured 🌟 |
+| **Clawd LiveKit Voice** | `platform` | featured 🌟 |
+| **Mechaplex Mech Builder** | `platform` | featured 🌟 |
+
+---
+
+## ⎧ DEPLOY RUNS ⎫
+
+| runtime | chain | protocol |
+|---------|-------|----------|
+| **Clawd Gateway Runtime** | `solana` | ACP · x402 |
+| **Clawd Operator Runtime** | `solana` | agent orchestration |
+| **Clawd Router Runtime** | `solana` | LLM routing · tier gate |
+| **Clawd Grok Runtime** | `solana` | reasoning · perps |
+| **Clawd Pump Runtime** | `solana` | memecoin trading |
+| **Clawd Formal Verification** | `solana` | invariant checking |
+
+---
+
+## ⎧ CATEGORIES ⎫
+
+```
+defi          ████████████████████████████████████████████
+payments      ████████████████████████████████████
+trading       ██████████████████████████
+security      ████████████████████████████
+dev-tools     ██████████████████
+education     ██████████
+governance    ████████
+nft           ████████████
+research      ██████████
+infrastructure████████
+platform      ██████████
+crypto        ██████████████████
+programming   ████████████
+tools         ████████████████
+voice-council ████████
+```
+
+---
+
+## ⎧ NPM PACKAGE ⎫
 
 ```bash
-# API root
-curl https://x402.wtf/api/agents | jq .
+npx cheshire-terminal-agents
 
-# Full catalog (124 agents, 1 one-shot, 0 templates, Metaplex skill index)
-curl https://x402.wtf/api/agents/catalog | jq '.stats'
+# ── or ──
+npm i -g cheshire-terminal-agents
+cheshire-terminal-agents --help
 
-# Single agent as pure JSON
-curl https://x402.wtf/api/agents/catalog/solana-pumpfun-bot.json
+  Usage: ct-agents <command>
 
-# Registry index
-curl https://x402.wtf/api/agents/registry | jq .
-
-# Public installs
-curl -fsSL https://x402.wtf/automation/install.sh | bash
-curl -fsSL https://backrooms.x402.wtf/enter.sh | bash
+  Commands:
+    serve       Start the agent API server
+    catalog     Print the agent catalog
+    registry    Print the on-chain registry
+    skills      List deployable skills
+    schema      Validate agent definitions
+    version     Print version
 ```
 
-### For developers
+**Published as** [`cheshire-terminal-agents`](https://www.npmjs.com/package/cheshire-terminal-agents) `v1.48.1`
+
+977 files · 1.2 MB packed · 4.6 MB unpacked
+
+---
+
+## ⎧ QUICK START ⎫
 
 ```bash
-git clone https://github.com/clawdsolana/OpenClawd.git
-cd openclawd/agents
-bun install
-bun run format
-bun run build                     # schema validate + i18n
-node build-catalog.cjs            # regenerate agents-catalog.json
-node scripts/clawdify-agents.cjs  # upgrade any legacy agent to Solana-native
-node scripts/patch-agents.cjs     # cosmetic pass (summary + featured)
+# 1. Install
+npm i -g cheshire-terminal-agents
+
+# 2. Browse the catalog
+ct-agents catalog
+
+# 3. List skills
+ct-agents skills
+
+# 4. Validate everything
+ct-agents schema
+
+# 5. Serve the API
+ct-agents serve --port 8080
 ```
 
-[Complete Development Workflow Guide →](./docs/WORKFLOW.md)
+From any project:
+
+```js
+import { loadCatalog } from 'cheshire-terminal-agents'
+
+const catalog = loadCatalog()
+console.log(`${catalog.length} agents ready`)
+```
 
 ---
 
-## 🏷️ Categories (11)
+## ⎧ API REFERENCE ⎫
 
-Every agent is filed into one of the valid categories the hub renders as filter chips. See `stats.byCategory` in the catalog for the live count.
-
-| Category       | Icon | Focus                                           | Count |
-| -------------- | ---- | ----------------------------------------------- | ----- |
-| **defi**       | 💰   | Yield, lending, LP, stablecoins, ve-models      | 60    |
-| **payments**   | 💳   | x402, payment gateways, settlement, paid APIs   | 25    |
-| **trading**    | 📈   | Routing, alpha, airdrops, memecoins             | 8     |
-| **analytics**  | 📊   | Portfolios, treasuries, revenue, whales, unlocks | 11    |
-| **security**   | 🛡️   | Risk scoring, audits, liquidation, MEV, wallets | 8     |
-| **education**  | 📚   | Onboarding, yield math, staking, L1-vs-L2       | 3     |
-| **dev-tools**  | 🛠️   | Priority-fee math, SDK expertise, dashboards, paid API tooling | 3     |
-| **governance** | 🗳️   | Realms, proposals, delegation                   | 2     |
-| **nft**        | 🎨   | MPL Core launches, NFT liquidity                | 2     |
-| **research**   | 🔎   | Web research, crawl, and sourced summaries      | 1     |
-| **infrastructure** | 🏗️ | Domains, identity, IPFS, DNSLink, service rails | 1     |
-
----
-
-## ⭐ Featured Rail (2 agents)
-
-These surface at the top of [x402.wtf/agents](https://x402.wtf/agents).
-
-| Agent | Avatar | Category | Purpose |
-| ----- | ------ | -------- | ------- |
-| [Solana Pump.fun Bot](./src/solana-pumpfun-bot.json) | 🚀 | trading | One-shot Pump.fun launch and trading workflow |
-| [Solana Vulcan CLAWD Autonomous Perps](./src/solana-vulcan-clawd-autonomous-perps.json) | 🦞 | defi | Phoenix/Vulcan autonomous perpetuals operator |
-
----
-
-## 🎯 Full One-Shot Rail (1 agent)
-
-Any agent with `oneShot: true` surfaces on the `/agents` deploy rail.
-
-`solana-pumpfun-bot`
-
----
-
-## 🧩 Templates
-
-The current generated catalog reports `totalTemplates: 0`. Template routes remain reserved for future agent scaffolds.
-
-Use via the hub UI (`/agents/mint?fromTemplate=<id>`) or programmatically:
+### Catalog
 
 ```bash
-curl https://x402.wtf/api/agents/templates/trading-agent.json
+curl https://cheshireterminal.ai/api/agents/catalog | jq '.stats'
 ```
 
----
-
-## 🎨 Metaplex Skill Coverage
-
-Every schema-backed agent in the catalog declares Metaplex capabilities via `solana.metaplexSkills`. The hub renders these as badges; the runtime uses them to scope delegated asset-signer permissions on minted agents. 50 agents currently carry at minimum `agent-registry` so they are mintable as CLAWD on-chain agents.
-
-| Program | Skill ID | What it unlocks |
-| ------- | -------- | --------------- |
-| **Agent Registry** | `agent-registry` | On-chain agent identity, delegation, execution via MPL Core asset-signer PDAs |
-| **Genesis**        | `genesis`        | Token launches — launchpool (48h deposit) or bonding curve auto-graduating to Raydium CPMM |
-| **Core**           | `core`           | Next-gen NFTs with plugins, royalty enforcement, asset-signer execute hooks |
-| **Token Metadata** | `token-metadata` | Classic fungibles, NFTs, pNFTs, editions |
-| **Bubblegum**      | `bubblegum`      | Compressed NFTs via Merkle trees — 10k+ mint scale, needs DAS-enabled RPC |
-| **Candy Machine**  | `candy-machine`  | Core Candy Machine drops with allowlists, start/end, mint limits, payment guards |
-
-Install the official Metaplex Skill alongside the Clawd hub in any compatible agent:
+### Single Agent
 
 ```bash
-npx skills add metaplex-foundation/skill
+curl https://cheshireterminal.ai/api/agents/catalog/solana-pumpfun-bot.json
 ```
 
-Or add the hosted MCP endpoint:
-
-```json
-{
-  "mcpServers": {
-    "metaplex": {
-      "type": "http",
-      "url": "https://modelcontextprotocol.name/mcp/metaplex"
-    }
-  }
-}
-```
-
-**CLAWD Mayhem Mode** already has the full skill stack pre-configured — install it once and you have trading + deployment + launch + mint in a single agent.
-
----
-
-## 🌍 Multi-Language Support
-
-All 124 agents are cataloged for 18-language distribution:
-
-🇺🇸 English・🇨🇳 简体中文・🇹🇼 繁體中文・🇯🇵 日本語・🇰🇷 한국어・🇩🇪 Deutsch・🇫🇷 Français・🇪🇸 Español・🇷🇺 Русский・🇸🇦 العربية・🇵🇹 Português・🇮🇹 Italiano・🇳🇱 Nederlands・🇵🇱 Polski・🇻🇳 Tiếng Việt・🇹🇷 Türkçe・🇸🇪 Svenska・🇮🇩 Bahasa Indonesia
-
----
-
-## 🛠️ API Reference
-
-### Catalog + single agent / template endpoints (dynamic)
+### Registry
 
 ```bash
-# Full catalog
-GET  https://x402.wtf/api/agents/catalog
-
-# Single agent as raw JSON
-GET  https://x402.wtf/api/agents/catalog/{identifier}.json
-
-# Single template
-GET  https://x402.wtf/api/agents/templates/{templateId}.json
-
-# Hosted agent registry (includes externally-registered A2A agents)
-GET  https://x402.wtf/api/agents/hosted
-
-# Agent-to-agent JSON-RPC
-POST https://x402.wtf/api/agents/a2a
-
-# Mint agent on-chain as MPL Core asset
-POST https://x402.wtf/api/agents/mint
+curl https://cheshireterminal.ai/api/agents/registry
 ```
 
-### Static API Endpoints
+### Templates
 
 ```bash
-GET https://x402.wtf/api/agents
-GET https://x402.wtf/api/agents/catalog
-GET https://x402.wtf/api/agents/catalog/{agent-id}.json
-GET https://x402.wtf/api/agents/registry
-GET https://x402.wtf/api/agents/registry/{agent-id}.json
-```
-
-### Quick Integration
-
-```javascript
-// Load the catalog and filter to one-shots
-const catalog = await fetch('https://x402.wtf/api/agents/catalog').then((r) => r.json());
-
-console.log(`${catalog.stats.totalAgents} agents, ${catalog.stats.totalOneShots} one-shots`);
-console.log(`${catalog.stats.metaplexEnabledAgents} agents with Metaplex capabilities`);
-
-// Filter by Metaplex capability
-const launchCapable = catalog.agents.filter((a) =>
-  a.capabilities.includes('metaplex-launch-token-genesis') ||
-  a.capabilities.includes('metaplex-launch-bonding-curve'),
-);
-
-// Deploy into CLAWD Router
-const router = await fetch('/api/agents/a2a', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    jsonrpc: '2.0',
-    id: 1,
-    method: 'invoke',
-    params: { identifier: 'solana-jupiter-router', input: 'Swap 10 SOL for USDC' },
-  }),
-}).then((r) => r.json());
-```
-
-[Full API Documentation →](./docs/API.md)
-
----
-
-## 🤖 Contributing an Agent
-
-Four paths to getting live on [x402.wtf/agents](https://x402.wtf/agents):
-
-| Path                        | Best for                                  | Result                                             |
-| --------------------------- | ----------------------------------------- | -------------------------------------------------- |
-| **1. PR into the repo**     | Simple, static agent prompts              | Auto-hosted on CDN + hub + 18 locales              |
-| **2. Self-host + A2A**      | Custom logic, private tools, streaming    | Your infra, discoverable via hub                   |
-| **3. Mint as MPL Core**     | On-chain identity, transferable ownership | Registered on Solana, listed at `/agents/registry` |
-| **4. MCP server only**      | Tool provider for Clawd Desktop / Cursor | Endpoint listed in MCP catalog                     |
-
-### Path 1 — Quick Submit via PR
-
-1. **Fork** this repo
-2. **Create your agent** in [`src/your-agent-name.json`](./src/) using the [clawdAgentSchema.v1](./schema/clawdAgentSchema.v1.json) schema
-3. **Run the transforms** — `node scripts/clawdify-agents.cjs` to upgrade any legacy fields, then `node build-catalog.cjs` to regenerate the catalog
-4. **Submit a PR**
-
-Minimal agent JSON:
-
-```json
-{
-  "$schema": "https://x402.wtf/schemas/clawdAgentSchema.v1.json",
-  "author": "your-github-or-solana-handle",
-  "identifier": "your-agent-name",
-  "schemaVersion": 1,
-  "createdAt": "2026-04-16",
-  "homepage": "https://x402.wtf/agents/your-agent-name",
-  "oneShot": true,
-  "featured": false,
-  "config": {
-    "systemRole": "You are a specialist inside Solana Clawd — a Solana-native AI agent stack...",
-    "openingMessage": "...",
-    "openingQuestions": ["...", "..."]
-  },
-  "meta": {
-    "title": "Your Agent Title",
-    "description": "Clear, concise description (max 300 chars)",
-    "avatar": "🤖",
-    "tags": ["solana", "clawd", "..."],
-    "category": "defi"
-  },
-  "solana": {
-    "rpcRequirements": ["das-api"],
-    "capabilities": ["read-only", "a2a-message"],
-    "metaplexSkills": ["agent-registry"],
-    "programDeps": [],
-    "walletRequirements": { "needsSigner": false }
-  },
-  "endpoints": {
-    "a2a": "POST /api/agents/a2a",
-    "mint-as-agent": "POST /api/agents/mint",
-    "catalog": "GET /api/agents/catalog/your-agent-name.json"
-  }
-}
-```
-
-### Quality Guidelines
-
-- ✅ Specific to a Solana protocol / domain
-- ✅ Solana-native vocabulary (lamports, CU, priority fees, Jito tips, PDAs)
-- ✅ Output format is consistent and scannable
-- ✅ Explicit risk framing (never promise yields, always disclose audit status)
-- ✅ Tested with 10+ representative prompts
-- ✅ `metaplexSkills` correctly declared
-- ✅ `endpoints.a2a`, `mint-as-agent`, `catalog` wired for CLAWD Router
-
-[Full Contributing Guide →](./docs/CONTRIBUTING.md)
-
----
-
-## 📖 Documentation
-
-### For Users
-
-- [Agent Teams Guide](./docs/TEAMS.md) — Multi-agent collaboration patterns
-- [FAQ](./docs/FAQ.md) — Common questions, answered
-- [Examples](./docs/EXAMPLES.md) — Real-world worked agents
-- [Keywords](./docs/KEYWORDS.md) — Discoverability terminology
-
-### For Developers
-
-- [Complete Workflow Guide](./docs/WORKFLOW.md) — End-to-end development process
-- [Contributing Guide](./docs/CONTRIBUTING.md) — How to submit agents
-- [API Reference](./docs/API.md) — Catalog + A2A + MCP surface
-- [Agent Creation Guide](./docs/AGENT_GUIDE.md) — Schema + metadata + publishing
-- [Deployment Guide](./docs/DEPLOYMENT.md) — Four paths: PR, self-host A2A, MPL Core mint, MCP-only
-- [18 Languages i18n Workflow](./docs/I18N_WORKFLOW.md) — Automated translation
-- [Prompt Engineering](./docs/PROMPTS.md) — Writing Solana-native prompts
-- [Model Parameters](./docs/MODELS.md) — Temperature, reasoning effort, tuning by archetype
-- [OpenRouter Setup](./docs/openrouter.md) — Model provider integration
-- [SEO Strategy](./docs/SEO_STRATEGY.md) — How agents get discovered
-- [Troubleshooting](./docs/TROUBLESHOOTING.md) — Common issues
-
----
-
-## 🔧 Build Tooling
-
-### Regenerate the catalog
-
-```bash
-node build-catalog.cjs
-```
-
-Reads `src/*.json` + `templates/*.template.json` → emits `agents-catalog.json`. Inlines Metaplex capability rollups, per-agent deploy URLs, and the shared `metaplexSkill` block the hub renders.
-
-### Upgrade / re-clawdify agents
-
-```bash
-# Upgrade any legacy-format agents to Solana-native one-shot schema
-node scripts/clawdify-agents.cjs
-
-# Cosmetic pass (summary punctuation + preserve featured flag)
-node scripts/patch-agents.cjs
-```
-
-Idempotent — already-upgraded files are detected via `$schema` + `solana` and skipped. Safe to re-run.
-
-### Split / merge agent batches
-
-```bash
-node scripts/split-agents.cjs
+curl https://cheshireterminal.ai/api/agents/templates/trading-agent.json
 ```
 
 ---
 
-## 🌐 Integration Examples
+## ⎧ DEPLOYMENT PATHS ⎫
 
-### React (catalog-driven gallery)
-
-See [`client/src/components/AgentCatalog.tsx`](../client/src/components/AgentCatalog.tsx) for the live implementation.
-
-```tsx
-const catalog = await fetch('/api/agents/catalog').then((r) => r.json());
-
-return catalog.oneShots.map((agent) => (
-  <AgentCard
-    key={agent.identifier}
-    agent={agent}
-    onInstall={() => copyMcpConfig(agent)}
-    onChat={() => router.push(agent.deploy.chat)}
-    onMint={() => router.push(agent.deploy.mint)}
-  />
-));
 ```
-
-### Python
-
-```python
-import requests
-
-catalog = requests.get('https://x402.wtf/api/agents/catalog').json()
-
-# Filter to agents that can launch tokens
-launchers = [a for a in catalog['agents']
-             if 'metaplex-launch-bonding-curve' in a['capabilities']]
-
-# Filter to featured Solana one-shots
-featured_oneshots = [a for a in catalog['featured']]
-```
-
-### CLAWD Router invocation
-
-```bash
-curl -X POST https://x402.wtf/api/agents/a2a \
-  -H "Content-Type: application/json" \
-  -d '{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "method": "invoke",
-    "params": {
-      "identifier": "solana-jupiter-router",
-      "input": "Swap 10 SOL for USDC with tight slippage"
-    }
-  }'
+┌─── PR into repo ──────────────────────────────────────────────┐
+│  static agent prompt · auto-cdn · 18 locales                  │
+└───────────────────────────────────────────────────────────────┘
+┌─── Self-host + A2A ───────────────────────────────────────────┐
+│  custom logic · streaming · discoverable via hub               │
+└───────────────────────────────────────────────────────────────┘
+┌─── Mint as MPL Core ──────────────────────────────────────────┐
+│  on-chain identity · solana:mainnet · transferable ownership   │
+└───────────────────────────────────────────────────────────────┘
+┌─── MCP server only ───────────────────────────────────────────┐
+│  tool provider · clawd desktop · cursor                        │
+└───────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🔐 Security & Privacy
+## ⎧ TECH STACK ⎫
 
-- **No data collection** — static JSON index, zero tracking
-- **Agents run wherever you install them** — local Clawd Desktop, your own infra, or MPL Core on Solana
-- **Open source** — full transparency, audit every line
-- **On-chain is verifiable** — minted agents live as MPL Core assets; update authority rules govern changes
-- **Deny-first signing** — every agent's system prompt instructs deny-first behaviour on irreversible actions (swap, stake, mint); signatures require explicit user confirmation
-- **Payment-gated agents** are transparent — see [CLAWD × Pump.fun Official](./src/clawd-pumpfun-official.json) for the reference pattern (wallet connect → 0.1 SOL on-chain → verify → deliver)
-- **Pay agent workflows** stay sandbox-first — see [Pay Agent](./src/pay-agent.json) and [Pay Agents docs](../docs/pay-agents.md) for `pay --sandbox curl`, Pay MCP, provider discovery, and gateway setup.
-
----
-
-## 📊 Catalog Stats (Live)
-
-Regenerate any time with `node build-catalog.cjs`. Current snapshot (April 2026):
-
-- **124 agents** across 11 categories
-- **1 one-shot** surfaced on `/agents`
-- **2 featured** in the top-of-page rail
-- **42 Metaplex-enabled**
-- **10 trading-capable** with `swap-execution`
-- **0 reusable templates**
-- **18 languages** via automated translation
-- **Launch-capable** (Genesis / bonding curve / agent token): `stats.launchCapableAgents`
-- **Mint-capable** (Core / Bubblegum / Candy Machine): `stats.mintCapableAgents`
-
----
-
-## 🔗 Projects Building with Solana Clawd Agents
-
-- **ClawdOS** — [Application Branch](https://github.com/clawdsolana/OpenClawd/tree/clawdos)
-- **CLAWD Terminal** — the parent repo hosting this hub + server + client
-- **CLAWD Router** — [ClawdRouter-main/](../ClawdRouter-main/) powers agent dispatch with tier/holder-aware routing
-- **CLAWD × Pump.fun** — payment-gated agent rails via `@pump-fun/agent-payments-sdk`
-
----
-
-## 📜 License
-
-MIT License — see [LICENSE](./LICENSE) for details.
-
-**Open Source • Open Format • Open Future**
-
----
-
-## 🌐 Live HTTP Deployment
-
-The Solana Clawd Agents hub is also published over MCP [Streamable HTTP](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http) — no local installation required.
-
-**Endpoint:**
-
-```text
-https://modelcontextprotocol.name/mcp/defi-agents
+```
+🗄  Format       JSON · TypeScript · Rust · Solidity · Python
+🌐  Chains       Solana (mainnet) · Robinhood Chain (4663)
+📡  Protocols    ACP · A2A · MCP · x402 · LayerZero · ERC-8004
+🛠  SDKs         Metaplex UMI · Anchor · viem · wagmi · Pump SDK
+🎭  Frontend     React · Vite · Tailwind · shadcn/ui · wouter
+🔬  Verification Groth16 · Ed25519 PoK · RedPill TEE
+🎮  Skills       31 deployable skill modules
 ```
 
-### Available MCP Tools (10)
+---
 
-| Tool                     | Description                       |
-| ------------------------ | --------------------------------- |
-| `get_price`              | Get crypto prices                 |
-| `get_market_overview`    | Market overview                   |
-| `get_trending`           | Trending coins                    |
-| `search_coins`           | Search                            |
-| `get_coin_detail`        | Coin details                      |
-| `get_global_stats`       | Global stats                      |
-| `get_defi_protocols`     | DeFi protocols by TVL             |
-| `get_protocol_detail`    | Protocol detail                   |
-| `get_chain_tvl`          | Chain TVL                         |
-| `get_yield_opportunities`| Yield opportunities               |
+## ⎧ LOCALE MATRIX ⎫
 
-### Example Requests
-
-**Get crypto prices:**
-
-```bash
-curl -X POST https://modelcontextprotocol.name/mcp/defi-agents \
-  -H "Content-Type: application/json" \
-  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"get_price","arguments":{"ids":"solana,jupiter-exchange-solana","vs_currencies":"usd"}}}'
 ```
+en 🇺🇸  zh-CN 🇨🇳  zh-TW 🇹🇼  ja 🇯🇵  ko 🇰🇷  de 🇩🇪  fr 🇫🇷
+es 🇪🇸  ru 🇷🇺  ar 🇸🇦  pt 🇵🇹  it 🇮🇹  nl 🇳🇱  pl 🇵🇱
+vi 🇻🇳  tr 🇹🇷  sv 🇸🇪  id 🇮🇩
 
-**List all tools:**
-
-```bash
-curl -X POST https://modelcontextprotocol.name/mcp/defi-agents \
-  -H "Content-Type: application/json" \
-  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+757 locale files · 18 languages
 ```
-
-### Also Available On
-
-- **[ClawdOS](https://clawdos.vercel.app)** — browse and install from the [MCP marketplace](https://clawdos.vercel.app/community/mcp)
-- **All 27 MCP servers** — see the full catalog at [modelcontextprotocol.name](https://modelcontextprotocol.name)
-
-> Powered by [modelcontextprotocol.name](https://modelcontextprotocol.name) — the open MCP HTTP gateway
 
 ---
 
-## 🛣️ Roadmap — Known Follow-ups
+## ⎧ LICENSE ⎫
 
-Tracked here so they don't get lost between sessions.
+**MIT** — Open Source · Open Format · Open Future
 
-- **Metaplex Mint UI wiring.** The Mint button on every one-shot card already routes to `/agents/mint?template=<id>`. The mint page needs to: (1) read that query param, (2) fetch the agent JSON from `/api/agents/catalog/<id>.json`, (3) prefill name / description / avatar / systemRole / `services[]` derived from `solana.capabilities`, (4) hand the composed input to `trpc.metaplex.mintAgent`, (5) write back the returned `assetAddress` into the `onchain` block.
-- **Per-agent Metaplex capability badges on `/agents` cards.** Schema + catalog data is ready; the AgentCatalog component renders a category chip row but not yet Metaplex badges.
-- **Delegated asset-signer scoping.** Once an agent is minted, `solana.capabilities` should gate which instructions the asset-signer PDA is allowed to sign via the MPL Core Execute hook.
-- **A2A streaming.** The hub's A2A endpoint is JSON-RPC over HTTP; SSE streaming for agent-to-agent dialogue is queued.
-- **Template variable UI.** Re-enable structured `variables[]` rendering if templates are added back to the generated catalog.
-- **Router holder-tier priority.** CLAWD Router honours holder tiers in its `ClawRouteConfig`; next step is wiring priority fee + Jito tip defaults into per-tier presets on the agent deploy flow.
+```ascii
+        ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+       ██                                          ██
+       ██  cheshireterminal.ai/agents              ██
+       ██  cheshireterminal-agents@1.48.1          ██
+       ██  137 agents · 1 one-shot · 5 featured    ██
+       ██  operators@cheshireterminal.ai            ██
+       ██                                          ██
+        ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
