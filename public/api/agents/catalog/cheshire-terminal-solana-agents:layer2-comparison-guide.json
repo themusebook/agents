@@ -1,0 +1,34 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:layer2-comparison-guide",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Alayer2-comparison-guide",
+  "createdAt": "2024-12-16",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Layer 2 Comparison Guide",
+    "description": "Cheshire Terminal agent: Compare Ethereum L2 solutions: Arbitrum, Optimism, Base, zkSync",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "layer-2",
+      "scaling",
+      "arbitrum",
+      "optimism",
+      "ethereum",
+      "cheshire-terminal",
+      "defi"
+    ],
+    "category": "defi"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

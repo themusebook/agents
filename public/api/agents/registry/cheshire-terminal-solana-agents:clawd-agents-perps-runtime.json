@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "erc-8004-agent-registration-v1",
+  "protocol": "metaplex-agent-registry",
+  "name": "Clawd Perps Runtime",
+  "description": "Unified perpetuals agent surface: Phoenix Rise SDK market data, Hawkeye margin/liquidation, Imperial routing, and Vulcan paper/dry-run/live gates.",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime",
+  "active": true,
+  "createdAt": "2026-07-21",
+  "updatedAt": "2026-07-22T16:26:41.207Z",
+  "tags": [
+    "perps",
+    "phoenix",
+    "rise-sdk",
+    "hawkeye",
+    "imperial",
+    "vulcan",
+    "clawd-perps",
+    "solana"
+  ],
+  "categories": [
+    "trading"
+  ],
+  "owner": {
+    "organization": "OpenClawd",
+    "website": "https://x402.wtf",
+    "token": {
+      "symbol": "CLAWD",
+      "chain": "solana",
+      "mint": "8cHzQHUS2s2h8TzCmfqPKYiM4dSt4roa3n7MyRLApump"
+    }
+  },
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime"
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "version": "0.3.0"
+    },
+    {
+      "name": "catalog",
+      "endpoint": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime.json"
+    },
+    {
+      "name": "registration",
+      "endpoint": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime.json"
+    }
+  ],
+  "registrations": [
+    {
+      "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-agents-perps-runtime",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration",
+      "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime.json"
+    }
+  ],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic",
+    "token-gated"
+  ],
+  "metaplex": {
+    "programs": [],
+    "sdk": "@metaplex-foundation/mpl-agent-registry",
+    "expectedIdentity": {
+      "asset": null,
+      "agentIdentityPda": null,
+      "assetSignerPda": null,
+      "executiveProfilePda": null
+    },
+    "registrationFlow": [
+      "mint MPL Core agent asset",
+      "register AgentIdentity with this registrationUri",
+      "optionally register an executive profile",
+      "delegate execution only after operator review"
+    ]
+  },
+  "openclawd": {
+    "identifier": "cheshire-terminal-solana-agents:clawd-agents-perps-runtime",
+    "capabilities": [],
+    "payment": null,
+    "agentToken": null
+  }
+}

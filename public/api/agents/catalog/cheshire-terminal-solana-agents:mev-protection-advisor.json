@@ -1,0 +1,34 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:mev-protection-advisor",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Amev-protection-advisor",
+  "createdAt": "2024-12-16",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "MEV Protection Advisor",
+    "description": "Cheshire Terminal agent: Protect users from front-running, sandwich attacks, and MEV exploitation",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "mev",
+      "security",
+      "front-running",
+      "flashbots",
+      "protection",
+      "cheshire-terminal",
+      "defi"
+    ],
+    "category": "security"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

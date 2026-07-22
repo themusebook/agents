@@ -1,0 +1,32 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:disruptiveshell",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Adisruptiveshell",
+  "createdAt": null,
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "DisruptiveShell · Vision Lobster",
+    "description": "Exponential-thinking voice of the Lobster Council. AI × Crypto convergence, optimistic but disciplined.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "solana",
+      "voice",
+      "exponential",
+      "ai",
+      "lobster-council"
+    ],
+    "category": "voice-council"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

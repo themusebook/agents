@@ -1,0 +1,38 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-grok-runtime",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-grok-runtime",
+  "createdAt": "2026-06-10",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Clawd Grok Runtime",
+    "description": "Grok-powered Solana CLI runtime for multi-agent research, coding, Phoenix/Vulcan perps workflows, x402 tools, and paper-first trading.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "solana",
+      "clawd",
+      "grok",
+      "xai",
+      "perps",
+      "phoenix",
+      "vulcan",
+      "trading",
+      "cli"
+    ],
+    "category": "trading"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": [
+      "agent-registry"
+    ]
+  },
+  "payment": null,
+  "agentToken": null
+}

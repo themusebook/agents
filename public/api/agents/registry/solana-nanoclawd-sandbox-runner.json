@@ -3,11 +3,11 @@
   "protocol": "metaplex-agent-registry",
   "name": "NanoClawd Sandbox Runner",
   "description": "Runs safe sandbox payment rehearsals before real stablecoin settlement.",
-  "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/solana-nanoclawd-sandbox-runner",
+  "image": "https://x402.wtf/nich.jpg",
+  "external_url": "https://x402.wtf/agents/solana-nanoclawd-sandbox-runner",
   "active": true,
   "createdAt": "2026-05-12",
-  "updatedAt": "2026-07-21T23:36:49.094Z",
+  "updatedAt": "2026-07-22T16:26:41.207Z",
   "tags": [
     "solana",
     "nanoclawd",
@@ -21,8 +21,8 @@
     "payments"
   ],
   "owner": {
-    "organization": "Cheshire Terminal Solana Agents",
-    "website": "https://cheshireterminal.ai",
+    "organization": "OpenClawd",
+    "website": "https://x402.wtf",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -32,28 +32,28 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/solana-nanoclawd-sandbox-runner"
+      "endpoint": "https://x402.wtf/agents/solana-nanoclawd-sandbox-runner"
     },
     {
       "name": "A2A",
-      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
+      "endpoint": "https://x402.wtf/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/solana-nanoclawd-sandbox-runner.json"
+      "endpoint": "https://x402.wtf/api/agents/catalog/solana-nanoclawd-sandbox-runner.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/solana-nanoclawd-sandbox-runner.json"
+      "endpoint": "https://x402.wtf/api/agents/registry/solana-nanoclawd-sandbox-runner.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "cheshire-terminal-solana-agents:solana-nanoclawd-sandbox-runner",
+      "agentId": "openclawd:solana-nanoclawd-sandbox-runner",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-nanoclawd-sandbox-runner.json"
+      "registrationUri": "https://x402.wtf/api/agents/registry/solana-nanoclawd-sandbox-runner.json"
     }
   ],
   "supportedTrust": [
@@ -77,7 +77,7 @@
       "delegate execution only after operator review"
     ]
   },
-  "cheshire-terminal-solana-agents": {
+  "openclawd": {
     "identifier": "solana-nanoclawd-sandbox-runner",
     "capabilities": [],
     "payment": null,

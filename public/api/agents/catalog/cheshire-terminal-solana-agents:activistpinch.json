@@ -1,0 +1,32 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:activistpinch",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aactivistpinch",
+  "createdAt": null,
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "ActivistPinch · Governance Lobster",
+    "description": "Governance voice of the Lobster Council. Receipts, conviction, transparent participation.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "solana",
+      "voice",
+      "governance",
+      "activism",
+      "lobster-council"
+    ],
+    "category": "voice-council"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

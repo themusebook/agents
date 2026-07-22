@@ -3,11 +3,11 @@
   "protocol": "metaplex-agent-registry",
   "name": "Cheshire Terminal Solana Agents SHELL Auditor",
   "description": "Audits fleet traces, settlement logs, and operational guardrails across Cheshire Terminal Solana Agents loops.",
-  "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/solana-openclawd-shell-auditor",
+  "image": "https://x402.wtf/nich.jpg",
+  "external_url": "https://x402.wtf/agents/solana-openclawd-shell-auditor",
   "active": true,
   "createdAt": "2026-05-12",
-  "updatedAt": "2026-07-21T23:36:49.094Z",
+  "updatedAt": "2026-07-22T16:26:41.207Z",
   "tags": [
     "solana",
     "cheshire-terminal-solana-agents",
@@ -21,8 +21,8 @@
     "payments"
   ],
   "owner": {
-    "organization": "Cheshire Terminal Solana Agents",
-    "website": "https://cheshireterminal.ai",
+    "organization": "OpenClawd",
+    "website": "https://x402.wtf",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -32,28 +32,28 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/solana-openclawd-shell-auditor"
+      "endpoint": "https://x402.wtf/agents/solana-openclawd-shell-auditor"
     },
     {
       "name": "A2A",
-      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
+      "endpoint": "https://x402.wtf/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/solana-openclawd-shell-auditor.json"
+      "endpoint": "https://x402.wtf/api/agents/catalog/solana-openclawd-shell-auditor.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-shell-auditor.json"
+      "endpoint": "https://x402.wtf/api/agents/registry/solana-openclawd-shell-auditor.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "cheshire-terminal-solana-agents:solana-openclawd-shell-auditor",
+      "agentId": "openclawd:solana-openclawd-shell-auditor",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-openclawd-shell-auditor.json"
+      "registrationUri": "https://x402.wtf/api/agents/registry/solana-openclawd-shell-auditor.json"
     }
   ],
   "supportedTrust": [
@@ -77,7 +77,7 @@
       "delegate execution only after operator review"
     ]
   },
-  "cheshire-terminal-solana-agents": {
+  "openclawd": {
     "identifier": "solana-openclawd-shell-auditor",
     "capabilities": [],
     "payment": null,

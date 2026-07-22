@@ -1,0 +1,34 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-livekit-voice",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-livekit-voice",
+  "createdAt": "2026-07-21",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "CLAWD LiveKit Voice",
+    "description": "Real-time voice agent powered by LiveKit and xAI Grok. Holder-aware terminal assist with tool calls and Solana context.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "livekit",
+      "voice",
+      "grok",
+      "xai",
+      "clawd",
+      "realtime",
+      "holder"
+    ],
+    "category": "platform"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

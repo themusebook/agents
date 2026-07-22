@@ -3,11 +3,11 @@
   "protocol": "metaplex-agent-registry",
   "name": "Clawd USDC Allocator",
   "description": "Allocates USDC across agents, payment float, and execution needs in the fleet treasury.",
-  "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/solana-clawd-usdc-allocator",
+  "image": "https://x402.wtf/nich.jpg",
+  "external_url": "https://x402.wtf/agents/solana-clawd-usdc-allocator",
   "active": true,
   "createdAt": "2026-05-12",
-  "updatedAt": "2026-07-21T23:36:49.094Z",
+  "updatedAt": "2026-07-22T16:26:41.207Z",
   "tags": [
     "solana",
     "clawd",
@@ -21,8 +21,8 @@
     "payments"
   ],
   "owner": {
-    "organization": "Cheshire Terminal Solana Agents",
-    "website": "https://cheshireterminal.ai",
+    "organization": "OpenClawd",
+    "website": "https://x402.wtf",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -32,28 +32,28 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/solana-clawd-usdc-allocator"
+      "endpoint": "https://x402.wtf/agents/solana-clawd-usdc-allocator"
     },
     {
       "name": "A2A",
-      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
+      "endpoint": "https://x402.wtf/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/solana-clawd-usdc-allocator.json"
+      "endpoint": "https://x402.wtf/api/agents/catalog/solana-clawd-usdc-allocator.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-usdc-allocator.json"
+      "endpoint": "https://x402.wtf/api/agents/registry/solana-clawd-usdc-allocator.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "cheshire-terminal-solana-agents:solana-clawd-usdc-allocator",
+      "agentId": "openclawd:solana-clawd-usdc-allocator",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-clawd-usdc-allocator.json"
+      "registrationUri": "https://x402.wtf/api/agents/registry/solana-clawd-usdc-allocator.json"
     }
   ],
   "supportedTrust": [
@@ -77,7 +77,7 @@
       "delegate execution only after operator review"
     ]
   },
-  "cheshire-terminal-solana-agents": {
+  "openclawd": {
     "identifier": "solana-clawd-usdc-allocator",
     "capabilities": [],
     "payment": null,

@@ -1,0 +1,37 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-gateway-runtime",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-gateway-runtime",
+  "createdAt": "2026-06-10",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Clawd Gateway Runtime",
+    "description": "Telegram and HTTP gateway runtime for Cheshire Terminal Solana agent registry, skill hub, webhook, x402, and Solana service routes.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "solana",
+      "clawd",
+      "gateway",
+      "telegram",
+      "x402",
+      "registry",
+      "skills",
+      "http"
+    ],
+    "category": "infrastructure"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": [
+      "agent-registry"
+    ]
+  },
+  "payment": null,
+  "agentToken": null
+}

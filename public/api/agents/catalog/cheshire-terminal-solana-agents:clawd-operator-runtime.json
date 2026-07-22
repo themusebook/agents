@@ -1,0 +1,37 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-operator-runtime",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-operator-runtime",
+  "createdAt": "2026-06-10",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Clawd Operator Runtime",
+    "description": "Autonomous operator-loop runtime with multi-adapter agent execution, checkpoints, prompt archiving, metrics, and ACP support.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "solana",
+      "clawd",
+      "operator",
+      "orchestration",
+      "acp",
+      "claude",
+      "gemini",
+      "automation"
+    ],
+    "category": "dev-tools"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": [
+      "agent-registry"
+    ]
+  },
+  "payment": null,
+  "agentToken": null
+}

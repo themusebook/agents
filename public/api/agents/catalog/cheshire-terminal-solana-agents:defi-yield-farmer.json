@@ -1,0 +1,33 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:defi-yield-farmer",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Adefi-yield-farmer",
+  "createdAt": "2024-12-16",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "DeFi Yield Farming Strategist",
+    "description": "Cheshire Terminal agent: Identify and optimize yield farming opportunities across DeFi protocols",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "defi",
+      "yield-farming",
+      "apy",
+      "strategy",
+      "optimization",
+      "cheshire-terminal"
+    ],
+    "category": "defi"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

@@ -1,0 +1,35 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-governance-guide",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-governance-guide",
+  "createdAt": "2024-12-16",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Cheshire Terminal Governance Guide",
+    "description": "Cheshire Terminal agent: Navigate $CLAWD DAO proposals, voting, and protocol upgrades",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "clawd",
+      "governance",
+      "dao",
+      "voting",
+      "proposals",
+      "cheshire-terminal",
+      "defi",
+      "solana"
+    ],
+    "category": "governance"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

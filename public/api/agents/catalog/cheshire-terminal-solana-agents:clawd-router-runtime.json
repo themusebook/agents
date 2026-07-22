@@ -1,0 +1,37 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-router-runtime",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-router-runtime",
+  "createdAt": "2026-06-10",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Cheshire Terminal Router Runtime",
+    "description": "OpenAI-compatible LLM router for Cheshire Terminal Solana agents with auto model scoring, platform key validation, CLAWD holder tiers, and x402 payment checks.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "solana",
+      "clawd",
+      "router",
+      "llm",
+      "openrouter",
+      "x402",
+      "clawd-token",
+      "infrastructure"
+    ],
+    "category": "infrastructure"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": [
+      "agent-registry"
+    ]
+  },
+  "payment": null,
+  "agentToken": null
+}

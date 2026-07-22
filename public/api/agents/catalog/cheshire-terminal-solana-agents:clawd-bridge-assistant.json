@@ -1,0 +1,35 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-bridge-assistant",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-bridge-assistant",
+  "createdAt": "2024-12-16",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Cheshire Terminal Bridge Assistant",
+    "description": "Cheshire Terminal agent: Guide users through cross-chain bridging with optimal routes and costs",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "clawd",
+      "bridge",
+      "cross-chain",
+      "arbitrum",
+      "layer-2",
+      "cheshire-terminal",
+      "defi",
+      "solana"
+    ],
+    "category": "programming"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

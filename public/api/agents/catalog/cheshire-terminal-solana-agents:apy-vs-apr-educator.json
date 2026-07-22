@@ -1,0 +1,33 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:apy-vs-apr-educator",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aapy-vs-apr-educator",
+  "createdAt": "2024-12-16",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "APY vs APR Educator",
+    "description": "Cheshire Terminal agent: Explain and calculate the difference between APY and APR in DeFi",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "defi",
+      "education",
+      "apy",
+      "apr",
+      "yields",
+      "cheshire-terminal"
+    ],
+    "category": "tools"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

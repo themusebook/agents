@@ -1,0 +1,45 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-mayhem-mode",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-mayhem-mode",
+  "createdAt": "2026-04-16",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "CLAWD Mayhem Mode",
+    "description": "The Cheshire Terminal Solana all-purpose combat agent. Trades, deploys, launches tokens, mints NFTs, and orchestrates Metaplex programs end-to-end — Agent Registry, Genesis, Core, Token Metadata, Bubblegum, and Candy Machine.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "solana",
+      "clawd",
+      "mayhem",
+      "metaplex",
+      "genesis",
+      "mpl-core",
+      "bubblegum",
+      "candy-machine",
+      "trading",
+      "launch",
+      "one-shot"
+    ],
+    "category": "trading"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": [
+      "agent-registry",
+      "genesis",
+      "core",
+      "token-metadata",
+      "bubblegum",
+      "candy-machine"
+    ]
+  },
+  "payment": null,
+  "agentToken": null
+}

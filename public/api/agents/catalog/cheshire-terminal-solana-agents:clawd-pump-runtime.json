@@ -1,0 +1,37 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-pump-runtime",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-pump-runtime",
+  "createdAt": "2026-06-10",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Clawd Pump Runtime",
+    "description": "Rust PumpFun/PumpSwap runtime for wallet monitoring, copy trading, parser diagnostics, risk gates, Telegram alerts, and paper-first Solana execution.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "solana",
+      "clawd",
+      "pumpfun",
+      "pumpswap",
+      "copy-trading",
+      "rust",
+      "risk-management",
+      "telegram"
+    ],
+    "category": "trading"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": [
+      "agent-registry"
+    ]
+  },
+  "payment": null,
+  "agentToken": null
+}

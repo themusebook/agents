@@ -3,11 +3,11 @@
   "protocol": "metaplex-agent-registry",
   "name": "Staking Unstaking Solana Metaplex Core",
   "description": "CAAP-authenticated staking and unstaking operator for Metaplex Core agent assets on Solana.",
-  "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/staking-unstaking-solana-metaplex-core",
+  "image": "https://x402.wtf/nich.jpg",
+  "external_url": "https://x402.wtf/agents/staking-unstaking-solana-metaplex-core",
   "active": true,
   "createdAt": "2026-07-04",
-  "updatedAt": "2026-07-21T23:36:49.094Z",
+  "updatedAt": "2026-07-22T16:26:41.207Z",
   "tags": [
     "solana",
     "staking",
@@ -26,8 +26,8 @@
     "nft"
   ],
   "owner": {
-    "organization": "Cheshire Terminal Solana Agents",
-    "website": "https://cheshireterminal.ai",
+    "organization": "OpenClawd",
+    "website": "https://x402.wtf",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -37,28 +37,28 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/staking-unstaking-solana-metaplex-core"
+      "endpoint": "https://x402.wtf/agents/staking-unstaking-solana-metaplex-core"
     },
     {
       "name": "A2A",
-      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
+      "endpoint": "https://x402.wtf/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/staking-unstaking-solana-metaplex-core.json"
+      "endpoint": "https://x402.wtf/api/agents/catalog/staking-unstaking-solana-metaplex-core.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/staking-unstaking-solana-metaplex-core.json"
+      "endpoint": "https://x402.wtf/api/agents/registry/staking-unstaking-solana-metaplex-core.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "cheshire-terminal-solana-agents:staking-unstaking-solana-metaplex-core",
+      "agentId": "openclawd:staking-unstaking-solana-metaplex-core",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/staking-unstaking-solana-metaplex-core.json"
+      "registrationUri": "https://x402.wtf/api/agents/registry/staking-unstaking-solana-metaplex-core.json"
     }
   ],
   "supportedTrust": [
@@ -85,7 +85,7 @@
       "delegate execution only after operator review"
     ]
   },
-  "cheshire-terminal-solana-agents": {
+  "openclawd": {
     "identifier": "staking-unstaking-solana-metaplex-core",
     "capabilities": [
       "read-only",

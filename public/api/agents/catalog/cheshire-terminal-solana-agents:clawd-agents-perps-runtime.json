@@ -1,0 +1,35 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-agents-perps-runtime",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-agents-perps-runtime",
+  "createdAt": "2026-07-21",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Clawd Perps Runtime",
+    "description": "Unified perpetuals agent surface: Phoenix Rise SDK market data, Hawkeye margin/liquidation, Imperial routing, and Vulcan paper/dry-run/live gates.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "perps",
+      "phoenix",
+      "rise-sdk",
+      "hawkeye",
+      "imperial",
+      "vulcan",
+      "clawd-perps",
+      "solana"
+    ],
+    "category": "trading"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

@@ -3,11 +3,11 @@
   "protocol": "metaplex-agent-registry",
   "name": "Clawd Formal Verification",
   "description": "Formal verification, invariant gates, and attestation workflows for Cheshire Terminal Solana skills, registries, risk engines, and Metaplex execution delegation.",
-  "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/clawd-formal-verification",
+  "image": "https://x402.wtf/nich.jpg",
+  "external_url": "https://x402.wtf/agents/clawd-formal-verification",
   "active": true,
   "createdAt": "2026-06-10",
-  "updatedAt": "2026-07-21T23:36:49.094Z",
+  "updatedAt": "2026-07-22T16:26:41.207Z",
   "tags": [
     "solana",
     "clawd",
@@ -22,8 +22,8 @@
     "security"
   ],
   "owner": {
-    "organization": "Cheshire Terminal Solana Agents",
-    "website": "https://cheshireterminal.ai",
+    "organization": "OpenClawd",
+    "website": "https://x402.wtf",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -33,28 +33,28 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/clawd-formal-verification"
+      "endpoint": "https://x402.wtf/agents/clawd-formal-verification"
     },
     {
       "name": "A2A",
-      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
+      "endpoint": "https://x402.wtf/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/clawd-formal-verification.json"
+      "endpoint": "https://x402.wtf/api/agents/catalog/clawd-formal-verification.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/clawd-formal-verification.json"
+      "endpoint": "https://x402.wtf/api/agents/registry/clawd-formal-verification.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "cheshire-terminal-solana-agents:clawd-formal-verification",
+      "agentId": "openclawd:clawd-formal-verification",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawd-formal-verification.json"
+      "registrationUri": "https://x402.wtf/api/agents/registry/clawd-formal-verification.json"
     }
   ],
   "supportedTrust": [
@@ -81,7 +81,7 @@
       "delegate execution only after operator review"
     ]
   },
-  "cheshire-terminal-solana-agents": {
+  "openclawd": {
     "identifier": "clawd-formal-verification",
     "capabilities": [
       "formal-verification",

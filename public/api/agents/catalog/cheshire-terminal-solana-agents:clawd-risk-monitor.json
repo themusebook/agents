@@ -1,0 +1,35 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-risk-monitor",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-risk-monitor",
+  "createdAt": "2024-12-16",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Cheshire Terminal Risk Monitor",
+    "description": "Cheshire Terminal agent: Track and analyze security risks across $CLAWD smart contracts",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "clawd",
+      "security",
+      "risk",
+      "audit",
+      "monitoring",
+      "cheshire-terminal",
+      "defi",
+      "solana"
+    ],
+    "category": "security"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

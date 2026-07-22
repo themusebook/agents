@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-labelledby="title description">
+  <title id="title">Cheshire Terminal Agents</title>
+  <desc id="description">Animated Cheshire Terminal Agents banner — dual-chain identity forge on Robinhood Chain and Solana plus production agent catalog, schema, locales, hub and MCP.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#041008"/>
+      <stop offset="0.45" stop-color="#080910"/>
+      <stop offset="1" stop-color="#12081f"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#75f58b" stop-opacity="0"/>
+      <stop offset="0.22" stop-color="#75f58b"/>
+      <stop offset="0.5" stop-color="#f3f5ff"/>
+      <stop offset="0.78" stop-color="#c084fc"/>
+      <stop offset="1" stop-color="#c084fc" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#75f58b"/>
+      <stop offset="0.5" stop-color="#e8ecff"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <radialGradient id="greenGlow">
+      <stop offset="0" stop-color="#75f58b" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#75f58b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="violetGlow">
+      <stop offset="0" stop-color="#c084fc" stop-opacity="0.24"/>
+      <stop offset="1" stop-color="#c084fc" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pinkGlow">
+      <stop offset="0" stop-color="#ff8ad8" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#ff8ad8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#fff" stroke-opacity="0.035"/>
+    </pattern>
+    <filter id="glow" x="-70%" y="-70%" width="240%" height="240%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .sans { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
+      .route { stroke-dasharray: 8 10; animation: route 2.4s linear infinite; }
+      .pulse { animation: pulse 2.6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      .blink { animation: blink 1.8s steps(2, end) infinite; }
+      .float { animation: float 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      @keyframes route { to { stroke-dashoffset: -72; } }
+      @keyframes pulse { 0%,100% { opacity: .55; transform: scale(.96); } 50% { opacity: 1; transform: scale(1.05); } }
+      @keyframes blink { 50% { opacity: .25; } }
+      @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+      @media (prefers-reduced-motion: reduce) {
+        .route, .pulse, .blink, .float { animation: none; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="440" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="440" rx="24" fill="url(#grid)"/>
+  <circle cx="130" cy="220" r="270" fill="url(#greenGlow)"/>
+  <circle cx="1070" cy="220" r="270" fill="url(#violetGlow)"/>
+  <circle cx="600" cy="380" r="160" fill="url(#pinkGlow)"/>
+  <rect x="1.5" y="1.5" width="1197" height="437" rx="22.5" fill="none" stroke="url(#rail)" stroke-width="3" stroke-dasharray="22 12">
+    <animate attributeName="stroke-dashoffset" values="0;-136" dur="5s" repeatCount="indefinite"/>
+  </rect>
+
+  <text x="600" y="42" text-anchor="middle" fill="#fff" class="mono" font-size="12" font-weight="700" letter-spacing="3.5">OPEN SOURCE · MIT · NPM · HUB</text>
+  <text x="600" y="78" text-anchor="middle" fill="url(#titleGrad)" class="sans" font-size="32" font-weight="900">CHESHIRE TERMINAL AGENTS</text>
+  <text x="600" y="102" text-anchor="middle" fill="#8d93a5" class="mono" font-size="11" letter-spacing="1.5">CATALOG · FORGE · EVM + SVM · SCHEMA · LOCALES</text>
+
+  <!-- left: EVM forge -->
+  <g transform="translate(40 130)">
+    <rect width="300" height="220" rx="18" fill="#07140d" fill-opacity=".96" stroke="#75f58b" stroke-opacity=".75" stroke-width="1.5">
+      <animate attributeName="stroke-opacity" values=".35;.9;.35" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="16" y="16" width="92" height="22" rx="11" fill="#75f58b" fill-opacity=".13" stroke="#75f58b" stroke-opacity=".4"/>
+    <circle cx="29" cy="27" r="4" fill="#75f58b" class="blink"/>
+    <text x="41" y="31" fill="#b8ffc4" class="mono" font-size="10" font-weight="700">EVM RAIL</text>
+    <text x="16" y="68" fill="#f3fff5" class="sans" font-size="20" font-weight="800">Robinhood Chain</text>
+    <text x="16" y="90" fill="#75f58b" class="mono" font-size="11">ERC-8004 · 46630 / 4663</text>
+    <g transform="translate(16 108)">
+      <rect width="82" height="34" rx="8" fill="#0b2114" stroke="#75f58b" stroke-opacity=".28"/>
+      <text x="41" y="14" text-anchor="middle" fill="#d7ffde" class="sans" font-size="9" font-weight="700">IDENTITY</text>
+      <text x="41" y="26" text-anchor="middle" fill="#6f8e77" class="mono" font-size="8">ERC-721</text>
+      <rect x="90" width="82" height="34" rx="8" fill="#0b2114" stroke="#75f58b" stroke-opacity=".28"/>
+      <text x="131" y="14" text-anchor="middle" fill="#d7ffde" class="sans" font-size="9" font-weight="700">REPUTATION</text>
+      <text x="131" y="26" text-anchor="middle" fill="#6f8e77" class="mono" font-size="8">FEEDBACK</text>
+      <rect x="180" width="88" height="34" rx="8" fill="#0b2114" stroke="#75f58b" stroke-opacity=".28"/>
+      <text x="224" y="14" text-anchor="middle" fill="#d7ffde" class="sans" font-size="9" font-weight="700">VALIDATION</text>
+      <text x="224" y="26" text-anchor="middle" fill="#6f8e77" class="mono" font-size="8">EVIDENCE</text>
+    </g>
+    <text x="16" y="172" fill="#cde8d3" class="mono" font-size="10">unsigned register(agentURI)</text>
+    <text x="16" y="198" fill="#f5c36b" class="mono" font-size="9" font-weight="700">DEPLOYED · RUNTIME TRUST</text>
+  </g>
+
+  <!-- center hub -->
+  <g transform="translate(420 155)" class="float">
+    <circle cx="180" cy="95" r="82" fill="#12081f" stroke="#c084fc" stroke-opacity=".55" stroke-width="2" filter="url(#glow)" class="pulse"/>
+    <circle cx="180" cy="95" r="56" fill="none" stroke="#75f58b" stroke-opacity=".35" stroke-width="1.5" class="route"/>
+    <text x="180" y="82" text-anchor="middle" fill="#fff" class="sans" font-size="22" font-weight="800">🐱</text>
+    <text x="180" y="106" text-anchor="middle" fill="#e8ecff" class="mono" font-size="12" font-weight="700">HUB</text>
+    <text x="180" y="124" text-anchor="middle" fill="#9f8cff" class="mono" font-size="9">cheshireterminal.ai</text>
+  </g>
+
+  <path d="M340 245 C380 245, 400 245, 430 245" fill="none" stroke="#75f58b" stroke-width="2" stroke-opacity=".7" class="route"/>
+  <path d="M770 245 C800 245, 820 245, 860 245" fill="none" stroke="#c084fc" stroke-width="2" stroke-opacity=".7" class="route"/>
+
+  <!-- right: SVM + catalog -->
+  <g transform="translate(860 130)">
+    <rect width="300" height="220" rx="18" fill="#12081f" fill-opacity=".96" stroke="#c084fc" stroke-opacity=".75" stroke-width="1.5">
+      <animate attributeName="stroke-opacity" values=".35;.9;.35" dur="3.2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="16" y="16" width="100" height="22" rx="11" fill="#c084fc" fill-opacity=".13" stroke="#c084fc" stroke-opacity=".4"/>
+    <circle cx="29" cy="27" r="4" fill="#c084fc" class="blink"/>
+    <text x="41" y="31" fill="#e9d5ff" class="mono" font-size="10" font-weight="700">SVM + PACK</text>
+    <text x="16" y="68" fill="#f8f5ff" class="sans" font-size="20" font-weight="800">Solana + Agents</text>
+    <text x="16" y="90" fill="#c084fc" class="mono" font-size="11">Core mint · 53 catalog IDs</text>
+    <g transform="translate(16 108)">
+      <rect width="82" height="34" rx="8" fill="#1a0f2e" stroke="#c084fc" stroke-opacity=".28"/>
+      <text x="41" y="14" text-anchor="middle" fill="#f3e8ff" class="sans" font-size="9" font-weight="700">METAPLEX</text>
+      <text x="41" y="26" text-anchor="middle" fill="#9b87b8" class="mono" font-size="8">CORE</text>
+      <rect x="90" width="82" height="34" rx="8" fill="#1a0f2e" stroke="#c084fc" stroke-opacity=".28"/>
+      <text x="131" y="14" text-anchor="middle" fill="#f3e8ff" class="sans" font-size="9" font-weight="700">LOCALES</text>
+      <text x="131" y="26" text-anchor="middle" fill="#9b87b8" class="mono" font-size="8">17 LANGS</text>
+      <rect x="180" width="88" height="34" rx="8" fill="#1a0f2e" stroke="#c084fc" stroke-opacity=".28"/>
+      <text x="224" y="14" text-anchor="middle" fill="#f3e8ff" class="sans" font-size="9" font-weight="700">SCHEMA</text>
+      <text x="224" y="26" text-anchor="middle" fill="#9b87b8" class="mono" font-size="8">CHESHIRE</text>
+    </g>
+    <text x="16" y="172" fill="#ddd0f0" class="mono" font-size="10">CLAWD_AGENT_MINT_V2</text>
+    <text x="16" y="198" fill="#ff8ad8" class="mono" font-size="9" font-weight="700">npm i cheshire-terminal-agents</text>
+  </g>
+
+  <text x="600" y="410" text-anchor="middle" fill="#6b7280" class="mono" font-size="10" letter-spacing="1.2">$CLAWD · ONE EXPLICIT CHAIN CHOICE · SAFETY-FIRST PROMPTS</text>
+</svg>

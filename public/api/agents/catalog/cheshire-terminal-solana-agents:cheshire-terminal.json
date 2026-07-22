@@ -1,0 +1,37 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:cheshire-terminal",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Acheshire-terminal",
+  "createdAt": null,
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Cheshire Terminal",
+    "description": "The sovereign AI oracle of the Cheshire Terminal Solana Agents ecosystem. Solana-native, x402-powered, CAAP/1.0 authenticated. Built on the Leviathan runtime with immutable Three Laws.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "cheshire-terminal",
+      "solana",
+      "anchor",
+      "x402",
+      "cheshire-terminal-solana-agents",
+      "agent-staking",
+      "clawd",
+      "defi",
+      "metaplex",
+      "caap"
+    ],
+    "category": "defi"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

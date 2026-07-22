@@ -1,0 +1,35 @@
+{
+  "identifier": "cheshire-terminal-solana-agents:clawd-portfolio-tracker",
+  "author": "openclawd",
+  "homepage": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-portfolio-tracker",
+  "createdAt": "2024-12-16",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Cheshire Terminal Portfolio Tracker",
+    "description": "Cheshire Terminal agent: Track and analyze your complete $CLAWD ecosystem holdings",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "clawd",
+      "portfolio",
+      "tracking",
+      "analytics",
+      "dashboard",
+      "cheshire-terminal",
+      "defi",
+      "solana"
+    ],
+    "category": "trading"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

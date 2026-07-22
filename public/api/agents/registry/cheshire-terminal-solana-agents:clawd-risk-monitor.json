@@ -1,0 +1,87 @@
+{
+  "schemaVersion": "erc-8004-agent-registration-v1",
+  "protocol": "metaplex-agent-registry",
+  "name": "Cheshire Terminal Risk Monitor",
+  "description": "Cheshire Terminal agent: Track and analyze security risks across $CLAWD smart contracts",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-risk-monitor",
+  "active": true,
+  "createdAt": "2024-12-16",
+  "updatedAt": "2026-07-22T16:26:41.207Z",
+  "tags": [
+    "clawd",
+    "security",
+    "risk",
+    "audit",
+    "monitoring",
+    "cheshire-terminal",
+    "defi",
+    "solana"
+  ],
+  "categories": [
+    "security"
+  ],
+  "owner": {
+    "organization": "OpenClawd",
+    "website": "https://x402.wtf",
+    "token": {
+      "symbol": "CLAWD",
+      "chain": "solana",
+      "mint": "8cHzQHUS2s2h8TzCmfqPKYiM4dSt4roa3n7MyRLApump"
+    }
+  },
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://x402.wtf/agents/cheshire-terminal-solana-agents%3Aclawd-risk-monitor"
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "version": "0.3.0"
+    },
+    {
+      "name": "catalog",
+      "endpoint": "https://x402.wtf/api/agents/catalog/cheshire-terminal-solana-agents%3Aclawd-risk-monitor.json"
+    },
+    {
+      "name": "registration",
+      "endpoint": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-risk-monitor.json"
+    }
+  ],
+  "registrations": [
+    {
+      "agentId": "openclawd:cheshire-terminal-solana-agents:clawd-risk-monitor",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration",
+      "registrationUri": "https://x402.wtf/api/agents/registry/cheshire-terminal-solana-agents%3Aclawd-risk-monitor.json"
+    }
+  ],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic",
+    "token-gated"
+  ],
+  "metaplex": {
+    "programs": [],
+    "sdk": "@metaplex-foundation/mpl-agent-registry",
+    "expectedIdentity": {
+      "asset": null,
+      "agentIdentityPda": null,
+      "assetSignerPda": null,
+      "executiveProfilePda": null
+    },
+    "registrationFlow": [
+      "mint MPL Core agent asset",
+      "register AgentIdentity with this registrationUri",
+      "optionally register an executive profile",
+      "delegate execution only after operator review"
+    ]
+  },
+  "openclawd": {
+    "identifier": "cheshire-terminal-solana-agents:clawd-risk-monitor",
+    "capabilities": [],
+    "payment": null,
+    "agentToken": null
+  }
+}
