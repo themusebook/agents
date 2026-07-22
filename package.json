@@ -33,11 +33,11 @@
     "blockchain"
   ],
   "bin": {
-    "cheshire-terminal-agents": "./bin/ct-agents.js",
-    "ct-agents": "./bin/ct-agents.js"
+    "cheshire-terminal-agents": "./bin/ct-agents.cjs",
+    "ct-agents": "./bin/ct-agents.cjs"
   },
   "exports": {
-    ".": "./bin/ct-agents.js",
+    ".": "./bin/ct-agents.cjs",
     "./catalog": "./robinhood-src/agentCatalog.js",
     "./agents/*": "./agents/*.json",
     "./schema/*": "./schema/*.json",
@@ -49,7 +49,7 @@
     "validate": "node scripts/validate-catalog.cjs",
     "test": "node scripts/validate-catalog.cjs",
     "catalog": "node -e \"import('./agents-catalog.json').then(c => { const s=c.stats||c; console.log(JSON.stringify({agents:s.totalAgents,oneShots:s.totalOneShots,featured:s.totalFeatured,templates:s.totalTemplates,categories:Object.keys(s.byCategory||{}).length},null,2)) })\"",
-    "start": "node bin/ct-agents.js serve",
+    "start": "node bin/ct-agents.cjs serve",
     "prepublishOnly": "node build-catalog.cjs && node scripts/validate-catalog.cjs"
   },
   "engines": {
