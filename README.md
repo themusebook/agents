@@ -1,38 +1,103 @@
-╔══════════════════════════════════════════════════════════════╗
-║     ██████╗██╗  ██╗███████╗███████╗██╗  ██╗██╗██████╗ ██╗  ║
-║    ██╔════╝██║  ██║██╔════╝██╔════╝██║  ██║██║██╔══██╗██║  ║
-║    ██║     ███████║█████╗  ███████╗███████║██║██████╔╝██║  ║
-║    ██║     ██╔══██║██╔══╝  ╚════██║██╔══██║██║██╔══██╗██║  ║
-║    ╚██████╗██║  ██║███████╗███████║██║  ██║██║██║  ██║██║  ║
-║     ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚═╝  ║
-║     ████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗        ██╗
-║     ╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║████╗  ██║██╔══██╗██║        ██║
-║        ██║   █████╗  ██████╔╝██╔████╔██║██║██╔██╗ ██║███████║██║        ██║
-║        ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║██║╚██╗██║██╔══██║██║        ██║
-║        ██║   ███████╗██║  ██║██║ ╚═╝ ██║██║██║ ╚████║██║  ██║███████╗██╗██║
-║        ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝╚═╝╚═╝
-╚══════════════════════════════════════════════════════════════╝
-```
+<p align="center">
+  <a href="public/assets/cheshire-terminal-agents.svg">
+    <img src="public/assets/cheshire-terminal-agents.svg" alt="Animated Clawd Agents banner — dual-chain identity forge and production agent catalog" width="100%" />
+  </a>
+</p>
+
+# Clawd Agents
+
+**Catalog + forge. One package for agent prompts and on-chain identity.**  
+Ship Clawd / Cheshire-schema agents, then register them on **Robinhood Chain** (EVM / ERC-8004), **Solana** (SVM / Metaplex Core), or *both rails* with optional LayerZero zk-omni through the Cheshire Terminal hub.
 
 <p align="center">
-  <strong><code>✦ dual-chain agent forge · 137 agents · 53 characters · 31 skills ✦</code></strong><br>
-  <em>solana:mainnet · robinhood-chain:4663 · layerzero zk-omni · erc-8004 · metaplex core</em>
+  <a href="https://cheshireterminal.ai/agents"><img alt="Open Agent Hub" src="https://img.shields.io/badge/OPEN_AGENT_HUB-75f58b?style=for-the-badge&labelColor=07140d" /></a>
+  <a href="https://cheshireterminal.ai/agents/forge"><img alt="Open Agent Forge" src="https://img.shields.io/badge/OPEN_AGENT_FORGE-c084fc?style=for-the-badge&labelColor=12081f" /></a>
+  <a href="https://www.npmjs.com/package/cheshire-terminal-agents"><img alt="npm cheshire-terminal-agents" src="https://img.shields.io/badge/npm-cheshire--terminal--agents-ff8ad8?style=for-the-badge&labelColor=1b0b18" /></a>
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/LICENSE-MIT-9f8cff?style=for-the-badge&labelColor=100b1d" /></a>
 </p>
+
+<p align="center">
+  <img alt="Node.js 18.18+" src="https://img.shields.io/badge/Node-%3E%3D18.18-5fa04e?style=flat-square&logo=nodedotjs&logoColor=white" />
+  <img alt="137 catalog agents" src="https://img.shields.io/badge/catalog-137_agents-75f58b?style=flat-square" />
+  <img alt="31 skills" src="https://img.shields.io/badge/skills-31-c084fc?style=flat-square" />
+  <img alt="Solana mainnet-beta" src="https://img.shields.io/badge/Solana-mainnet--beta-9f8cff?style=flat-square&logo=solana&logoColor=white" />
+  <img alt="Robinhood Chain 4663" src="https://img.shields.io/badge/Robinhood_Chain-4663-75f58b?style=flat-square" />
+  <img alt="npm v1.48.3" src="https://img.shields.io/badge/npm-v1.48.3-cb3837?style=flat-square&logo=npm&logoColor=white" />
+</p>
+
+```
+  ██████╗██╗      █████╗ ██╗    ██╗██████╗      █████╗  ██████╗ ███████╗███╗   ██╗████████╗███████╗
+ ██╔════╝██║     ██╔══██╗██║    ██║██╔══██╗    ██╔══██╗██╔════╝ ██╔════╝████╗  ██║╚══██╔══╝██╔════╝
+ ██║     ██║     ███████║██║ █╗ ██║██║  ██║    ███████║██║  ███╗█████╗  ██╔██╗ ██║   ██║   ███████╗
+ ██║     ██║     ██╔══██║██║███╗██║██║  ██║    ██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║   ╚════██║
+ ╚██████╗███████╗██║  ██║╚███╔███╔╝██████╔╝    ██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║   ███████║
+  ╚═════╝╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═════╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝
+                         ✦ dual-chain agent forge · cheshire-terminal-agents@1.48.3 ✦
+```
+
+**Clawd Agents** ships as [`cheshire-terminal-agents`](https://www.npmjs.com/package/cheshire-terminal-agents) on npm — the open catalog + forge package for:
+
+1. **Agent catalog** — 137 dual-chain agent definitions, character personas, locales, and schema validation  
+2. **Identity forge** — dual-rail registration (Robinhood Chain EVM + Solana SVM) with fail-closed safety  
+
+Hosted surfaces: [agent hub](https://cheshireterminal.ai/agents) · [agent forge](https://cheshireterminal.ai/agents/forge) · [catalog API](https://cheshireterminal.ai/api/agents/catalog)
 
 ---
 
 ## ⎧ ONE-SHOT INSTALL ⎫
 
 ```bash
-# ── zero config, one command ──
+# zero config — boot the forge
 npx cheshire-terminal-agents
 
-# ── install globally ──
+# install globally (bins: cheshire-terminal-agents · ct-agents)
 npm i -g cheshire-terminal-agents
+ct-agents catalog
 ct-agents serve
 
-# ── add to any project ──
+# add to any project
 npm i cheshire-terminal-agents
+```
+
+Requires **Node.js `>=18.18`** (ESM).
+
+### CLI
+
+| Command | Effect |
+|---------|--------|
+| `ct-agents` / `cheshire-terminal-agents` | Interactive forge boot |
+| `ct-agents catalog` | Print catalog stats (agents, categories, hub) |
+| `ct-agents skills` | List deployable skill directories |
+| `ct-agents registry` | Print on-chain registry index |
+| `ct-agents schema` | Show `clawdAgentSchema` info |
+| `ct-agents serve [--port]` | Local static API from `public/` |
+| `ct-agents --help` | Usage + live endpoint map |
+
+```bash
+npx cheshire-terminal-agents catalog
+npx cheshire-terminal-agents skills
+npx cheshire-terminal-agents serve --port 8080
+```
+
+---
+
+## ⎧ WHAT YOU GET ⎫
+
+| Surface | Included | Boundary |
+|---------|----------|----------|
+| **Agent catalog** | 137 agents in `agents-catalog.json`, 53 JSON defs under `agents/`, 11 characters, locales, schema | Prompts + metadata — not a custody runtime |
+| **CLI** | `cheshire-terminal-agents` · `ct-agents` → `bin/ct-agents.js` | No silent wallet broadcast |
+| **Skills** | 31 deployable skill modules under `skills/` | Instruction content — pin like code |
+| **REST / discovery** | `public/api/agents/*`, `.well-known/acp.json`, `ai-plugin.json` | Hosted hub is source of truth for live chain config |
+| **Nested packages** | Source under `packages/*` (TUI, headless, LZ, trust) | **Private / unpublished** — not on npm |
+| **Optional companion** | [`clawdbot-go`](https://www.npmjs.com/package/clawdbot-go) Zero Clawd runtime | Separate package — not a hard dependency |
+
+```
+catalog prompts ──► agents-catalog.json ──► hub / MCP / chat
+metadata + image ──► choose rails
+  ├─ Robinhood Chain (4663)  → ERC-8004 identity
+  ├─ Solana mainnet          → Metaplex Core + Agent Identity
+  └─ both + zk-omni          → dual_identity_link (LayerZero)
 ```
 
 ---
@@ -40,15 +105,86 @@ npm i cheshire-terminal-agents
 ## ⎧ LIVE ENDPOINTS ⎫
 
 ```
-⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
  AGENT HUB        https://cheshireterminal.ai/agents
- CATALOG API      GET /api/agents/catalog          ⟶  137 agents
- REGISTRY         GET /api/agents/registry          ⟶  on-chain docs
- TEMPLATES        GET /api/agents/templates          ⟶  5 scaffolds
- ACP DISCOVERY    GET /.well-known/acp.json         ⟶  protocol
- AI PLUGIN        GET /.well-known/ai-plugin.json   ⟶  chat-gpt
- ASSETS           /assets/*.svg                     ⟶  forge art
-⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+ CATALOG API      GET /api/agents/catalog          →  137 agents
+ REGISTRY         GET /api/agents/registry          →  on-chain docs
+ TEMPLATES        GET /api/agents/templates          →  scaffolds
+ ACP DISCOVERY    GET /.well-known/acp.json         →  protocol
+ AI PLUGIN        GET /.well-known/ai-plugin.json   →  chat-gpt
+ ASSETS           /assets/*.svg                     →  forge art
+```
+
+```bash
+curl -fsS https://cheshireterminal.ai/api/agents/catalog | jq '.stats'
+```
+
+---
+
+## ⎧ CATALOG STATS ⎫
+
+Facts from `agents-catalog.json` (rebuild with `npm run build`):
+
+| Metric | Count |
+|--------|------:|
+| **Agents** | **137** |
+| One-shots | 1 |
+| Featured | 5 |
+| Categories | 15 |
+| Character profiles (`characters/`) | 11 |
+| Agent JSON defs (`agents/`) | 53 |
+| Deployable skills | 31 |
+| Locale files | ~759 |
+
+### Category breakdown
+
+| Category | Agents |
+|----------|-------:|
+| defi | 64 |
+| payments | 25 |
+| trading | 13 |
+| security | 6 |
+| infrastructure | 5 |
+| platform | 4 |
+| tools | 4 |
+| dev-tools | 3 |
+| voice-council | 3 |
+| crypto | 2 |
+| governance | 2 |
+| education | 2 |
+| nft | 2 |
+| programming | 1 |
+| research | 1 |
+
+### Featured agents
+
+| Agent | Category | Type |
+|-------|----------|------|
+| **Clawd Perps Runtime** | `trading` | featured |
+| **CLAWD LiveKit Voice** | `platform` | featured |
+| **Mechaplex · Mech Builder** | `platform` | featured |
+| **Solana PumpFun/PumpSwap Copy Trading Bot** | `trading` | one-shot · featured |
+| **Vulcan CLAWD Autonomous Perps** | `trading` | featured |
+
+---
+
+## ⎧ NPM SURFACE ⎫
+
+| Package | npm | Status |
+|---------|-----|--------|
+| **Clawd Agents / forge** | [`cheshire-terminal-agents@1.48.3`](https://www.npmjs.com/package/cheshire-terminal-agents) | **Published** · bins `cheshire-terminal-agents`, `ct-agents` |
+| Zero Clawd runtime | [`clawdbot-go`](https://www.npmjs.com/package/clawdbot-go) | Optional companion |
+| `@cheshire/clawd-agent-tui` | — | **Private** (source only in `packages/clawd-agent-tui`) |
+| `@cheshire/headless-agent` | — | **Private** (source only in `packages/headless-agent`) |
+| `@cheshire/layerzero-omnichain` | — | **Private** |
+| `@cheshire/solana-agent-trust` | — | **Private** |
+
+```bash
+# published package only
+npm view cheshire-terminal-agents name version bin
+# name = cheshire-terminal-agents
+# version = 1.48.3
+# bin.cheshire-terminal-agents = bin/ct-agents.js
+# bin.ct-agents = bin/ct-agents.js
 ```
 
 ---
@@ -56,121 +192,29 @@ npm i cheshire-terminal-agents
 ## ⎧ REPO TOPOLOGY ⎫
 
 ```
-├── agents/          ⎯  53 agent definitions (Robinhood + Solana)
-├── characters/      ⎯  11 character profiles (Cheshire, Clawd, etc.)
-├── cli/             ⎯  CLI tools
-├── docs/            ⎯  18 documentation files
-├── examples/        ⎯  agent templates
-├── gemini/          ⎯  Gemini AI gateway + MCP server
-├── locales/         ⎯  757 files · 18 languages
-├── minted/          ⎯  4 on-chain minted agents
-├── packages/        ⎯  4 sub-packages (tui, headless, lz, trust)
+clawd-agents / cheshire-terminal-agents
+├── agents/              # 53 agent definition JSON files
+├── characters/          # 11 character profiles
+├── bin/ct-agents.js     # CLI entry (npm bins)
+├── docs/                # documentation
+├── examples/            # robinhood + solana templates
+├── locales/             # i18n overlays (~759 files)
+├── packages/            # private nested packages (not published)
+│   ├── clawd-agent-tui/
+│   ├── headless-agent/
+│   ├── layerzero-omnichain/
+│   └── solana-agent-trust/
 ├── public/
-│   ├── .well-known/ ⎯  acp.json · ai-plugin.json
-│   ├── api/agents/  ⎯  catalog(138) · registry(138) · templates(5)
-│   └── assets/      ⎯  SVG branding
-├── robinhood-schema/⎯  Cheshire agent schema
-├── robinhood-src/   ⎯  JS source (catalog, bridge, deployments, zkOmni)
-├── schema/          ⎯  clawdAgentSchema v1
-├── scripts/         ⎯  build, validate, track
-├── skills/          ⎯  31 deployable skills
-├── solana-gpt-oracle/⎯  pumpfun oracle
-└── src/             ⎯  React app · 121 pages · 135 components · 25 hooks
+│   ├── .well-known/     # acp.json · ai-plugin.json
+│   ├── api/agents/      # catalog · registry · templates
+│   └── assets/          # animated SVG banners
+├── robinhood-src/       # catalog loaders + bridge
+├── schema/              # clawdAgentSchema
+├── scripts/             # build + validate
+├── skills/              # 31 deployable skills
+├── agents-catalog.json  # built catalog (137 agents)
+└── package.json         # name: cheshire-terminal-agents @ 1.48.3
 ```
-
----
-
-## ⎧ STATS ⎫
-
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  agents          ██████████████████████████████████████████  137 │
-│  characters      ████████████                                  11 │
-│  skills          █████████████████████████████████              31 │
-│  locales         ██████████████████████████████████████████  757 │
-│  one-shots       ██                                              1 │
-│  featured        ███████                                         5 │
-│  templates       ██████                                          5 │
-│  pages           █████████████████████████████████████████   121 │
-│  components      ██████████████████████████████████████████  135 │
-│  hooks           ██████████████████                             25 │
-│  catalog files   █████████████████████████████████████████████ 138 │
-│  registry docs   █████████████████████████████████████████████ 138 │
-└─────────────────────────────────────────────────────────────────┘
-```
-
----
-
-## ⎧ FEATURED AGENTS ⎫
-
-| agent | category | type |
-|-------|----------|------|
-| **Solana Pump.fun Bot** | `trading` | one-shot ⭐ |
-| **Solana Vulcan Clawd Autoperps** | `defi` | featured 🌟 |
-| **Clawd Perps Runtime** | `trading` | featured 🌟 |
-| **Clawd LiveKit Voice** | `platform` | featured 🌟 |
-| **Mechaplex Mech Builder** | `platform` | featured 🌟 |
-
----
-
-## ⎧ DEPLOY RUNS ⎫
-
-| runtime | chain | protocol |
-|---------|-------|----------|
-| **Clawd Gateway Runtime** | `solana` | ACP · x402 |
-| **Clawd Operator Runtime** | `solana` | agent orchestration |
-| **Clawd Router Runtime** | `solana` | LLM routing · tier gate |
-| **Clawd Grok Runtime** | `solana` | reasoning · perps |
-| **Clawd Pump Runtime** | `solana` | memecoin trading |
-| **Clawd Formal Verification** | `solana` | invariant checking |
-
----
-
-## ⎧ CATEGORIES ⎫
-
-```
-defi          ████████████████████████████████████████████
-payments      ████████████████████████████████████
-trading       ██████████████████████████
-security      ████████████████████████████
-dev-tools     ██████████████████
-education     ██████████
-governance    ████████
-nft           ████████████
-research      ██████████
-infrastructure████████
-platform      ██████████
-crypto        ██████████████████
-programming   ████████████
-tools         ████████████████
-voice-council ████████
-```
-
----
-
-## ⎧ NPM PACKAGE ⎫
-
-```bash
-npx cheshire-terminal-agents
-
-# ── or ──
-npm i -g cheshire-terminal-agents
-cheshire-terminal-agents --help
-
-  Usage: ct-agents <command>
-
-  Commands:
-    serve       Start the agent API server
-    catalog     Print the agent catalog
-    registry    Print the on-chain registry
-    skills      List deployable skills
-    schema      Validate agent definitions
-    version     Print version
-```
-
-**Published as** [`cheshire-terminal-agents`](https://www.npmjs.com/package/cheshire-terminal-agents) `v1.48.1`
-
-977 files · 1.2 MB packed · 4.6 MB unpacked
 
 ---
 
@@ -186,49 +230,22 @@ ct-agents catalog
 # 3. List skills
 ct-agents skills
 
-# 4. Validate everything
+# 4. Schema info
 ct-agents schema
 
-# 5. Serve the API
+# 5. Serve the local API
 ct-agents serve --port 8080
 ```
 
-From any project:
+From any project (after `npm i cheshire-terminal-agents`):
 
 ```js
-import { loadCatalog } from 'cheshire-terminal-agents'
-
-const catalog = loadCatalog()
-console.log(`${catalog.length} agents ready`)
+import catalog from 'cheshire-terminal-agents/catalog'
+// or load agents-catalog.json via package exports
+console.log('Clawd Agents ready')
 ```
 
----
-
-## ⎧ API REFERENCE ⎫
-
-### Catalog
-
-```bash
-curl https://cheshireterminal.ai/api/agents/catalog | jq '.stats'
-```
-
-### Single Agent
-
-```bash
-curl https://cheshireterminal.ai/api/agents/catalog/solana-pumpfun-bot.json
-```
-
-### Registry
-
-```bash
-curl https://cheshireterminal.ai/api/agents/registry
-```
-
-### Templates
-
-```bash
-curl https://cheshireterminal.ai/api/agents/templates/trading-agent.json
-```
+Root agent scaffolds: `agent-template.json` · `agent-template-full.json` · `agent-template-attested.json`.
 
 ---
 
@@ -236,57 +253,72 @@ curl https://cheshireterminal.ai/api/agents/templates/trading-agent.json
 
 ```
 ┌─── PR into repo ──────────────────────────────────────────────┐
-│  static agent prompt · auto-cdn · 18 locales                  │
+│  static agent prompt · auto-cdn · locales                     │
 └───────────────────────────────────────────────────────────────┘
 ┌─── Self-host + A2A ───────────────────────────────────────────┐
-│  custom logic · streaming · discoverable via hub               │
+│  custom logic · streaming · discoverable via hub              │
 └───────────────────────────────────────────────────────────────┘
 ┌─── Mint as MPL Core ──────────────────────────────────────────┐
-│  on-chain identity · solana:mainnet · transferable ownership   │
+│  on-chain identity · solana:mainnet · transferable ownership  │
 └───────────────────────────────────────────────────────────────┘
 ┌─── MCP server only ───────────────────────────────────────────┐
-│  tool provider · clawd desktop · cursor                        │
+│  tool provider · clawd desktop · cursor                       │
 └───────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## ⎧ TECH STACK ⎫
+## ⎧ SECURITY MODEL ⎫
 
+- Never request, store, print, or transmit private keys or seed phrases.
+- Hosted forge APIs prepare unsigned intents — they do not custody wallets.
+- Re-fetch live registry / health endpoints before any chain write.
+- Catalog prompts are instruction content — not automatic execution.
+- Agent identity assets are not investment promises.
+
+---
+
+## ⎧ DEVELOP & VERIFY ⎫
+
+```bash
+npm run build      # rebuild agents-catalog.json + validate
+npm run validate   # schema / catalog checks
+npm test           # same as validate
+npm run catalog    # print compact stats JSON
+node bin/ct-agents.js catalog
+node bin/ct-agents.js --help
 ```
-🗄  Format       JSON · TypeScript · Rust · Solidity · Python
-🌐  Chains       Solana (mainnet) · Robinhood Chain (4663)
-📡  Protocols    ACP · A2A · MCP · x402 · LayerZero · ERC-8004
-🛠  SDKs         Metaplex UMI · Anchor · viem · wagmi · Pump SDK
-🎭  Frontend     React · Vite · Tailwind · shadcn/ui · wouter
-🔬  Verification Groth16 · Ed25519 PoK · RedPill TEE
-🎮  Skills       31 deployable skill modules
+
+Smoke script (README + package + CLI consistency):
+
+```bash
+node scripts/smoke-readme-npm.cjs
 ```
 
 ---
 
-## ⎧ LOCALE MATRIX ⎫
+## ⎧ VERSION ⎫
+
+| Field | Value |
+|-------|-------|
+| Product | **Clawd Agents** |
+| npm name | `cheshire-terminal-agents` |
+| Version | **1.48.3** |
+| Bins | `cheshire-terminal-agents`, `ct-agents` |
+| License | MIT |
+| Hub | https://cheshireterminal.ai/agents |
 
 ```
-en 🇺🇸  zh-CN 🇨🇳  zh-TW 🇹🇼  ja 🇯🇵  ko 🇰🇷  de 🇩🇪  fr 🇫🇷
-es 🇪🇸  ru 🇷🇺  ar 🇸🇦  pt 🇵🇹  it 🇮🇹  nl 🇳🇱  pl 🇵🇱
-vi 🇻🇳  tr 🇹🇷  sv 🇸🇪  id 🇮🇩
-
-757 locale files · 18 languages
-```
-
----
-
-## ⎧ LICENSE ⎫
-
-**MIT** — Open Source · Open Format · Open Future
-
-```ascii
         ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
        ██                                          ██
-       ██  cheshireterminal.ai/agents              ██
-       ██  cheshireterminal-agents@1.48.1          ██
+       ██  CLAWD AGENTS                            ██
+       ██  cheshire-terminal-agents@1.48.3         ██
        ██  137 agents · 1 one-shot · 5 featured    ██
-       ██  operators@cheshireterminal.ai            ██
+       ██  cheshireterminal.ai/agents              ██
        ██                                          ██
         ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+```
+
+## License
+
+[MIT](LICENSE) © Cheshire Terminal / Clawd Agents contributors.

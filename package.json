@@ -1,7 +1,7 @@
 {
   "name": "cheshire-terminal-agents",
-  "version": "1.48.2",
-  "description": "♾️  Cheshire Terminal Agents — 137 dual-chain agent definitions (Solana SVM + Robinhood Chain EVM), 53 characters, 31 deployable skills, on-chain identity forge, Metaplex Core minting, LayerZero zk-omni, and a full REST + MCP catalog API. One-shot npm install.",
+  "version": "1.48.3",
+  "description": "♾️  Clawd Agents — 137 dual-chain agent definitions (Solana SVM + Robinhood Chain EVM), 53 agent JSON defs, 11 characters, 31 deployable skills, on-chain identity forge, Metaplex Core minting, LayerZero zk-omni, and a full REST + MCP catalog API. One-shot npm install (cheshire-terminal-agents).",
   "type": "module",
   "sideEffects": false,
   "license": "MIT",
@@ -47,7 +47,8 @@
   "scripts": {
     "build": "node build-catalog.cjs && node scripts/validate-catalog.cjs && echo '✓ catalog built'",
     "validate": "node scripts/validate-catalog.cjs",
-    "test": "node scripts/validate-catalog.cjs",
+    "test": "node scripts/validate-catalog.cjs && node scripts/smoke-readme-npm.cjs",
+    "smoke:readme": "node scripts/smoke-readme-npm.cjs",
     "catalog": "node -e \"import('./agents-catalog.json').then(c => { const s=c.stats||c; console.log(JSON.stringify({agents:s.totalAgents,oneShots:s.totalOneShots,featured:s.totalFeatured,templates:s.totalTemplates,categories:Object.keys(s.byCategory||{}).length},null,2)) })\"",
     "start": "node bin/ct-agents.js serve",
     "prepublishOnly": "node build-catalog.cjs && node scripts/validate-catalog.cjs"
@@ -93,6 +94,6 @@
     "viem": "^2.38.0"
   },
   "optionalDependencies": {
-    "cheshire-terminal-agents": "^1.48.1"
+    "cheshire-terminal-agents": "^1.48.3"
   }
 }

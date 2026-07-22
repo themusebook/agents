@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" role="img" aria-labelledby="title description">
-  <title id="title">Cheshire Terminal Agents</title>
-  <desc id="description">Animated Cheshire Terminal Agents banner — dual-chain identity forge on Robinhood Chain and Solana plus production agent catalog, schema, locales, hub and MCP.</desc>
+  <title id="title">Clawd Agents</title>
+  <desc id="description">Animated Clawd Agents banner — dual-chain identity forge on Robinhood Chain and Solana plus production agent catalog, schema, locales, hub and MCP.</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#041008"/>
