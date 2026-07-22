@@ -38,7 +38,7 @@
   },
   "exports": {
     ".": "./bin/ct-agents.js",
-    "./catalog": "./robothood-src/agentCatalog.js",
+    "./catalog": "./robinhood-src/agentCatalog.js",
     "./agents/*": "./agents/*.json",
     "./schema/*": "./schema/*.json",
     "./skills": "./skills/suite-index.json",
