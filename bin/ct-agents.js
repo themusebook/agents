@@ -1,5 +1,13 @@
 #!/usr/bin/env node
 
+import { createRequire } from 'module';
+import { fileURLToPath } from 'url';
+import path from 'path';
+import http from 'http';
+import fs from 'fs';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const require = createRequire(import.meta.url);
 const pkg = require('../package.json');
 const catalog = require('../agents-catalog.json');
 
@@ -12,7 +20,7 @@ const RED = '\x1b[31m';
 const RESET = '\x1b[0m';
 
 function showBoot() {
-  console.log(`
+  process.stdout.write(`
 ${CYAN}  ██████╗██╗  ██╗███████╗███████╗██╗  ██╗██╗██████╗ ███████╗${RESET}
 ${CYAN} ██╔════╝██║  ██║██╔════╝██╔════╝██║  ██║██║██╔══██╗██╔════╝${RESET}
 ${CYAN} ██║     ███████║█████╗  ███████╗███████║██║██████╔╝█████╗${RESET}
@@ -56,20 +64,16 @@ const COMMANDS = {
   },
 
   registry: () => {
-    const fs = require('fs');
-    const path = require('path');
-    try {
-      const reg = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'public', 'api', 'agents', 'registry', 'index.json'), 'utf8'));
-      console.log(JSON.stringify(reg, null, 2));
-    } catch {
+    const regPath = path.join(__dirname, '..', 'public', 'api', 'agents', 'registry', 'index.json');
+    if (!fs.existsSync(regPath)) {
       console.error('Registry index not found. Run build first: npm run build');
       process.exit(1);
     }
+    const reg = JSON.parse(fs.readFileSync(regPath, 'utf8'));
+    console.log(JSON.stringify(reg, null, 2));
   },
 
   skills: () => {
-    const fs = require('fs');
-    const path = require('path');
     const skillsDir = path.join(__dirname, '..', 'skills');
     if (!fs.existsSync(skillsDir)) {
       console.log('No skills directory found.');
@@ -80,8 +84,6 @@ const COMMANDS = {
   },
 
   schema: () => {
-    const fs = require('fs');
-    const path = require('path');
     const schemaPath = path.join(__dirname, '..', 'schema', 'clawdAgentSchema.v1.json');
     if (!fs.existsSync(schemaPath)) {
       console.error('Schema file not found.');
@@ -93,11 +95,7 @@ const COMMANDS = {
   },
 
   serve: () => {
-    const http = require('http');
-    const fs = require('fs');
-    const path = require('path');
     const port = parseInt(process.argv[3] || process.env.PORT || '3000', 10);
-
     const PUBLIC = path.join(__dirname, '..', 'public');
 
     const MIME = {
@@ -185,6 +183,6 @@ if (COMMANDS[cmd]) {
 } else {
   showBoot();
   console.log(`${YELLOW}Unknown command: ${cmd}${RESET}`);
-  console.log(`Run ${CYAN}npx cheshire-terminal-agents --help${RESET} for available commands.\n`);
+  console.log(`Run ${CYAN}npx cheshire-terminal-agents --help${RESET} for available commands.`);
   process.exit(1);
 }

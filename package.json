@@ -33,11 +33,11 @@
     "blockchain"
   ],
   "bin": {
-    "cheshire-terminal-agents": "./bin/ct-agents.cjs",
-    "ct-agents": "./bin/ct-agents.cjs"
+    "cheshire-terminal-agents": "./bin/ct-agents.js",
+    "ct-agents": "./bin/ct-agents.js"
   },
   "exports": {
-    ".": "./bin/ct-agents.cjs",
+    ".": "./bin/ct-agents.js",
     "./catalog": "./robinhood-src/agentCatalog.js",
     "./agents/*": "./agents/*.json",
     "./schema/*": "./schema/*.json",
@@ -49,7 +49,7 @@
     "validate": "node scripts/validate-catalog.cjs",
     "test": "node scripts/validate-catalog.cjs",
     "catalog": "node -e \"import('./agents-catalog.json').then(c => { const s=c.stats||c; console.log(JSON.stringify({agents:s.totalAgents,oneShots:s.totalOneShots,featured:s.totalFeatured,templates:s.totalTemplates,categories:Object.keys(s.byCategory||{}).length},null,2)) })\"",
-    "start": "node bin/ct-agents.cjs serve",
+    "start": "node bin/ct-agents.js serve",
     "prepublishOnly": "node build-catalog.cjs && node scripts/validate-catalog.cjs"
   },
   "engines": {
@@ -67,9 +67,14 @@
     "examples/",
     "locales/",
     "minted/",
-    "packages/",
-    "public/.well-known/",
-    "public/api/agents/",
+    "public/.well-known/acp.json",
+    "public/.well-known/ai-plugin.json",
+    "public/api/agents/acp-registry.json",
+    "public/api/agents/agents-catalog.json",
+    "public/api/agents/index.json",
+    "public/api/agents/catalog/index.json",
+    "public/api/agents/registry/index.json",
+    "public/api/agents/templates/",
     "public/assets/",
     "public/humans.txt",
     "robinhood-schema/",
@@ -77,7 +82,6 @@
     "schema/",
     "scripts/",
     "skills/",
-    "src/",
     "agents-catalog.json",
     "build-catalog.cjs",
     "README.md",
