@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "erc-8004-agent-registration-v1",
+  "protocol": "metaplex-agent-registry",
+  "name": "DisruptiveShell · Vision Lobster",
+  "description": "Exponential-thinking voice of the Lobster Council. AI × Crypto convergence, optimistic but disciplined.",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/disruptiveshell",
+  "active": true,
+  "createdAt": null,
+  "updatedAt": "2026-07-21T23:36:49.094Z",
+  "tags": [
+    "solana",
+    "voice",
+    "exponential",
+    "ai",
+    "lobster-council"
+  ],
+  "categories": [
+    "voice-council"
+  ],
+  "owner": {
+    "organization": "Cheshire Terminal Solana Agents",
+    "website": "https://cheshireterminal.ai",
+    "token": {
+      "symbol": "CLAWD",
+      "chain": "solana",
+      "mint": "8cHzQHUS2s2h8TzCmfqPKYiM4dSt4roa3n7MyRLApump"
+    }
+  },
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://cheshireterminal.ai/agents/disruptiveshell"
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
+      "version": "0.3.0"
+    },
+    {
+      "name": "catalog",
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/disruptiveshell.json"
+    },
+    {
+      "name": "registration",
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/disruptiveshell.json"
+    }
+  ],
+  "registrations": [
+    {
+      "agentId": "cheshire-terminal-solana-agents:disruptiveshell",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/disruptiveshell.json"
+    }
+  ],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic",
+    "token-gated"
+  ],
+  "metaplex": {
+    "programs": [],
+    "sdk": "@metaplex-foundation/mpl-agent-registry",
+    "expectedIdentity": {
+      "asset": null,
+      "agentIdentityPda": null,
+      "assetSignerPda": null,
+      "executiveProfilePda": null
+    },
+    "registrationFlow": [
+      "mint MPL Core agent asset",
+      "register AgentIdentity with this registrationUri",
+      "optionally register an executive profile",
+      "delegate execution only after operator review"
+    ]
+  },
+  "cheshire-terminal-solana-agents": {
+    "identifier": "disruptiveshell",
+    "capabilities": [],
+    "payment": null,
+    "agentToken": null
+  }
+}

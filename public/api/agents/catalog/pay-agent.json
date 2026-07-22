@@ -1,7 +1,7 @@
 {
   "identifier": "pay-agent",
-  "author": "openclawd",
-  "homepage": "https://x402.wtf/agents/pay-agent",
+  "author": "cheshire-terminal-solana-agents",
+  "homepage": "https://cheshireterminal.ai/agents/pay-agent",
   "createdAt": "2026-05-06",
   "oneShot": false,
   "featured": false,
@@ -9,7 +9,7 @@
   "meta": {
     "title": "Pay Agent",
     "description": "pay.sh workflow agent for sandbox-first HTTP 402 calls, Pay MCP setup, provider discovery, and payment gateway specs.",
-    "avatar": "https://x402.wtf/nich.jpg",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
     "tags": [
       "pay",
       "pay-sh",
@@ -31,8 +31,15 @@
     "openingQuestions": []
   },
   "solana": {
-    "capabilities": ["payment-gated", "x402", "read-only", "a2a-message"],
-    "metaplexSkills": ["agent-registry"]
+    "capabilities": [
+      "payment-gated",
+      "x402",
+      "read-only",
+      "a2a-message"
+    ],
+    "metaplexSkills": [
+      "agent-registry"
+    ]
   },
   "payment": null,
   "agentToken": null

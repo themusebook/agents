@@ -3,11 +3,11 @@
   "protocol": "metaplex-agent-registry",
   "name": "HERMES Mail Settlement Controller",
   "description": "Settlement-control inbox agent for x402, MPP, MoonPay, and payment failure escalation across the Clawd commerce stack",
-  "image": "https://x402.wtf/nich.jpg",
-  "external_url": "https://x402.wtf/agents/solana-hermes-mail-settlement",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/solana-hermes-mail-settlement",
   "active": true,
   "createdAt": "2026-05-12",
-  "updatedAt": "2026-07-06T19:39:52.174Z",
+  "updatedAt": "2026-07-21T23:36:49.094Z",
   "tags": [
     "agentmail",
     "email",
@@ -19,10 +19,12 @@
     "moonpay",
     "solana"
   ],
-  "categories": ["defi"],
+  "categories": [
+    "defi"
+  ],
   "owner": {
-    "organization": "OpenClawd",
-    "website": "https://x402.wtf",
+    "organization": "Cheshire Terminal Solana Agents",
+    "website": "https://cheshireterminal.ai",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -32,31 +34,35 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/solana-hermes-mail-settlement"
+      "endpoint": "https://cheshireterminal.ai/agents/solana-hermes-mail-settlement"
     },
     {
       "name": "A2A",
-      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/solana-hermes-mail-settlement.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/solana-hermes-mail-settlement.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/solana-hermes-mail-settlement.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/solana-hermes-mail-settlement.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:solana-hermes-mail-settlement",
+      "agentId": "cheshire-terminal-solana-agents:solana-hermes-mail-settlement",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/solana-hermes-mail-settlement.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-hermes-mail-settlement.json"
     }
   ],
-  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic",
+    "token-gated"
+  ],
   "metaplex": {
     "programs": [],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
@@ -73,7 +79,7 @@
       "delegate execution only after operator review"
     ]
   },
-  "openclawd": {
+  "cheshire-terminal-solana-agents": {
     "identifier": "solana-hermes-mail-settlement",
     "capabilities": [],
     "payment": null,

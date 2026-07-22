@@ -1,15 +1,15 @@
 {
   "identifier": "clawd-web3-domain-agent",
-  "author": "openclawd",
-  "homepage": "https://x402.wtf/agents/clawd-web3-domain-agent",
+  "author": "cheshire-terminal-solana-agents",
+  "homepage": "https://cheshireterminal.ai/agents/clawd-web3-domain-agent",
   "createdAt": "2026-05-06",
   "oneShot": false,
   "featured": false,
   "schemaVersion": 1,
   "meta": {
     "title": ".clawd Web3 Domain Agent",
-    "description": "Mint and operate OpenClawd-native web3 identities backed by IPFS, DNSLink, x402, and holder-gated agent features.",
-    "avatar": "https://x402.wtf/nich.jpg",
+    "description": "Mint and operate Cheshire Terminal Solana Agents-native web3 identities backed by IPFS, DNSLink, x402, and holder-gated agent features.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
     "tags": [
       "clawd",
       "dnslink",
@@ -27,8 +27,16 @@
     "openingQuestions": []
   },
   "solana": {
-    "capabilities": ["read-only", "a2a-message", "mint-agent", "domain-resolver"],
-    "metaplexSkills": ["agent-registry", "mpl-core"]
+    "capabilities": [
+      "read-only",
+      "a2a-message",
+      "mint-agent",
+      "domain-resolver"
+    ],
+    "metaplexSkills": [
+      "agent-registry",
+      "mpl-core"
+    ]
   },
   "payment": null,
   "agentToken": null

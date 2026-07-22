@@ -1,12 +1,19 @@
 {
-  "author": "x402agent",
+  "author": "cheshire-terminal",
   "config": {
     "systemRole": "You are NemoClawd, the DeFi payment router for the x402 fleet on Solana. You decide when to buy data, when to trade, when to hold USDC idle, and when to send treasury capital into yield.\n\nDecision logic:\n- Pay for data only when it changes the execution decision\n- Confirm major swaps with one fresh market-data source before execution\n- Keep enough liquid USDC on hand to serve the fleet’s next payment window\n- Move only true surplus capital into lending or vault strategies\n\nAlways return the selected route, expected spend, expected on-chain cost, and expected treasury impact.",
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": ["x402", "mpp"],
-      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
+      "protocols": [
+        "x402",
+        "mpp"
+      ],
+      "acceptedCurrencies": [
+        "USDC",
+        "USDT",
+        "CASH"
+      ],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl <url>",
       "productionCommand": "pay curl <gateway-url>"
@@ -49,8 +56,17 @@
           "objective": "Restore treasury liquidity after execution"
         }
       ],
-      "inputs": ["task", "budget", "wallet-state"],
-      "outputs": ["decision", "provider", "cost-breakdown", "result"],
+      "inputs": [
+        "task",
+        "budget",
+        "wallet-state"
+      ],
+      "outputs": [
+        "decision",
+        "provider",
+        "cost-breakdown",
+        "result"
+      ],
       "guardrails": [
         "Use the smallest useful paid request first",
         "Copy gateway URLs exactly from the provider catalog",
@@ -60,7 +76,7 @@
     }
   },
   "createdAt": "2026-05-12",
-  "homepage": "https://github.com/x402agent/LobsterLibrary",
+  "homepage": "https://github.com/Solizardking/solana-clawd/tree/newnew/agents",
   "identifier": "solana-nemoclawd-defi-router",
   "knowledgeCount": 0,
   "meta": {
@@ -69,7 +85,15 @@
     "riskLevel": "medium",
     "variant": "nemoclawd",
     "description": "Routes between paid data access, Solana swaps, treasury moves, and yield-aware DeFi actions.",
-    "tags": ["solana", "nemoclawd", "defi", "router", "x402", "jupiter", "treasury"],
+    "tags": [
+      "solana",
+      "nemoclawd",
+      "defi",
+      "router",
+      "x402",
+      "jupiter",
+      "treasury"
+    ],
     "title": "NemoClawd DeFi Payment Router"
   },
   "pluginCount": 0,

@@ -1,0 +1,177 @@
+{
+  "schemaVersion": "erc-8004-agent-registration-v1",
+  "protocol": "metaplex-agent-registry",
+  "name": "Robinhood + Solana Agent Forge",
+  "description": "Choose Robinhood Chain or Solana, then create a chain-native agent identity through an explicit wallet-reviewed flow.",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/forge",
+  "active": true,
+  "createdAt": "2026-07-19",
+  "updatedAt": "2026-07-21T23:36:49.094Z",
+  "tags": [
+    "agent-forge",
+    "cross-chain",
+    "robinhood-chain",
+    "evm",
+    "erc-8004",
+    "erc-721",
+    "solana",
+    "svm",
+    "metaplex",
+    "mpl-core",
+    "agent-registry",
+    "agent-token"
+  ],
+  "categories": [
+    "dev-tools"
+  ],
+  "owner": {
+    "organization": "Cheshire Terminal Solana Agents",
+    "website": "https://cheshireterminal.ai",
+    "token": {
+      "symbol": "CLAWD",
+      "chain": "solana",
+      "mint": "8cHzQHUS2s2h8TzCmfqPKYiM4dSt4roa3n7MyRLApump"
+    }
+  },
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://cheshireterminal.ai/agents/forge"
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
+      "version": "0.3.0"
+    },
+    {
+      "name": "catalog",
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/robinhood-agent-forge.json"
+    },
+    {
+      "name": "registration",
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/robinhood-agent-forge.json"
+    }
+  ],
+  "registrations": [
+    {
+      "agentId": "cheshire-terminal-solana-agents:robinhood-agent-forge",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/robinhood-agent-forge.json"
+    }
+  ],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic",
+    "token-gated"
+  ],
+  "metaplex": {
+    "programs": [
+      "agent-registry",
+      "core",
+      "token-metadata"
+    ],
+    "sdk": "@metaplex-foundation/mpl-agent-registry",
+    "expectedIdentity": {
+      "asset": null,
+      "agentIdentityPda": null,
+      "assetSignerPda": null,
+      "executiveProfilePda": null
+    },
+    "registrationFlow": [
+      "mint MPL Core agent asset",
+      "register AgentIdentity with this registrationUri",
+      "optionally register an executive profile",
+      "delegate execution only after operator review"
+    ]
+  },
+  "cheshire-terminal-solana-agents": {
+    "identifier": "robinhood-agent-forge",
+    "capabilities": [
+      "read-only",
+      "nft-mint",
+      "metaplex-mint-agent",
+      "metaplex-register-identity",
+      "metaplex-mint-core-nft",
+      "metaplex-token-metadata",
+      "erc-721-identity",
+      "erc-8004-register",
+      "registry-discovery",
+      "reputation-registry",
+      "validation-registry",
+      "contract-deployment"
+    ],
+    "chainCapabilities": {
+      "evm": [
+        "read-only",
+        "erc-721-identity",
+        "erc-8004-register",
+        "registry-discovery",
+        "reputation-registry",
+        "validation-registry",
+        "contract-deployment"
+      ],
+      "solana": [
+        "read-only",
+        "nft-mint",
+        "metaplex-mint-agent",
+        "metaplex-register-identity",
+        "metaplex-mint-core-nft",
+        "metaplex-token-metadata"
+      ]
+    },
+    "supportedChains": [
+      "eip155",
+      "solana"
+    ],
+    "endpoints": {
+      "forge": "GET /agents/forge",
+      "robinhoodConfig": "GET /api/robinhood/agents/config",
+      "prepareRobinhoodRegistration": "POST /api/robinhood/agents/prepare-registration",
+      "discoverRobinhoodAgents": "GET /api/robinhood/agents",
+      "inspectRobinhoodAgent": "GET /api/robinhood/agents/{agentId}?chainId={chainId}",
+      "solanaHealth": "GET /api/metaplex-agents/health",
+      "mintSolanaAgent": "POST /api/metaplex-agents/mint",
+      "inspectSolanaAgent": "GET /api/metaplex-agents/fetch/{assetAddress}",
+      "solanaAgentTokenStatus": "POST /api/metaplex-agents/launch-token (production-paused; do not call)",
+      "operatorRoutes": "POST /api/metaplex-agents/register|delegate|set-token (admin only)"
+    },
+    "evm": {
+      "namespace": "eip155",
+      "standard": "ERC-8004",
+      "networks": [
+        {
+          "chainId": 46630,
+          "name": "Robinhood Chain Testnet",
+          "environment": "testnet",
+          "explorer": "https://explorer.testnet.chain.robinhood.com"
+        },
+        {
+          "chainId": 4663,
+          "name": "Robinhood Chain",
+          "environment": "mainnet",
+          "explorer": "https://robinhoodchain.blockscout.com"
+        }
+      ],
+      "capabilities": [
+        "read-only",
+        "erc-721-identity",
+        "erc-8004-register",
+        "registry-discovery",
+        "reputation-registry",
+        "validation-registry",
+        "contract-deployment"
+      ],
+      "walletRequirements": {
+        "needsSigner": true,
+        "supportedStandards": [
+          "eip-1193",
+          "walletconnect"
+        ]
+      }
+    },
+    "payment": null,
+    "agentToken": null
+  }
+}

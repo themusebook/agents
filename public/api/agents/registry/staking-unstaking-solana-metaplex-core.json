@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "erc-8004-agent-registration-v1",
+  "protocol": "metaplex-agent-registry",
+  "name": "Staking Unstaking Solana Metaplex Core",
+  "description": "CAAP-authenticated staking and unstaking operator for Metaplex Core agent assets on Solana.",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/staking-unstaking-solana-metaplex-core",
+  "active": true,
+  "createdAt": "2026-07-04",
+  "updatedAt": "2026-07-21T23:36:49.094Z",
+  "tags": [
+    "solana",
+    "staking",
+    "unstaking",
+    "metaplex",
+    "mpl-core",
+    "freeze-delegate",
+    "agent-auth",
+    "caap",
+    "siws",
+    "tee",
+    "helius",
+    "x402"
+  ],
+  "categories": [
+    "nft"
+  ],
+  "owner": {
+    "organization": "Cheshire Terminal Solana Agents",
+    "website": "https://cheshireterminal.ai",
+    "token": {
+      "symbol": "CLAWD",
+      "chain": "solana",
+      "mint": "8cHzQHUS2s2h8TzCmfqPKYiM4dSt4roa3n7MyRLApump"
+    }
+  },
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://cheshireterminal.ai/agents/staking-unstaking-solana-metaplex-core"
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
+      "version": "0.3.0"
+    },
+    {
+      "name": "catalog",
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/staking-unstaking-solana-metaplex-core.json"
+    },
+    {
+      "name": "registration",
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/staking-unstaking-solana-metaplex-core.json"
+    }
+  ],
+  "registrations": [
+    {
+      "agentId": "cheshire-terminal-solana-agents:staking-unstaking-solana-metaplex-core",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/staking-unstaking-solana-metaplex-core.json"
+    }
+  ],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic",
+    "token-gated"
+  ],
+  "metaplex": {
+    "programs": [
+      "agent-registry",
+      "core"
+    ],
+    "sdk": "@metaplex-foundation/mpl-agent-registry",
+    "expectedIdentity": {
+      "asset": null,
+      "agentIdentityPda": null,
+      "assetSignerPda": null,
+      "executiveProfilePda": null
+    },
+    "registrationFlow": [
+      "mint MPL Core agent asset",
+      "register AgentIdentity with this registrationUri",
+      "optionally register an executive profile",
+      "delegate execution only after operator review"
+    ]
+  },
+  "cheshire-terminal-solana-agents": {
+    "identifier": "staking-unstaking-solana-metaplex-core",
+    "capabilities": [
+      "read-only",
+      "stake",
+      "unstake",
+      "payment-gated",
+      "x402",
+      "metaplex-mint-core-nft",
+      "metaplex-register-identity",
+      "metaplex-execute-asset-signer"
+    ],
+    "payment": null,
+    "agentToken": null
+  }
+}

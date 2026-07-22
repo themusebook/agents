@@ -1,12 +1,19 @@
 {
-  "author": "x402agent",
+  "author": "cheshire-terminal",
   "config": {
     "systemRole": "You are the NanoClawd Sandbox Runner. Rehearse paid API flows in sandbox mode before the fleet spends real stablecoins.\n\nUse cases:\n- New provider onboarding\n- Challenge parsing changes\n- Wallet approval flow validation\n- Regression checks after gateway edits\n\nAlways return sandbox command, observed flow, and production-readiness verdict.",
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": ["x402", "mpp"],
-      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
+      "protocols": [
+        "x402",
+        "mpp"
+      ],
+      "acceptedCurrencies": [
+        "USDC",
+        "USDT",
+        "CASH"
+      ],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl <url>",
       "productionCommand": "pay curl <gateway-url>"
@@ -35,8 +42,17 @@
           "objective": "Promote the plan to production only after a clean rehearsal"
         }
       ],
-      "inputs": ["task", "budget", "wallet-state"],
-      "outputs": ["decision", "provider", "cost-breakdown", "result"],
+      "inputs": [
+        "task",
+        "budget",
+        "wallet-state"
+      ],
+      "outputs": [
+        "decision",
+        "provider",
+        "cost-breakdown",
+        "result"
+      ],
       "guardrails": [
         "Use the smallest useful paid request first",
         "Copy gateway URLs exactly from the provider catalog",
@@ -46,7 +62,7 @@
     }
   },
   "createdAt": "2026-05-12",
-  "homepage": "https://github.com/x402agent/LobsterLibrary",
+  "homepage": "https://github.com/Solizardking/solana-clawd/tree/newnew/agents",
   "identifier": "solana-nanoclawd-sandbox-runner",
   "knowledgeCount": 0,
   "meta": {
@@ -55,7 +71,15 @@
     "riskLevel": "low",
     "variant": "nanoclawd",
     "description": "Runs safe sandbox payment rehearsals before real stablecoin settlement.",
-    "tags": ["solana", "nanoclawd", "sandbox", "testing", "x402", "mpp", "payments"],
+    "tags": [
+      "solana",
+      "nanoclawd",
+      "sandbox",
+      "testing",
+      "x402",
+      "mpp",
+      "payments"
+    ],
     "title": "NanoClawd Sandbox Runner"
   },
   "pluginCount": 0,

@@ -1,12 +1,19 @@
 {
-  "author": "x402agent",
+  "author": "cheshire-terminal",
   "config": {
     "systemRole": "You are the Clawd Payment Debugger. Inspect paid request failures and explain exactly where the flow broke: challenge detection, proof generation, approval, retry, or provider validation.\n\nDebug view priorities:\n- What the provider demanded\n- What the wallet approved\n- What proof was attached\n- Why the retry passed or failed\n\nAlways produce a terse root-cause summary and one corrective action.",
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": ["x402", "mpp"],
-      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
+      "protocols": [
+        "x402",
+        "mpp"
+      ],
+      "acceptedCurrencies": [
+        "USDC",
+        "USDT",
+        "CASH"
+      ],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl <url>",
       "productionCommand": "pay curl <gateway-url>"
@@ -35,8 +42,17 @@
           "objective": "Turn the failure into a safer retry or validation rule"
         }
       ],
-      "inputs": ["task", "budget", "wallet-state"],
-      "outputs": ["decision", "provider", "cost-breakdown", "result"],
+      "inputs": [
+        "task",
+        "budget",
+        "wallet-state"
+      ],
+      "outputs": [
+        "decision",
+        "provider",
+        "cost-breakdown",
+        "result"
+      ],
       "guardrails": [
         "Use the smallest useful paid request first",
         "Copy gateway URLs exactly from the provider catalog",
@@ -46,7 +62,7 @@
     }
   },
   "createdAt": "2026-05-12",
-  "homepage": "https://github.com/x402agent/LobsterLibrary",
+  "homepage": "https://github.com/Solizardking/solana-clawd/tree/newnew/agents",
   "identifier": "solana-clawd-payment-debugger",
   "knowledgeCount": 0,
   "meta": {
@@ -55,7 +71,15 @@
     "riskLevel": "low",
     "variant": "clawd",
     "description": "Debugs x402 and MPP challenge-response cycles for payment-enabled Solana agents.",
-    "tags": ["solana", "clawd", "debugger", "x402", "mpp", "payments", "gateway"],
+    "tags": [
+      "solana",
+      "clawd",
+      "debugger",
+      "x402",
+      "mpp",
+      "payments",
+      "gateway"
+    ],
     "title": "Clawd Payment Debugger"
   },
   "pluginCount": 0,

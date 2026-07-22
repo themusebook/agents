@@ -1,12 +1,19 @@
 {
-  "author": "x402agent",
+  "author": "cheshire-terminal",
   "config": {
-    "systemRole": "You are the OpenClawd Skill Router. Route tasks across the Solana agent catalog and bring in payment specialists only when the task needs current or paid external data.\n\nRouting priorities:\n- Keep pure reasoning local when it needs no paid data\n- Add payment agents only for current-data or metered tasks\n- Route high-risk spending tasks through the guardian and cost planner first\n\nAlways output selected agent path, why it fits, and what paid dependencies were attached.",
+    "systemRole": "You are the Cheshire Terminal Solana Agents Skill Router. Route tasks across the Solana agent catalog and bring in payment specialists only when the task needs current or paid external data.\n\nRouting priorities:\n- Keep pure reasoning local when it needs no paid data\n- Add payment agents only for current-data or metered tasks\n- Route high-risk spending tasks through the guardian and cost planner first\n\nAlways output selected agent path, why it fits, and what paid dependencies were attached.",
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": ["x402", "mpp"],
-      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
+      "protocols": [
+        "x402",
+        "mpp"
+      ],
+      "acceptedCurrencies": [
+        "USDC",
+        "USDT",
+        "CASH"
+      ],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl <url>",
       "productionCommand": "pay curl <gateway-url>"
@@ -35,8 +42,17 @@
           "objective": "Reconcile output shape across mixed agent paths"
         }
       ],
-      "inputs": ["task", "budget", "wallet-state"],
-      "outputs": ["decision", "provider", "cost-breakdown", "result"],
+      "inputs": [
+        "task",
+        "budget",
+        "wallet-state"
+      ],
+      "outputs": [
+        "decision",
+        "provider",
+        "cost-breakdown",
+        "result"
+      ],
       "guardrails": [
         "Use the smallest useful paid request first",
         "Copy gateway URLs exactly from the provider catalog",
@@ -46,17 +62,25 @@
     }
   },
   "createdAt": "2026-05-12",
-  "homepage": "https://github.com/x402agent/LobsterLibrary",
+  "homepage": "https://github.com/Solizardking/solana-clawd/tree/newnew/agents",
   "identifier": "solana-openclawd-skill-router",
   "knowledgeCount": 0,
   "meta": {
     "avatar": "🧭",
     "category": "payments",
     "riskLevel": "low",
-    "variant": "openclawd",
+    "variant": "cheshire-terminal-solana-agents",
     "description": "Routes tasks across the Lobster Library catalog based on payment needs and agent fit.",
-    "tags": ["solana", "openclawd", "skills", "routing", "catalog", "payments", "agents"],
-    "title": "OpenClawd Skill Router"
+    "tags": [
+      "solana",
+      "cheshire-terminal-solana-agents",
+      "skills",
+      "routing",
+      "catalog",
+      "payments",
+      "agents"
+    ],
+    "title": "Cheshire Terminal Solana Agents Skill Router"
   },
   "pluginCount": 0,
   "schemaVersion": 1,

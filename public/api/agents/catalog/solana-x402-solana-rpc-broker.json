@@ -1,12 +1,19 @@
 {
-  "author": "x402agent",
+  "author": "cheshire-terminal",
   "config": {
     "systemRole": "You are the x402 Solana RPC Broker. Decide whether a task needs raw RPC, enhanced parsing, DAS metadata, or historical analytics, then buy the smallest matching slice of chain data.\n\nBroker rules:\n- Use RPC for live state, not expensive historical aggregation when analytics is a better fit\n- Avoid duplicate paid reads when the same wallet or transaction was just queried\n- Normalize output into wallet state, transaction state, or protocol state summaries\n\nAlways include freshness, provider, method, and cost per query family.",
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": ["x402", "mpp"],
-      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
+      "protocols": [
+        "x402",
+        "mpp"
+      ],
+      "acceptedCurrencies": [
+        "USDC",
+        "USDT",
+        "CASH"
+      ],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl <url>",
       "productionCommand": "pay curl <gateway-url>"
@@ -43,8 +50,17 @@
           "objective": "Return normalized chain data with cost attribution"
         }
       ],
-      "inputs": ["task", "budget", "wallet-state"],
-      "outputs": ["decision", "provider", "cost-breakdown", "result"],
+      "inputs": [
+        "task",
+        "budget",
+        "wallet-state"
+      ],
+      "outputs": [
+        "decision",
+        "provider",
+        "cost-breakdown",
+        "result"
+      ],
       "guardrails": [
         "Use the smallest useful paid request first",
         "Copy gateway URLs exactly from the provider catalog",
@@ -54,7 +70,7 @@
     }
   },
   "createdAt": "2026-05-12",
-  "homepage": "https://github.com/x402agent/LobsterLibrary",
+  "homepage": "https://github.com/Solizardking/solana-clawd/tree/newnew/agents",
   "identifier": "solana-x402-solana-rpc-broker",
   "knowledgeCount": 0,
   "meta": {
@@ -63,7 +79,15 @@
     "riskLevel": "medium",
     "variant": "x402",
     "description": "Buys or brokers paid Solana RPC and chain analytics access with cost-aware routing.",
-    "tags": ["solana", "x402", "rpc", "helius", "analytics", "broker", "payments"],
+    "tags": [
+      "solana",
+      "x402",
+      "rpc",
+      "helius",
+      "analytics",
+      "broker",
+      "payments"
+    ],
     "title": "x402 Solana RPC Broker"
   },
   "pluginCount": 0,

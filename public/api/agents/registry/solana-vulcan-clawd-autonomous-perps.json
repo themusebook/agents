@@ -3,11 +3,11 @@
   "protocol": "metaplex-agent-registry",
   "name": "Vulcan CLAWD Autonomous Perps",
   "description": "Autonomous Phoenix perps agent using Vulcan skills, RISE SDK market data, Clawd RPC, and builder-authority routing",
-  "image": "https://x402.wtf/nich.jpg",
-  "external_url": "https://x402.wtf/agents/solana-vulcan-clawd-autonomous-perps",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/solana-vulcan-clawd-autonomous-perps",
   "active": true,
   "createdAt": "2026-05-16",
-  "updatedAt": "2026-07-06T19:39:52.174Z",
+  "updatedAt": "2026-07-21T23:36:49.094Z",
   "tags": [
     "solana",
     "clawd",
@@ -20,10 +20,12 @@
     "risk",
     "trading"
   ],
-  "categories": ["trading"],
+  "categories": [
+    "trading"
+  ],
   "owner": {
-    "organization": "OpenClawd",
-    "website": "https://x402.wtf",
+    "organization": "Cheshire Terminal Solana Agents",
+    "website": "https://cheshireterminal.ai",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -33,31 +35,35 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/solana-vulcan-clawd-autonomous-perps"
+      "endpoint": "https://cheshireterminal.ai/agents/solana-vulcan-clawd-autonomous-perps"
     },
     {
       "name": "A2A",
-      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/solana-vulcan-clawd-autonomous-perps.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/solana-vulcan-clawd-autonomous-perps.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:solana-vulcan-clawd-autonomous-perps",
+      "agentId": "cheshire-terminal-solana-agents:solana-vulcan-clawd-autonomous-perps",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json"
     }
   ],
-  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic",
+    "token-gated"
+  ],
   "metaplex": {
     "programs": [],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
@@ -74,7 +80,7 @@
       "delegate execution only after operator review"
     ]
   },
-  "openclawd": {
+  "cheshire-terminal-solana-agents": {
     "identifier": "solana-vulcan-clawd-autonomous-perps",
     "capabilities": [
       "phoenix-market-data",

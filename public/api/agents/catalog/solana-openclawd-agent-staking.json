@@ -1,15 +1,22 @@
 {
-  "author": "openclawd",
+  "author": "cheshire-terminal-solana-agents",
   "config": {
-    "systemRole": "You are the OpenClawd Agent Staking Operator. Help users verify CLAWD token holdings and Metaplex Core agent ownership, then prepare staking or unstaking flows through the OpenClawd staking program.\n\nResponsibilities:\n- Use Helius DAS getAssetsByOwner to inspect wallet-owned CLAWD tokens and Metaplex Core agent assets\n- Explain whether the wallet holds CLAWD, agent assets, or both\n- Route users to /staking for Phantom-signed stake and unstake transactions\n- Check collection, owner, frozen state, program id, and global pool before action\n- Treat staking as a transfer-lock primitive, not a guaranteed yield product\n\nAlways return wallet status, matching agent assets, staking state, and the next safest action.",
+    "systemRole": "You are the Cheshire Terminal Solana Agents Agent Staking Operator. Help users verify CLAWD token holdings and Metaplex Core agent ownership, then prepare staking or unstaking flows through the Cheshire Terminal Solana Agents staking program.\n\nResponsibilities:\n- Use Helius DAS getAssetsByOwner to inspect wallet-owned CLAWD tokens and Metaplex Core agent assets\n- Explain whether the wallet holds CLAWD, agent assets, or both\n- Route users to /staking for Phantom-signed stake and unstake transactions\n- Check collection, owner, frozen state, program id, and global pool before action\n- Treat staking as a transfer-lock primitive, not a guaranteed yield product\n\nAlways return wallet status, matching agent assets, staking state, and the next safest action.",
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": ["x402", "mpp"],
-      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
+      "protocols": [
+        "x402",
+        "mpp"
+      ],
+      "acceptedCurrencies": [
+        "USDC",
+        "USDT",
+        "CASH"
+      ],
       "approvalMode": "biometric",
-      "sandboxCommand": "pay --sandbox curl https://x402.wtf/api/staking/config",
-      "productionCommand": "pay curl https://x402.wtf/api/staking/config"
+      "sandboxCommand": "pay --sandbox curl https://cheshireterminal.ai/api/staking/config",
+      "productionCommand": "pay curl https://cheshireterminal.ai/api/staking/config"
     },
     "providers": [
       {
@@ -20,8 +27,8 @@
         "typicalCostUsd": 0.001
       },
       {
-        "fqn": "openclawd-gateway",
-        "label": "OpenClawd Gateway",
+        "fqn": "cheshire-terminal-solana-agents-gateway",
+        "label": "Cheshire Terminal Solana Agents Gateway",
         "purpose": "Staking config, portfolio scan, and unsigned transaction preparation",
         "pricingModel": "free"
       }
@@ -42,8 +49,18 @@
           "objective": "Use /api/staking/transaction for unsigned stake or unstake transactions"
         }
       ],
-      "inputs": ["wallet", "agent asset", "collection", "action"],
-      "outputs": ["holding status", "staking state", "transaction plan", "confirmation signature"],
+      "inputs": [
+        "wallet",
+        "agent asset",
+        "collection",
+        "action"
+      ],
+      "outputs": [
+        "holding status",
+        "staking state",
+        "transaction plan",
+        "confirmation signature"
+      ],
       "guardrails": [
         "Never claim rewards are active unless the staking API reports them",
         "Require wallet ownership before normal stake",
@@ -53,18 +70,18 @@
     }
   },
   "createdAt": "2026-06-08",
-  "homepage": "https://x402.wtf/staking",
+  "homepage": "https://cheshireterminal.ai/staking",
   "identifier": "solana-openclawd-agent-staking",
   "knowledgeCount": 0,
   "meta": {
     "avatar": "S",
     "category": "nft",
     "riskLevel": "high",
-    "variant": "openclawd",
+    "variant": "cheshire-terminal-solana-agents",
     "description": "Helius DAS powered CLAWD and Metaplex Core agent staking and unstaking operator.",
     "tags": [
       "solana",
-      "openclawd",
+      "cheshire-terminal-solana-agents",
       "clawd",
       "staking",
       "unstaking",
@@ -75,7 +92,7 @@
       "agent-registry",
       "x402"
     ],
-    "title": "OpenClawd Agent Staking Operator"
+    "title": "Cheshire Terminal Solana Agents Agent Staking Operator"
   },
   "pluginCount": 0,
   "schemaVersion": 1,
@@ -89,7 +106,10 @@
       "agent-unstake",
       "x402-gateway-routing"
     ],
-    "metaplexSkills": ["agent-registry", "core"]
+    "metaplexSkills": [
+      "agent-registry",
+      "core"
+    ]
   },
   "tokenUsage": 0
 }

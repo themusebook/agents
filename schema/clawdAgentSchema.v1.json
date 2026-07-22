@@ -1,0 +1,417 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://cheshireterminal.ai/schemas/clawdAgentSchema.v1.json",
+  "title": "Cheshire Terminal Agent Definition",
+  "description": "Schema for agents published in the Cheshire Terminal hub (cheshireterminal.ai/agents). Extends the upstream Sperax v1 schema with Solana-native metadata and optional EVM agent identity capabilities.",
+  "type": "object",
+  "required": [
+    "author",
+    "config",
+    "identifier",
+    "meta",
+    "schemaVersion"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "author": {
+      "type": "string",
+      "description": "GitHub handle, Solana pubkey, or organizational name that owns the agent."
+    },
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]{0,63}$",
+      "description": "URL-safe unique identifier. Used as filename and in API routes."
+    },
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "Currently fixed at 1."
+    },
+    "createdAt": {
+      "type": "string",
+      "description": "ISO date or timestamp when the agent was first published."
+    },
+    "homepage": {
+      "type": "string",
+      "format": "uri"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Long-form description used by search/indexing layers."
+    },
+    "knowledgeCount": {
+      "type": "number",
+      "minimum": 0
+    },
+    "pluginCount": {
+      "type": "number",
+      "minimum": 0
+    },
+    "tokenUsage": {
+      "type": "number",
+      "minimum": 0,
+      "description": "Expected average tokens consumed per response (used for cost hints)."
+    },
+    "oneShot": {
+      "type": "boolean",
+      "default": false,
+      "description": "When true, the agent is surfaced in the one-click deploy rail on /agents. Should be a fully self-contained, tested, Solana-native configuration."
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false,
+      "description": "When true, appears in the featured row on the hub homepage."
+    },
+    "meta": {
+      "type": "object",
+      "required": ["title", "description", "avatar", "tags"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string", "maxLength": 300 },
+        "avatar": {
+          "type": "string",
+          "description": "Emoji, URL, or data URI representing the agent."
+        },
+        "backgroundColor": { "type": "string" },
+        "category": {
+          "type": "string",
+          "enum": [
+            "defi",
+            "trading",
+            "nft",
+            "analytics",
+            "security",
+            "dev-tools",
+            "education",
+            "governance"
+          ]
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "maxItems": 12
+        }
+      }
+    },
+    "config": {
+      "type": "object",
+      "required": ["systemRole"],
+      "additionalProperties": false,
+      "properties": {
+        "systemRole": {
+          "type": "string",
+          "description": "Core system prompt that defines the agent's behavior."
+        },
+        "model": {
+          "type": "string",
+          "description": "OpenRouter-compatible model id. Defaults to Sonnet if unset."
+        },
+        "displayMode": { "type": "string", "enum": ["chat", "docs"] },
+        "openingMessage": { "type": "string" },
+        "openingQuestions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "maxItems": 8
+        },
+        "inputTemplate": { "type": "string" },
+        "historyCount": { "type": "number", "minimum": 0 },
+        "enableHistoryCount": { "type": "boolean" },
+        "compressThreshold": { "type": "number" },
+        "enableCompressThreshold": { "type": "boolean" },
+        "enableMaxTokens": { "type": "boolean" },
+        "params": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "temperature": { "type": "number", "default": 0.3 },
+            "top_p": { "type": "number", "default": 0.9 },
+            "frequency_penalty": { "type": "number", "default": 0 },
+            "presence_penalty": { "type": "number", "default": 0 },
+            "max_tokens": { "type": "number" }
+          }
+        },
+        "plugins": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "fewShots": { "$ref": "#/definitions/messageList" },
+        "knowledgeBases": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/knowledgeBase" }
+        }
+      }
+    },
+    "examples": { "$ref": "#/definitions/messageList" },
+    "solana": {
+      "type": "object",
+      "description": "Solana-native capability metadata consumed by the Clawd hub.",
+      "additionalProperties": false,
+      "properties": {
+        "rpcRequirements": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "das-api",
+              "jito-bundle-relay",
+              "helius-webhooks",
+              "websocket",
+              "archive-access"
+            ]
+          }
+        },
+        "programDeps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "programId"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "type": "string" },
+              "programId": { "type": "string", "minLength": 32, "maxLength": 44 },
+              "cluster": {
+                "type": "string",
+                "enum": ["mainnet-beta", "devnet", "testnet"],
+                "default": "mainnet-beta"
+              },
+              "auditStatus": { "type": "string" }
+            }
+          }
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "read-only",
+              "swap-execution",
+              "lending-deposit",
+              "lending-withdraw",
+              "stake",
+              "unstake",
+              "nft-mint",
+              "nft-transfer",
+              "governance-vote",
+              "payment-gated",
+              "x402",
+              "a2a-message",
+              "metaplex-mint-agent",
+              "metaplex-register-identity",
+              "metaplex-launch-token-genesis",
+              "metaplex-launch-bonding-curve",
+              "metaplex-mint-core-nft",
+              "metaplex-mint-cnft",
+              "metaplex-deploy-candy-machine",
+              "metaplex-create-agent-token",
+              "metaplex-execute-asset-signer",
+              "metaplex-token-metadata"
+            ]
+          }
+        },
+        "metaplexSkills": {
+          "type": "array",
+          "description": "Which Metaplex programs this agent can operate. Consumed by /agents to render Metaplex capability badges and by the runtime to scope delegated asset-signer permissions.",
+          "items": {
+            "type": "string",
+            "enum": [
+              "agent-registry",
+              "genesis",
+              "core",
+              "token-metadata",
+              "bubblegum",
+              "candy-machine"
+            ]
+          }
+        },
+        "walletRequirements": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "needsSigner": { "type": "boolean", "default": false },
+            "minBalanceLamports": { "type": "number", "minimum": 0 },
+            "supportedStandards": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["wallet-standard", "phantom", "solflare", "backpack", "privy"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "evm": {
+      "type": "object",
+      "description": "EVM capability metadata for chain-aware agents. Contract addresses must be discovered from a trusted runtime configuration endpoint rather than embedded here unless deployed and verified.",
+      "required": ["namespace", "standard", "networks", "capabilities"],
+      "additionalProperties": false,
+      "properties": {
+        "namespace": {
+          "type": "string",
+          "const": "eip155"
+        },
+        "standard": {
+          "type": "string",
+          "enum": ["ERC-8004"]
+        },
+        "networks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["chainId", "name", "environment", "explorer"],
+            "additionalProperties": false,
+            "properties": {
+              "chainId": {
+                "type": "integer",
+                "enum": [4663, 46630]
+              },
+              "name": { "type": "string" },
+              "environment": {
+                "type": "string",
+                "enum": ["mainnet", "testnet"]
+              },
+              "explorer": {
+                "type": "string",
+                "format": "uri"
+              }
+            }
+          }
+        },
+        "capabilities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "read-only",
+              "erc-721-identity",
+              "erc-8004-register",
+              "registry-discovery",
+              "reputation-registry",
+              "validation-registry",
+              "contract-deployment"
+            ]
+          }
+        },
+        "walletRequirements": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "needsSigner": { "type": "boolean", "default": false },
+            "supportedStandards": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["eip-1193", "walletconnect"]
+              }
+            }
+          }
+        }
+      }
+    },
+    "onchain": {
+      "type": "object",
+      "description": "MPL Core on-chain identity once the agent has been minted via /agents/mint.",
+      "additionalProperties": false,
+      "properties": {
+        "assetAddress": {
+          "type": "string",
+          "description": "MPL Core asset pubkey (base58, 32–44 chars)."
+        },
+        "collection": { "type": "string" },
+        "updateAuthority": { "type": "string" },
+        "cluster": {
+          "type": "string",
+          "enum": ["mainnet-beta", "devnet", "testnet"]
+        },
+        "mintedAt": { "type": "string", "format": "date-time" }
+      }
+    },
+    "payment": {
+      "type": "object",
+      "description": "Optional payment gate for paid agents (x402 or Pump.fun agent payments).",
+      "required": ["currency", "amount", "decimals"],
+      "additionalProperties": false,
+      "properties": {
+        "provider": {
+          "type": "string",
+          "enum": ["x402", "pump-fun", "solana-pay"]
+        },
+        "currency": { "type": "string" },
+        "currencyMint": { "type": "string" },
+        "amount": {
+          "type": "string",
+          "description": "Raw amount as string (to avoid JS number precision loss for lamports/atomics)."
+        },
+        "decimals": { "type": "number", "minimum": 0, "maximum": 18 },
+        "displayAmount": { "type": "string" },
+        "receiver": { "type": "string" }
+      }
+    },
+    "agentToken": {
+      "type": "string",
+      "description": "SPL mint address that represents the agent (optional — required for tokenized agents, e.g. Pump.fun-launched agents)."
+    },
+    "a2a": {
+      "type": "string",
+      "format": "uri",
+      "description": "Agent-to-Agent endpoint (JSON-RPC over HTTP) for this agent, if externally hosted."
+    },
+    "endpoints": {
+      "type": "object",
+      "description": "Optional map of domain-specific endpoints (invoice creation, payment verification, etc.). Keys are endpoint names, values are 'METHOD /path' strings.",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^(GET|POST|PUT|DELETE|PATCH)\\s+\\S+$"
+      }
+    },
+    "deploy": {
+      "type": "object",
+      "description": "URL handles for the Clawd hub deploy flow. Generated by build-catalog.cjs — usually omitted in source files.",
+      "additionalProperties": false,
+      "properties": {
+        "json": { "type": "string" },
+        "chat": { "type": "string" },
+        "mint": { "type": "string" },
+        "mcp": { "type": "string" },
+        "fork": { "type": "string" }
+      }
+    }
+  },
+  "definitions": {
+    "messageList": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["content", "role"],
+        "additionalProperties": false,
+        "properties": {
+          "content": { "type": "string" },
+          "role": {
+            "type": "string",
+            "enum": ["user", "system", "assistant", "function", "tool"]
+          }
+        }
+      }
+    },
+    "knowledgeBase": {
+      "type": "object",
+      "required": ["id", "name"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": ["string", "null"] },
+        "type": { "type": ["string", "null"] },
+        "avatar": { "type": ["string", "null"] },
+        "enabled": { "type": "boolean", "default": true },
+        "isPublic": { "type": ["boolean", "null"] },
+        "settings": {},
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

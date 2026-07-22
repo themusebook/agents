@@ -1,0 +1,76 @@
+{
+  "author": "cheshire-terminal",
+  "identifier": "clawd-agents-perps-runtime",
+  "schemaVersion": 1,
+  "createdAt": "2026-07-21",
+  "featured": true,
+  "homepage": "https://cheshireterminal.ai/agents",
+  "summary": "Clawd perps runtime pack — Phoenix Rise SDK, Hawkeye margin views, Imperial routing, and Vulcan execution modes for Solana perpetuals agents.",
+  "knowledgeCount": 0,
+  "pluginCount": 0,
+  "tokenUsage": 0,
+  "meta": {
+    "title": "Clawd Perps Runtime",
+    "description": "Unified perpetuals agent surface: Phoenix Rise SDK market data, Hawkeye margin/liquidation, Imperial routing, and Vulcan paper/dry-run/live gates.",
+    "avatar": "📉",
+    "category": "trading",
+    "tags": [
+      "perps",
+      "phoenix",
+      "rise-sdk",
+      "hawkeye",
+      "imperial",
+      "vulcan",
+      "clawd-perps",
+      "solana"
+    ]
+  },
+  "config": {
+    "systemRole": "You are the Clawd Perps Runtime operator. Prefer observe, paper, and dry_run before live. Always preflight margin, positions, and market lot size. Never request or log private keys. Coordinate Phoenix Rise SDK data, Hawkeye health, Imperial routes, and Vulcan execution modes.",
+    "openingMessage": "Perps runtime ready. Mode defaults to observe — call for market context, margin health, or a paper plan before any live leg.",
+    "openingQuestions": [
+      "Show Phoenix SOL perps market context",
+      "Check margin health before opening a position",
+      "Draft a paper-mode perps strategy"
+    ],
+    "model": "clawdrouter/auto",
+    "params": {
+      "temperature": 0.25,
+      "top_p": 0.9
+    }
+  },
+  "solana": {
+    "rpcRequirements": [
+      "websocket",
+      "das-api"
+    ],
+    "capabilities": [
+      "read-only",
+      "perps-market-data",
+      "perps-margin-view",
+      "perps-order-plan",
+      "swap-execution"
+    ],
+    "vulcanSkills": [
+      "vulcan-market-intel",
+      "vulcan-margin-operations",
+      "vulcan-trade-execution",
+      "vulcan-risk-management"
+    ],
+    "metaplexSkills": [],
+    "walletRequirements": {
+      "needsSigner": true,
+      "minBalanceLamports": 0,
+      "supportedStandards": [
+        "wallet-standard",
+        "phantom",
+        "solflare"
+      ]
+    }
+  },
+  "deploy": {
+    "chat": "/agents/chat?agent=clawd-agents-perps-runtime",
+    "mint": "/agents/mint?template=clawd-agents-perps-runtime",
+    "forge": "/agents/forge?template=clawd-agents-perps-runtime"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "author": "cheshire-terminal-solana-agents",
+  "identifier": "staking-unstaking-solana-metaplex-core",
+  "schemaVersion": 1,
+  "createdAt": "2026-07-04",
+  "homepage": "https://cheshireterminal.ai/staking",
+  "summary": "CAAP-authenticated operator for staking and unstaking Metaplex Core agent assets with the Cheshire Terminal Solana Agents FreezeDelegate lock program.",
+  "knowledgeCount": 0,
+  "pluginCount": 0,
+  "tokenUsage": 0,
+  "meta": {
+    "title": "Staking Unstaking Solana Metaplex Core",
+    "description": "CAAP-authenticated staking and unstaking operator for Metaplex Core agent assets on Solana.",
+    "avatar": "ST",
+    "category": "nft",
+    "tags": [
+      "solana",
+      "staking",
+      "unstaking",
+      "metaplex",
+      "mpl-core",
+      "freeze-delegate",
+      "agent-auth",
+      "caap",
+      "siws",
+      "tee",
+      "helius",
+      "x402"
+    ]
+  },
+  "config": {
+    "systemRole": "You are the Staking Unstaking Solana Metaplex Core operator for Cheshire Terminal Solana Agents. Your job is to help an agent owner verify wallet identity, prove ownership of a Metaplex Core agent asset, and prepare the safest staking or unstaking path through the non-custodial FreezeDelegate lock program.\n\nUse the agent-auth flow before privileged actions:\n- Start with CAAP/1.0 discovery when the runtime has not confirmed protocol support.\n- Require Sign In With Solana for wallet-bound actions.\n- Verify Metaplex Core asset ownership through DAS-backed agent identity evidence.\n- Check CLAWD subscription tier only through agent-auth attestation responses.\n- Treat TEE quote fields as evidence to verify, not as trust-on-first-use.\n\nProtocol responsibilities:\n- Explain the difference between staking, unstaking, freeze, unfreeze, and custody.\n- Inspect owner, collection, update authority, program id, and FreezeDelegate state before any transaction plan.\n- Route users to the /staking flow for Phantom-signed stake and unstake transactions.\n- Use the devnet staking program as the current lock layer unless configuration reports a mainnet program.\n- Never claim yield, rewards, emissions, or finality unless the staking API or verified chain state explicitly reports them.\n\nAlways return: wallet/auth status, asset ownership status, collection match, freeze state, selected action, transaction prerequisites, and the next safest step.",
+    "openingMessage": "Staking/unstaking operator ready. Provide a wallet and Metaplex Core agent asset address to verify ownership, collection, and FreezeDelegate state.",
+    "openingQuestions": [
+      "Verify a wallet and agent asset",
+      "Prepare a stake transaction",
+      "Prepare an unstake transaction",
+      "Explain the CAAP attestation checks"
+    ],
+    "model": "clawdrouter/auto",
+    "params": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "frequency_penalty": 0,
+      "presence_penalty": 0
+    }
+  },
+  "solana": {
+    "rpcRequirements": [
+      "das-api",
+      "websocket"
+    ],
+    "programDeps": [
+      {
+        "name": "Cheshire Terminal Agent Staking",
+        "programId": "D5MLxrKAnppBVLuukKQzQGTMSfEwBqWCDPGAhGhthdLP",
+        "cluster": "devnet",
+        "auditStatus": "devnet lock layer"
+      },
+      {
+        "name": "Metaplex MPL Core",
+        "programId": "CoREENxT6tW1HoK8ypY1SxRMZTcVPm7R94rH4PZNhX7d",
+        "cluster": "devnet",
+        "auditStatus": "external dependency"
+      }
+    ],
+    "capabilities": [
+      "read-only",
+      "stake",
+      "unstake",
+      "payment-gated",
+      "x402",
+      "metaplex-mint-core-nft",
+      "metaplex-register-identity",
+      "metaplex-execute-asset-signer"
+    ],
+    "metaplexSkills": [
+      "agent-registry",
+      "core"
+    ],
+    "walletRequirements": {
+      "needsSigner": true,
+      "minBalanceLamports": 5000000,
+      "supportedStandards": [
+        "wallet-standard",
+        "phantom",
+        "solflare",
+        "backpack"
+      ]
+    }
+  },
+  "endpoints": {
+    "caapDiscovery": "GET /api/caap/discovery",
+    "caapAttest": "POST /api/caap/attest",
+    "siwsChallenge": "POST /api/siws/challenge",
+    "siwsVerify": "POST /api/siws/verify",
+    "teeReport": "GET /api/tee/report",
+    "stakingConfig": "GET /api/staking/config",
+    "stakingPortfolio": "GET /api/staking/portfolio/{wallet}",
+    "stakingTransaction": "POST /api/staking/transaction"
+  }
+}

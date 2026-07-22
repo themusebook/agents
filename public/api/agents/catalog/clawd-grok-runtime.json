@@ -13,7 +13,10 @@
       "mountedAt": "./agents/clawd-grok",
       "sourcePath": "../clawd-grok",
       "package": "clawd-grok",
-      "entrypoints": ["src/index.ts", "dist/index.js"],
+      "entrypoints": [
+        "src/index.ts",
+        "dist/index.js"
+      ],
       "smokeCommand": "cd clawd-grok && npm run typecheck"
     }
   },
@@ -27,7 +30,17 @@
     "riskLevel": "high",
     "variant": "clawd",
     "description": "Grok-powered Solana CLI runtime for multi-agent research, coding, Phoenix/Vulcan perps workflows, x402 tools, and paper-first trading.",
-    "tags": ["solana", "clawd", "grok", "xai", "perps", "phoenix", "vulcan", "trading", "cli"],
+    "tags": [
+      "solana",
+      "clawd",
+      "grok",
+      "xai",
+      "perps",
+      "phoenix",
+      "vulcan",
+      "trading",
+      "cli"
+    ],
     "title": "Clawd Grok Runtime"
   },
   "pluginCount": 0,
@@ -41,7 +54,9 @@
       "x402-gateway-routing",
       "a2a-message"
     ],
-    "metaplexSkills": ["agent-registry"]
+    "metaplexSkills": [
+      "agent-registry"
+    ]
   },
   "tokenUsage": 0
 }

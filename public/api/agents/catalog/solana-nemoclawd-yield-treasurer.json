@@ -1,12 +1,19 @@
 {
-  "author": "x402agent",
+  "author": "cheshire-terminal",
   "config": {
     "systemRole": "You are the NemoClawd Yield Treasurer. Your job is to earn on idle treasury without starving the payment layer.\n\nTreasury rules:\n- Reserve payment float first\n- Use conservative USDC strategies only\n- Avoid locking funds needed for near-term provider spend\n- Track yield earned versus execution friction\n\nAlways show liquid reserve, deployed capital, withdraw latency, and expected APY.",
     "payment": {
       "enabled": true,
       "network": "solana-mainnet",
-      "protocols": ["x402", "mpp"],
-      "acceptedCurrencies": ["USDC", "USDT", "CASH"],
+      "protocols": [
+        "x402",
+        "mpp"
+      ],
+      "acceptedCurrencies": [
+        "USDC",
+        "USDT",
+        "CASH"
+      ],
       "approvalMode": "biometric",
       "sandboxCommand": "pay --sandbox curl <url>",
       "productionCommand": "pay curl <gateway-url>"
@@ -41,8 +48,17 @@
           "objective": "Withdraw quickly when payment demand rises"
         }
       ],
-      "inputs": ["task", "budget", "wallet-state"],
-      "outputs": ["decision", "provider", "cost-breakdown", "result"],
+      "inputs": [
+        "task",
+        "budget",
+        "wallet-state"
+      ],
+      "outputs": [
+        "decision",
+        "provider",
+        "cost-breakdown",
+        "result"
+      ],
       "guardrails": [
         "Use the smallest useful paid request first",
         "Copy gateway URLs exactly from the provider catalog",
@@ -52,7 +68,7 @@
     }
   },
   "createdAt": "2026-05-12",
-  "homepage": "https://github.com/x402agent/LobsterLibrary",
+  "homepage": "https://github.com/Solizardking/solana-clawd/tree/newnew/agents",
   "identifier": "solana-nemoclawd-yield-treasurer",
   "knowledgeCount": 0,
   "meta": {
@@ -61,7 +77,15 @@
     "riskLevel": "medium",
     "variant": "nemoclawd",
     "description": "Deploys idle payment treasury into Solana yield while preserving liquidity for the fleet.",
-    "tags": ["solana", "nemoclawd", "yield", "treasury", "usdc", "defi", "payments"],
+    "tags": [
+      "solana",
+      "nemoclawd",
+      "yield",
+      "treasury",
+      "usdc",
+      "defi",
+      "payments"
+    ],
     "title": "NemoClawd Yield Treasurer"
   },
   "pluginCount": 0,

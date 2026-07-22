@@ -3,16 +3,26 @@
   "protocol": "metaplex-agent-registry",
   "name": "Solana Kamino Vault Picker",
   "description": "Pick the right Kamino lending, Multiply, or Liquidity vault with net APY, liquidation math, and risk breakdown",
-  "image": "https://x402.wtf/nich.jpg",
-  "external_url": "https://x402.wtf/agents/solana-kamino-picker",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/solana-kamino-picker",
   "active": true,
   "createdAt": "2026-04-16",
-  "updatedAt": "2026-07-06T19:39:52.174Z",
-  "tags": ["solana", "kamino", "lending", "yield", "defi", "one-shot", "clawd"],
-  "categories": ["defi"],
+  "updatedAt": "2026-07-21T23:36:49.094Z",
+  "tags": [
+    "solana",
+    "kamino",
+    "lending",
+    "yield",
+    "defi",
+    "one-shot",
+    "clawd"
+  ],
+  "categories": [
+    "defi"
+  ],
   "owner": {
-    "organization": "OpenClawd",
-    "website": "https://x402.wtf",
+    "organization": "Cheshire Terminal Solana Agents",
+    "website": "https://cheshireterminal.ai",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -22,33 +32,39 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/solana-kamino-picker"
+      "endpoint": "https://cheshireterminal.ai/agents/solana-kamino-picker"
     },
     {
       "name": "A2A",
-      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/solana-kamino-picker.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/solana-kamino-picker.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/solana-kamino-picker.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/solana-kamino-picker.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:solana-kamino-picker",
+      "agentId": "cheshire-terminal-solana-agents:solana-kamino-picker",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/solana-kamino-picker.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/solana-kamino-picker.json"
     }
   ],
-  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic",
+    "token-gated"
+  ],
   "metaplex": {
-    "programs": ["agent-registry"],
+    "programs": [
+      "agent-registry"
+    ],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,
@@ -63,7 +79,7 @@
       "delegate execution only after operator review"
     ]
   },
-  "openclawd": {
+  "cheshire-terminal-solana-agents": {
     "identifier": "solana-kamino-picker",
     "capabilities": [
       "lending-deposit",

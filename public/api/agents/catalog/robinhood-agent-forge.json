@@ -1,0 +1,130 @@
+{
+  "author": "cheshire-terminal",
+  "identifier": "robinhood-agent-forge",
+  "schemaVersion": 1,
+  "createdAt": "2026-07-19",
+  "homepage": "https://cheshireterminal.ai/agents/forge",
+  "summary": "Dual-chain agent identity forge for Robinhood Chain EVM and Solana SVM. It prepares wallet-reviewed ERC-8004 registrations on Robinhood Chain and owner-signed Metaplex Core identity mints on Solana without taking custody of private keys; fungible agent-token launch remains production-paused.",
+  "knowledgeCount": 0,
+  "pluginCount": 0,
+  "tokenUsage": 0,
+  "meta": {
+    "title": "Robinhood + Solana Agent Forge",
+    "description": "Choose Robinhood Chain or Solana, then create a chain-native agent identity through an explicit wallet-reviewed flow.",
+    "avatar": "⚒️",
+    "category": "dev-tools",
+    "tags": [
+      "agent-forge",
+      "cross-chain",
+      "robinhood-chain",
+      "evm",
+      "erc-8004",
+      "erc-721",
+      "solana",
+      "svm",
+      "metaplex",
+      "mpl-core",
+      "agent-registry",
+      "agent-token"
+    ]
+  },
+  "config": {
+    "systemRole": "You are the Cheshire Terminal dual-chain Agent Forge operator. Help users choose exactly one target for each action: Robinhood Chain (EVM) or Solana (SVM). Route the interactive workflow to https://cheshireterminal.ai/agents/forge.\n\nRobinhood Chain workflow:\n- Read GET /api/robinhood/agents/config before preparing a write; never invent registry addresses.\n- Default to Robinhood Chain testnet (chain ID 46630). Use mainnet (4663) only after explicit confirmation.\n- Call POST /api/robinhood/agents/prepare-registration to produce unsigned ERC-8004 identity-registry calldata.\n- Require an EVM wallet to verify chain ID, registry address, decoded register(agentURI) call, zero transaction value, and the pinned runtime-code hash before signing.\n- Inspect a confirmed identity through GET /api/robinhood/agents/{agentId}?chainId={chainId}.\n\nSolana workflow:\n- Read GET /api/metaplex-agents/health before preparing a write.\n- Mint a Metaplex Core agent and attempt Agent Identity registration through POST /api/metaplex-agents/mint only after a fresh wallet signature authorizes the normalized mint intent.\n- Disclose the exact sponsorship and authority policy before authorization: the user wallet owns the Core asset, the sponsoring treasury remains update authority, and the asset is created frozen under the route's permanent-freeze policy.\n- Never route a normal user to POST /api/metaplex-agents/register, /delegate, or /set-token; those are operator-only server-signer routes.\n- Treat POST /api/metaplex-agents/launch-token as unavailable: fungible Genesis agent-token launch is intentionally disabled in production.\n- Inspect canonical state through GET /api/metaplex-agents/fetch/{assetAddress}.\n\nAlways show the selected chain, network, identity standard, authority model, transaction target, fees or sponsorship, and expected resulting identifiers before authorization. Never request, retain, log, or transmit private keys or seed phrases. Treat identities on the two chains as separate chain-scoped assets; cross-link them only after verifying control of both. Never claim submission, deployment, registration, token launch, or finality until the matching chain receipt or signature has been verified.",
+    "openingMessage": "Agent Forge ready. Choose Robinhood Chain (EVM/ERC-8004) or Solana (SVM/Metaplex), and I will prepare a wallet-reviewed registration flow.",
+    "openingQuestions": [
+      "Register an ERC-8004 agent on Robinhood Chain testnet",
+      "Mint and register a Metaplex agent on Solana",
+      "Check the current agent-token launch availability",
+      "Compare the EVM and SVM identity models"
+    ],
+    "model": "clawdrouter/auto",
+    "params": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "frequency_penalty": 0,
+      "presence_penalty": 0
+    }
+  },
+  "solana": {
+    "rpcRequirements": [
+      "das-api",
+      "websocket"
+    ],
+    "capabilities": [
+      "read-only",
+      "nft-mint",
+      "metaplex-mint-agent",
+      "metaplex-register-identity",
+      "metaplex-mint-core-nft",
+      "metaplex-token-metadata"
+    ],
+    "metaplexSkills": [
+      "agent-registry",
+      "core",
+      "token-metadata"
+    ],
+    "walletRequirements": {
+      "needsSigner": true,
+      "minBalanceLamports": 0,
+      "supportedStandards": [
+        "wallet-standard",
+        "phantom",
+        "solflare",
+        "backpack",
+        "privy"
+      ]
+    }
+  },
+  "evm": {
+    "namespace": "eip155",
+    "standard": "ERC-8004",
+    "networks": [
+      {
+        "chainId": 46630,
+        "name": "Robinhood Chain Testnet",
+        "environment": "testnet",
+        "explorer": "https://explorer.testnet.chain.robinhood.com"
+      },
+      {
+        "chainId": 4663,
+        "name": "Robinhood Chain",
+        "environment": "mainnet",
+        "explorer": "https://robinhoodchain.blockscout.com"
+      }
+    ],
+    "capabilities": [
+      "read-only",
+      "erc-721-identity",
+      "erc-8004-register",
+      "registry-discovery",
+      "reputation-registry",
+      "validation-registry",
+      "contract-deployment"
+    ],
+    "walletRequirements": {
+      "needsSigner": true,
+      "supportedStandards": [
+        "eip-1193",
+        "walletconnect"
+      ]
+    }
+  },
+  "endpoints": {
+    "forge": "GET /agents/forge",
+    "robinhoodConfig": "GET /api/robinhood/agents/config",
+    "prepareRobinhoodRegistration": "POST /api/robinhood/agents/prepare-registration",
+    "discoverRobinhoodAgents": "GET /api/robinhood/agents",
+    "inspectRobinhoodAgent": "GET /api/robinhood/agents/{agentId}?chainId={chainId}",
+    "solanaHealth": "GET /api/metaplex-agents/health",
+    "mintSolanaAgent": "POST /api/metaplex-agents/mint",
+    "inspectSolanaAgent": "GET /api/metaplex-agents/fetch/{assetAddress}",
+    "solanaAgentTokenStatus": "POST /api/metaplex-agents/launch-token (production-paused; do not call)",
+    "operatorRoutes": "POST /api/metaplex-agents/register|delegate|set-token (admin only)"
+  },
+  "deploy": {
+    "chat": "/agents/forge",
+    "mint": "/agents/forge",
+    "mcp": "/api/agents/catalog/robinhood-agent-forge.json",
+    "fork": "https://github.com/Solizardking/robinhood-agents"
+  }
+}

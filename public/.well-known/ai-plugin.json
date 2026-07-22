@@ -1,44 +1,44 @@
 {
   "schema_version": "v1",
-  "name_for_human": "OpenClawd Agents",
-  "name_for_model": "openclawd_agents",
-  "description_for_human": "OpenClawd Solana-native agent registry with catalog JSON, ACP discovery, x402 gateway routing, skill discovery, Telegram gateway hooks, and Metaplex Agent Registry documents.",
-  "description_for_model": "Use OpenClawd Agents to discover Solana-native agents and skills on x402.wtf. Canonical surfaces include https://x402.wtf/agents, https://x402.wtf/skills, https://x402.wtf/gateway, and https://x402.wtf/telegram.",
+  "name_for_human": "Cheshire Terminal Solana Agents",
+  "name_for_model": "cheshire_terminal_solana_agents",
+  "description_for_human": "Cheshire Terminal Solana Agents Solana-native agent registry with catalog JSON, ACP discovery, x402 gateway routing, skill discovery, Telegram gateway hooks, and Metaplex Agent Registry documents.",
+  "description_for_model": "Use Cheshire Terminal Solana Agents to discover Solana-native agents and skills on cheshireterminal.ai. Canonical surfaces include https://cheshireterminal.ai/agents, https://cheshireterminal.ai/skills, https://cheshireterminal.ai/gateway, and https://cheshireterminal.ai/telegram.",
   "auth": {
     "type": "none"
   },
   "api": {
     "type": "none",
-    "url": "https://x402.wtf/api/agents"
+    "url": "https://cheshireterminal.ai/api/clawd/browser-agents"
   },
-  "logo_url": "https://x402.wtf/nich.jpg",
-  "contact_email": "operators@x402.wtf",
-  "legal_info_url": "https://github.com/openclawd/solana-clawd/blob/main/agents/LICENSE",
+  "logo_url": "https://cheshireterminal.ai/nich.jpg",
+  "contact_email": "operators@cheshireterminal.ai",
+  "legal_info_url": "https://github.com/cheshire-terminal-solana-agents/solana-clawd/blob/main/agents/LICENSE",
   "agent_registry": {
-    "hub": "https://x402.wtf/agents",
-    "catalog": "https://x402.wtf/api/agents/catalog",
-    "registry": "https://x402.wtf/api/agents/registry",
-    "templates": "https://x402.wtf/api/agents/templates",
-    "acp": "https://x402.wtf/api/agents/acp-registry.json"
+    "hub": "https://cheshireterminal.ai/agents",
+    "catalog": "https://cheshireterminal.ai/api/clawd/browser-agents/catalog",
+    "registry": "https://cheshireterminal.ai/api/clawd/browser-agents/registry",
+    "templates": "https://cheshireterminal.ai/api/clawd/browser-agents/templates",
+    "acp": "https://cheshireterminal.ai/api/clawd/browser-agents/acp-registry.json"
   },
   "skill_registry": {
-    "hub": "https://x402.wtf/skills",
-    "catalog": "https://x402.wtf/api/skills/catalog",
-    "list": "https://x402.wtf/api/skills"
+    "hub": "https://cheshireterminal.ai/skills",
+    "catalog": "https://cheshireterminal.ai/api/skills/catalog",
+    "list": "https://cheshireterminal.ai/api/skills"
   },
   "gateway": {
-    "hub": "https://x402.wtf/gateway",
-    "health": "https://x402.wtf/health",
-    "telegram_webhook": "https://x402.wtf/telegram/webhook"
+    "hub": "https://cheshireterminal.ai/gateway",
+    "health": "https://cheshireterminal.ai/health",
+    "telegram_webhook": "https://cheshireterminal.ai/telegram/webhook"
   },
   "staking": {
-    "hub": "https://x402.wtf/staking",
-    "config": "https://x402.wtf/api/staking/config",
-    "portfolio": "https://x402.wtf/api/staking/portfolio/{owner}",
-    "assets": "https://x402.wtf/api/staking/assets/{owner}",
-    "asset": "https://x402.wtf/api/staking/agent/{assetId}",
-    "batch": "https://x402.wtf/api/staking/agents/batch",
-    "transaction": "https://x402.wtf/api/staking/transaction",
+    "hub": "https://cheshireterminal.ai/staking",
+    "config": "https://cheshireterminal.ai/api/staking/config",
+    "portfolio": "https://cheshireterminal.ai/api/staking/portfolio/{owner}",
+    "assets": "https://cheshireterminal.ai/api/staking/assets/{owner}",
+    "asset": "https://cheshireterminal.ai/api/staking/agent/{assetId}",
+    "batch": "https://cheshireterminal.ai/api/staking/agents/batch",
+    "transaction": "https://cheshireterminal.ai/api/staking/transaction",
     "das_methods": ["getAssetsByOwner", "getAsset", "getAssetBatch"]
   }
 }

@@ -2,28 +2,27 @@
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
   "name": "DeFi Portfolio Rebalancing Advisor",
-  "description": "Optimize portfolio allocation and rebalancing strategies",
-  "image": "https://x402.wtf/nich.jpg",
-  "external_url": "https://x402.wtf/agents/portfolio-rebalancing-advisor",
+  "description": "Cheshire Terminal agent: Optimize portfolio allocation and rebalancing strategies",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/portfolio-rebalancing-advisor",
   "active": true,
-  "createdAt": "2026-04-16",
-  "updatedAt": "2026-07-06T19:39:52.174Z",
+  "createdAt": "2024-12-16",
+  "updatedAt": "2026-07-21T23:36:49.094Z",
   "tags": [
     "portfolio",
     "rebalancing",
     "allocation",
     "strategy",
     "optimization",
-    "clawd",
-    "solana",
-    "rebalance",
-    "analytics",
-    "one-shot"
+    "cheshire-terminal",
+    "defi"
   ],
-  "categories": ["analytics"],
+  "categories": [
+    "trading"
+  ],
   "owner": {
-    "organization": "OpenClawd",
-    "website": "https://x402.wtf",
+    "organization": "Cheshire Terminal Solana Agents",
+    "website": "https://cheshireterminal.ai",
     "token": {
       "symbol": "CLAWD",
       "chain": "solana",
@@ -33,33 +32,37 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://x402.wtf/agents/portfolio-rebalancing-advisor"
+      "endpoint": "https://cheshireterminal.ai/agents/portfolio-rebalancing-advisor"
     },
     {
       "name": "A2A",
-      "endpoint": "https://x402.wtf/api/agents/a2a",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
       "version": "0.3.0"
     },
     {
       "name": "catalog",
-      "endpoint": "https://x402.wtf/api/agents/catalog/portfolio-rebalancing-advisor.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/portfolio-rebalancing-advisor.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://x402.wtf/api/agents/registry/portfolio-rebalancing-advisor.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/portfolio-rebalancing-advisor.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:portfolio-rebalancing-advisor",
+      "agentId": "cheshire-terminal-solana-agents:portfolio-rebalancing-advisor",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://x402.wtf/api/agents/registry/portfolio-rebalancing-advisor.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/portfolio-rebalancing-advisor.json"
     }
   ],
-  "supportedTrust": ["reputation", "crypto-economic", "token-gated"],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic",
+    "token-gated"
+  ],
   "metaplex": {
-    "programs": ["agent-registry"],
+    "programs": [],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,
@@ -74,9 +77,9 @@
       "delegate execution only after operator review"
     ]
   },
-  "openclawd": {
+  "cheshire-terminal-solana-agents": {
     "identifier": "portfolio-rebalancing-advisor",
-    "capabilities": ["swap-execution", "read-only", "a2a-message"],
+    "capabilities": [],
     "payment": null,
     "agentToken": null
   }
