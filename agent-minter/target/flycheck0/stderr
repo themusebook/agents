@@ -1,0 +1,105 @@
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+   3.121647792s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint: fingerprint error for agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter)/Check { test: false }/TargetInner { ..: lib_target("agent_minter", ["cdylib", "lib"], "/Users/8bit/agents/agents/agent-minter/src/lib.rs", Edition2021) }
+   3.121670083s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/agent-minter-dbbe8bad93b00d8d/lib-agent_minter`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   3.258559667s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint: fingerprint error for solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle)/Check { test: false }/TargetInner { ..: lib_target("solana_gpt_oracle", ["cdylib", "lib"], "/Users/8bit/agents/agents/solana-gpt-oracle/src/lib.rs", Edition2021) }
+   3.258572625s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/solana-gpt-oracle-8249f7000d97cf64/lib-solana_gpt_oracle`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   3.259185583s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint: fingerprint error for ephemeral-rollups-sdk v0.2.4/Check { test: false }/TargetInner { ..: lib_target("ephemeral_rollups_sdk", ["lib"], "/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ephemeral-rollups-sdk-0.2.4/src/lib.rs", Edition2021) }
+   3.259190042s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/ephemeral-rollups-sdk-9dfadd3db768a1d8/lib-ephemeral_rollups_sdk`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: cargo::core::compiler::compile
+   7: cargo::core::compiler::compile
+   8: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   9: cargo::ops::cargo_compile::compile_ws
+  10: cargo::ops::cargo_compile::compile_with_exec
+  11: cargo::ops::cargo_compile::compile
+  12: cargo::commands::check::exec
+  13: <cargo::cli::Exec>::exec
+  14: cargo::main
+  15: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  16: std::rt::lang_start::<()>::{closure#0}
+  17: std::rt::lang_start_internal
+  18: _main
+   3.293522792s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint: fingerprint error for agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter)/Check { test: true }/TargetInner { ..: lib_target("agent_minter", ["cdylib", "lib"], "/Users/8bit/agents/agents/agent-minter/src/lib.rs", Edition2021) }
+   3.293536917s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/agent-minter-08ab9f088097f21b/test-lib-agent_minter`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: cargo_util::paths::read_bytes
+   2: cargo_util::paths::read
+   3: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   4: cargo::core::compiler::fingerprint::prepare_target
+   5: cargo::core::compiler::compile
+   6: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   7: cargo::ops::cargo_compile::compile_ws
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+    Checking ephemeral-rollups-sdk v0.2.4
+error: could not compile `ephemeral-rollups-sdk` (lib) due to 13 previous errors
