@@ -362,6 +362,12 @@ function build() {
       { id: 'governance', label: 'Governance', icon: '🗳️' },
       { id: 'research', label: 'Research', icon: '🔎' },
       { id: 'infrastructure', label: 'Infrastructure', icon: '🏗️' },
+      { id: 'crypto', label: 'Crypto', icon: '🪙' },
+      { id: 'platform', label: 'Platform', icon: '🎯' },
+      { id: 'programming', label: 'Programming', icon: '💻' },
+      { id: 'tools', label: 'Tools', icon: '🔧' },
+      { id: 'voice-council', label: 'Voice Council', icon: '🎙️' },
+      { id: 'community', label: 'Community', icon: '👥' },
     ],
     deployPaths: [
       {

@@ -1,7 +1,7 @@
 {
   "schemaVersion": "openclawd.acp.registry.v1",
   "protocol": "Agent Commerce Protocol",
-  "generatedAt": "2026-07-22T16:27:24.881Z",
+  "generatedAt": "2026-07-22T16:28:19.624Z",
   "host": "https://cheshireterminal.ai",
   "discover": {
     "catalog": "https://cheshireterminal.ai/api/agents/catalog",
