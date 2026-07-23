@@ -55,6 +55,13 @@ async function runDesign(argv) {
   process.exit(code ?? 0);
 }
 
+async function runSkills(argv) {
+  const modPath = path.join(ROOT, 'robinhood-src', 'skillHub.js');
+  const { runSkillsCli } = await import(pathToFileURL(modPath).href);
+  const code = await runSkillsCli(argv, ROOT);
+  process.exit(code ?? 0);
+}
+
 const COMMANDS = {
   version: () => {
     showBoot();
@@ -84,17 +91,8 @@ const COMMANDS = {
     console.log(JSON.stringify(reg, null, 2));
   },
 
-  skills: () => {
-    const skillsDir = path.join(ROOT, 'skills');
-    if (!fs.existsSync(skillsDir)) {
-      console.log('No skills directory found.');
-      return;
-    }
-    const dirs = fs.readdirSync(skillsDir).filter((d) =>
-      fs.statSync(path.join(skillsDir, d)).isDirectory()
-    );
-    console.log(JSON.stringify({ count: dirs.length, skills: dirs }, null, 2));
-  },
+  // legacy local suite listing moved under: ct-agents skills packs
+  // full Skill Hub: ct-agents skills list|search|install
 
   schema: () => {
     const schemaPath = path.join(ROOT, 'schema', 'clawdAgentSchema.v1.json');
@@ -128,6 +126,9 @@ const COMMANDS = {
   design: (argv) => runDesign(argv),
   forge: (argv) => runDesign(argv),
   tui: (argv) => runDesign(argv),
+
+  // skills — Skill Hub picker (remote catalog; no install bloat)
+  skills: (argv) => runSkills(argv),
 
   serve: () => {
     const port = parseInt(process.argv[3] || process.env.PORT || '3000', 10);
@@ -195,26 +196,31 @@ ${BOLD}Usage:${RESET}
   ${CYAN}npx cheshire-terminal-agents${RESET}              Open design TUI (default)
   ${CYAN}npx cheshire-terminal-agents design${RESET}       Template-driven agent forge TUI
   ${CYAN}npx cheshire-terminal-agents design --list${RESET} List forkable templates
-  ${CYAN}npx cheshire-terminal-agents design --from <id> --id <new> --out ./agent.json${RESET}
-  ${CYAN}npx cheshire-terminal-agents forge${RESET}        Alias for design
+  ${CYAN}npx cheshire-terminal-agents design --from <id> --id <new> --skills metaplex-agent --out ./agent.json${RESET}
+  ${CYAN}npx cheshire-terminal-agents forge${RESET}        Alias for design (oneshot OK)
+  ${CYAN}npx cheshire-terminal-agents skills${RESET}       Skill Hub picker (remote, no bloat)
+  ${CYAN}npx cheshire-terminal-agents skills search vulcan${RESET}
+  ${CYAN}npx cheshire-terminal-agents skills install metaplex-agent${RESET}
   ${CYAN}npx cheshire-terminal-agents serve${RESET}        Start the API server
   ${CYAN}npx cheshire-terminal-agents catalog${RESET}      Print agent catalog stats
   ${CYAN}npx cheshire-terminal-agents templates${RESET}    List scaffold templates
   ${CYAN}npx cheshire-terminal-agents registry${RESET}     Print registry index
-  ${CYAN}npx cheshire-terminal-agents skills${RESET}       List deployable skills
   ${CYAN}npx cheshire-terminal-agents schema${RESET}       Show agent schema info
   ${CYAN}npx cheshire-terminal-agents --help${RESET}       Show this help
 
 ${BOLD}Install globally:${RESET}
   ${YELLOW}npm i -g cheshire-terminal-agents${RESET}
   ${YELLOW}ct-agents design${RESET}          ${DIM}# interactive template forge${RESET}
-  ${YELLOW}ct-agents design --from defi-yield-farmer --id my-yield --out ./my-yield.json${RESET}
+  ${YELLOW}ct-agents design --from defi-yield-farmer --id my-yield --skills cheshire-core --out ./my-yield.json${RESET}
+  ${YELLOW}ct-agents skills install metaplex-agent${RESET}  ${DIM}# download only that skill${RESET}
 
 ${BOLD}Design flow:${RESET}
   1. Pick a catalog agent, character, or blank scaffold as a template
   2. Customize identifier / title / systemRole / tags
-  3. Validate against ${MAGENTA}clawdAgentSchema.v1${RESET}
-  4. Write a local agent JSON you own
+  3. Optionally attach Skill Hub skills (refs only — 595 skills stay remote)
+  4. Validate against ${MAGENTA}clawdAgentSchema.v1${RESET}
+  5. Write a local agent JSON you own
+  6. Optional: ${CYAN}--install-skills${RESET} pulls only selected skills into ./.agents/skills
 
 ${BOLD}Endpoints:${RESET}
   ${MAGENTA}https://cheshireterminal.ai/agents${RESET}          Agent hub
@@ -238,6 +244,8 @@ if (!cmd) {
   }
 } else if (cmd === 'design' || cmd === 'forge' || cmd === 'tui') {
   await runDesign(args.slice(1));
+} else if (cmd === 'skills') {
+  await runSkills(args.slice(1));
 } else if (COMMANDS[cmd]) {
   const result = COMMANDS[cmd](args.slice(1));
   if (result && typeof result.then === 'function') await result;

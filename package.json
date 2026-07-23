@@ -44,12 +44,15 @@
     "./templates/*": "./templates/*",
     "./schema/*": "./schema/*.json",
     "./skills": "./skills/suite-index.json",
+    "./skillhub": "./skills/skillhub-index.json",
+    "./skill-hub": "./robinhood-src/skillHub.js",
     "./package.json": "./package.json"
   },
   "scripts": {
     "build": "node build-catalog.cjs && node scripts/validate-catalog.cjs && echo '✓ catalog built'",
     "validate": "node scripts/validate-catalog.cjs",
-    "test": "node scripts/validate-catalog.cjs && node scripts/smoke-readme-npm.cjs && node bin/ct-agents.js design --list --json > /dev/null",
+    "test": "node scripts/validate-catalog.cjs && node scripts/smoke-readme-npm.cjs && node bin/ct-agents.js design --list --json > /dev/null && node bin/ct-agents.js skills packs --json > /dev/null",
+    "skills": "node bin/ct-agents.js skills",
     "smoke:readme": "node scripts/smoke-readme-npm.cjs",
     "catalog": "node -e \"import('./agents-catalog.json').then(c => { const s=c.stats||c; console.log(JSON.stringify({agents:s.totalAgents,oneShots:s.totalOneShots,featured:s.totalFeatured,templates:s.totalTemplates,categories:Object.keys(s.byCategory||{}).length},null,2)) })\"",
     "start": "node bin/ct-agents.js design",

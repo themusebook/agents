@@ -88,9 +88,31 @@ ct-agents design --from defi-yield-farmer --id my-yield-bot --out ./agents/my-yi
 # blank scaffold
 ct-agents design --blank --id research-bot --title "Research Bot" --out ./research-bot.json
 
+# oneshot forge + choose Skill Hub skills (refs only — no bloat)
+ct-agents design --from blank --id forge-bot \
+  --skills metaplex-agent,cheshire-core \
+  --out ./forge-bot.json
+
+# same, and download ONLY those skills into ./.agents/skills
+ct-agents design --from blank --id forge-bot \
+  --skills metaplex-agent,trading \
+  --install-skills \
+  --out ./forge-bot.json
+
+# Skill Hub browser (595 skills stay remote)
+ct-agents skills packs
+ct-agents skills search vulcan
+ct-agents skills install metaplex-agent          # sparse fetch of one skill
+ct-agents skills attach ./forge-bot.json trading # add refs to existing agent
+
 # validate a definition
 ct-agents design --validate ./agents/my-yield-bot.json
 ```
+
+**Skills without install bloat:** the 595 Skill Hub playbooks live at
+[Solizardking/skillhub-main](https://github.com/Solizardking/skillhub-main).
+This package only ships a tiny `skills/skillhub-index.json` pointer + curated packs.
+Full catalog is fetched on demand; installs pull **only** the slugs you select.
 
 | Source | Path | Role |
 |--------|------|------|

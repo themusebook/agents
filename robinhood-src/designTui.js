@@ -1042,8 +1042,8 @@ export async function runDesignTui(argv = process.argv.slice(2), root = ROOT) {
     return result.ok ? 0 : 1;
   }
 
-  // Non-interactive fork / blank
-  if (args.blank || args.from || args.id || args.out) {
+  // Non-interactive / oneshot forge
+  if (args.blank || args.from || args.id || args.out || args.skills) {
     let agent;
     if (args.blank || !args.from) {
       agent = blankAgent({
@@ -1072,6 +1072,30 @@ export async function runDesignTui(argv = process.argv.slice(2), root = ROOT) {
     if (args.author) agent.author = args.author;
     if (args.category) agent.meta.category = args.category;
 
+    const skillTokens = parseSkillList(args.skills);
+    let installed = null;
+    if (skillTokens.length) {
+      try {
+        const applied = await applySkillsToAgent(agent, skillTokens, {
+          root,
+          install: Boolean(args.installSkills),
+          viaCli: Boolean(args.viaSkillhubCli),
+          targetDir: args.skillsTarget,
+        });
+        agent = applied.agent;
+        installed = applied.installed;
+        if (!args.json && applied.picked?.length) {
+          console.log(
+            `${GREEN}skills${RESET} ${applied.picked.map((s) => s.slug).join(', ')}` +
+              (args.installSkills ? ' (installed sparse)' : ' (refs only — no bloat)')
+          );
+        }
+      } catch (err) {
+        console.error(`${RED}${err.message}${RESET}`);
+        return 1;
+      }
+    }
+
     const result = validateAgent(agent, path.join(root, 'schema', 'clawdAgentSchema.v1.json'));
     if (!result.ok) {
       console.error(`${RED}Generated agent failed validation:${RESET}`);
@@ -1082,10 +1106,18 @@ export async function runDesignTui(argv = process.argv.slice(2), root = ROOT) {
     const out = path.resolve(args.out || defaultOutPath(agent.identifier));
     writeAgentFile(agent, out);
     if (args.json) {
-      console.log(JSON.stringify({ ok: true, path: out, agent }, null, 2));
+      console.log(JSON.stringify({ ok: true, path: out, agent, installed }, null, 2));
     } else {
       console.log(`${GREEN}✓ wrote${RESET} ${out}`);
       console.log(`  template: ${args.from || 'blank'} → ${agent.identifier}`);
+      if (agent.skills?.length) {
+        console.log(`  skills:   ${agent.skills.map((s) => s.slug || s.name).join(', ')}`);
+        if (!args.installSkills) {
+          console.log(
+            `  install:  ct-agents skills install ${agent.skills.map((s) => s.slug || s.name).join(' ')}`
+          );
+        }
+      }
       console.log(`  validate: ct-agents design --validate ${out}`);
     }
     return 0;

@@ -491,7 +491,40 @@ Manual UI:
 
 ---
 
-## 11. Contact / ownership hints
+## 11. Skill selection without install bloat (2026-07-23)
+
+**Problem:** Skill Hub has **595** skills ([skillhub-main](https://github.com/Solizardking/skillhub-main)). Vendoring them in `cheshire-terminal-agents` would explode the npm install.
+
+**Solution shipped in the package:**
+
+| Layer | What ships | Size intent |
+|-------|------------|-------------|
+| `skills/skillhub-index.json` | Hub URLs + curated packs + featured slugs | ~2KB |
+| `robinhood-src/skillHub.js` | Remote catalog fetch + sparse install | code only |
+| Agent `skills[]` field | **References** (slug, install cmd, hub) | bytes per skill |
+| Optional `--install-skills` | Fetch **only** selected `SKILL.md` into `./.agents/skills` | user opt-in |
+
+**CLI:**
+
+```bash
+ct-agents skills packs
+ct-agents skills search vulcan
+ct-agents skills install metaplex-agent          # sparse
+ct-agents design --from blank --id bot --skills cheshire-core,metaplex-agent --out ./bot.json
+ct-agents design --skills trading --install-skills --id bot --out ./bot.json
+```
+
+**Web integration (monorepo):**
+
+1. Builder skill picker should call the same remote catalog URL (or proxy `GET /api/skills` from skillhub public API) — never bundle skill bodies in the SPA bundle.
+2. On deploy, store `skills[]` refs on the user-agent record; install to runtime skill root only when the operator enables skills.
+3. Prefer sparse raw GitHub fetch or `npx github:Solizardking/skills install <slugs>` over cloning the whole hub.
+
+Schema: `clawdAgentSchema.v1` now allows optional `skills[]` objects (`name`, `slug`, `source`, `install`, `path`, …).
+
+---
+
+## 12. Contact / ownership hints
 
 - **Hub SPA UX:** `client/src/pages/AgentsHubPage.tsx`, `AgentBuilderPage.tsx`
 - **Catalog build:** `agents/build-catalog.cjs`, validate scripts
