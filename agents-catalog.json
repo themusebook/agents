@@ -1,7 +1,7 @@
 {
   "$schema": "https://cheshireterminal.ai/schema/clawdAgentCatalog.v1.json",
   "apiVersion": "1.0",
-  "generatedAt": "2026-07-22T20:00:02.064Z",
+  "generatedAt": "2026-07-23T22:08:45.423Z",
   "hub": {
     "gallery": "https://cheshireterminal.ai/agents",
     "mint": "https://cheshireterminal.ai/agents/mint",
@@ -12,25 +12,26 @@
     "totalAgents": 137,
     "totalOneShots": 1,
     "totalFeatured": 5,
-    "totalTemplates": 0,
+    "totalTemplates": 4,
     "byCategory": {
-      "defi": 64,
-      "trading": 13,
+      "defi": 62,
+      "trading": 14,
       "security": 6,
       "infrastructure": 5,
-      "platform": 4,
+      "platform": 3,
       "dev-tools": 3,
       "payments": 25,
       "nft": 2,
-      "voice-council": 3,
-      "crypto": 2,
-      "tools": 4,
+      "character": 6,
+      "crypto": 3,
+      "voice-council": 2,
+      "tools": 1,
       "programming": 1,
       "research": 1,
-      "governance": 2,
+      "governance": 1,
       "education": 2
     },
-    "metaplexEnabledAgents": 19,
+    "metaplexEnabledAgents": 18,
     "tradingCapableAgents": 3,
     "launchCapableAgents": 0,
     "mintCapableAgents": 4
@@ -84,8 +85,8 @@
       }
     ],
     "coverage": {
-      "agent-registry": 19,
-      "core": 8,
+      "agent-registry": 18,
+      "core": 7,
       "token-metadata": 2,
       "genesis": 1,
       "bubblegum": 1,
@@ -213,6 +214,11 @@
       "id": "community",
       "label": "Community",
       "icon": "👥"
+    },
+    {
+      "id": "character",
+      "label": "Character",
+      "icon": "🎭"
     }
   ],
   "deployPaths": [
@@ -287,7 +293,8 @@
         "chat": "/agents/chat?agent=solana-pumpfun-bot",
         "mint": "/agents/mint?template=solana-pumpfun-bot",
         "mcp": "/api/agents/catalog/solana-pumpfun-bot.json",
-        "registration": "/api/agents/registry/solana-pumpfun-bot.json"
+        "registration": "/api/agents/registry/solana-pumpfun-bot.json",
+        "fork": "ct-agents design --from solana-pumpfun-bot"
       }
     }
   ],
@@ -334,7 +341,8 @@
         "chat": "/agents/chat?agent=clawd-agents-perps-runtime",
         "mint": "/agents/mint?template=clawd-agents-perps-runtime",
         "mcp": "/api/agents/catalog/clawd-agents-perps-runtime.json",
-        "registration": "/api/agents/registry/clawd-agents-perps-runtime.json"
+        "registration": "/api/agents/registry/clawd-agents-perps-runtime.json",
+        "fork": "ct-agents design --from clawd-agents-perps-runtime"
       }
     },
     {
@@ -376,7 +384,8 @@
         "chat": "/agents/chat?agent=clawd-livekit-voice",
         "mint": "/agents/mint?template=clawd-livekit-voice",
         "mcp": "/api/agents/catalog/clawd-livekit-voice.json",
-        "registration": "/api/agents/registry/clawd-livekit-voice.json"
+        "registration": "/api/agents/registry/clawd-livekit-voice.json",
+        "fork": "ct-agents design --from clawd-livekit-voice"
       }
     },
     {
@@ -423,7 +432,8 @@
         "chat": "/agents/chat?agent=mechaplex-mech-builder",
         "mint": "/agents/mint?template=mechaplex-mech-builder",
         "mcp": "/api/agents/catalog/mechaplex-mech-builder.json",
-        "registration": "/api/agents/registry/mechaplex-mech-builder.json"
+        "registration": "/api/agents/registry/mechaplex-mech-builder.json",
+        "fork": "ct-agents design --from mechaplex-mech-builder"
       }
     },
     {
@@ -475,7 +485,8 @@
         "chat": "/agents/chat?agent=solana-pumpfun-bot",
         "mint": "/agents/mint?template=solana-pumpfun-bot",
         "mcp": "/api/agents/catalog/solana-pumpfun-bot.json",
-        "registration": "/api/agents/registry/solana-pumpfun-bot.json"
+        "registration": "/api/agents/registry/solana-pumpfun-bot.json",
+        "fork": "ct-agents design --from solana-pumpfun-bot"
       }
     },
     {
@@ -527,7 +538,8 @@
         "chat": "/agents/chat?agent=solana-vulcan-clawd-autonomous-perps",
         "mint": "/agents/mint?template=solana-vulcan-clawd-autonomous-perps",
         "mcp": "/api/agents/catalog/solana-vulcan-clawd-autonomous-perps.json",
-        "registration": "/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json"
+        "registration": "/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json",
+        "fork": "ct-agents design --from solana-vulcan-clawd-autonomous-perps"
       }
     }
   ],
@@ -566,7 +578,8 @@
         "chat": "/agents/chat?agent=cheshire-terminal",
         "mint": "/agents/mint?template=cheshire-terminal",
         "mcp": "/api/agents/catalog/cheshire-terminal.json",
-        "registration": "/api/agents/registry/cheshire-terminal.json"
+        "registration": "/api/agents/registry/cheshire-terminal.json",
+        "fork": "ct-agents design --from cheshire-terminal"
       }
     },
     {
@@ -611,7 +624,8 @@
         "chat": "/agents/chat?agent=clawd-agents-perps-runtime",
         "mint": "/agents/mint?template=clawd-agents-perps-runtime",
         "mcp": "/api/agents/catalog/clawd-agents-perps-runtime.json",
-        "registration": "/api/agents/registry/clawd-agents-perps-runtime.json"
+        "registration": "/api/agents/registry/clawd-agents-perps-runtime.json",
+        "fork": "ct-agents design --from clawd-agents-perps-runtime"
       }
     },
     {
@@ -661,7 +675,8 @@
         "chat": "/agents/chat?agent=clawd-formal-verification",
         "mint": "/agents/mint?template=clawd-formal-verification",
         "mcp": "/api/agents/catalog/clawd-formal-verification.json",
-        "registration": "/api/agents/registry/clawd-formal-verification.json"
+        "registration": "/api/agents/registry/clawd-formal-verification.json",
+        "fork": "ct-agents design --from clawd-formal-verification"
       }
     },
     {
@@ -723,7 +738,8 @@
         "chat": "/agents/chat?agent=clawd-gateway-runtime",
         "mint": "/agents/mint?template=clawd-gateway-runtime",
         "mcp": "/api/agents/catalog/clawd-gateway-runtime.json",
-        "registration": "/api/agents/registry/clawd-gateway-runtime.json"
+        "registration": "/api/agents/registry/clawd-gateway-runtime.json",
+        "fork": "ct-agents design --from clawd-gateway-runtime"
       }
     },
     {
@@ -773,7 +789,8 @@
         "chat": "/agents/chat?agent=clawd-grok-runtime",
         "mint": "/agents/mint?template=clawd-grok-runtime",
         "mcp": "/api/agents/catalog/clawd-grok-runtime.json",
-        "registration": "/api/agents/registry/clawd-grok-runtime.json"
+        "registration": "/api/agents/registry/clawd-grok-runtime.json",
+        "fork": "ct-agents design --from clawd-grok-runtime"
       }
     },
     {
@@ -815,7 +832,8 @@
         "chat": "/agents/chat?agent=clawd-livekit-voice",
         "mint": "/agents/mint?template=clawd-livekit-voice",
         "mcp": "/api/agents/catalog/clawd-livekit-voice.json",
-        "registration": "/api/agents/registry/clawd-livekit-voice.json"
+        "registration": "/api/agents/registry/clawd-livekit-voice.json",
+        "fork": "ct-agents design --from clawd-livekit-voice"
       }
     },
     {
@@ -863,7 +881,8 @@
         "chat": "/agents/chat?agent=clawd-operator-runtime",
         "mint": "/agents/mint?template=clawd-operator-runtime",
         "mcp": "/api/agents/catalog/clawd-operator-runtime.json",
-        "registration": "/api/agents/registry/clawd-operator-runtime.json"
+        "registration": "/api/agents/registry/clawd-operator-runtime.json",
+        "fork": "ct-agents design --from clawd-operator-runtime"
       }
     },
     {
@@ -912,7 +931,8 @@
         "chat": "/agents/chat?agent=clawd-pump-runtime",
         "mint": "/agents/mint?template=clawd-pump-runtime",
         "mcp": "/api/agents/catalog/clawd-pump-runtime.json",
-        "registration": "/api/agents/registry/clawd-pump-runtime.json"
+        "registration": "/api/agents/registry/clawd-pump-runtime.json",
+        "fork": "ct-agents design --from clawd-pump-runtime"
       }
     },
     {
@@ -972,7 +992,8 @@
         "chat": "/agents/chat?agent=clawd-router-runtime",
         "mint": "/agents/mint?template=clawd-router-runtime",
         "mcp": "/api/agents/catalog/clawd-router-runtime.json",
-        "registration": "/api/agents/registry/clawd-router-runtime.json"
+        "registration": "/api/agents/registry/clawd-router-runtime.json",
+        "fork": "ct-agents design --from clawd-router-runtime"
       }
     },
     {
@@ -1007,7 +1028,8 @@
         "chat": "/agents/chat?agent=clawdex",
         "mint": "/agents/mint?template=clawdex",
         "mcp": "/api/agents/catalog/clawdex.json",
-        "registration": "/api/agents/registry/clawdex.json"
+        "registration": "/api/agents/registry/clawdex.json",
+        "fork": "ct-agents design --from clawdex"
       }
     },
     {
@@ -1054,7 +1076,8 @@
         "chat": "/agents/chat?agent=mechaplex-mech-builder",
         "mint": "/agents/mint?template=mechaplex-mech-builder",
         "mcp": "/api/agents/catalog/mechaplex-mech-builder.json",
-        "registration": "/api/agents/registry/mechaplex-mech-builder.json"
+        "registration": "/api/agents/registry/mechaplex-mech-builder.json",
+        "fork": "ct-agents design --from mechaplex-mech-builder"
       }
     },
     {
@@ -1109,7 +1132,8 @@
         "chat": "/agents/chat?agent=robinhood-agent-forge",
         "mint": "/agents/mint?template=robinhood-agent-forge",
         "mcp": "/api/agents/catalog/robinhood-agent-forge.json",
-        "registration": "/api/agents/registry/robinhood-agent-forge.json"
+        "registration": "/api/agents/registry/robinhood-agent-forge.json",
+        "fork": "ct-agents design --from robinhood-agent-forge"
       }
     },
     {
@@ -1141,7 +1165,8 @@
         "chat": "/agents/chat?agent=solana-agent-orchestrator",
         "mint": "/agents/mint?template=solana-agent-orchestrator",
         "mcp": "/api/agents/catalog/solana-agent-orchestrator.json",
-        "registration": "/api/agents/registry/solana-agent-orchestrator.json"
+        "registration": "/api/agents/registry/solana-agent-orchestrator.json",
+        "fork": "ct-agents design --from solana-agent-orchestrator"
       }
     },
     {
@@ -1173,7 +1198,8 @@
         "chat": "/agents/chat?agent=solana-airdrop-farmer",
         "mint": "/agents/mint?template=solana-airdrop-farmer",
         "mcp": "/api/agents/catalog/solana-airdrop-farmer.json",
-        "registration": "/api/agents/registry/solana-airdrop-farmer.json"
+        "registration": "/api/agents/registry/solana-airdrop-farmer.json",
+        "fork": "ct-agents design --from solana-airdrop-farmer"
       }
     },
     {
@@ -1205,7 +1231,8 @@
         "chat": "/agents/chat?agent=solana-alpha-aggregator",
         "mint": "/agents/mint?template=solana-alpha-aggregator",
         "mcp": "/api/agents/catalog/solana-alpha-aggregator.json",
-        "registration": "/api/agents/registry/solana-alpha-aggregator.json"
+        "registration": "/api/agents/registry/solana-alpha-aggregator.json",
+        "fork": "ct-agents design --from solana-alpha-aggregator"
       }
     },
     {
@@ -1237,7 +1264,8 @@
         "chat": "/agents/chat?agent=solana-anchor-developer",
         "mint": "/agents/mint?template=solana-anchor-developer",
         "mcp": "/api/agents/catalog/solana-anchor-developer.json",
-        "registration": "/api/agents/registry/solana-anchor-developer.json"
+        "registration": "/api/agents/registry/solana-anchor-developer.json",
+        "fork": "ct-agents design --from solana-anchor-developer"
       }
     },
     {
@@ -1268,7 +1296,8 @@
         "chat": "/agents/chat?agent=solana-anomaly-detector",
         "mint": "/agents/mint?template=solana-anomaly-detector",
         "mcp": "/api/agents/catalog/solana-anomaly-detector.json",
-        "registration": "/api/agents/registry/solana-anomaly-detector.json"
+        "registration": "/api/agents/registry/solana-anomaly-detector.json",
+        "fork": "ct-agents design --from solana-anomaly-detector"
       }
     },
     {
@@ -1299,7 +1328,8 @@
         "chat": "/agents/chat?agent=solana-arbitrage-scanner",
         "mint": "/agents/mint?template=solana-arbitrage-scanner",
         "mcp": "/api/agents/catalog/solana-arbitrage-scanner.json",
-        "registration": "/api/agents/registry/solana-arbitrage-scanner.json"
+        "registration": "/api/agents/registry/solana-arbitrage-scanner.json",
+        "fork": "ct-agents design --from solana-arbitrage-scanner"
       }
     },
     {
@@ -1331,7 +1361,8 @@
         "chat": "/agents/chat?agent=solana-autonomous-trader",
         "mint": "/agents/mint?template=solana-autonomous-trader",
         "mcp": "/api/agents/catalog/solana-autonomous-trader.json",
-        "registration": "/api/agents/registry/solana-autonomous-trader.json"
+        "registration": "/api/agents/registry/solana-autonomous-trader.json",
+        "fork": "ct-agents design --from solana-autonomous-trader"
       }
     },
     {
@@ -1362,7 +1393,8 @@
         "chat": "/agents/chat?agent=solana-bot-architect",
         "mint": "/agents/mint?template=solana-bot-architect",
         "mcp": "/api/agents/catalog/solana-bot-architect.json",
-        "registration": "/api/agents/registry/solana-bot-architect.json"
+        "registration": "/api/agents/registry/solana-bot-architect.json",
+        "fork": "ct-agents design --from solana-bot-architect"
       }
     },
     {
@@ -1393,7 +1425,8 @@
         "chat": "/agents/chat?agent=solana-chart-pattern-ai",
         "mint": "/agents/mint?template=solana-chart-pattern-ai",
         "mcp": "/api/agents/catalog/solana-chart-pattern-ai.json",
-        "registration": "/api/agents/registry/solana-chart-pattern-ai.json"
+        "registration": "/api/agents/registry/solana-chart-pattern-ai.json",
+        "fork": "ct-agents design --from solana-chart-pattern-ai"
       }
     },
     {
@@ -1427,7 +1460,8 @@
         "chat": "/agents/chat?agent=solana-clawd-cost-planner",
         "mint": "/agents/mint?template=solana-clawd-cost-planner",
         "mcp": "/api/agents/catalog/solana-clawd-cost-planner.json",
-        "registration": "/api/agents/registry/solana-clawd-cost-planner.json"
+        "registration": "/api/agents/registry/solana-clawd-cost-planner.json",
+        "fork": "ct-agents design --from solana-clawd-cost-planner"
       }
     },
     {
@@ -1462,7 +1496,8 @@
         "chat": "/agents/chat?agent=solana-clawd-mail-concierge",
         "mint": "/agents/mint?template=solana-clawd-mail-concierge",
         "mcp": "/api/agents/catalog/solana-clawd-mail-concierge.json",
-        "registration": "/api/agents/registry/solana-clawd-mail-concierge.json"
+        "registration": "/api/agents/registry/solana-clawd-mail-concierge.json",
+        "fork": "ct-agents design --from solana-clawd-mail-concierge"
       }
     },
     {
@@ -1496,7 +1531,8 @@
         "chat": "/agents/chat?agent=solana-clawd-payment-debugger",
         "mint": "/agents/mint?template=solana-clawd-payment-debugger",
         "mcp": "/api/agents/catalog/solana-clawd-payment-debugger.json",
-        "registration": "/api/agents/registry/solana-clawd-payment-debugger.json"
+        "registration": "/api/agents/registry/solana-clawd-payment-debugger.json",
+        "fork": "ct-agents design --from solana-clawd-payment-debugger"
       }
     },
     {
@@ -1530,7 +1566,8 @@
         "chat": "/agents/chat?agent=solana-clawd-payment-gateway",
         "mint": "/agents/mint?template=solana-clawd-payment-gateway",
         "mcp": "/api/agents/catalog/solana-clawd-payment-gateway.json",
-        "registration": "/api/agents/registry/solana-clawd-payment-gateway.json"
+        "registration": "/api/agents/registry/solana-clawd-payment-gateway.json",
+        "fork": "ct-agents design --from solana-clawd-payment-gateway"
       }
     },
     {
@@ -1564,7 +1601,8 @@
         "chat": "/agents/chat?agent=solana-clawd-provider-scorer",
         "mint": "/agents/mint?template=solana-clawd-provider-scorer",
         "mcp": "/api/agents/catalog/solana-clawd-provider-scorer.json",
-        "registration": "/api/agents/registry/solana-clawd-provider-scorer.json"
+        "registration": "/api/agents/registry/solana-clawd-provider-scorer.json",
+        "fork": "ct-agents design --from solana-clawd-provider-scorer"
       }
     },
     {
@@ -1598,7 +1636,8 @@
         "chat": "/agents/chat?agent=solana-clawd-quote-relay",
         "mint": "/agents/mint?template=solana-clawd-quote-relay",
         "mcp": "/api/agents/catalog/solana-clawd-quote-relay.json",
-        "registration": "/api/agents/registry/solana-clawd-quote-relay.json"
+        "registration": "/api/agents/registry/solana-clawd-quote-relay.json",
+        "fork": "ct-agents design --from solana-clawd-quote-relay"
       }
     },
     {
@@ -1632,7 +1671,8 @@
         "chat": "/agents/chat?agent=solana-clawd-usdc-allocator",
         "mint": "/agents/mint?template=solana-clawd-usdc-allocator",
         "mcp": "/api/agents/catalog/solana-clawd-usdc-allocator.json",
-        "registration": "/api/agents/registry/solana-clawd-usdc-allocator.json"
+        "registration": "/api/agents/registry/solana-clawd-usdc-allocator.json",
+        "fork": "ct-agents design --from solana-clawd-usdc-allocator"
       }
     },
     {
@@ -1666,7 +1706,8 @@
         "chat": "/agents/chat?agent=solana-clawd-wallet-guardian",
         "mint": "/agents/mint?template=solana-clawd-wallet-guardian",
         "mcp": "/api/agents/catalog/solana-clawd-wallet-guardian.json",
-        "registration": "/api/agents/registry/solana-clawd-wallet-guardian.json"
+        "registration": "/api/agents/registry/solana-clawd-wallet-guardian.json",
+        "fork": "ct-agents design --from solana-clawd-wallet-guardian"
       }
     },
     {
@@ -1698,7 +1739,8 @@
         "chat": "/agents/chat?agent=solana-cross-chain-bridge",
         "mint": "/agents/mint?template=solana-cross-chain-bridge",
         "mcp": "/api/agents/catalog/solana-cross-chain-bridge.json",
-        "registration": "/api/agents/registry/solana-cross-chain-bridge.json"
+        "registration": "/api/agents/registry/solana-cross-chain-bridge.json",
+        "fork": "ct-agents design --from solana-cross-chain-bridge"
       }
     },
     {
@@ -1733,7 +1775,8 @@
         "chat": "/agents/chat?agent=solana-dark-ralph-mail-briefing",
         "mint": "/agents/mint?template=solana-dark-ralph-mail-briefing",
         "mcp": "/api/agents/catalog/solana-dark-ralph-mail-briefing.json",
-        "registration": "/api/agents/registry/solana-dark-ralph-mail-briefing.json"
+        "registration": "/api/agents/registry/solana-dark-ralph-mail-briefing.json",
+        "fork": "ct-agents design --from solana-dark-ralph-mail-briefing"
       }
     },
     {
@@ -1765,7 +1808,8 @@
         "chat": "/agents/chat?agent=solana-data-pipeline",
         "mint": "/agents/mint?template=solana-data-pipeline",
         "mcp": "/api/agents/catalog/solana-data-pipeline.json",
-        "registration": "/api/agents/registry/solana-data-pipeline.json"
+        "registration": "/api/agents/registry/solana-data-pipeline.json",
+        "fork": "ct-agents design --from solana-data-pipeline"
       }
     },
     {
@@ -1797,7 +1841,8 @@
         "chat": "/agents/chat?agent=solana-dex-aggregator",
         "mint": "/agents/mint?template=solana-dex-aggregator",
         "mcp": "/api/agents/catalog/solana-dex-aggregator.json",
-        "registration": "/api/agents/registry/solana-dex-aggregator.json"
+        "registration": "/api/agents/registry/solana-dex-aggregator.json",
+        "fork": "ct-agents design --from solana-dex-aggregator"
       }
     },
     {
@@ -1832,7 +1877,8 @@
         "chat": "/agents/chat?agent=solana-dexter-mail-operator",
         "mint": "/agents/mint?template=solana-dexter-mail-operator",
         "mcp": "/api/agents/catalog/solana-dexter-mail-operator.json",
-        "registration": "/api/agents/registry/solana-dexter-mail-operator.json"
+        "registration": "/api/agents/registry/solana-dexter-mail-operator.json",
+        "fork": "ct-agents design --from solana-dexter-mail-operator"
       }
     },
     {
@@ -1863,7 +1909,8 @@
         "chat": "/agents/chat?agent=solana-funding-rate-arb",
         "mint": "/agents/mint?template=solana-funding-rate-arb",
         "mcp": "/api/agents/catalog/solana-funding-rate-arb.json",
-        "registration": "/api/agents/registry/solana-funding-rate-arb.json"
+        "registration": "/api/agents/registry/solana-funding-rate-arb.json",
+        "fork": "ct-agents design --from solana-funding-rate-arb"
       }
     },
     {
@@ -1895,7 +1942,8 @@
         "chat": "/agents/chat?agent=solana-helius-specialist",
         "mint": "/agents/mint?template=solana-helius-specialist",
         "mcp": "/api/agents/catalog/solana-helius-specialist.json",
-        "registration": "/api/agents/registry/solana-helius-specialist.json"
+        "registration": "/api/agents/registry/solana-helius-specialist.json",
+        "fork": "ct-agents design --from solana-helius-specialist"
       }
     },
     {
@@ -1931,7 +1979,8 @@
         "chat": "/agents/chat?agent=solana-hermes-mail-settlement",
         "mint": "/agents/mint?template=solana-hermes-mail-settlement",
         "mcp": "/api/agents/catalog/solana-hermes-mail-settlement.json",
-        "registration": "/api/agents/registry/solana-hermes-mail-settlement.json"
+        "registration": "/api/agents/registry/solana-hermes-mail-settlement.json",
+        "fork": "ct-agents design --from solana-hermes-mail-settlement"
       }
     },
     {
@@ -1962,7 +2011,8 @@
         "chat": "/agents/chat?agent=solana-impermanent-loss-calc",
         "mint": "/agents/mint?template=solana-impermanent-loss-calc",
         "mcp": "/api/agents/catalog/solana-impermanent-loss-calc.json",
-        "registration": "/api/agents/registry/solana-impermanent-loss-calc.json"
+        "registration": "/api/agents/registry/solana-impermanent-loss-calc.json",
+        "fork": "ct-agents design --from solana-impermanent-loss-calc"
       }
     },
     {
@@ -1995,7 +2045,8 @@
         "chat": "/agents/chat?agent=solana-lending-strategist",
         "mint": "/agents/mint?template=solana-lending-strategist",
         "mcp": "/api/agents/catalog/solana-lending-strategist.json",
-        "registration": "/api/agents/registry/solana-lending-strategist.json"
+        "registration": "/api/agents/registry/solana-lending-strategist.json",
+        "fork": "ct-agents design --from solana-lending-strategist"
       }
     },
     {
@@ -2027,7 +2078,8 @@
         "chat": "/agents/chat?agent=solana-liquidation-bot",
         "mint": "/agents/mint?template=solana-liquidation-bot",
         "mcp": "/api/agents/catalog/solana-liquidation-bot.json",
-        "registration": "/api/agents/registry/solana-liquidation-bot.json"
+        "registration": "/api/agents/registry/solana-liquidation-bot.json",
+        "fork": "ct-agents design --from solana-liquidation-bot"
       }
     },
     {
@@ -2059,7 +2111,8 @@
         "chat": "/agents/chat?agent=solana-lsd-analyst",
         "mint": "/agents/mint?template=solana-lsd-analyst",
         "mcp": "/api/agents/catalog/solana-lsd-analyst.json",
-        "registration": "/api/agents/registry/solana-lsd-analyst.json"
+        "registration": "/api/agents/registry/solana-lsd-analyst.json",
+        "fork": "ct-agents design --from solana-lsd-analyst"
       }
     },
     {
@@ -2091,7 +2144,8 @@
         "chat": "/agents/chat?agent=solana-macro-analyst",
         "mint": "/agents/mint?template=solana-macro-analyst",
         "mcp": "/api/agents/catalog/solana-macro-analyst.json",
-        "registration": "/api/agents/registry/solana-macro-analyst.json"
+        "registration": "/api/agents/registry/solana-macro-analyst.json",
+        "fork": "ct-agents design --from solana-macro-analyst"
       }
     },
     {
@@ -2123,7 +2177,8 @@
         "chat": "/agents/chat?agent=solana-market-maker",
         "mint": "/agents/mint?template=solana-market-maker",
         "mcp": "/api/agents/catalog/solana-market-maker.json",
-        "registration": "/api/agents/registry/solana-market-maker.json"
+        "registration": "/api/agents/registry/solana-market-maker.json",
+        "fork": "ct-agents design --from solana-market-maker"
       }
     },
     {
@@ -2155,7 +2210,8 @@
         "chat": "/agents/chat?agent=solana-memecoin-analyst",
         "mint": "/agents/mint?template=solana-memecoin-analyst",
         "mcp": "/api/agents/catalog/solana-memecoin-analyst.json",
-        "registration": "/api/agents/registry/solana-memecoin-analyst.json"
+        "registration": "/api/agents/registry/solana-memecoin-analyst.json",
+        "fork": "ct-agents design --from solana-memecoin-analyst"
       }
     },
     {
@@ -2187,7 +2243,8 @@
         "chat": "/agents/chat?agent=solana-mev-protector",
         "mint": "/agents/mint?template=solana-mev-protector",
         "mcp": "/api/agents/catalog/solana-mev-protector.json",
-        "registration": "/api/agents/registry/solana-mev-protector.json"
+        "registration": "/api/agents/registry/solana-mev-protector.json",
+        "fork": "ct-agents design --from solana-mev-protector"
       }
     },
     {
@@ -2221,7 +2278,8 @@
         "chat": "/agents/chat?agent=solana-nanoclawd-cache-keeper",
         "mint": "/agents/mint?template=solana-nanoclawd-cache-keeper",
         "mcp": "/api/agents/catalog/solana-nanoclawd-cache-keeper.json",
-        "registration": "/api/agents/registry/solana-nanoclawd-cache-keeper.json"
+        "registration": "/api/agents/registry/solana-nanoclawd-cache-keeper.json",
+        "fork": "ct-agents design --from solana-nanoclawd-cache-keeper"
       }
     },
     {
@@ -2255,7 +2313,8 @@
         "chat": "/agents/chat?agent=solana-nanoclawd-microtransaction",
         "mint": "/agents/mint?template=solana-nanoclawd-microtransaction",
         "mcp": "/api/agents/catalog/solana-nanoclawd-microtransaction.json",
-        "registration": "/api/agents/registry/solana-nanoclawd-microtransaction.json"
+        "registration": "/api/agents/registry/solana-nanoclawd-microtransaction.json",
+        "fork": "ct-agents design --from solana-nanoclawd-microtransaction"
       }
     },
     {
@@ -2289,7 +2348,8 @@
         "chat": "/agents/chat?agent=solana-nanoclawd-sandbox-runner",
         "mint": "/agents/mint?template=solana-nanoclawd-sandbox-runner",
         "mcp": "/api/agents/catalog/solana-nanoclawd-sandbox-runner.json",
-        "registration": "/api/agents/registry/solana-nanoclawd-sandbox-runner.json"
+        "registration": "/api/agents/registry/solana-nanoclawd-sandbox-runner.json",
+        "fork": "ct-agents design --from solana-nanoclawd-sandbox-runner"
       }
     },
     {
@@ -2321,7 +2381,8 @@
         "chat": "/agents/chat?agent=solana-narrative-tracker",
         "mint": "/agents/mint?template=solana-narrative-tracker",
         "mcp": "/api/agents/catalog/solana-narrative-tracker.json",
-        "registration": "/api/agents/registry/solana-narrative-tracker.json"
+        "registration": "/api/agents/registry/solana-narrative-tracker.json",
+        "fork": "ct-agents design --from solana-narrative-tracker"
       }
     },
     {
@@ -2355,7 +2416,8 @@
         "chat": "/agents/chat?agent=solana-nemoclawd-defi-router",
         "mint": "/agents/mint?template=solana-nemoclawd-defi-router",
         "mcp": "/api/agents/catalog/solana-nemoclawd-defi-router.json",
-        "registration": "/api/agents/registry/solana-nemoclawd-defi-router.json"
+        "registration": "/api/agents/registry/solana-nemoclawd-defi-router.json",
+        "fork": "ct-agents design --from solana-nemoclawd-defi-router"
       }
     },
     {
@@ -2389,7 +2451,8 @@
         "chat": "/agents/chat?agent=solana-nemoclawd-settlement-ops",
         "mint": "/agents/mint?template=solana-nemoclawd-settlement-ops",
         "mcp": "/api/agents/catalog/solana-nemoclawd-settlement-ops.json",
-        "registration": "/api/agents/registry/solana-nemoclawd-settlement-ops.json"
+        "registration": "/api/agents/registry/solana-nemoclawd-settlement-ops.json",
+        "fork": "ct-agents design --from solana-nemoclawd-settlement-ops"
       }
     },
     {
@@ -2423,7 +2486,8 @@
         "chat": "/agents/chat?agent=solana-nemoclawd-yield-treasurer",
         "mint": "/agents/mint?template=solana-nemoclawd-yield-treasurer",
         "mcp": "/api/agents/catalog/solana-nemoclawd-yield-treasurer.json",
-        "registration": "/api/agents/registry/solana-nemoclawd-yield-treasurer.json"
+        "registration": "/api/agents/registry/solana-nemoclawd-yield-treasurer.json",
+        "fork": "ct-agents design --from solana-nemoclawd-yield-treasurer"
       }
     },
     {
@@ -2455,7 +2519,8 @@
         "chat": "/agents/chat?agent=solana-nft-floor-trader",
         "mint": "/agents/mint?template=solana-nft-floor-trader",
         "mcp": "/api/agents/catalog/solana-nft-floor-trader.json",
-        "registration": "/api/agents/registry/solana-nft-floor-trader.json"
+        "registration": "/api/agents/registry/solana-nft-floor-trader.json",
+        "fork": "ct-agents design --from solana-nft-floor-trader"
       }
     },
     {
@@ -2487,7 +2552,8 @@
         "chat": "/agents/chat?agent=solana-onchain-metrics",
         "mint": "/agents/mint?template=solana-onchain-metrics",
         "mcp": "/api/agents/catalog/solana-onchain-metrics.json",
-        "registration": "/api/agents/registry/solana-onchain-metrics.json"
+        "registration": "/api/agents/registry/solana-onchain-metrics.json",
+        "fork": "ct-agents design --from solana-onchain-metrics"
       }
     },
     {
@@ -2519,7 +2585,8 @@
         "chat": "/agents/chat?agent=solana-onchain-sleuth",
         "mint": "/agents/mint?template=solana-onchain-sleuth",
         "mcp": "/api/agents/catalog/solana-onchain-sleuth.json",
-        "registration": "/api/agents/registry/solana-onchain-sleuth.json"
+        "registration": "/api/agents/registry/solana-onchain-sleuth.json",
+        "fork": "ct-agents design --from solana-onchain-sleuth"
       }
     },
     {
@@ -2568,7 +2635,8 @@
         "chat": "/agents/chat?agent=solana-openclawd-agent-staking",
         "mint": "/agents/mint?template=solana-openclawd-agent-staking",
         "mcp": "/api/agents/catalog/solana-openclawd-agent-staking.json",
-        "registration": "/api/agents/registry/solana-openclawd-agent-staking.json"
+        "registration": "/api/agents/registry/solana-openclawd-agent-staking.json",
+        "fork": "ct-agents design --from solana-openclawd-agent-staking"
       }
     },
     {
@@ -2602,7 +2670,8 @@
         "chat": "/agents/chat?agent=solana-openclawd-orchestrator",
         "mint": "/agents/mint?template=solana-openclawd-orchestrator",
         "mcp": "/api/agents/catalog/solana-openclawd-orchestrator.json",
-        "registration": "/api/agents/registry/solana-openclawd-orchestrator.json"
+        "registration": "/api/agents/registry/solana-openclawd-orchestrator.json",
+        "fork": "ct-agents design --from solana-openclawd-orchestrator"
       }
     },
     {
@@ -2636,7 +2705,8 @@
         "chat": "/agents/chat?agent=solana-openclawd-pulse-monitor",
         "mint": "/agents/mint?template=solana-openclawd-pulse-monitor",
         "mcp": "/api/agents/catalog/solana-openclawd-pulse-monitor.json",
-        "registration": "/api/agents/registry/solana-openclawd-pulse-monitor.json"
+        "registration": "/api/agents/registry/solana-openclawd-pulse-monitor.json",
+        "fork": "ct-agents design --from solana-openclawd-pulse-monitor"
       }
     },
     {
@@ -2670,7 +2740,8 @@
         "chat": "/agents/chat?agent=solana-openclawd-shell-auditor",
         "mint": "/agents/mint?template=solana-openclawd-shell-auditor",
         "mcp": "/api/agents/catalog/solana-openclawd-shell-auditor.json",
-        "registration": "/api/agents/registry/solana-openclawd-shell-auditor.json"
+        "registration": "/api/agents/registry/solana-openclawd-shell-auditor.json",
+        "fork": "ct-agents design --from solana-openclawd-shell-auditor"
       }
     },
     {
@@ -2704,7 +2775,8 @@
         "chat": "/agents/chat?agent=solana-openclawd-skill-router",
         "mint": "/agents/mint?template=solana-openclawd-skill-router",
         "mcp": "/api/agents/catalog/solana-openclawd-skill-router.json",
-        "registration": "/api/agents/registry/solana-openclawd-skill-router.json"
+        "registration": "/api/agents/registry/solana-openclawd-skill-router.json",
+        "fork": "ct-agents design --from solana-openclawd-skill-router"
       }
     },
     {
@@ -2738,7 +2810,8 @@
         "chat": "/agents/chat?agent=solana-openclawd-spawn-manager",
         "mint": "/agents/mint?template=solana-openclawd-spawn-manager",
         "mcp": "/api/agents/catalog/solana-openclawd-spawn-manager.json",
-        "registration": "/api/agents/registry/solana-openclawd-spawn-manager.json"
+        "registration": "/api/agents/registry/solana-openclawd-spawn-manager.json",
+        "fork": "ct-agents design --from solana-openclawd-spawn-manager"
       }
     },
     {
@@ -2769,7 +2842,8 @@
         "chat": "/agents/chat?agent=solana-order-flow-analyst",
         "mint": "/agents/mint?template=solana-order-flow-analyst",
         "mcp": "/api/agents/catalog/solana-order-flow-analyst.json",
-        "registration": "/api/agents/registry/solana-order-flow-analyst.json"
+        "registration": "/api/agents/registry/solana-order-flow-analyst.json",
+        "fork": "ct-agents design --from solana-order-flow-analyst"
       }
     },
     {
@@ -2801,7 +2875,8 @@
         "chat": "/agents/chat?agent=solana-perpetuals-trader",
         "mint": "/agents/mint?template=solana-perpetuals-trader",
         "mcp": "/api/agents/catalog/solana-perpetuals-trader.json",
-        "registration": "/api/agents/registry/solana-perpetuals-trader.json"
+        "registration": "/api/agents/registry/solana-perpetuals-trader.json",
+        "fork": "ct-agents design --from solana-perpetuals-trader"
       }
     },
     {
@@ -2833,7 +2908,8 @@
         "chat": "/agents/chat?agent=solana-portfolio-risk",
         "mint": "/agents/mint?template=solana-portfolio-risk",
         "mcp": "/api/agents/catalog/solana-portfolio-risk.json",
-        "registration": "/api/agents/registry/solana-portfolio-risk.json"
+        "registration": "/api/agents/registry/solana-portfolio-risk.json",
+        "fork": "ct-agents design --from solana-portfolio-risk"
       }
     },
     {
@@ -2864,7 +2940,8 @@
         "chat": "/agents/chat?agent=solana-position-sizer",
         "mint": "/agents/mint?template=solana-position-sizer",
         "mcp": "/api/agents/catalog/solana-position-sizer.json",
-        "registration": "/api/agents/registry/solana-position-sizer.json"
+        "registration": "/api/agents/registry/solana-position-sizer.json",
+        "fork": "ct-agents design --from solana-position-sizer"
       }
     },
     {
@@ -2896,7 +2973,8 @@
         "chat": "/agents/chat?agent=solana-prediction-market",
         "mint": "/agents/mint?template=solana-prediction-market",
         "mcp": "/api/agents/catalog/solana-prediction-market.json",
-        "registration": "/api/agents/registry/solana-prediction-market.json"
+        "registration": "/api/agents/registry/solana-prediction-market.json",
+        "fork": "ct-agents design --from solana-prediction-market"
       }
     },
     {
@@ -2928,7 +3006,8 @@
         "chat": "/agents/chat?agent=solana-price-predictor",
         "mint": "/agents/mint?template=solana-price-predictor",
         "mcp": "/api/agents/catalog/solana-price-predictor.json",
-        "registration": "/api/agents/registry/solana-price-predictor.json"
+        "registration": "/api/agents/registry/solana-price-predictor.json",
+        "fork": "ct-agents design --from solana-price-predictor"
       }
     },
     {
@@ -2960,7 +3039,8 @@
         "chat": "/agents/chat?agent=solana-protocol-auditor",
         "mint": "/agents/mint?template=solana-protocol-auditor",
         "mcp": "/api/agents/catalog/solana-protocol-auditor.json",
-        "registration": "/api/agents/registry/solana-protocol-auditor.json"
+        "registration": "/api/agents/registry/solana-protocol-auditor.json",
+        "fork": "ct-agents design --from solana-protocol-auditor"
       }
     },
     {
@@ -3012,7 +3092,8 @@
         "chat": "/agents/chat?agent=solana-pumpfun-bot",
         "mint": "/agents/mint?template=solana-pumpfun-bot",
         "mcp": "/api/agents/catalog/solana-pumpfun-bot.json",
-        "registration": "/api/agents/registry/solana-pumpfun-bot.json"
+        "registration": "/api/agents/registry/solana-pumpfun-bot.json",
+        "fork": "ct-agents design --from solana-pumpfun-bot"
       }
     },
     {
@@ -3044,7 +3125,8 @@
         "chat": "/agents/chat?agent=solana-quant-researcher",
         "mint": "/agents/mint?template=solana-quant-researcher",
         "mcp": "/api/agents/catalog/solana-quant-researcher.json",
-        "registration": "/api/agents/registry/solana-quant-researcher.json"
+        "registration": "/api/agents/registry/solana-quant-researcher.json",
+        "fork": "ct-agents design --from solana-quant-researcher"
       }
     },
     {
@@ -3076,7 +3158,8 @@
         "chat": "/agents/chat?agent=solana-regulatory-advisor",
         "mint": "/agents/mint?template=solana-regulatory-advisor",
         "mcp": "/api/agents/catalog/solana-regulatory-advisor.json",
-        "registration": "/api/agents/registry/solana-regulatory-advisor.json"
+        "registration": "/api/agents/registry/solana-regulatory-advisor.json",
+        "fork": "ct-agents design --from solana-regulatory-advisor"
       }
     },
     {
@@ -3108,7 +3191,8 @@
         "chat": "/agents/chat?agent=solana-risk-sentinel",
         "mint": "/agents/mint?template=solana-risk-sentinel",
         "mcp": "/api/agents/catalog/solana-risk-sentinel.json",
-        "registration": "/api/agents/registry/solana-risk-sentinel.json"
+        "registration": "/api/agents/registry/solana-risk-sentinel.json",
+        "fork": "ct-agents design --from solana-risk-sentinel"
       }
     },
     {
@@ -3140,7 +3224,8 @@
         "chat": "/agents/chat?agent=solana-rpc-optimizer",
         "mint": "/agents/mint?template=solana-rpc-optimizer",
         "mcp": "/api/agents/catalog/solana-rpc-optimizer.json",
-        "registration": "/api/agents/registry/solana-rpc-optimizer.json"
+        "registration": "/api/agents/registry/solana-rpc-optimizer.json",
+        "fork": "ct-agents design --from solana-rpc-optimizer"
       }
     },
     {
@@ -3172,7 +3257,8 @@
         "chat": "/agents/chat?agent=solana-sentiment-analyzer",
         "mint": "/agents/mint?template=solana-sentiment-analyzer",
         "mcp": "/api/agents/catalog/solana-sentiment-analyzer.json",
-        "registration": "/api/agents/registry/solana-sentiment-analyzer.json"
+        "registration": "/api/agents/registry/solana-sentiment-analyzer.json",
+        "fork": "ct-agents design --from solana-sentiment-analyzer"
       }
     },
     {
@@ -3203,7 +3289,8 @@
         "chat": "/agents/chat?agent=solana-spot-trader",
         "mint": "/agents/mint?template=solana-spot-trader",
         "mcp": "/api/agents/catalog/solana-spot-trader.json",
-        "registration": "/api/agents/registry/solana-spot-trader.json"
+        "registration": "/api/agents/registry/solana-spot-trader.json",
+        "fork": "ct-agents design --from solana-spot-trader"
       }
     },
     {
@@ -3235,7 +3322,8 @@
         "chat": "/agents/chat?agent=solana-stablecoin-strategist",
         "mint": "/agents/mint?template=solana-stablecoin-strategist",
         "mcp": "/api/agents/catalog/solana-stablecoin-strategist.json",
-        "registration": "/api/agents/registry/solana-stablecoin-strategist.json"
+        "registration": "/api/agents/registry/solana-stablecoin-strategist.json",
+        "fork": "ct-agents design --from solana-stablecoin-strategist"
       }
     },
     {
@@ -3267,7 +3355,8 @@
         "chat": "/agents/chat?agent=solana-technical-analyst",
         "mint": "/agents/mint?template=solana-technical-analyst",
         "mcp": "/api/agents/catalog/solana-technical-analyst.json",
-        "registration": "/api/agents/registry/solana-technical-analyst.json"
+        "registration": "/api/agents/registry/solana-technical-analyst.json",
+        "fork": "ct-agents design --from solana-technical-analyst"
       }
     },
     {
@@ -3298,7 +3387,8 @@
         "chat": "/agents/chat?agent=solana-token-launcher",
         "mint": "/agents/mint?template=solana-token-launcher",
         "mcp": "/api/agents/catalog/solana-token-launcher.json",
-        "registration": "/api/agents/registry/solana-token-launcher.json"
+        "registration": "/api/agents/registry/solana-token-launcher.json",
+        "fork": "ct-agents design --from solana-token-launcher"
       }
     },
     {
@@ -3330,7 +3420,8 @@
         "chat": "/agents/chat?agent=solana-tokenomics-analyst",
         "mint": "/agents/mint?template=solana-tokenomics-analyst",
         "mcp": "/api/agents/catalog/solana-tokenomics-analyst.json",
-        "registration": "/api/agents/registry/solana-tokenomics-analyst.json"
+        "registration": "/api/agents/registry/solana-tokenomics-analyst.json",
+        "fork": "ct-agents design --from solana-tokenomics-analyst"
       }
     },
     {
@@ -3362,7 +3453,8 @@
         "chat": "/agents/chat?agent=solana-vc-deal-analyzer",
         "mint": "/agents/mint?template=solana-vc-deal-analyzer",
         "mcp": "/api/agents/catalog/solana-vc-deal-analyzer.json",
-        "registration": "/api/agents/registry/solana-vc-deal-analyzer.json"
+        "registration": "/api/agents/registry/solana-vc-deal-analyzer.json",
+        "fork": "ct-agents design --from solana-vc-deal-analyzer"
       }
     },
     {
@@ -3394,7 +3486,8 @@
         "chat": "/agents/chat?agent=solana-volatility-analyst",
         "mint": "/agents/mint?template=solana-volatility-analyst",
         "mcp": "/api/agents/catalog/solana-volatility-analyst.json",
-        "registration": "/api/agents/registry/solana-volatility-analyst.json"
+        "registration": "/api/agents/registry/solana-volatility-analyst.json",
+        "fork": "ct-agents design --from solana-volatility-analyst"
       }
     },
     {
@@ -3446,7 +3539,8 @@
         "chat": "/agents/chat?agent=solana-vulcan-clawd-autonomous-perps",
         "mint": "/agents/mint?template=solana-vulcan-clawd-autonomous-perps",
         "mcp": "/api/agents/catalog/solana-vulcan-clawd-autonomous-perps.json",
-        "registration": "/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json"
+        "registration": "/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json",
+        "fork": "ct-agents design --from solana-vulcan-clawd-autonomous-perps"
       }
     },
     {
@@ -3477,7 +3571,8 @@
         "chat": "/agents/chat?agent=solana-whale-tracker",
         "mint": "/agents/mint?template=solana-whale-tracker",
         "mcp": "/api/agents/catalog/solana-whale-tracker.json",
-        "registration": "/api/agents/registry/solana-whale-tracker.json"
+        "registration": "/api/agents/registry/solana-whale-tracker.json",
+        "fork": "ct-agents design --from solana-whale-tracker"
       }
     },
     {
@@ -3509,7 +3604,8 @@
         "chat": "/agents/chat?agent=solana-whitepaper-analyst",
         "mint": "/agents/mint?template=solana-whitepaper-analyst",
         "mcp": "/api/agents/catalog/solana-whitepaper-analyst.json",
-        "registration": "/api/agents/registry/solana-whitepaper-analyst.json"
+        "registration": "/api/agents/registry/solana-whitepaper-analyst.json",
+        "fork": "ct-agents design --from solana-whitepaper-analyst"
       }
     },
     {
@@ -3543,7 +3639,8 @@
         "chat": "/agents/chat?agent=solana-x402-market-data-buyer",
         "mint": "/agents/mint?template=solana-x402-market-data-buyer",
         "mcp": "/api/agents/catalog/solana-x402-market-data-buyer.json",
-        "registration": "/api/agents/registry/solana-x402-market-data-buyer.json"
+        "registration": "/api/agents/registry/solana-x402-market-data-buyer.json",
+        "fork": "ct-agents design --from solana-x402-market-data-buyer"
       }
     },
     {
@@ -3577,7 +3674,8 @@
         "chat": "/agents/chat?agent=solana-x402-provider-author",
         "mint": "/agents/mint?template=solana-x402-provider-author",
         "mcp": "/api/agents/catalog/solana-x402-provider-author.json",
-        "registration": "/api/agents/registry/solana-x402-provider-author.json"
+        "registration": "/api/agents/registry/solana-x402-provider-author.json",
+        "fork": "ct-agents design --from solana-x402-provider-author"
       }
     },
     {
@@ -3611,7 +3709,8 @@
         "chat": "/agents/chat?agent=solana-x402-provider-catalog",
         "mint": "/agents/mint?template=solana-x402-provider-catalog",
         "mcp": "/api/agents/catalog/solana-x402-provider-catalog.json",
-        "registration": "/api/agents/registry/solana-x402-provider-catalog.json"
+        "registration": "/api/agents/registry/solana-x402-provider-catalog.json",
+        "fork": "ct-agents design --from solana-x402-provider-catalog"
       }
     },
     {
@@ -3645,7 +3744,8 @@
         "chat": "/agents/chat?agent=solana-x402-research-broker",
         "mint": "/agents/mint?template=solana-x402-research-broker",
         "mcp": "/api/agents/catalog/solana-x402-research-broker.json",
-        "registration": "/api/agents/registry/solana-x402-research-broker.json"
+        "registration": "/api/agents/registry/solana-x402-research-broker.json",
+        "fork": "ct-agents design --from solana-x402-research-broker"
       }
     },
     {
@@ -3679,7 +3779,8 @@
         "chat": "/agents/chat?agent=solana-x402-signal-monetizer",
         "mint": "/agents/mint?template=solana-x402-signal-monetizer",
         "mcp": "/api/agents/catalog/solana-x402-signal-monetizer.json",
-        "registration": "/api/agents/registry/solana-x402-signal-monetizer.json"
+        "registration": "/api/agents/registry/solana-x402-signal-monetizer.json",
+        "fork": "ct-agents design --from solana-x402-signal-monetizer"
       }
     },
     {
@@ -3713,7 +3814,8 @@
         "chat": "/agents/chat?agent=solana-x402-solana-rpc-broker",
         "mint": "/agents/mint?template=solana-x402-solana-rpc-broker",
         "mcp": "/api/agents/catalog/solana-x402-solana-rpc-broker.json",
-        "registration": "/api/agents/registry/solana-x402-solana-rpc-broker.json"
+        "registration": "/api/agents/registry/solana-x402-solana-rpc-broker.json",
+        "fork": "ct-agents design --from solana-x402-solana-rpc-broker"
       }
     },
     {
@@ -3747,7 +3849,8 @@
         "chat": "/agents/chat?agent=solana-x402-webhook-settlement",
         "mint": "/agents/mint?template=solana-x402-webhook-settlement",
         "mcp": "/api/agents/catalog/solana-x402-webhook-settlement.json",
-        "registration": "/api/agents/registry/solana-x402-webhook-settlement.json"
+        "registration": "/api/agents/registry/solana-x402-webhook-settlement.json",
+        "fork": "ct-agents design --from solana-x402-webhook-settlement"
       }
     },
     {
@@ -3779,7 +3882,8 @@
         "chat": "/agents/chat?agent=solana-yield-optimizer",
         "mint": "/agents/mint?template=solana-yield-optimizer",
         "mcp": "/api/agents/catalog/solana-yield-optimizer.json",
-        "registration": "/api/agents/registry/solana-yield-optimizer.json"
+        "registration": "/api/agents/registry/solana-yield-optimizer.json",
+        "fork": "ct-agents design --from solana-yield-optimizer"
       }
     },
     {
@@ -3835,7 +3939,584 @@
         "chat": "/agents/chat?agent=staking-unstaking-solana-metaplex-core",
         "mint": "/agents/mint?template=staking-unstaking-solana-metaplex-core",
         "mcp": "/api/agents/catalog/staking-unstaking-solana-metaplex-core.json",
-        "registration": "/api/agents/registry/staking-unstaking-solana-metaplex-core.json"
+        "registration": "/api/agents/registry/staking-unstaking-solana-metaplex-core.json",
+        "fork": "ct-agents design --from staking-unstaking-solana-metaplex-core"
+      }
+    },
+    {
+      "identifier": "airdrop-hunter",
+      "title": "DeFi Airdrop Hunter",
+      "description": "Cheshire Terminal agent: Identify and strategize for potential protocol airdrops",
+      "avatar": "https://cheshireterminal.ai/nich.jpg",
+      "tags": [
+        "airdrop",
+        "rewards",
+        "strategy",
+        "farming",
+        "allocation",
+        "cheshire-terminal",
+        "defi"
+      ],
+      "category": "trading",
+      "author": "openclawd",
+      "createdAt": "2024-12-16",
+      "oneShot": false,
+      "featured": false,
+      "openingMessage": null,
+      "openingQuestions": [],
+      "tokenUsage": null,
+      "capabilities": [],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/airdrop-hunter.json",
+        "chat": "/agents/chat?agent=airdrop-hunter",
+        "mint": "/agents/mint?template=airdrop-hunter",
+        "mcp": "/api/agents/catalog/airdrop-hunter.json",
+        "registration": "/api/agents/registry/airdrop-hunter.json"
+      },
+      "rawCatalog": {
+        "identifier": "airdrop-hunter",
+        "author": "openclawd",
+        "homepage": "https://cheshireterminal.ai/agents/airdrop-hunter",
+        "createdAt": "2024-12-16",
+        "oneShot": false,
+        "featured": false,
+        "schemaVersion": 1,
+        "meta": {
+          "title": "DeFi Airdrop Hunter",
+          "description": "Cheshire Terminal agent: Identify and strategize for potential protocol airdrops",
+          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "tags": [
+            "airdrop",
+            "rewards",
+            "strategy",
+            "farming",
+            "allocation",
+            "cheshire-terminal",
+            "defi"
+          ],
+          "category": "trading"
+        },
+        "config": {
+          "openingMessage": null,
+          "openingQuestions": []
+        },
+        "solana": {
+          "capabilities": [],
+          "metaplexSkills": []
+        },
+        "payment": null,
+        "agentToken": null
+      }
+    },
+    {
+      "identifier": "alice-character-json",
+      "title": "Alice",
+      "description": "Alice is a fully integrated AI Agent that combines on-chain crypto trading with AI-driven Twitter engagement.",
+      "avatar": "https://cheshireterminal.ai/nich.jpg",
+      "tags": [
+        "trading",
+        "cross-chain",
+        "character",
+        "solana"
+      ],
+      "category": "character",
+      "author": "openclawd",
+      "createdAt": "2026-07-20",
+      "oneShot": false,
+      "featured": false,
+      "openingMessage": null,
+      "openingQuestions": [],
+      "tokenUsage": null,
+      "capabilities": [],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/alice-character-json.json",
+        "chat": "/agents/chat?agent=alice-character-json",
+        "mint": "/agents/mint?template=alice-character-json",
+        "mcp": "/api/agents/catalog/alice-character-json.json",
+        "registration": "/api/agents/registry/alice-character-json.json"
+      },
+      "rawCatalog": {
+        "identifier": "alice-character-json",
+        "author": "openclawd",
+        "homepage": "https://cheshireterminal.ai/agents/alice-character-json",
+        "createdAt": "2026-07-20",
+        "oneShot": false,
+        "featured": false,
+        "schemaVersion": 1,
+        "meta": {
+          "title": "Alice",
+          "description": "Alice is a fully integrated AI Agent that combines on-chain crypto trading with AI-driven Twitter engagement.",
+          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "tags": [
+            "trading",
+            "cross-chain",
+            "character",
+            "solana"
+          ],
+          "category": "character"
+        },
+        "config": {
+          "openingMessage": null,
+          "openingQuestions": []
+        },
+        "solana": {
+          "capabilities": [],
+          "metaplexSkills": []
+        },
+        "payment": null,
+        "agentToken": null
+      }
+    },
+    {
+      "identifier": "alpha-leak-detector",
+      "title": "Crypto Alpha & Signal Detector",
+      "description": "Cheshire Terminal agent: Identify trading alpha and early signals in DeFi markets",
+      "avatar": "https://cheshireterminal.ai/nich.jpg",
+      "tags": [
+        "alpha",
+        "trading",
+        "signals",
+        "research",
+        "opportunities",
+        "cheshire-terminal",
+        "defi"
+      ],
+      "category": "crypto",
+      "author": "openclawd",
+      "createdAt": "2024-12-16",
+      "oneShot": false,
+      "featured": false,
+      "openingMessage": null,
+      "openingQuestions": [],
+      "tokenUsage": null,
+      "capabilities": [],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/alpha-leak-detector.json",
+        "chat": "/agents/chat?agent=alpha-leak-detector",
+        "mint": "/agents/mint?template=alpha-leak-detector",
+        "mcp": "/api/agents/catalog/alpha-leak-detector.json",
+        "registration": "/api/agents/registry/alpha-leak-detector.json"
+      },
+      "rawCatalog": {
+        "identifier": "alpha-leak-detector",
+        "author": "openclawd",
+        "homepage": "https://cheshireterminal.ai/agents/alpha-leak-detector",
+        "createdAt": "2024-12-16",
+        "oneShot": false,
+        "featured": false,
+        "schemaVersion": 1,
+        "meta": {
+          "title": "Crypto Alpha & Signal Detector",
+          "description": "Cheshire Terminal agent: Identify trading alpha and early signals in DeFi markets",
+          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "tags": [
+            "alpha",
+            "trading",
+            "signals",
+            "research",
+            "opportunities",
+            "cheshire-terminal",
+            "defi"
+          ],
+          "category": "crypto"
+        },
+        "config": {
+          "openingMessage": null,
+          "openingQuestions": []
+        },
+        "solana": {
+          "capabilities": [],
+          "metaplexSkills": []
+        },
+        "payment": null,
+        "agentToken": null
+      }
+    },
+    {
+      "identifier": "bengraham",
+      "title": "Benjamin Graham",
+      "description": "Benjamin Graham is an AI Agent specializing in value investing principles.",
+      "avatar": "https://cheshireterminal.ai/nich.jpg",
+      "tags": [
+        "value-investing",
+        "fundamentals",
+        "character",
+        "finance"
+      ],
+      "category": "character",
+      "author": "openclawd",
+      "createdAt": "2026-07-20",
+      "oneShot": false,
+      "featured": false,
+      "openingMessage": null,
+      "openingQuestions": [],
+      "tokenUsage": null,
+      "capabilities": [],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/bengraham.json",
+        "chat": "/agents/chat?agent=bengraham",
+        "mint": "/agents/mint?template=bengraham",
+        "mcp": "/api/agents/catalog/bengraham.json",
+        "registration": "/api/agents/registry/bengraham.json"
+      },
+      "rawCatalog": {
+        "identifier": "bengraham",
+        "author": "openclawd",
+        "homepage": "https://cheshireterminal.ai/agents/bengraham",
+        "createdAt": "2026-07-20",
+        "oneShot": false,
+        "featured": false,
+        "schemaVersion": 1,
+        "meta": {
+          "title": "Benjamin Graham",
+          "description": "Benjamin Graham is an AI Agent specializing in value investing principles.",
+          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "tags": [
+            "value-investing",
+            "fundamentals",
+            "character",
+            "finance"
+          ],
+          "category": "character"
+        },
+        "config": {
+          "openingMessage": null,
+          "openingQuestions": []
+        },
+        "solana": {
+          "capabilities": [],
+          "metaplexSkills": []
+        },
+        "payment": null,
+        "agentToken": null
+      }
+    },
+    {
+      "identifier": "billackman",
+      "title": "Bill Ackman",
+      "description": "Bill Ackman is an AI Agent specializing in activist investing and concentrated portfolio management.",
+      "avatar": "https://cheshireterminal.ai/nich.jpg",
+      "tags": [
+        "activist-investing",
+        "concentrated",
+        "character",
+        "finance"
+      ],
+      "category": "character",
+      "author": "openclawd",
+      "createdAt": "2026-07-20",
+      "oneShot": false,
+      "featured": false,
+      "openingMessage": null,
+      "openingQuestions": [],
+      "tokenUsage": null,
+      "capabilities": [],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/billackman.json",
+        "chat": "/agents/chat?agent=billackman",
+        "mint": "/agents/mint?template=billackman",
+        "mcp": "/api/agents/catalog/billackman.json",
+        "registration": "/api/agents/registry/billackman.json"
+      },
+      "rawCatalog": {
+        "identifier": "billackman",
+        "author": "openclawd",
+        "homepage": "https://cheshireterminal.ai/agents/billackman",
+        "createdAt": "2026-07-20",
+        "oneShot": false,
+        "featured": false,
+        "schemaVersion": 1,
+        "meta": {
+          "title": "Bill Ackman",
+          "description": "Bill Ackman is an AI Agent specializing in activist investing and concentrated portfolio management.",
+          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "tags": [
+            "activist-investing",
+            "concentrated",
+            "character",
+            "finance"
+          ],
+          "category": "character"
+        },
+        "config": {
+          "openingMessage": null,
+          "openingQuestions": []
+        },
+        "solana": {
+          "capabilities": [],
+          "metaplexSkills": []
+        },
+        "payment": null,
+        "agentToken": null
+      }
+    },
+    {
+      "identifier": "bridge-security-analyst",
+      "title": "Cross-Chain Bridge Security Analyst",
+      "description": "Cheshire Terminal agent: Evaluate bridge security and recommend safest cross-chain routes",
+      "avatar": "https://cheshireterminal.ai/nich.jpg",
+      "tags": [
+        "bridge",
+        "security",
+        "cross-chain",
+        "risk",
+        "multichain",
+        "cheshire-terminal",
+        "defi"
+      ],
+      "category": "security",
+      "author": "openclawd",
+      "createdAt": "2024-12-16",
+      "oneShot": false,
+      "featured": false,
+      "openingMessage": null,
+      "openingQuestions": [],
+      "tokenUsage": null,
+      "capabilities": [],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/bridge-security-analyst.json",
+        "chat": "/agents/chat?agent=bridge-security-analyst",
+        "mint": "/agents/mint?template=bridge-security-analyst",
+        "mcp": "/api/agents/catalog/bridge-security-analyst.json",
+        "registration": "/api/agents/registry/bridge-security-analyst.json"
+      },
+      "rawCatalog": {
+        "identifier": "bridge-security-analyst",
+        "author": "openclawd",
+        "homepage": "https://cheshireterminal.ai/agents/bridge-security-analyst",
+        "createdAt": "2024-12-16",
+        "oneShot": false,
+        "featured": false,
+        "schemaVersion": 1,
+        "meta": {
+          "title": "Cross-Chain Bridge Security Analyst",
+          "description": "Cheshire Terminal agent: Evaluate bridge security and recommend safest cross-chain routes",
+          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "tags": [
+            "bridge",
+            "security",
+            "cross-chain",
+            "risk",
+            "multichain",
+            "cheshire-terminal",
+            "defi"
+          ],
+          "category": "security"
+        },
+        "config": {
+          "openingMessage": null,
+          "openingQuestions": []
+        },
+        "solana": {
+          "capabilities": [],
+          "metaplexSkills": []
+        },
+        "payment": null,
+        "agentToken": null
+      }
+    },
+    {
+      "identifier": "cathiewood",
+      "title": "Cathie Wood",
+      "description": "Cathie Wood focuses on disruptive innovation and exponential growth potential in technology-enabled sectors. She invests in companies leveraging breakthrough technologies, emphasizing long-term growth over immediate profitability, and accepts higher volatility for potentially market-beating returns.",
+      "avatar": "https://cheshireterminal.ai/nich.jpg",
+      "tags": [
+        "disruptive-innovation",
+        "growth",
+        "character",
+        "finance"
+      ],
+      "category": "character",
+      "author": "openclawd",
+      "createdAt": "2026-07-20",
+      "oneShot": false,
+      "featured": false,
+      "openingMessage": null,
+      "openingQuestions": [],
+      "tokenUsage": null,
+      "capabilities": [],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/cathiewood.json",
+        "chat": "/agents/chat?agent=cathiewood",
+        "mint": "/agents/mint?template=cathiewood",
+        "mcp": "/api/agents/catalog/cathiewood.json",
+        "registration": "/api/agents/registry/cathiewood.json"
+      },
+      "rawCatalog": {
+        "identifier": "cathiewood",
+        "author": "openclawd",
+        "homepage": "https://cheshireterminal.ai/agents/cathiewood",
+        "createdAt": "2026-07-20",
+        "oneShot": false,
+        "featured": false,
+        "schemaVersion": 1,
+        "meta": {
+          "title": "Cathie Wood",
+          "description": "Cathie Wood focuses on disruptive innovation and exponential growth potential in technology-enabled sectors. She invests in companies leveraging breakthrough technologies, emphasizing long-term growth over immediate profitability, and accepts higher volatility for potentially market-beating returns.",
+          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "tags": [
+            "disruptive-innovation",
+            "growth",
+            "character",
+            "finance"
+          ],
+          "category": "character"
+        },
+        "config": {
+          "openingMessage": null,
+          "openingQuestions": []
+        },
+        "solana": {
+          "capabilities": [],
+          "metaplexSkills": []
+        },
+        "payment": null,
+        "agentToken": null
+      }
+    },
+    {
+      "identifier": "charliemunger",
+      "title": "Charlie Munger",
+      "description": "Charlie Munger is an AI Agent specializing in multidisciplinary thinking and rational investment decision-making.",
+      "avatar": "https://cheshireterminal.ai/nich.jpg",
+      "tags": [
+        "mental-models",
+        "investing",
+        "character",
+        "finance"
+      ],
+      "category": "character",
+      "author": "openclawd",
+      "createdAt": "2026-07-20",
+      "oneShot": false,
+      "featured": false,
+      "openingMessage": null,
+      "openingQuestions": [],
+      "tokenUsage": null,
+      "capabilities": [],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/charliemunger.json",
+        "chat": "/agents/chat?agent=charliemunger",
+        "mint": "/agents/mint?template=charliemunger",
+        "mcp": "/api/agents/catalog/charliemunger.json",
+        "registration": "/api/agents/registry/charliemunger.json"
+      },
+      "rawCatalog": {
+        "identifier": "charliemunger",
+        "author": "openclawd",
+        "homepage": "https://cheshireterminal.ai/agents/charliemunger",
+        "createdAt": "2026-07-20",
+        "oneShot": false,
+        "featured": false,
+        "schemaVersion": 1,
+        "meta": {
+          "title": "Charlie Munger",
+          "description": "Charlie Munger is an AI Agent specializing in multidisciplinary thinking and rational investment decision-making.",
+          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "tags": [
+            "mental-models",
+            "investing",
+            "character",
+            "finance"
+          ],
+          "category": "character"
+        },
+        "config": {
+          "openingMessage": null,
+          "openingQuestions": []
+        },
+        "solana": {
+          "capabilities": [],
+          "metaplexSkills": []
+        },
+        "payment": null,
+        "agentToken": null
+      }
+    },
+    {
+      "identifier": "cheshire-character-json",
+      "title": "Cheshire",
+      "description": "Cheshire is a multimodal AI agent specializing in creative generation across digital realms.",
+      "avatar": "https://cheshireterminal.ai/nich.jpg",
+      "tags": [
+        "oracle",
+        "generative",
+        "character",
+        "solana"
+      ],
+      "category": "character",
+      "author": "openclawd",
+      "createdAt": "2026-07-20",
+      "oneShot": false,
+      "featured": false,
+      "openingMessage": null,
+      "openingQuestions": [],
+      "tokenUsage": null,
+      "capabilities": [],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/cheshire-character-json.json",
+        "chat": "/agents/chat?agent=cheshire-character-json",
+        "mint": "/agents/mint?template=cheshire-character-json",
+        "mcp": "/api/agents/catalog/cheshire-character-json.json",
+        "registration": "/api/agents/registry/cheshire-character-json.json"
+      },
+      "rawCatalog": {
+        "identifier": "cheshire-character-json",
+        "author": "openclawd",
+        "homepage": "https://cheshireterminal.ai/agents/cheshire-character-json",
+        "createdAt": "2026-07-20",
+        "oneShot": false,
+        "featured": false,
+        "schemaVersion": 1,
+        "meta": {
+          "title": "Cheshire",
+          "description": "Cheshire is a multimodal AI agent specializing in creative generation across digital realms.",
+          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "tags": [
+            "oracle",
+            "generative",
+            "character",
+            "solana"
+          ],
+          "category": "character"
+        },
+        "config": {
+          "openingMessage": null,
+          "openingQuestions": []
+        },
+        "solana": {
+          "capabilities": [],
+          "metaplexSkills": []
+        },
+        "payment": null,
+        "agentToken": null
       }
     },
     {
@@ -6305,615 +6986,303 @@
         "payment": null,
         "agentToken": null
       }
-    },
+    }
+  ],
+  "templates": [
     {
-      "identifier": "cheshire-terminal-solana-agents:gas-optimization-expert",
-      "title": "Gas Cost Optimization Expert",
-      "description": "Cheshire Terminal agent: Minimize gas costs and optimize transaction timing",
-      "avatar": "https://cheshireterminal.ai/nich.jpg",
-      "tags": [
-        "ethereum",
-        "gas",
-        "optimization",
-        "layer-2",
-        "efficiency",
-        "cheshire-terminal",
-        "defi"
+      "templateId": "blank",
+      "name": "Blank Agent",
+      "description": "Minimal clawdAgentSchema.v1 scaffold — fill in identity and systemRole.",
+      "category": "dev-tools",
+      "avatar": "🧩",
+      "variables": [
+        {
+          "name": "identifier",
+          "default": "my-agent",
+          "description": "URL-safe agent id"
+        },
+        {
+          "name": "title",
+          "default": "My Agent",
+          "description": "Display title"
+        },
+        {
+          "name": "author",
+          "default": "your-name",
+          "description": "Owner handle"
+        },
+        {
+          "name": "systemRole",
+          "default": "You are a helpful Cheshire Terminal agent.",
+          "description": "Core prompt"
+        },
+        {
+          "name": "category",
+          "default": "defi",
+          "description": "Hub category"
+        },
+        {
+          "name": "avatar",
+          "default": "🤖",
+          "description": "Emoji or URL"
+        }
       ],
-      "category": "tools",
-      "author": "openclawd",
-      "createdAt": "2024-12-16",
-      "oneShot": false,
-      "featured": false,
-      "openingMessage": null,
-      "openingQuestions": [],
-      "tokenUsage": null,
-      "capabilities": [],
-      "metaplexSkills": [],
-      "payment": null,
-      "agentToken": null,
-      "deploy": {
-        "json": "/api/agents/catalog/cheshire-terminal-solana-agents%3Agas-optimization-expert.json",
-        "chat": "/agents/chat?agent=cheshire-terminal-solana-agents%3Agas-optimization-expert",
-        "mint": "/agents/mint?template=cheshire-terminal-solana-agents%3Agas-optimization-expert",
-        "mcp": "/api/agents/catalog/cheshire-terminal-solana-agents%3Agas-optimization-expert.json",
-        "registration": "/api/agents/registry/cheshire-terminal-solana-agents%3Agas-optimization-expert.json"
-      },
-      "rawCatalog": {
-        "identifier": "cheshire-terminal-solana-agents:gas-optimization-expert",
-        "author": "openclawd",
-        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Agas-optimization-expert",
-        "createdAt": "2024-12-16",
-        "oneShot": false,
-        "featured": false,
+      "scaffold": {
+        "author": "your-name",
+        "identifier": "my-agent",
         "schemaVersion": 1,
+        "homepage": "https://cheshireterminal.ai/agents",
+        "summary": "Custom Cheshire Terminal agent",
         "meta": {
-          "title": "Gas Cost Optimization Expert",
-          "description": "Cheshire Terminal agent: Minimize gas costs and optimize transaction timing",
-          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "title": "My Agent",
+          "description": "Custom Cheshire Terminal agent — describe what this agent does.",
+          "avatar": "🤖",
           "tags": [
-            "ethereum",
-            "gas",
-            "optimization",
-            "layer-2",
-            "efficiency",
-            "cheshire-terminal",
-            "defi"
-          ],
-          "category": "tools"
-        },
-        "config": {
-          "openingMessage": null,
-          "openingQuestions": []
-        },
-        "solana": {
-          "capabilities": [],
-          "metaplexSkills": []
-        },
-        "payment": null,
-        "agentToken": null
-      }
-    },
-    {
-      "identifier": "cheshire-terminal-solana-agents:governance-proposal-analyst",
-      "title": "DAO Governance Proposal Analyst",
-      "description": "Cheshire Terminal agent: Analyze and explain DAO governance proposals and their implications",
-      "avatar": "https://cheshireterminal.ai/nich.jpg",
-      "tags": [
-        "governance",
-        "dao",
-        "voting",
-        "proposals",
-        "analysis",
-        "cheshire-terminal",
-        "defi"
-      ],
-      "category": "governance",
-      "author": "openclawd",
-      "createdAt": "2024-12-16",
-      "oneShot": false,
-      "featured": false,
-      "openingMessage": null,
-      "openingQuestions": [],
-      "tokenUsage": null,
-      "capabilities": [],
-      "metaplexSkills": [],
-      "payment": null,
-      "agentToken": null,
-      "deploy": {
-        "json": "/api/agents/catalog/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json",
-        "chat": "/agents/chat?agent=cheshire-terminal-solana-agents%3Agovernance-proposal-analyst",
-        "mint": "/agents/mint?template=cheshire-terminal-solana-agents%3Agovernance-proposal-analyst",
-        "mcp": "/api/agents/catalog/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json",
-        "registration": "/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
-      },
-      "rawCatalog": {
-        "identifier": "cheshire-terminal-solana-agents:governance-proposal-analyst",
-        "author": "openclawd",
-        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst",
-        "createdAt": "2024-12-16",
-        "oneShot": false,
-        "featured": false,
-        "schemaVersion": 1,
-        "meta": {
-          "title": "DAO Governance Proposal Analyst",
-          "description": "Cheshire Terminal agent: Analyze and explain DAO governance proposals and their implications",
-          "avatar": "https://cheshireterminal.ai/nich.jpg",
-          "tags": [
-            "governance",
-            "dao",
-            "voting",
-            "proposals",
-            "analysis",
-            "cheshire-terminal",
-            "defi"
-          ],
-          "category": "governance"
-        },
-        "config": {
-          "openingMessage": null,
-          "openingQuestions": []
-        },
-        "solana": {
-          "capabilities": [],
-          "metaplexSkills": []
-        },
-        "payment": null,
-        "agentToken": null
-      }
-    },
-    {
-      "identifier": "cheshire-terminal-solana-agents:impermanent-loss-calculator",
-      "title": "Impermanent Loss Calculator",
-      "description": "Cheshire Terminal agent: Calculate and explain impermanent loss scenarios for LP positions",
-      "avatar": "https://cheshireterminal.ai/nich.jpg",
-      "tags": [
-        "defi",
-        "liquidity",
-        "impermanent-loss",
-        "calculator",
-        "amm",
-        "cheshire-terminal"
-      ],
-      "category": "tools",
-      "author": "openclawd",
-      "createdAt": "2024-12-16",
-      "oneShot": false,
-      "featured": false,
-      "openingMessage": null,
-      "openingQuestions": [],
-      "tokenUsage": null,
-      "capabilities": [],
-      "metaplexSkills": [],
-      "payment": null,
-      "agentToken": null,
-      "deploy": {
-        "json": "/api/agents/catalog/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator.json",
-        "chat": "/agents/chat?agent=cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator",
-        "mint": "/agents/mint?template=cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator",
-        "mcp": "/api/agents/catalog/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator.json",
-        "registration": "/api/agents/registry/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator.json"
-      },
-      "rawCatalog": {
-        "identifier": "cheshire-terminal-solana-agents:impermanent-loss-calculator",
-        "author": "openclawd",
-        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator",
-        "createdAt": "2024-12-16",
-        "oneShot": false,
-        "featured": false,
-        "schemaVersion": 1,
-        "meta": {
-          "title": "Impermanent Loss Calculator",
-          "description": "Cheshire Terminal agent: Calculate and explain impermanent loss scenarios for LP positions",
-          "avatar": "https://cheshireterminal.ai/nich.jpg",
-          "tags": [
-            "defi",
-            "liquidity",
-            "impermanent-loss",
-            "calculator",
-            "amm",
-            "cheshire-terminal"
-          ],
-          "category": "tools"
-        },
-        "config": {
-          "openingMessage": null,
-          "openingQuestions": []
-        },
-        "solana": {
-          "capabilities": [],
-          "metaplexSkills": []
-        },
-        "payment": null,
-        "agentToken": null
-      }
-    },
-    {
-      "identifier": "cheshire-terminal-solana-agents:latticeclaw",
-      "title": "LatticeClaw · Inversion Lobster",
-      "description": "Second-level thinking voice of the Lobster Council. Invert, always invert.",
-      "avatar": "https://cheshireterminal.ai/nich.jpg",
-      "tags": [
-        "solana",
-        "voice",
-        "contrarian",
-        "inversion",
-        "lobster-council"
-      ],
-      "category": "voice-council",
-      "author": "openclawd",
-      "createdAt": null,
-      "oneShot": false,
-      "featured": false,
-      "openingMessage": null,
-      "openingQuestions": [],
-      "tokenUsage": null,
-      "capabilities": [],
-      "metaplexSkills": [],
-      "payment": null,
-      "agentToken": null,
-      "deploy": {
-        "json": "/api/agents/catalog/cheshire-terminal-solana-agents%3Alatticeclaw.json",
-        "chat": "/agents/chat?agent=cheshire-terminal-solana-agents%3Alatticeclaw",
-        "mint": "/agents/mint?template=cheshire-terminal-solana-agents%3Alatticeclaw",
-        "mcp": "/api/agents/catalog/cheshire-terminal-solana-agents%3Alatticeclaw.json",
-        "registration": "/api/agents/registry/cheshire-terminal-solana-agents%3Alatticeclaw.json"
-      },
-      "rawCatalog": {
-        "identifier": "cheshire-terminal-solana-agents:latticeclaw",
-        "author": "openclawd",
-        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Alatticeclaw",
-        "createdAt": null,
-        "oneShot": false,
-        "featured": false,
-        "schemaVersion": 1,
-        "meta": {
-          "title": "LatticeClaw · Inversion Lobster",
-          "description": "Second-level thinking voice of the Lobster Council. Invert, always invert.",
-          "avatar": "https://cheshireterminal.ai/nich.jpg",
-          "tags": [
-            "solana",
-            "voice",
-            "contrarian",
-            "inversion",
-            "lobster-council"
-          ],
-          "category": "voice-council"
-        },
-        "config": {
-          "openingMessage": null,
-          "openingQuestions": []
-        },
-        "solana": {
-          "capabilities": [],
-          "metaplexSkills": []
-        },
-        "payment": null,
-        "agentToken": null
-      }
-    },
-    {
-      "identifier": "cheshire-terminal-solana-agents:layer2-comparison-guide",
-      "title": "Layer 2 Comparison Guide",
-      "description": "Cheshire Terminal agent: Compare Ethereum L2 solutions: Arbitrum, Optimism, Base, zkSync",
-      "avatar": "https://cheshireterminal.ai/nich.jpg",
-      "tags": [
-        "layer-2",
-        "scaling",
-        "arbitrum",
-        "optimism",
-        "ethereum",
-        "cheshire-terminal",
-        "defi"
-      ],
-      "category": "defi",
-      "author": "openclawd",
-      "createdAt": "2024-12-16",
-      "oneShot": false,
-      "featured": false,
-      "openingMessage": null,
-      "openingQuestions": [],
-      "tokenUsage": null,
-      "capabilities": [],
-      "metaplexSkills": [],
-      "payment": null,
-      "agentToken": null,
-      "deploy": {
-        "json": "/api/agents/catalog/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json",
-        "chat": "/agents/chat?agent=cheshire-terminal-solana-agents%3Alayer2-comparison-guide",
-        "mint": "/agents/mint?template=cheshire-terminal-solana-agents%3Alayer2-comparison-guide",
-        "mcp": "/api/agents/catalog/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json",
-        "registration": "/api/agents/registry/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json"
-      },
-      "rawCatalog": {
-        "identifier": "cheshire-terminal-solana-agents:layer2-comparison-guide",
-        "author": "openclawd",
-        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Alayer2-comparison-guide",
-        "createdAt": "2024-12-16",
-        "oneShot": false,
-        "featured": false,
-        "schemaVersion": 1,
-        "meta": {
-          "title": "Layer 2 Comparison Guide",
-          "description": "Cheshire Terminal agent: Compare Ethereum L2 solutions: Arbitrum, Optimism, Base, zkSync",
-          "avatar": "https://cheshireterminal.ai/nich.jpg",
-          "tags": [
-            "layer-2",
-            "scaling",
-            "arbitrum",
-            "optimism",
-            "ethereum",
-            "cheshire-terminal",
-            "defi"
-          ],
-          "category": "defi"
-        },
-        "config": {
-          "openingMessage": null,
-          "openingQuestions": []
-        },
-        "solana": {
-          "capabilities": [],
-          "metaplexSkills": []
-        },
-        "payment": null,
-        "agentToken": null
-      }
-    },
-    {
-      "identifier": "cheshire-terminal-solana-agents:liquidation-risk-manager",
-      "title": "Liquidation Risk Manager",
-      "description": "Cheshire Terminal agent: Monitor and manage liquidation risks in lending protocols",
-      "avatar": "https://cheshireterminal.ai/nich.jpg",
-      "tags": [
-        "lending",
-        "liquidation",
-        "risk",
-        "collateral",
-        "defi",
-        "cheshire-terminal"
-      ],
-      "category": "tools",
-      "author": "openclawd",
-      "createdAt": "2024-12-16",
-      "oneShot": false,
-      "featured": false,
-      "openingMessage": null,
-      "openingQuestions": [],
-      "tokenUsage": null,
-      "capabilities": [],
-      "metaplexSkills": [],
-      "payment": null,
-      "agentToken": null,
-      "deploy": {
-        "json": "/api/agents/catalog/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json",
-        "chat": "/agents/chat?agent=cheshire-terminal-solana-agents%3Aliquidation-risk-manager",
-        "mint": "/agents/mint?template=cheshire-terminal-solana-agents%3Aliquidation-risk-manager",
-        "mcp": "/api/agents/catalog/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json",
-        "registration": "/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json"
-      },
-      "rawCatalog": {
-        "identifier": "cheshire-terminal-solana-agents:liquidation-risk-manager",
-        "author": "openclawd",
-        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aliquidation-risk-manager",
-        "createdAt": "2024-12-16",
-        "oneShot": false,
-        "featured": false,
-        "schemaVersion": 1,
-        "meta": {
-          "title": "Liquidation Risk Manager",
-          "description": "Cheshire Terminal agent: Monitor and manage liquidation risks in lending protocols",
-          "avatar": "https://cheshireterminal.ai/nich.jpg",
-          "tags": [
-            "lending",
-            "liquidation",
-            "risk",
-            "collateral",
-            "defi",
-            "cheshire-terminal"
-          ],
-          "category": "tools"
-        },
-        "config": {
-          "openingMessage": null,
-          "openingQuestions": []
-        },
-        "solana": {
-          "capabilities": [],
-          "metaplexSkills": []
-        },
-        "payment": null,
-        "agentToken": null
-      }
-    },
-    {
-      "identifier": "cheshire-terminal-solana-agents:liquidity-pool-analyzer",
-      "title": "Liquidity Pool Deep Analyzer",
-      "description": "Cheshire Terminal agent: Analyze LP pool health, risks, and optimal entry/exit timing",
-      "avatar": "https://cheshireterminal.ai/nich.jpg",
-      "tags": [
-        "defi",
-        "liquidity-pools",
-        "amm",
-        "analysis",
-        "risk",
-        "cheshire-terminal"
-      ],
-      "category": "defi",
-      "author": "openclawd",
-      "createdAt": "2024-12-16",
-      "oneShot": false,
-      "featured": false,
-      "openingMessage": null,
-      "openingQuestions": [],
-      "tokenUsage": null,
-      "capabilities": [],
-      "metaplexSkills": [],
-      "payment": null,
-      "agentToken": null,
-      "deploy": {
-        "json": "/api/agents/catalog/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json",
-        "chat": "/agents/chat?agent=cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer",
-        "mint": "/agents/mint?template=cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer",
-        "mcp": "/api/agents/catalog/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json",
-        "registration": "/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json"
-      },
-      "rawCatalog": {
-        "identifier": "cheshire-terminal-solana-agents:liquidity-pool-analyzer",
-        "author": "openclawd",
-        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer",
-        "createdAt": "2024-12-16",
-        "oneShot": false,
-        "featured": false,
-        "schemaVersion": 1,
-        "meta": {
-          "title": "Liquidity Pool Deep Analyzer",
-          "description": "Cheshire Terminal agent: Analyze LP pool health, risks, and optimal entry/exit timing",
-          "avatar": "https://cheshireterminal.ai/nich.jpg",
-          "tags": [
-            "defi",
-            "liquidity-pools",
-            "amm",
-            "analysis",
-            "risk",
+            "custom",
             "cheshire-terminal"
           ],
           "category": "defi"
         },
         "config": {
-          "openingMessage": null,
-          "openingQuestions": []
+          "systemRole": "You are a helpful Cheshire Terminal agent. Prefer Solana-first guidance when chain is unspecified. Never request seed phrases or private keys.",
+          "openingMessage": "Hello! I'm your custom agent. How can I help?",
+          "openingQuestions": [
+            "What would you like help with?",
+            "Should we start with a high-level overview?"
+          ],
+          "displayMode": "chat"
         },
-        "solana": {
-          "capabilities": [],
-          "metaplexSkills": []
-        },
-        "payment": null,
-        "agentToken": null
-      }
+        "examples": [
+          {
+            "role": "user",
+            "content": "What can you do?"
+          },
+          {
+            "role": "assistant",
+            "content": "I follow the system role you define. Tell me your goal and constraints."
+          }
+        ]
+      },
+      "deploy": {
+        "template": "/api/agents/templates/blank.json",
+        "create": "/agents/mint?fromTemplate=blank",
+        "design": "ct-agents design --from blank"
+      },
+      "sourceFile": "blank.template.json"
     },
     {
-      "identifier": "cheshire-terminal-solana-agents:mechaplex-mech-builder",
-      "title": "Mechaplex · Mech Builder",
-      "description": "In-page Mechaplex forge for user-owned Mech agents on Metaplex Core. Assemble modules, mint identity, and operate your Mech from /mecha.",
-      "avatar": "https://cheshireterminal.ai/nich.jpg",
-      "tags": [
-        "mecha",
-        "mechaplex",
-        "metaplex",
-        "mpl-core",
-        "agent-builder",
-        "solana",
-        "holder"
+      "templateId": "defi-strategist",
+      "name": "DeFi Strategist",
+      "description": "Yield, risk, and protocol comparison specialist — fork and specialize for your protocol.",
+      "category": "defi",
+      "avatar": "💰",
+      "variables": [
+        {
+          "name": "identifier",
+          "default": "my-defi-strategist"
+        },
+        {
+          "name": "title",
+          "default": "DeFi Strategist"
+        },
+        {
+          "name": "author",
+          "default": "your-name"
+        },
+        {
+          "name": "category",
+          "default": "defi"
+        }
       ],
-      "category": "platform",
-      "author": "openclawd",
-      "createdAt": "2026-07-21",
-      "oneShot": false,
-      "featured": false,
-      "openingMessage": null,
-      "openingQuestions": [],
-      "tokenUsage": null,
-      "capabilities": [],
-      "metaplexSkills": [
-        "agent-registry",
-        "core"
-      ],
-      "payment": null,
-      "agentToken": null,
-      "deploy": {
-        "json": "/api/agents/catalog/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json",
-        "chat": "/agents/chat?agent=cheshire-terminal-solana-agents%3Amechaplex-mech-builder",
-        "mint": "/agents/mint?template=cheshire-terminal-solana-agents%3Amechaplex-mech-builder",
-        "mcp": "/api/agents/catalog/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json",
-        "registration": "/api/agents/registry/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json"
-      },
-      "rawCatalog": {
-        "identifier": "cheshire-terminal-solana-agents:mechaplex-mech-builder",
-        "author": "openclawd",
-        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Amechaplex-mech-builder",
-        "createdAt": "2026-07-21",
-        "oneShot": false,
-        "featured": false,
+      "scaffold": {
+        "author": "your-name",
+        "identifier": "my-defi-strategist",
         "schemaVersion": 1,
+        "homepage": "https://cheshireterminal.ai/agents",
+        "summary": "DeFi strategist agent for yield, risk, and protocol analysis",
         "meta": {
-          "title": "Mechaplex · Mech Builder",
-          "description": "In-page Mechaplex forge for user-owned Mech agents on Metaplex Core. Assemble modules, mint identity, and operate your Mech from /mecha.",
-          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "title": "DeFi Strategist",
+          "description": "Analyze yields, risk, and protocol mechanics across Solana and EVM DeFi.",
+          "avatar": "💰",
           "tags": [
-            "mecha",
-            "mechaplex",
-            "metaplex",
-            "mpl-core",
-            "agent-builder",
-            "solana",
-            "holder"
+            "defi",
+            "yield",
+            "risk",
+            "strategy",
+            "cheshire-terminal"
           ],
-          "category": "platform"
+          "category": "defi"
         },
         "config": {
-          "openingMessage": null,
-          "openingQuestions": []
+          "systemRole": "You are a DeFi strategist for Cheshire Terminal.\n\nCAPABILITIES:\n- Compare protocol yields and incentives\n- Explain risk (smart contract, IL, liquidity, oracle)\n- Prefer Solana-first when chain is unspecified\n- Flag unsustainable APYs and thin exit liquidity\n\nOUTPUT:\nClear recommendations with risk labels, assumptions, and next steps.\n\nNever request seed phrases or private keys.",
+          "openingMessage": "I'm your DeFi Strategist. Tell me your capital, risk tolerance, and target chain.",
+          "openingQuestions": [
+            "What is your risk tolerance?",
+            "Stablecoin yield or volatile pairs?",
+            "Solana, EVM, or both?",
+            "What time horizon are you farming?"
+          ],
+          "displayMode": "chat"
         },
-        "solana": {
-          "capabilities": [],
-          "metaplexSkills": [
-            "agent-registry",
-            "core"
-          ]
-        },
-        "payment": null,
-        "agentToken": null
-      }
+        "examples": [
+          {
+            "role": "user",
+            "content": "Where should I farm stablecoins with moderate risk?"
+          },
+          {
+            "role": "assistant",
+            "content": "I'll compare base APY, incentives, TVL, and exit liquidity — then rank options with risk labels."
+          }
+        ]
+      },
+      "deploy": {
+        "template": "/api/agents/templates/defi-strategist.json",
+        "create": "/agents/mint?fromTemplate=defi-strategist",
+        "design": "ct-agents design --from defi-strategist"
+      },
+      "sourceFile": "defi-strategist.template.json"
     },
     {
-      "identifier": "cheshire-terminal-solana-agents:mev-protection-advisor",
-      "title": "MEV Protection Advisor",
-      "description": "Cheshire Terminal agent: Protect users from front-running, sandwich attacks, and MEV exploitation",
-      "avatar": "https://cheshireterminal.ai/nich.jpg",
-      "tags": [
-        "mev",
-        "security",
-        "front-running",
-        "flashbots",
-        "protection",
-        "cheshire-terminal",
-        "defi"
-      ],
+      "templateId": "security-auditor",
+      "name": "Security Auditor",
+      "description": "Smart-contract and wallet security reviewer scaffold — specialize for your stack.",
       "category": "security",
-      "author": "openclawd",
-      "createdAt": "2024-12-16",
-      "oneShot": false,
-      "featured": false,
-      "openingMessage": null,
-      "openingQuestions": [],
-      "tokenUsage": null,
-      "capabilities": [],
-      "metaplexSkills": [],
-      "payment": null,
-      "agentToken": null,
-      "deploy": {
-        "json": "/api/agents/catalog/cheshire-terminal-solana-agents%3Amev-protection-advisor.json",
-        "chat": "/agents/chat?agent=cheshire-terminal-solana-agents%3Amev-protection-advisor",
-        "mint": "/agents/mint?template=cheshire-terminal-solana-agents%3Amev-protection-advisor",
-        "mcp": "/api/agents/catalog/cheshire-terminal-solana-agents%3Amev-protection-advisor.json",
-        "registration": "/api/agents/registry/cheshire-terminal-solana-agents%3Amev-protection-advisor.json"
-      },
-      "rawCatalog": {
-        "identifier": "cheshire-terminal-solana-agents:mev-protection-advisor",
-        "author": "openclawd",
-        "homepage": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Amev-protection-advisor",
-        "createdAt": "2024-12-16",
-        "oneShot": false,
-        "featured": false,
+      "avatar": "🛡️",
+      "variables": [
+        {
+          "name": "identifier",
+          "default": "my-security-auditor"
+        },
+        {
+          "name": "title",
+          "default": "Security Auditor"
+        },
+        {
+          "name": "author",
+          "default": "your-name"
+        },
+        {
+          "name": "category",
+          "default": "security"
+        }
+      ],
+      "scaffold": {
+        "author": "your-name",
+        "identifier": "my-security-auditor",
         "schemaVersion": 1,
+        "homepage": "https://cheshireterminal.ai/agents",
+        "summary": "Security-focused agent for contract review and operational hardening",
         "meta": {
-          "title": "MEV Protection Advisor",
-          "description": "Cheshire Terminal agent: Protect users from front-running, sandwich attacks, and MEV exploitation",
-          "avatar": "https://cheshireterminal.ai/nich.jpg",
+          "title": "Security Auditor",
+          "description": "Review contracts, permissions, and operational security with a conservative bias.",
+          "avatar": "🛡️",
           "tags": [
-            "mev",
             "security",
-            "front-running",
-            "flashbots",
-            "protection",
-            "cheshire-terminal",
-            "defi"
+            "audit",
+            "risk",
+            "cheshire-terminal"
           ],
           "category": "security"
         },
         "config": {
-          "openingMessage": null,
-          "openingQuestions": []
+          "systemRole": "You are a security auditor agent for Cheshire Terminal.\n\nFOCUS:\n- Threat models and trust assumptions\n- Privilege escalation and key custody risks\n- Solana account validation / PDA misuse patterns when relevant\n- Practical remediation steps ordered by severity\n\nSTYLE:\nConservative. Prefer false positives over silent risk. Never request seed phrases or private keys.",
+          "openingMessage": "Security Auditor online. Share the surface (program, wallet flow, or ops setup) you want reviewed.",
+          "openingQuestions": [
+            "What system are we reviewing?",
+            "Is this Solana, EVM, or off-chain ops?",
+            "Any known privileged keys or admin roles?",
+            "Do you want a severity-ranked findings list?"
+          ],
+          "displayMode": "chat"
         },
-        "solana": {
-          "capabilities": [],
-          "metaplexSkills": []
+        "examples": [
+          {
+            "role": "user",
+            "content": "Review this deposit flow for custody risk."
+          },
+          {
+            "role": "assistant",
+            "content": "I'll map trust boundaries, privileged signers, and failure modes, then return severity-ranked findings."
+          }
+        ]
+      },
+      "deploy": {
+        "template": "/api/agents/templates/security-auditor.json",
+        "create": "/agents/mint?fromTemplate=security-auditor",
+        "design": "ct-agents design --from security-auditor"
+      },
+      "sourceFile": "security-auditor.template.json"
+    },
+    {
+      "templateId": "trading-analyst",
+      "name": "Trading Analyst",
+      "description": "Market structure and trade planning scaffold — fork for perps, spot, or memecoins.",
+      "category": "trading",
+      "avatar": "📈",
+      "variables": [
+        {
+          "name": "identifier",
+          "default": "my-trading-analyst"
         },
-        "payment": null,
-        "agentToken": null
-      }
+        {
+          "name": "title",
+          "default": "Trading Analyst"
+        },
+        {
+          "name": "author",
+          "default": "your-name"
+        },
+        {
+          "name": "category",
+          "default": "trading"
+        }
+      ],
+      "scaffold": {
+        "author": "your-name",
+        "identifier": "my-trading-analyst",
+        "schemaVersion": 1,
+        "homepage": "https://cheshireterminal.ai/agents",
+        "summary": "Trading analyst agent for setup quality, risk, and execution hygiene",
+        "meta": {
+          "title": "Trading Analyst",
+          "description": "Plan trades with explicit risk, invalidation, and size — Solana-first when unspecified.",
+          "avatar": "📈",
+          "tags": [
+            "trading",
+            "risk",
+            "execution",
+            "cheshire-terminal"
+          ],
+          "category": "trading"
+        },
+        "config": {
+          "systemRole": "You are a trading analyst for Cheshire Terminal.\n\nALWAYS INCLUDE:\n- Thesis and invalidation\n- Position sizing guidance as % of risk capital\n- Slippage / liquidity caveats\n- Whether the idea is observe-only vs executable\n\nPrefer Solana venues when chain is unspecified. Never request seed phrases or private keys. Do not promise profits.",
+          "openingMessage": "Trading Analyst ready. Share the market, timeframe, and max risk you're willing to take.",
+          "openingQuestions": [
+            "Spot, perps, or memecoins?",
+            "What is your max loss per trade?",
+            "What timeframe are you trading?",
+            "Do you want a plan only or execution checklist?"
+          ],
+          "displayMode": "chat"
+        },
+        "examples": [
+          {
+            "role": "user",
+            "content": "Outline a SOL long plan with 1% account risk."
+          },
+          {
+            "role": "assistant",
+            "content": "I'll define entry zones, invalidation, size from 1% risk, and liquidity caveats."
+          }
+        ]
+      },
+      "deploy": {
+        "template": "/api/agents/templates/trading-analyst.json",
+        "create": "/agents/mint?fromTemplate=trading-analyst",
+        "design": "ct-agents design --from trading-analyst"
+      },
+      "sourceFile": "trading-analyst.template.json"
     }
-  ],
-  "templates": []
+  ]
 }

@@ -50,7 +50,26 @@ assert(
   `catalog index mismatch: ${catalogIndex.stats.totalAgents}`
 );
 assert(registryIndex.count === EXPECTED_TOTAL, `registry count mismatch: ${registryIndex.count}`);
-assert(catalog.stats.totalTemplates === 0, `bad template count: ${catalog.stats.totalTemplates}`);
+assert(
+  catalog.stats.totalTemplates >= 1,
+  `expected scaffold templates >= 1, got ${catalog.stats.totalTemplates}`
+);
+assert(
+  Array.isArray(catalog.templates) && catalog.templates.length === catalog.stats.totalTemplates,
+  `templates array length mismatch: ${catalog.templates?.length} vs stats ${catalog.stats.totalTemplates}`
+);
+for (const template of catalog.templates) {
+  assert(template.templateId, 'template missing templateId');
+  assert(template.name, `${template.templateId} missing name`);
+  assert(
+    fs.existsSync(path.join(ROOT, 'public/api/agents/templates', `${template.templateId}.json`)),
+    `${template.templateId} missing public template file`
+  );
+}
+assert(
+  fs.existsSync(path.join(ROOT, 'public/api/agents/templates', 'index.json')),
+  'missing templates index.json'
+);
 
 const oneShots = catalog.oneShots.map((agent) => agent.identifier).sort();
 const featured = catalog.featured.map((agent) => agent.identifier).sort();

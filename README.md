@@ -47,11 +47,15 @@ Hosted surfaces: [agent hub](https://cheshireterminal.ai/agents) · [agent forge
 ## ⎧ ONE-SHOT INSTALL ⎫
 
 ```bash
-# zero config — boot the forge
+# zero config — open the design TUI (fork templates → customize → save)
 npx cheshire-terminal-agents
+
+# or explicit
+npx cheshire-terminal-agents design
 
 # install globally (bins: cheshire-terminal-agents · ct-agents)
 npm i -g cheshire-terminal-agents
+ct-agents design
 ct-agents catalog
 ct-agents serve
 
@@ -61,12 +65,53 @@ npm i cheshire-terminal-agents
 
 Requires **Node.js `>=18.18`** (ESM).
 
+### Design your own agent (TUI)
+
+Every catalog agent, character, minted example, and blank scaffold is a **forkable template**. The design TUI walks you through:
+
+1. **Pick a template** — catalog agent / character / scaffold / minted  
+2. **Customize** — identifier, title, author, category, tags, systemRole  
+3. **Validate** — against `schema/clawdAgentSchema.v1.json`  
+4. **Save** — local JSON you own (default `./agents/<id>.json`)
+
+```bash
+# interactive forge
+ct-agents design
+ct-agents forge          # alias
+
+# list everything you can fork
+ct-agents design --list
+
+# non-interactive fork
+ct-agents design --from defi-yield-farmer --id my-yield-bot --out ./agents/my-yield-bot.json
+
+# blank scaffold
+ct-agents design --blank --id research-bot --title "Research Bot" --out ./research-bot.json
+
+# validate a definition
+ct-agents design --validate ./agents/my-yield-bot.json
+```
+
+| Source | Path | Role |
+|--------|------|------|
+| Catalog agents | `agents/*.json` | Production prompts — fork & specialize |
+| Scaffolds | `templates/*.template.json` | Blank / DeFi / security / trading starters |
+| Characters | `characters/*.json` | Persona seeds converted to agent shells |
+| Minted | `minted/*.json` | On-chain mint metadata → light agent shells |
+| Schema | `schema/clawdAgentSchema.v1.json` | Validation contract |
+| Locales | `locales/<id>/` | i18n packs for published agents |
+
 ### CLI
 
 | Command | Effect |
 |---------|--------|
-| `ct-agents` / `cheshire-terminal-agents` | Interactive forge boot |
+| `ct-agents` / `ct-agents design` | **Design TUI** — fork templates, customize, validate, save |
+| `ct-agents forge` | Alias for `design` |
+| `ct-agents design --list` | List forkable templates (agents + scaffolds + characters) |
+| `ct-agents design --from <id>` | Non-interactive fork |
+| `ct-agents design --validate <file>` | Schema-check an agent JSON |
 | `ct-agents catalog` | Print catalog stats (agents, categories, hub) |
+| `ct-agents templates` | List scaffold templates from the catalog |
 | `ct-agents skills` | List deployable skill directories |
 | `ct-agents registry` | Print on-chain registry index |
 | `ct-agents schema` | Show `clawdAgentSchema` info |
@@ -74,6 +119,7 @@ Requires **Node.js `>=18.18`** (ESM).
 | `ct-agents --help` | Usage + live endpoint map |
 
 ```bash
+npx cheshire-terminal-agents design --list
 npx cheshire-terminal-agents catalog
 npx cheshire-terminal-agents skills
 npx cheshire-terminal-agents serve --port 8080

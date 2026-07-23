@@ -1,6 +1,6 @@
 {
   "schemaVersion": "openclawd.metaplex.registry.index.v1",
-  "generatedAt": "2026-07-22T20:00:02.064Z",
+  "generatedAt": "2026-07-23T22:08:45.423Z",
   "registry": "metaplex-agent-registry",
   "host": "https://cheshireterminal.ai",
   "count": 137,
@@ -657,6 +657,69 @@
       "status": "pending-onchain-registration"
     },
     {
+      "id": "airdrop-hunter",
+      "name": "DeFi Airdrop Hunter",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/airdrop-hunter.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
+    {
+      "id": "alice-character-json",
+      "name": "Alice",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/alice-character-json.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
+    {
+      "id": "alpha-leak-detector",
+      "name": "Crypto Alpha & Signal Detector",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/alpha-leak-detector.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
+    {
+      "id": "bengraham",
+      "name": "Benjamin Graham",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/bengraham.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
+    {
+      "id": "billackman",
+      "name": "Bill Ackman",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/billackman.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
+    {
+      "id": "bridge-security-analyst",
+      "name": "Cross-Chain Bridge Security Analyst",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/bridge-security-analyst.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
+    {
+      "id": "cathiewood",
+      "name": "Cathie Wood",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cathiewood.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
+    {
+      "id": "charliemunger",
+      "name": "Charlie Munger",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/charliemunger.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
+    {
+      "id": "cheshire-character-json",
+      "name": "Cheshire",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-character-json.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
+    {
       "id": "cheshire-terminal-solana-agents:activistpinch",
       "name": "ActivistPinch · Governance Lobster",
       "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aactivistpinch.json",
@@ -898,69 +961,6 @@
       "id": "cheshire-terminal-solana-agents:disruptiveshell",
       "name": "DisruptiveShell · Vision Lobster",
       "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Adisruptiveshell.json",
-      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
-      "status": "pending-onchain-registration"
-    },
-    {
-      "id": "cheshire-terminal-solana-agents:gas-optimization-expert",
-      "name": "Gas Cost Optimization Expert",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agas-optimization-expert.json",
-      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
-      "status": "pending-onchain-registration"
-    },
-    {
-      "id": "cheshire-terminal-solana-agents:governance-proposal-analyst",
-      "name": "DAO Governance Proposal Analyst",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json",
-      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
-      "status": "pending-onchain-registration"
-    },
-    {
-      "id": "cheshire-terminal-solana-agents:impermanent-loss-calculator",
-      "name": "Impermanent Loss Calculator",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aimpermanent-loss-calculator.json",
-      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
-      "status": "pending-onchain-registration"
-    },
-    {
-      "id": "cheshire-terminal-solana-agents:latticeclaw",
-      "name": "LatticeClaw · Inversion Lobster",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Alatticeclaw.json",
-      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
-      "status": "pending-onchain-registration"
-    },
-    {
-      "id": "cheshire-terminal-solana-agents:layer2-comparison-guide",
-      "name": "Layer 2 Comparison Guide",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json",
-      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
-      "status": "pending-onchain-registration"
-    },
-    {
-      "id": "cheshire-terminal-solana-agents:liquidation-risk-manager",
-      "name": "Liquidation Risk Manager",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json",
-      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
-      "status": "pending-onchain-registration"
-    },
-    {
-      "id": "cheshire-terminal-solana-agents:liquidity-pool-analyzer",
-      "name": "Liquidity Pool Deep Analyzer",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json",
-      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
-      "status": "pending-onchain-registration"
-    },
-    {
-      "id": "cheshire-terminal-solana-agents:mechaplex-mech-builder",
-      "name": "Mechaplex · Mech Builder",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json",
-      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
-      "status": "pending-onchain-registration"
-    },
-    {
-      "id": "cheshire-terminal-solana-agents:mev-protection-advisor",
-      "name": "MEV Protection Advisor",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Amev-protection-advisor.json",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration"
     }

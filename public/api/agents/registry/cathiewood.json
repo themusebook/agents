@@ -1,24 +1,21 @@
 {
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
-  "name": "DAO Governance Proposal Analyst",
-  "description": "Cheshire Terminal agent: Analyze and explain DAO governance proposals and their implications",
+  "name": "Cathie Wood",
+  "description": "Cathie Wood focuses on disruptive innovation and exponential growth potential in technology-enabled sectors. She invests in companies leveraging breakthrough technologies, emphasizing long-term growth over immediate profitability, and accepts higher volatility for potentially market-beating returns.",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst",
+  "external_url": "https://cheshireterminal.ai/agents/cathiewood",
   "active": true,
-  "createdAt": "2024-12-16",
-  "updatedAt": "2026-07-22T20:00:02.064Z",
+  "createdAt": "2026-07-20",
+  "updatedAt": "2026-07-23T22:08:45.423Z",
   "tags": [
-    "governance",
-    "dao",
-    "voting",
-    "proposals",
-    "analysis",
-    "cheshire-terminal",
-    "defi"
+    "disruptive-innovation",
+    "growth",
+    "character",
+    "finance"
   ],
   "categories": [
-    "governance"
+    "character"
   ],
   "owner": {
     "organization": "OpenClawd",
@@ -32,7 +29,7 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst"
+      "endpoint": "https://cheshireterminal.ai/agents/cathiewood"
     },
     {
       "name": "A2A",
@@ -41,19 +38,19 @@
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cathiewood.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cathiewood.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:cheshire-terminal-solana-agents:governance-proposal-analyst",
+      "agentId": "openclawd:cathiewood",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agovernance-proposal-analyst.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cathiewood.json"
     }
   ],
   "supportedTrust": [
@@ -78,7 +75,7 @@
     ]
   },
   "openclawd": {
-    "identifier": "cheshire-terminal-solana-agents:governance-proposal-analyst",
+    "identifier": "cathiewood",
     "capabilities": [],
     "payment": null,
     "agentToken": null

@@ -1,24 +1,24 @@
 {
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
-  "name": "Layer 2 Comparison Guide",
-  "description": "Cheshire Terminal agent: Compare Ethereum L2 solutions: Arbitrum, Optimism, Base, zkSync",
+  "name": "Crypto Alpha & Signal Detector",
+  "description": "Cheshire Terminal agent: Identify trading alpha and early signals in DeFi markets",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Alayer2-comparison-guide",
+  "external_url": "https://cheshireterminal.ai/agents/alpha-leak-detector",
   "active": true,
   "createdAt": "2024-12-16",
-  "updatedAt": "2026-07-22T20:00:02.064Z",
+  "updatedAt": "2026-07-23T22:08:45.423Z",
   "tags": [
-    "layer-2",
-    "scaling",
-    "arbitrum",
-    "optimism",
-    "ethereum",
+    "alpha",
+    "trading",
+    "signals",
+    "research",
+    "opportunities",
     "cheshire-terminal",
     "defi"
   ],
   "categories": [
-    "defi"
+    "crypto"
   ],
   "owner": {
     "organization": "OpenClawd",
@@ -32,7 +32,7 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Alayer2-comparison-guide"
+      "endpoint": "https://cheshireterminal.ai/agents/alpha-leak-detector"
     },
     {
       "name": "A2A",
@@ -41,19 +41,19 @@
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/alpha-leak-detector.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/alpha-leak-detector.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:cheshire-terminal-solana-agents:layer2-comparison-guide",
+      "agentId": "openclawd:alpha-leak-detector",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Alayer2-comparison-guide.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/alpha-leak-detector.json"
     }
   ],
   "supportedTrust": [
@@ -78,7 +78,7 @@
     ]
   },
   "openclawd": {
-    "identifier": "cheshire-terminal-solana-agents:layer2-comparison-guide",
+    "identifier": "alpha-leak-detector",
     "capabilities": [],
     "payment": null,
     "agentToken": null

@@ -1,0 +1,31 @@
+{
+  "identifier": "bengraham",
+  "author": "openclawd",
+  "homepage": "https://cheshireterminal.ai/agents/bengraham",
+  "createdAt": "2026-07-20",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Benjamin Graham",
+    "description": "Benjamin Graham is an AI Agent specializing in value investing principles.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "value-investing",
+      "fundamentals",
+      "character",
+      "finance"
+    ],
+    "category": "character"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

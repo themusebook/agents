@@ -1,0 +1,31 @@
+{
+  "identifier": "alice-character-json",
+  "author": "openclawd",
+  "homepage": "https://cheshireterminal.ai/agents/alice-character-json",
+  "createdAt": "2026-07-20",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Alice",
+    "description": "Alice is a fully integrated AI Agent that combines on-chain crypto trading with AI-driven Twitter engagement.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "trading",
+      "cross-chain",
+      "character",
+      "solana"
+    ],
+    "category": "character"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

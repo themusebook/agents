@@ -1,24 +1,21 @@
 {
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
-  "name": "MEV Protection Advisor",
-  "description": "Cheshire Terminal agent: Protect users from front-running, sandwich attacks, and MEV exploitation",
+  "name": "Charlie Munger",
+  "description": "Charlie Munger is an AI Agent specializing in multidisciplinary thinking and rational investment decision-making.",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Amev-protection-advisor",
+  "external_url": "https://cheshireterminal.ai/agents/charliemunger",
   "active": true,
-  "createdAt": "2024-12-16",
-  "updatedAt": "2026-07-22T20:00:02.064Z",
+  "createdAt": "2026-07-20",
+  "updatedAt": "2026-07-23T22:08:45.423Z",
   "tags": [
-    "mev",
-    "security",
-    "front-running",
-    "flashbots",
-    "protection",
-    "cheshire-terminal",
-    "defi"
+    "mental-models",
+    "investing",
+    "character",
+    "finance"
   ],
   "categories": [
-    "security"
+    "character"
   ],
   "owner": {
     "organization": "OpenClawd",
@@ -32,7 +29,7 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Amev-protection-advisor"
+      "endpoint": "https://cheshireterminal.ai/agents/charliemunger"
     },
     {
       "name": "A2A",
@@ -41,19 +38,19 @@
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Amev-protection-advisor.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/charliemunger.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Amev-protection-advisor.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/charliemunger.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:cheshire-terminal-solana-agents:mev-protection-advisor",
+      "agentId": "openclawd:charliemunger",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Amev-protection-advisor.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/charliemunger.json"
     }
   ],
   "supportedTrust": [
@@ -78,7 +75,7 @@
     ]
   },
   "openclawd": {
-    "identifier": "cheshire-terminal-solana-agents:mev-protection-advisor",
+    "identifier": "charliemunger",
     "capabilities": [],
     "payment": null,
     "agentToken": null

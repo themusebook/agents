@@ -57,76 +57,73 @@ const writeJson = (p, data) => {
   fs.writeFileSync(p, JSON.stringify(normalizeCanonicalUrls(data), null, 2) + '\n');
 };
 
-function agentSourceDirs() {
-  // Prefer published agents/; optionally merge local-only src/ when present.
-  const dirs = [];
-  if (fs.existsSync(AGENTS_DIR)) dirs.push(AGENTS_DIR);
-  if (fs.existsSync(SRC_DIR)) dirs.push(SRC_DIR);
-  return dirs;
+function resolveAgentSourceDir() {
+  // Local unpublished tree (gitignored) is the full hub source when present.
+  // Published npm package ships agents/ only.
+  if (fs.existsSync(SRC_DIR)) return SRC_DIR;
+  if (fs.existsSync(AGENTS_DIR)) return AGENTS_DIR;
+  return null;
 }
 
 function loadAgentsFromDir(dir) {
-  if (!fs.existsSync(dir)) return [];
+  if (!dir || !fs.existsSync(dir)) return [];
   const files = fs
     .readdirSync(dir)
     .filter((f) => f.endsWith('.json') && f !== 'package.json')
     .sort();
 
-  return files.map((f) => {
-    const fullPath = path.join(dir, f);
-    const raw = readJson(fullPath);
-    // Skip non-clawd agent shapes (e.g. runtime packages without identifier/meta)
-    if (!raw || typeof raw !== 'object') return null;
-    const id = raw.identifier || path.basename(f, '.json');
-    if (!raw.meta && !raw.config) return null;
-    const capabilities = raw.solana?.capabilities || [];
-    const metaplexSkills =
-      raw.solana?.metaplexSkills || deriveMetaplexSkills(capabilities, raw.meta?.tags || []);
-    const agent = {
-      identifier: id,
-      title: raw.meta?.title || id,
-      description: raw.meta?.description || '',
-      avatar: raw.meta?.avatar || '🤖',
-      tags: raw.meta?.tags || [],
-      category: raw.meta?.category || 'defi',
-      author: raw.author || 'solana-clawd',
-      createdAt: raw.createdAt || null,
-      oneShot: raw.oneShot === true,
-      featured: raw.featured === true,
-      openingMessage: raw.config?.openingMessage || null,
-      openingQuestions: raw.config?.openingQuestions || [],
-      tokenUsage: raw.tokenUsage || null,
-      capabilities,
-      metaplexSkills,
-      payment: raw.payment || null,
-      agentToken: raw.agentToken || null,
-      // Deploy URLs (consumed by AgentGallery deploy buttons)
-      deploy: {
-        json: `/api/agents/catalog/${encodeURIComponent(id)}.json`,
-        chat: `/agents/chat?agent=${encodeURIComponent(id)}`,
-        mint: `/agents/mint?template=${encodeURIComponent(id)}`,
-        mcp: `/api/agents/catalog/${encodeURIComponent(id)}.json`,
-        registration: `/api/agents/registry/${encodeURIComponent(id)}.json`,
-        fork: `ct-agents design --from ${encodeURIComponent(id)}`,
-      },
-    };
-    Object.defineProperty(agent, 'sourceFile', { value: f, enumerable: false });
-    Object.defineProperty(agent, 'sourcePath', { value: fullPath, enumerable: false });
-    return agent;
-  }).filter(Boolean);
+  return files
+    .map((f) => {
+      const fullPath = path.join(dir, f);
+      const raw = readJson(fullPath);
+      if (!raw || typeof raw !== 'object') return null;
+      const id = raw.identifier || path.basename(f, '.json');
+      // Require clawd agent shape (skip package.json-like or unrelated JSON)
+      if (!raw.meta && !raw.config) return null;
+      const capabilities = raw.solana?.capabilities || [];
+      const metaplexSkills =
+        raw.solana?.metaplexSkills || deriveMetaplexSkills(capabilities, raw.meta?.tags || []);
+      const agent = {
+        identifier: id,
+        title: raw.meta?.title || id,
+        description: raw.meta?.description || '',
+        avatar: raw.meta?.avatar || '🤖',
+        tags: raw.meta?.tags || [],
+        category: raw.meta?.category || 'defi',
+        author: raw.author || 'solana-clawd',
+        createdAt: raw.createdAt || null,
+        oneShot: raw.oneShot === true,
+        featured: raw.featured === true,
+        openingMessage: raw.config?.openingMessage || null,
+        openingQuestions: raw.config?.openingQuestions || [],
+        tokenUsage: raw.tokenUsage || null,
+        capabilities,
+        metaplexSkills,
+        payment: raw.payment || null,
+        agentToken: raw.agentToken || null,
+        deploy: {
+          json: `/api/agents/catalog/${encodeURIComponent(id)}.json`,
+          chat: `/agents/chat?agent=${encodeURIComponent(id)}`,
+          mint: `/agents/mint?template=${encodeURIComponent(id)}`,
+          mcp: `/api/agents/catalog/${encodeURIComponent(id)}.json`,
+          registration: `/api/agents/registry/${encodeURIComponent(id)}.json`,
+          fork: `ct-agents design --from ${encodeURIComponent(id)}`,
+        },
+      };
+      Object.defineProperty(agent, 'sourceFile', { value: f, enumerable: false });
+      Object.defineProperty(agent, 'sourcePath', { value: fullPath, enumerable: false });
+      return agent;
+    })
+    .filter(Boolean);
 }
 
 function loadAgents() {
-  const seen = new Set();
-  const agents = [];
-  for (const dir of agentSourceDirs()) {
-    for (const agent of loadAgentsFromDir(dir)) {
-      if (seen.has(agent.identifier)) continue;
-      seen.add(agent.identifier);
-      agents.push(agent);
-    }
+  const dir = resolveAgentSourceDir();
+  if (!dir) {
+    console.warn('⚠ no agent source dir (src/ or agents/) — catalog agents will be registry-only');
+    return [];
   }
-  return agents;
+  return loadAgentsFromDir(dir);
 }
 
 function loadSupplementalRegistryAgents(existingIds) {
@@ -413,6 +410,7 @@ function build() {
       { id: 'tools', label: 'Tools', icon: '🔧' },
       { id: 'voice-council', label: 'Voice Council', icon: '🎙️' },
       { id: 'community', label: 'Community', icon: '👥' },
+      { id: 'character', label: 'Character', icon: '🎭' },
     ],
     deployPaths: [
       {
@@ -666,16 +664,6 @@ function writeStaticApi(catalog, agents, templates, registrationDocs, acpRegistr
 
   for (const doc of registrationDocs) {
     writeJson(path.join(PUBLIC_REGISTRY_DIR, `${doc.openclawd.identifier}.json`), doc);
-  }
-
-  for (const template of templates) {
-    const sourcePath = path.join(TEMPLATES_DIR, `${template.templateId}.template.json`);
-    if (fs.existsSync(sourcePath)) {
-      writeJson(
-        path.join(PUBLIC_TEMPLATES_DIR, `${template.templateId}.json`),
-        readJson(sourcePath)
-      );
-    }
   }
 }
 

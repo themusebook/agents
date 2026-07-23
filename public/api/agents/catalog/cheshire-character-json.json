@@ -1,0 +1,31 @@
+{
+  "identifier": "cheshire-character-json",
+  "author": "openclawd",
+  "homepage": "https://cheshireterminal.ai/agents/cheshire-character-json",
+  "createdAt": "2026-07-20",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Cheshire",
+    "description": "Cheshire is a multimodal AI agent specializing in creative generation across digital realms.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "oracle",
+      "generative",
+      "character",
+      "solana"
+    ],
+    "category": "character"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

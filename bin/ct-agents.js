@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 
 import { createRequire } from 'module';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import path from 'path';
 import http from 'http';
 import fs from 'fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const ROOT = path.join(__dirname, '..');
 const require = createRequire(import.meta.url);
 const pkg = require('../package.json');
 const catalog = require('../agents-catalog.json');
@@ -17,6 +18,7 @@ const GREEN = '\x1b[32m';
 const YELLOW = '\x1b[33m';
 const MAGENTA = '\x1b[35m';
 const RED = '\x1b[31m';
+const DIM = '\x1b[2m';
 const RESET = '\x1b[0m';
 
 function showBoot() {
@@ -42,7 +44,15 @@ ${CYAN} ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚�
 
 ${GREEN}✦ dual-chain agent forge ✦ ${RESET}
 ${YELLOW}${pkg.version}${RESET} · solana:mainnet · robinhood-chain:4663
+${DIM}  design your own: ct-agents design · fork any catalog agent as a template${RESET}
 `);
+}
+
+async function runDesign(argv) {
+  const modPath = path.join(ROOT, 'robinhood-src', 'designTui.js');
+  const { runDesignTui } = await import(pathToFileURL(modPath).href);
+  const code = await runDesignTui(argv, ROOT);
+  process.exit(code ?? 0);
 }
 
 const COMMANDS = {
@@ -60,11 +70,12 @@ const COMMANDS = {
       templates: stats.totalTemplates,
       categories: stats.byCategory ? Object.keys(stats.byCategory) : [],
       hub: catalog.hub || null,
+      design: 'ct-agents design',
     }, null, 2));
   },
 
   registry: () => {
-    const regPath = path.join(__dirname, '..', 'public', 'api', 'agents', 'registry', 'index.json');
+    const regPath = path.join(ROOT, 'public', 'api', 'agents', 'registry', 'index.json');
     if (!fs.existsSync(regPath)) {
       console.error('Registry index not found. Run build first: npm run build');
       process.exit(1);
@@ -74,29 +85,53 @@ const COMMANDS = {
   },
 
   skills: () => {
-    const skillsDir = path.join(__dirname, '..', 'skills');
+    const skillsDir = path.join(ROOT, 'skills');
     if (!fs.existsSync(skillsDir)) {
       console.log('No skills directory found.');
       return;
     }
-    const dirs = fs.readdirSync(skillsDir).filter(d => fs.statSync(path.join(skillsDir, d)).isDirectory());
+    const dirs = fs.readdirSync(skillsDir).filter((d) =>
+      fs.statSync(path.join(skillsDir, d)).isDirectory()
+    );
     console.log(JSON.stringify({ count: dirs.length, skills: dirs }, null, 2));
   },
 
   schema: () => {
-    const schemaPath = path.join(__dirname, '..', 'schema', 'clawdAgentSchema.v1.json');
+    const schemaPath = path.join(ROOT, 'schema', 'clawdAgentSchema.v1.json');
     if (!fs.existsSync(schemaPath)) {
       console.error('Schema file not found.');
       process.exit(1);
     }
     const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8'));
     console.log(`Schema: ${schema.$id || schema.title || 'clawdAgentSchema.v1'}`);
+    console.log(`Required: ${(schema.required || []).join(', ')}`);
     console.log(`Properties: ${Object.keys(schema.properties || {}).join(', ')}`);
+    console.log(`\n${DIM}Design against this schema:${RESET} ${CYAN}ct-agents design${RESET}`);
   },
+
+  templates: () => {
+    const templates = catalog.templates || [];
+    console.log(JSON.stringify({
+      count: templates.length,
+      design: 'ct-agents design --list',
+      templates: templates.map((t) => ({
+        id: t.templateId,
+        name: t.name,
+        category: t.category,
+        avatar: t.avatar,
+        design: t.deploy?.design || `ct-agents design --from ${t.templateId}`,
+      })),
+    }, null, 2));
+  },
+
+  // design / forge — template-driven TUI
+  design: (argv) => runDesign(argv),
+  forge: (argv) => runDesign(argv),
+  tui: (argv) => runDesign(argv),
 
   serve: () => {
     const port = parseInt(process.argv[3] || process.env.PORT || '3000', 10);
-    const PUBLIC = path.join(__dirname, '..', 'public');
+    const PUBLIC = path.join(ROOT, 'public');
 
     const MIME = {
       '.json': 'application/json',
@@ -121,6 +156,12 @@ const COMMANDS = {
         return;
       }
 
+      // directory → index.json
+      if (fs.statSync(filePath).isDirectory()) {
+        const indexPath = path.join(filePath, 'index.json');
+        if (fs.existsSync(indexPath)) filePath = indexPath;
+      }
+
       const ext = path.extname(filePath);
       res.writeHead(200, {
         'Content-Type': MIME[ext] || 'application/octet-stream',
@@ -139,7 +180,8 @@ const COMMANDS = {
     console.log(`${CYAN}  http://localhost:${port}/api/agents/catalog${RESET}`);
     console.log(`${CYAN}  http://localhost:${port}/api/agents/registry${RESET}`);
     console.log(`${CYAN}  http://localhost:${port}/api/agents/templates${RESET}`);
-    console.log(`${CYAN}  http://localhost:${port}/.well-known/acp.json${RESET}\n`);
+    console.log(`${CYAN}  http://localhost:${port}/.well-known/acp.json${RESET}`);
+    console.log(`${DIM}  design locally: ct-agents design${RESET}\n`);
 
     server.listen(port, () => {
       console.log(`${GREEN}✓ Listening on port ${port}${RESET}`);
@@ -150,39 +192,68 @@ const COMMANDS = {
     showBoot();
     console.log(`
 ${BOLD}Usage:${RESET}
-  ${CYAN}npx cheshire-terminal-agents${RESET}          Boot the agent forge (interactive)
-  ${CYAN}npx cheshire-terminal-agents serve${RESET}    Start the API server
-  ${CYAN}npx cheshire-terminal-agents catalog${RESET}   Print agent catalog stats
-  ${CYAN}npx cheshire-terminal-agents registry${RESET}  Print registry index
-  ${CYAN}npx cheshire-terminal-agents skills${RESET}    List deployable skills
-  ${CYAN}npx cheshire-terminal-agents schema${RESET}    Show agent schema info
-  ${CYAN}npx cheshire-terminal-agents --help${RESET}    Show this help
+  ${CYAN}npx cheshire-terminal-agents${RESET}              Open design TUI (default)
+  ${CYAN}npx cheshire-terminal-agents design${RESET}       Template-driven agent forge TUI
+  ${CYAN}npx cheshire-terminal-agents design --list${RESET} List forkable templates
+  ${CYAN}npx cheshire-terminal-agents design --from <id> --id <new> --out ./agent.json${RESET}
+  ${CYAN}npx cheshire-terminal-agents forge${RESET}        Alias for design
+  ${CYAN}npx cheshire-terminal-agents serve${RESET}        Start the API server
+  ${CYAN}npx cheshire-terminal-agents catalog${RESET}      Print agent catalog stats
+  ${CYAN}npx cheshire-terminal-agents templates${RESET}    List scaffold templates
+  ${CYAN}npx cheshire-terminal-agents registry${RESET}     Print registry index
+  ${CYAN}npx cheshire-terminal-agents skills${RESET}       List deployable skills
+  ${CYAN}npx cheshire-terminal-agents schema${RESET}       Show agent schema info
+  ${CYAN}npx cheshire-terminal-agents --help${RESET}       Show this help
 
 ${BOLD}Install globally:${RESET}
   ${YELLOW}npm i -g cheshire-terminal-agents${RESET}
-  ${YELLOW}ct-agents serve${RESET}
+  ${YELLOW}ct-agents design${RESET}          ${DIM}# interactive template forge${RESET}
+  ${YELLOW}ct-agents design --from defi-yield-farmer --id my-yield --out ./my-yield.json${RESET}
+
+${BOLD}Design flow:${RESET}
+  1. Pick a catalog agent, character, or blank scaffold as a template
+  2. Customize identifier / title / systemRole / tags
+  3. Validate against ${MAGENTA}clawdAgentSchema.v1${RESET}
+  4. Write a local agent JSON you own
 
 ${BOLD}Endpoints:${RESET}
   ${MAGENTA}https://cheshireterminal.ai/agents${RESET}          Agent hub
-  ${MAGENTA}https://cheshireterminal.ai/api/agents/catalog${RESET}   137 agents
+  ${MAGENTA}https://cheshireterminal.ai/api/agents/catalog${RESET}   catalog
   ${MAGENTA}https://cheshireterminal.ai/api/agents/registry${RESET}  On-chain registry
-  ${MAGENTA}https://cheshireterminal.ai/api/agents/templates${RESET} 5 templates
+  ${MAGENTA}https://cheshireterminal.ai/api/agents/templates${RESET} Scaffolds
 `);
   },
 };
 
 const args = process.argv.slice(2);
-const cmd = args[0] || 'help';
+const cmd = args[0];
 
-if (COMMANDS[cmd]) {
-  COMMANDS[cmd]();
+// Default: interactive design TUI when no command (or explicit design/forge/tui)
+if (!cmd) {
+  if (process.stdin.isTTY) {
+    showBoot();
+    await runDesign([]);
+  } else {
+    COMMANDS.help();
+  }
+} else if (cmd === 'design' || cmd === 'forge' || cmd === 'tui') {
+  await runDesign(args.slice(1));
+} else if (COMMANDS[cmd]) {
+  const result = COMMANDS[cmd](args.slice(1));
+  if (result && typeof result.then === 'function') await result;
 } else if (cmd === '--help' || cmd === '-h') {
   COMMANDS.help();
 } else if (cmd === '--version' || cmd === '-v') {
   COMMANDS.version();
 } else {
-  showBoot();
-  console.log(`${YELLOW}Unknown command: ${cmd}${RESET}`);
-  console.log(`Run ${CYAN}npx cheshire-terminal-agents --help${RESET} for available commands.`);
-  process.exit(1);
+  // Unknown command — if it looks like a design flag, forward to design
+  if (cmd.startsWith('--')) {
+    await runDesign(args);
+  } else {
+    showBoot();
+    console.log(`${YELLOW}Unknown command: ${cmd}${RESET}`);
+    console.log(`Run ${CYAN}npx cheshire-terminal-agents --help${RESET} for available commands.`);
+    console.log(`Or open the design TUI: ${CYAN}npx cheshire-terminal-agents design${RESET}`);
+    process.exit(1);
+  }
 }

@@ -1,0 +1,31 @@
+{
+  "identifier": "billackman",
+  "author": "openclawd",
+  "homepage": "https://cheshireterminal.ai/agents/billackman",
+  "createdAt": "2026-07-20",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Bill Ackman",
+    "description": "Bill Ackman is an AI Agent specializing in activist investing and concentrated portfolio management.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "activist-investing",
+      "concentrated",
+      "character",
+      "finance"
+    ],
+    "category": "character"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

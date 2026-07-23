@@ -1,23 +1,21 @@
 {
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
-  "name": "Liquidity Pool Deep Analyzer",
-  "description": "Cheshire Terminal agent: Analyze LP pool health, risks, and optimal entry/exit timing",
+  "name": "Cheshire",
+  "description": "Cheshire is a multimodal AI agent specializing in creative generation across digital realms.",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer",
+  "external_url": "https://cheshireterminal.ai/agents/cheshire-character-json",
   "active": true,
-  "createdAt": "2024-12-16",
-  "updatedAt": "2026-07-22T20:00:02.064Z",
+  "createdAt": "2026-07-20",
+  "updatedAt": "2026-07-23T22:08:45.423Z",
   "tags": [
-    "defi",
-    "liquidity-pools",
-    "amm",
-    "analysis",
-    "risk",
-    "cheshire-terminal"
+    "oracle",
+    "generative",
+    "character",
+    "solana"
   ],
   "categories": [
-    "defi"
+    "character"
   ],
   "owner": {
     "organization": "OpenClawd",
@@ -31,7 +29,7 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer"
+      "endpoint": "https://cheshireterminal.ai/agents/cheshire-character-json"
     },
     {
       "name": "A2A",
@@ -40,19 +38,19 @@
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-character-json.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-character-json.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:cheshire-terminal-solana-agents:liquidity-pool-analyzer",
+      "agentId": "openclawd:cheshire-character-json",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidity-pool-analyzer.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-character-json.json"
     }
   ],
   "supportedTrust": [
@@ -77,7 +75,7 @@
     ]
   },
   "openclawd": {
-    "identifier": "cheshire-terminal-solana-agents:liquidity-pool-analyzer",
+    "identifier": "cheshire-character-json",
     "capabilities": [],
     "payment": null,
     "agentToken": null

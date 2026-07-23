@@ -1,24 +1,21 @@
 {
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
-  "name": "Mechaplex · Mech Builder",
-  "description": "In-page Mechaplex forge for user-owned Mech agents on Metaplex Core. Assemble modules, mint identity, and operate your Mech from /mecha.",
+  "name": "Benjamin Graham",
+  "description": "Benjamin Graham is an AI Agent specializing in value investing principles.",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Amechaplex-mech-builder",
+  "external_url": "https://cheshireterminal.ai/agents/bengraham",
   "active": true,
-  "createdAt": "2026-07-21",
-  "updatedAt": "2026-07-22T20:00:02.064Z",
+  "createdAt": "2026-07-20",
+  "updatedAt": "2026-07-23T22:08:45.423Z",
   "tags": [
-    "mecha",
-    "mechaplex",
-    "metaplex",
-    "mpl-core",
-    "agent-builder",
-    "solana",
-    "holder"
+    "value-investing",
+    "fundamentals",
+    "character",
+    "finance"
   ],
   "categories": [
-    "platform"
+    "character"
   ],
   "owner": {
     "organization": "OpenClawd",
@@ -32,7 +29,7 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Amechaplex-mech-builder"
+      "endpoint": "https://cheshireterminal.ai/agents/bengraham"
     },
     {
       "name": "A2A",
@@ -41,19 +38,19 @@
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/bengraham.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/bengraham.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:cheshire-terminal-solana-agents:mechaplex-mech-builder",
+      "agentId": "openclawd:bengraham",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Amechaplex-mech-builder.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/bengraham.json"
     }
   ],
   "supportedTrust": [
@@ -62,10 +59,7 @@
     "token-gated"
   ],
   "metaplex": {
-    "programs": [
-      "agent-registry",
-      "core"
-    ],
+    "programs": [],
     "sdk": "@metaplex-foundation/mpl-agent-registry",
     "expectedIdentity": {
       "asset": null,
@@ -81,7 +75,7 @@
     ]
   },
   "openclawd": {
-    "identifier": "cheshire-terminal-solana-agents:mechaplex-mech-builder",
+    "identifier": "bengraham",
     "capabilities": [],
     "payment": null,
     "agentToken": null

@@ -1,0 +1,31 @@
+{
+  "identifier": "charliemunger",
+  "author": "openclawd",
+  "homepage": "https://cheshireterminal.ai/agents/charliemunger",
+  "createdAt": "2026-07-20",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Charlie Munger",
+    "description": "Charlie Munger is an AI Agent specializing in multidisciplinary thinking and rational investment decision-making.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "mental-models",
+      "investing",
+      "character",
+      "finance"
+    ],
+    "category": "character"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

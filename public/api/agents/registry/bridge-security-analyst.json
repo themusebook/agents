@@ -1,24 +1,24 @@
 {
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
-  "name": "Gas Cost Optimization Expert",
-  "description": "Cheshire Terminal agent: Minimize gas costs and optimize transaction timing",
+  "name": "Cross-Chain Bridge Security Analyst",
+  "description": "Cheshire Terminal agent: Evaluate bridge security and recommend safest cross-chain routes",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Agas-optimization-expert",
+  "external_url": "https://cheshireterminal.ai/agents/bridge-security-analyst",
   "active": true,
   "createdAt": "2024-12-16",
-  "updatedAt": "2026-07-22T20:00:02.064Z",
+  "updatedAt": "2026-07-23T22:08:45.423Z",
   "tags": [
-    "ethereum",
-    "gas",
-    "optimization",
-    "layer-2",
-    "efficiency",
+    "bridge",
+    "security",
+    "cross-chain",
+    "risk",
+    "multichain",
     "cheshire-terminal",
     "defi"
   ],
   "categories": [
-    "tools"
+    "security"
   ],
   "owner": {
     "organization": "OpenClawd",
@@ -32,7 +32,7 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Agas-optimization-expert"
+      "endpoint": "https://cheshireterminal.ai/agents/bridge-security-analyst"
     },
     {
       "name": "A2A",
@@ -41,19 +41,19 @@
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Agas-optimization-expert.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/bridge-security-analyst.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agas-optimization-expert.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/bridge-security-analyst.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:cheshire-terminal-solana-agents:gas-optimization-expert",
+      "agentId": "openclawd:bridge-security-analyst",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Agas-optimization-expert.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/bridge-security-analyst.json"
     }
   ],
   "supportedTrust": [
@@ -78,7 +78,7 @@
     ]
   },
   "openclawd": {
-    "identifier": "cheshire-terminal-solana-agents:gas-optimization-expert",
+    "identifier": "bridge-security-analyst",
     "capabilities": [],
     "payment": null,
     "agentToken": null

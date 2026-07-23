@@ -1,0 +1,44 @@
+{
+  "schemaVersion": "openclawd.templates.index.v1",
+  "generatedAt": "2026-07-23T22:08:45.423Z",
+  "count": 4,
+  "designCli": "ct-agents design",
+  "templates": [
+    {
+      "id": "blank",
+      "name": "Blank Agent",
+      "description": "Minimal clawdAgentSchema.v1 scaffold — fill in identity and systemRole.",
+      "category": "dev-tools",
+      "avatar": "🧩",
+      "endpoint": "/api/agents/templates/blank.json",
+      "design": "ct-agents design --from blank"
+    },
+    {
+      "id": "defi-strategist",
+      "name": "DeFi Strategist",
+      "description": "Yield, risk, and protocol comparison specialist — fork and specialize for your protocol.",
+      "category": "defi",
+      "avatar": "💰",
+      "endpoint": "/api/agents/templates/defi-strategist.json",
+      "design": "ct-agents design --from defi-strategist"
+    },
+    {
+      "id": "security-auditor",
+      "name": "Security Auditor",
+      "description": "Smart-contract and wallet security reviewer scaffold — specialize for your stack.",
+      "category": "security",
+      "avatar": "🛡️",
+      "endpoint": "/api/agents/templates/security-auditor.json",
+      "design": "ct-agents design --from security-auditor"
+    },
+    {
+      "id": "trading-analyst",
+      "name": "Trading Analyst",
+      "description": "Market structure and trade planning scaffold — fork for perps, spot, or memecoins.",
+      "category": "trading",
+      "avatar": "📈",
+      "endpoint": "/api/agents/templates/trading-analyst.json",
+      "design": "ct-agents design --from trading-analyst"
+    }
+  ]
+}

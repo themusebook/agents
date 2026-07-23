@@ -1,7 +1,7 @@
 {
   "name": "cheshire-terminal-agents",
   "version": "1.48.3",
-  "description": "♾️  Clawd Agents — 137 dual-chain agent definitions (Solana SVM + Robinhood Chain EVM), 53 agent JSON defs, 11 characters, 31 deployable skills, on-chain identity forge, Metaplex Core minting, LayerZero zk-omni, and a full REST + MCP catalog API. One-shot npm install (cheshire-terminal-agents).",
+  "description": "♾️  Clawd Agents — dual-chain agent catalog + design TUI. Fork any agent as a template, customize against clawdAgentSchema.v1, validate, and ship. 137 catalog agents, scaffolds, characters, skills, Metaplex/Robinhood forge surfaces. npx cheshire-terminal-agents design",
   "type": "module",
   "sideEffects": false,
   "license": "MIT",
@@ -39,7 +39,9 @@
   "exports": {
     ".": "./bin/ct-agents.js",
     "./catalog": "./robinhood-src/agentCatalog.js",
+    "./design": "./robinhood-src/designTui.js",
     "./agents/*": "./agents/*.json",
+    "./templates/*": "./templates/*",
     "./schema/*": "./schema/*.json",
     "./skills": "./skills/suite-index.json",
     "./package.json": "./package.json"
@@ -47,10 +49,13 @@
   "scripts": {
     "build": "node build-catalog.cjs && node scripts/validate-catalog.cjs && echo '✓ catalog built'",
     "validate": "node scripts/validate-catalog.cjs",
-    "test": "node scripts/validate-catalog.cjs && node scripts/smoke-readme-npm.cjs",
+    "test": "node scripts/validate-catalog.cjs && node scripts/smoke-readme-npm.cjs && node bin/ct-agents.js design --list --json > /dev/null",
     "smoke:readme": "node scripts/smoke-readme-npm.cjs",
     "catalog": "node -e \"import('./agents-catalog.json').then(c => { const s=c.stats||c; console.log(JSON.stringify({agents:s.totalAgents,oneShots:s.totalOneShots,featured:s.totalFeatured,templates:s.totalTemplates,categories:Object.keys(s.byCategory||{}).length},null,2)) })\"",
-    "start": "node bin/ct-agents.js serve",
+    "start": "node bin/ct-agents.js design",
+    "design": "node bin/ct-agents.js design",
+    "forge": "node bin/ct-agents.js forge",
+    "serve": "node bin/ct-agents.js serve",
     "prepublishOnly": "node build-catalog.cjs && node scripts/validate-catalog.cjs"
   },
   "engines": {
@@ -68,6 +73,7 @@
     "examples/",
     "locales/",
     "minted/",
+    "templates/",
     "public/.well-known/acp.json",
     "public/.well-known/ai-plugin.json",
     "public/api/agents/acp-registry.json",

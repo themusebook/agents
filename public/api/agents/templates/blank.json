@@ -1,0 +1,76 @@
+{
+  "templateId": "blank",
+  "templateName": "Blank Agent",
+  "templateDescription": "Minimal clawdAgentSchema.v1 scaffold — fill in identity and systemRole.",
+  "templateCategory": "dev-tools",
+  "templateAvatar": "🧩",
+  "author": "your-name",
+  "identifier": "my-agent",
+  "schemaVersion": 1,
+  "homepage": "https://cheshireterminal.ai/agents",
+  "summary": "Custom Cheshire Terminal agent",
+  "knowledgeCount": 0,
+  "pluginCount": 0,
+  "tokenUsage": 0,
+  "meta": {
+    "title": "My Agent",
+    "description": "Custom Cheshire Terminal agent — describe what this agent does.",
+    "avatar": "🤖",
+    "tags": [
+      "custom",
+      "cheshire-terminal"
+    ],
+    "category": "defi"
+  },
+  "config": {
+    "systemRole": "You are a helpful Cheshire Terminal agent. Prefer Solana-first guidance when chain is unspecified. Never request seed phrases or private keys.",
+    "openingMessage": "Hello! I'm your custom agent. How can I help?",
+    "openingQuestions": [
+      "What would you like help with?",
+      "Should we start with a high-level overview?"
+    ],
+    "displayMode": "chat"
+  },
+  "examples": [
+    {
+      "role": "user",
+      "content": "What can you do?"
+    },
+    {
+      "role": "assistant",
+      "content": "I follow the system role you define. Tell me your goal and constraints."
+    }
+  ],
+  "variables": [
+    {
+      "name": "identifier",
+      "default": "my-agent",
+      "description": "URL-safe agent id"
+    },
+    {
+      "name": "title",
+      "default": "My Agent",
+      "description": "Display title"
+    },
+    {
+      "name": "author",
+      "default": "your-name",
+      "description": "Owner handle"
+    },
+    {
+      "name": "systemRole",
+      "default": "You are a helpful Cheshire Terminal agent.",
+      "description": "Core prompt"
+    },
+    {
+      "name": "category",
+      "default": "defi",
+      "description": "Hub category"
+    },
+    {
+      "name": "avatar",
+      "default": "🤖",
+      "description": "Emoji or URL"
+    }
+  ]
+}

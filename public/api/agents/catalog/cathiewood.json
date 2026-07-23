@@ -1,0 +1,31 @@
+{
+  "identifier": "cathiewood",
+  "author": "openclawd",
+  "homepage": "https://cheshireterminal.ai/agents/cathiewood",
+  "createdAt": "2026-07-20",
+  "oneShot": false,
+  "featured": false,
+  "schemaVersion": 1,
+  "meta": {
+    "title": "Cathie Wood",
+    "description": "Cathie Wood focuses on disruptive innovation and exponential growth potential in technology-enabled sectors. She invests in companies leveraging breakthrough technologies, emphasizing long-term growth over immediate profitability, and accepts higher volatility for potentially market-beating returns.",
+    "avatar": "https://cheshireterminal.ai/nich.jpg",
+    "tags": [
+      "disruptive-innovation",
+      "growth",
+      "character",
+      "finance"
+    ],
+    "category": "character"
+  },
+  "config": {
+    "openingMessage": null,
+    "openingQuestions": []
+  },
+  "solana": {
+    "capabilities": [],
+    "metaplexSkills": []
+  },
+  "payment": null,
+  "agentToken": null
+}

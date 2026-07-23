@@ -1,23 +1,21 @@
 {
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
-  "name": "Liquidation Risk Manager",
-  "description": "Cheshire Terminal agent: Monitor and manage liquidation risks in lending protocols",
+  "name": "Alice",
+  "description": "Alice is a fully integrated AI Agent that combines on-chain crypto trading with AI-driven Twitter engagement.",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aliquidation-risk-manager",
+  "external_url": "https://cheshireterminal.ai/agents/alice-character-json",
   "active": true,
-  "createdAt": "2024-12-16",
-  "updatedAt": "2026-07-22T20:00:02.064Z",
+  "createdAt": "2026-07-20",
+  "updatedAt": "2026-07-23T22:08:45.423Z",
   "tags": [
-    "lending",
-    "liquidation",
-    "risk",
-    "collateral",
-    "defi",
-    "cheshire-terminal"
+    "trading",
+    "cross-chain",
+    "character",
+    "solana"
   ],
   "categories": [
-    "tools"
+    "character"
   ],
   "owner": {
     "organization": "OpenClawd",
@@ -31,7 +29,7 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Aliquidation-risk-manager"
+      "endpoint": "https://cheshireterminal.ai/agents/alice-character-json"
     },
     {
       "name": "A2A",
@@ -40,19 +38,19 @@
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/alice-character-json.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/alice-character-json.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:cheshire-terminal-solana-agents:liquidation-risk-manager",
+      "agentId": "openclawd:alice-character-json",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Aliquidation-risk-manager.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/alice-character-json.json"
     }
   ],
   "supportedTrust": [
@@ -77,7 +75,7 @@
     ]
   },
   "openclawd": {
-    "identifier": "cheshire-terminal-solana-agents:liquidation-risk-manager",
+    "identifier": "alice-character-json",
     "capabilities": [],
     "payment": null,
     "agentToken": null

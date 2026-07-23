@@ -1,22 +1,21 @@
 {
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
-  "name": "LatticeClaw · Inversion Lobster",
-  "description": "Second-level thinking voice of the Lobster Council. Invert, always invert.",
+  "name": "Bill Ackman",
+  "description": "Bill Ackman is an AI Agent specializing in activist investing and concentrated portfolio management.",
   "image": "https://cheshireterminal.ai/nich.jpg",
-  "external_url": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Alatticeclaw",
+  "external_url": "https://cheshireterminal.ai/agents/billackman",
   "active": true,
-  "createdAt": null,
-  "updatedAt": "2026-07-22T20:00:02.064Z",
+  "createdAt": "2026-07-20",
+  "updatedAt": "2026-07-23T22:08:45.423Z",
   "tags": [
-    "solana",
-    "voice",
-    "contrarian",
-    "inversion",
-    "lobster-council"
+    "activist-investing",
+    "concentrated",
+    "character",
+    "finance"
   ],
   "categories": [
-    "voice-council"
+    "character"
   ],
   "owner": {
     "organization": "OpenClawd",
@@ -30,7 +29,7 @@
   "services": [
     {
       "name": "web",
-      "endpoint": "https://cheshireterminal.ai/agents/cheshire-terminal-solana-agents%3Alatticeclaw"
+      "endpoint": "https://cheshireterminal.ai/agents/billackman"
     },
     {
       "name": "A2A",
@@ -39,19 +38,19 @@
     },
     {
       "name": "catalog",
-      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/cheshire-terminal-solana-agents%3Alatticeclaw.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/billackman.json"
     },
     {
       "name": "registration",
-      "endpoint": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Alatticeclaw.json"
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/billackman.json"
     }
   ],
   "registrations": [
     {
-      "agentId": "openclawd:cheshire-terminal-solana-agents:latticeclaw",
+      "agentId": "openclawd:billackman",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/cheshire-terminal-solana-agents%3Alatticeclaw.json"
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/billackman.json"
     }
   ],
   "supportedTrust": [
@@ -76,7 +75,7 @@
     ]
   },
   "openclawd": {
-    "identifier": "cheshire-terminal-solana-agents:latticeclaw",
+    "identifier": "billackman",
     "capabilities": [],
     "payment": null,
     "agentToken": null
