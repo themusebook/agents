@@ -144,6 +144,51 @@
       }
     },
     "examples": { "$ref": "#/definitions/messageList" },
+    "skills": {
+      "type": "array",
+      "description": "Optional Skill Hub playbooks attached to this agent. Prefer slim references (slug + install command) so packages do not vendor the full Skill Hub tree. Bodies are installed on demand via ct-agents skills install or npx github:Solizardking/skills.",
+      "items": {
+        "type": "object",
+        "required": ["name"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Human or directory name for the skill."
+          },
+          "slug": {
+            "type": "string",
+            "description": "Skill Hub slug (e.g. metaplex-agent or nvidia/jetson-quick-start)."
+          },
+          "enabled": { "type": "boolean", "default": true },
+          "priority": { "type": "string" },
+          "source": {
+            "type": "string",
+            "enum": ["skillhub", "local", "npm", "other"],
+            "default": "skillhub"
+          },
+          "hub": {
+            "type": "string",
+            "description": "Origin hub URL (e.g. https://github.com/Solizardking/skillhub-main)."
+          },
+          "category": { "type": "string" },
+          "description": { "type": "string", "maxLength": 400 },
+          "install": {
+            "type": "string",
+            "description": "One-shot install command for this skill only."
+          },
+          "path": {
+            "type": "string",
+            "description": "Relative path once installed (e.g. skills/metaplex-agent)."
+          },
+          "provides": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "verified": { "type": "boolean" }
+        }
+      }
+    },
     "solana": {
       "type": "object",
       "description": "Solana-native capability metadata consumed by the Clawd hub.",

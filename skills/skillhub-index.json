@@ -1,0 +1,73 @@
+{
+  "$schema": "https://cheshireterminal.ai/schemas/skillhub-index.v1.json",
+  "id": "cheshire-skillhub-index",
+  "version": 1,
+  "description": "Lightweight Skill Hub pointer — no skill bodies ship with this package. Full catalog is fetched on demand from skillhub-main.",
+  "hub": {
+    "github": "https://github.com/Solizardking/skillhub-main",
+    "skillsRepo": "https://github.com/Solizardking/skills",
+    "product": "https://cheshireterminal.ai/agents",
+    "forge": "https://cheshireterminal.ai/agents/forge"
+  },
+  "remote": {
+    "catalogUrl": "https://raw.githubusercontent.com/Solizardking/skillhub-main/main/catalog.json",
+    "apiSkillsUrl": "https://raw.githubusercontent.com/Solizardking/skillhub-main/main/public/api/skills.json",
+    "rawSkillBase": "https://raw.githubusercontent.com/Solizardking/skillhub-main/main/skills",
+    "installCommand": "npx --yes github:Solizardking/skills install",
+    "cacheTtlMs": 86400000
+  },
+  "featured": [
+    "metaplex-agent",
+    "cheshire-terminal-agents",
+    "robinhood-agent-forge",
+    "cheshire-agent-registries",
+    "cheshire-omni-mint",
+    "cheshire-zk-omni",
+    "rh-bonded-launch",
+    "rh-launchpad-v3",
+    "solana-dev",
+    "pumpfun",
+    "vulcan",
+    "imperial"
+  ],
+  "packs": {
+    "cheshire-core": {
+      "label": "Cheshire / Robinhood core",
+      "description": "Dual-rail forge + registries (references only until --install-skills).",
+      "skills": [
+        "robinhood-agent-forge",
+        "cheshire-agent-registries",
+        "cheshire-agent-identity-registry",
+        "cheshire-omni-mint",
+        "cheshire-zk-omni",
+        "rh-bonded-launch"
+      ]
+    },
+    "metaplex": {
+      "label": "Metaplex Agent",
+      "description": "Premiere Metaplex identity + commerce playbook.",
+      "skills": ["metaplex-agent"]
+    },
+    "trading": {
+      "label": "Trading stack",
+      "description": "Vulcan/Phoenix + Imperial entrypoints.",
+      "skills": ["vulcan", "imperial"]
+    },
+    "solana-dev": {
+      "label": "Solana developer",
+      "description": "Solana development + formal verification starters.",
+      "skills": ["solana-dev", "solana-formal-verification"]
+    },
+    "pump": {
+      "label": "Pump.fun",
+      "description": "Launch + lifecycle skills.",
+      "skills": ["pumpfun", "pump-token-lifecycle", "pump-bonding-curve"]
+    }
+  },
+  "notes": [
+    "This package does NOT vendor the 595 Skill Hub bodies.",
+    "ct-agents skills list|search uses the remote catalog (cached).",
+    "ct-agents design --skills a,b only attaches references by default.",
+    "ct-agents design --skills a,b --install-skills downloads only selected skills into ./.agents/skills."
+  ]
+}
