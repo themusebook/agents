@@ -9,6 +9,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = __dirname;
+// Public npm package ships agents/ (src/ is local-only / gitignored).
+const AGENTS_DIR = path.join(ROOT, 'agents');
 const SRC_DIR = path.join(ROOT, 'src');
 const TEMPLATES_DIR = path.join(ROOT, 'templates');
 const OUTPUT = path.join(ROOT, 'agents-catalog.json');
@@ -55,15 +57,28 @@ const writeJson = (p, data) => {
   fs.writeFileSync(p, JSON.stringify(normalizeCanonicalUrls(data), null, 2) + '\n');
 };
 
-function loadAgents() {
+function agentSourceDirs() {
+  // Prefer published agents/; optionally merge local-only src/ when present.
+  const dirs = [];
+  if (fs.existsSync(AGENTS_DIR)) dirs.push(AGENTS_DIR);
+  if (fs.existsSync(SRC_DIR)) dirs.push(SRC_DIR);
+  return dirs;
+}
+
+function loadAgentsFromDir(dir) {
+  if (!fs.existsSync(dir)) return [];
   const files = fs
-    .readdirSync(SRC_DIR)
+    .readdirSync(dir)
     .filter((f) => f.endsWith('.json') && f !== 'package.json')
     .sort();
 
   return files.map((f) => {
-    const raw = readJson(path.join(SRC_DIR, f));
+    const fullPath = path.join(dir, f);
+    const raw = readJson(fullPath);
+    // Skip non-clawd agent shapes (e.g. runtime packages without identifier/meta)
+    if (!raw || typeof raw !== 'object') return null;
     const id = raw.identifier || path.basename(f, '.json');
+    if (!raw.meta && !raw.config) return null;
     const capabilities = raw.solana?.capabilities || [];
     const metaplexSkills =
       raw.solana?.metaplexSkills || deriveMetaplexSkills(capabilities, raw.meta?.tags || []);
@@ -92,11 +107,26 @@ function loadAgents() {
         mint: `/agents/mint?template=${encodeURIComponent(id)}`,
         mcp: `/api/agents/catalog/${encodeURIComponent(id)}.json`,
         registration: `/api/agents/registry/${encodeURIComponent(id)}.json`,
+        fork: `ct-agents design --from ${encodeURIComponent(id)}`,
       },
     };
     Object.defineProperty(agent, 'sourceFile', { value: f, enumerable: false });
+    Object.defineProperty(agent, 'sourcePath', { value: fullPath, enumerable: false });
     return agent;
-  });
+  }).filter(Boolean);
+}
+
+function loadAgents() {
+  const seen = new Set();
+  const agents = [];
+  for (const dir of agentSourceDirs()) {
+    for (const agent of loadAgentsFromDir(dir)) {
+      if (seen.has(agent.identifier)) continue;
+      seen.add(agent.identifier);
+      agents.push(agent);
+    }
+  }
+  return agents;
 }
 
 function loadSupplementalRegistryAgents(existingIds) {
@@ -208,18 +238,33 @@ function loadTemplates() {
     .sort();
 
   return files.map((f) => {
-    const raw = readJson(path.join(TEMPLATES_DIR, f));
+    const fullPath = path.join(TEMPLATES_DIR, f);
+    const raw = readJson(fullPath);
+    const templateId = raw.templateId || path.basename(f, '.template.json');
     return {
-      templateId: raw.templateId,
-      name: raw.templateName,
-      description: raw.templateDescription,
-      category: raw.templateCategory,
-      avatar: raw.templateAvatar || '🧩',
+      templateId,
+      name: raw.templateName || templateId,
+      description: raw.templateDescription || raw.meta?.description || '',
+      category: raw.templateCategory || raw.meta?.category || 'dev-tools',
+      avatar: raw.templateAvatar || raw.meta?.avatar || '🧩',
       variables: raw.variables || [],
-      deploy: {
-        template: `/api/agents/templates/${encodeURIComponent(raw.templateId)}.json`,
-        create: `/agents/mint?fromTemplate=${encodeURIComponent(raw.templateId)}`,
+      // Full scaffold body for design TUI / forge consumers
+      scaffold: {
+        author: raw.author,
+        identifier: raw.identifier,
+        schemaVersion: raw.schemaVersion || 1,
+        homepage: raw.homepage,
+        summary: raw.summary,
+        meta: raw.meta,
+        config: raw.config,
+        examples: raw.examples || [],
       },
+      deploy: {
+        template: `/api/agents/templates/${encodeURIComponent(templateId)}.json`,
+        create: `/agents/mint?fromTemplate=${encodeURIComponent(templateId)}`,
+        design: `ct-agents design --from ${encodeURIComponent(templateId)}`,
+      },
+      sourceFile: f,
     };
   });
 }
@@ -565,10 +610,42 @@ function writeStaticApi(catalog, agents, templates, registrationDocs, acpRegistr
       continue;
     }
 
-    const sourcePath = path.join(SRC_DIR, agent.sourceFile);
-    if (fs.existsSync(sourcePath)) {
+    const sourcePath =
+      agent.sourcePath ||
+      (agent.sourceFile && fs.existsSync(path.join(AGENTS_DIR, agent.sourceFile))
+        ? path.join(AGENTS_DIR, agent.sourceFile)
+        : agent.sourceFile
+          ? path.join(SRC_DIR, agent.sourceFile)
+          : null);
+    if (sourcePath && fs.existsSync(sourcePath)) {
       const raw = readJson(sourcePath);
       writeJson(path.join(PUBLIC_CATALOG_DIR, `${agent.identifier}.json`), raw);
+    }
+  }
+
+  // Publish scaffold templates for design TUI / forge
+  writeJson(path.join(PUBLIC_TEMPLATES_DIR, 'index.json'), {
+    schemaVersion: 'openclawd.templates.index.v1',
+    generatedAt: catalog.generatedAt,
+    count: templates.length,
+    designCli: 'ct-agents design',
+    templates: templates.map((t) => ({
+      id: t.templateId,
+      name: t.name,
+      description: t.description,
+      category: t.category,
+      avatar: t.avatar,
+      endpoint: t.deploy.template,
+      design: t.deploy.design,
+    })),
+  });
+  for (const template of templates) {
+    const sourcePath = path.join(TEMPLATES_DIR, template.sourceFile);
+    if (fs.existsSync(sourcePath)) {
+      writeJson(
+        path.join(PUBLIC_TEMPLATES_DIR, `${template.templateId}.json`),
+        readJson(sourcePath)
+      );
     }
   }
 
