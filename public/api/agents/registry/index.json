@@ -1,9 +1,9 @@
 {
   "schemaVersion": "openclawd.metaplex.registry.index.v1",
-  "generatedAt": "2026-07-23T22:08:45.423Z",
+  "generatedAt": "2026-07-23T22:24:49.260Z",
   "registry": "metaplex-agent-registry",
   "host": "https://cheshireterminal.ai",
-  "count": 137,
+  "count": 138,
   "agents": [
     {
       "id": "cheshire-terminal",
@@ -653,6 +653,13 @@
       "id": "staking-unstaking-solana-metaplex-core",
       "name": "Staking Unstaking Solana Metaplex Core",
       "registrationUri": "https://cheshireterminal.ai/api/agents/registry/staking-unstaking-solana-metaplex-core.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
+    {
+      "id": "clawd-imperial-perps",
+      "name": "Clawd",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawd-imperial-perps.json",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration"
     },

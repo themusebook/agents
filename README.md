@@ -18,7 +18,7 @@ Ship Clawd / Cheshire-schema agents, then register them on **Robinhood Chain** (
 
 <p align="center">
   <img alt="Node.js 18.18+" src="https://img.shields.io/badge/Node-%3E%3D18.18-5fa04e?style=flat-square&logo=nodedotjs&logoColor=white" />
-  <img alt="137 catalog agents" src="https://img.shields.io/badge/catalog-137_agents-75f58b?style=flat-square" />
+  <img alt="138 catalog agents" src="https://img.shields.io/badge/catalog-138_agents-75f58b?style=flat-square" />
   <img alt="31 skills" src="https://img.shields.io/badge/skills-31-c084fc?style=flat-square" />
   <img alt="Solana mainnet-beta" src="https://img.shields.io/badge/Solana-mainnet--beta-9f8cff?style=flat-square&logo=solana&logoColor=white" />
   <img alt="Robinhood Chain 4663" src="https://img.shields.io/badge/Robinhood_Chain-4663-75f58b?style=flat-square" />
@@ -37,7 +37,7 @@ Ship Clawd / Cheshire-schema agents, then register them on **Robinhood Chain** (
 
 **Clawd Agents** ships as [`cheshire-terminal-agents`](https://www.npmjs.com/package/cheshire-terminal-agents) on npm — the open catalog + forge package for:
 
-1. **Agent catalog** — 137 dual-chain agent definitions, character personas, locales, and schema validation  
+1. **Agent catalog** — 138 dual-chain agent definitions, character personas, locales, and schema validation  
 2. **Identity forge** — dual-rail registration (Robinhood Chain EVM + Solana SVM) with fail-closed safety  
 
 Hosted surfaces: [agent hub](https://cheshireterminal.ai/agents) · [agent forge](https://cheshireterminal.ai/agents/forge) · [catalog API](https://cheshireterminal.ai/api/agents/catalog)
@@ -153,7 +153,7 @@ npx cheshire-terminal-agents serve --port 8080
 
 | Surface | Included | Boundary |
 |---------|----------|----------|
-| **Agent catalog** | 137 agents in `agents-catalog.json`, 53 JSON defs under `agents/`, 11 characters, locales, schema | Prompts + metadata — not a custody runtime |
+| **Agent catalog** | 138 agents in `agents-catalog.json`, 53 JSON defs under `agents/`, 11 characters, locales, schema | Prompts + metadata — not a custody runtime |
 | **CLI** | `cheshire-terminal-agents` · `ct-agents` → `bin/ct-agents.js` | No silent wallet broadcast |
 | **Skills** | 31 deployable skill modules under `skills/` | Instruction content — pin like code |
 | **REST / discovery** | `public/api/agents/*`, `.well-known/acp.json`, `ai-plugin.json` | Hosted hub is source of truth for live chain config |
@@ -174,7 +174,7 @@ metadata + image ──► choose rails
 
 ```
  AGENT HUB        https://cheshireterminal.ai/agents
- CATALOG API      GET /api/agents/catalog          →  137 agents
+ CATALOG API      GET /api/agents/catalog          →  138 agents
  REGISTRY         GET /api/agents/registry          →  on-chain docs
  TEMPLATES        GET /api/agents/templates          →  scaffolds
  ACP DISCOVERY    GET /.well-known/acp.json         →  protocol
@@ -194,7 +194,7 @@ Facts from `agents-catalog.json` (rebuild with `npm run build`):
 
 | Metric | Count |
 |--------|------:|
-| **Agents** | **137** |
+| **Agents** | **138** |
 | One-shots | 1 |
 | Featured | 5 |
 | Categories | 15 |
@@ -280,7 +280,7 @@ clawd-agents / cheshire-terminal-agents
 ├── schema/              # clawdAgentSchema
 ├── scripts/             # build + validate
 ├── skills/              # 31 deployable skills
-├── agents-catalog.json  # built catalog (137 agents)
+├── agents-catalog.json  # built catalog (138 agents)
 └── package.json         # name: cheshire-terminal-agents @ 1.48.3
 ```
 
@@ -381,7 +381,7 @@ node scripts/smoke-readme-npm.cjs
        ██                                          ██
        ██  CLAWD AGENTS                            ██
        ██  cheshire-terminal-agents@1.48.3         ██
-       ██  137 agents · 1 one-shot · 5 featured    ██
+       ██  138 agents · 1 one-shot · 5 featured    ██
        ██  cheshireterminal.ai/agents              ██
        ██                                          ██
         ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀

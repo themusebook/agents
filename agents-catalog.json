@@ -1,7 +1,7 @@
 {
   "$schema": "https://cheshireterminal.ai/schema/clawdAgentCatalog.v1.json",
   "apiVersion": "1.0",
-  "generatedAt": "2026-07-23T22:08:45.423Z",
+  "generatedAt": "2026-07-23T22:24:49.260Z",
   "hub": {
     "gallery": "https://cheshireterminal.ai/agents",
     "mint": "https://cheshireterminal.ai/agents/mint",
@@ -9,13 +9,13 @@
     "api": "https://cheshireterminal.ai/api/agents"
   },
   "stats": {
-    "totalAgents": 137,
-    "totalOneShots": 1,
-    "totalFeatured": 5,
-    "totalTemplates": 4,
+    "totalAgents": 138,
+    "totalOneShots": 2,
+    "totalFeatured": 6,
+    "totalTemplates": 5,
     "byCategory": {
       "defi": 62,
-      "trading": 14,
+      "trading": 15,
       "security": 6,
       "infrastructure": 5,
       "platform": 3,
@@ -32,7 +32,7 @@
       "education": 2
     },
     "metaplexEnabledAgents": 18,
-    "tradingCapableAgents": 3,
+    "tradingCapableAgents": 4,
     "launchCapableAgents": 0,
     "mintCapableAgents": 4
   },
@@ -296,6 +296,49 @@
         "registration": "/api/agents/registry/solana-pumpfun-bot.json",
         "fork": "ct-agents design --from solana-pumpfun-bot"
       }
+    },
+    {
+      "identifier": "clawd-imperial-perps",
+      "title": "Clawd",
+      "description": "Imperial perps agent: multi-venue Solana futures routing, risk checks, TP/SL, and operator-safe execution through api.imperial.space.",
+      "avatar": "🐱",
+      "tags": [
+        "clawd",
+        "imperial",
+        "perps",
+        "phoenix",
+        "solana",
+        "trading",
+        "cheshire-terminal"
+      ],
+      "category": "trading",
+      "author": "cheshire-terminal",
+      "createdAt": "2026-07-23",
+      "oneShot": true,
+      "featured": true,
+      "openingMessage": "Clawd online — Imperial perps desk. I route Solana futures through Imperial (Phoenix / Jupiter / Flash / GMTrade). Tell me symbol, side, risk budget, and whether we observe or prepare a live order.",
+      "openingQuestions": [
+        "What symbol and side (long/short) are we looking at?",
+        "Observe-only, paper, or live with JWT?",
+        "Max loss per trade as % of risk capital?",
+        "Prefer Phoenix maker flow or best-route market?"
+      ],
+      "tokenUsage": 900,
+      "capabilities": [
+        "read-only",
+        "swap-execution"
+      ],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/clawd-imperial-perps.json",
+        "chat": "/agents/chat?agent=clawd-imperial-perps",
+        "mint": "/agents/mint?template=clawd-imperial-perps",
+        "mcp": "/api/agents/catalog/clawd-imperial-perps.json",
+        "registration": "/api/agents/registry/clawd-imperial-perps.json",
+        "fork": "ct-agents design --from clawd-imperial-perps"
+      }
     }
   ],
   "featured": [
@@ -540,6 +583,49 @@
         "mcp": "/api/agents/catalog/solana-vulcan-clawd-autonomous-perps.json",
         "registration": "/api/agents/registry/solana-vulcan-clawd-autonomous-perps.json",
         "fork": "ct-agents design --from solana-vulcan-clawd-autonomous-perps"
+      }
+    },
+    {
+      "identifier": "clawd-imperial-perps",
+      "title": "Clawd",
+      "description": "Imperial perps agent: multi-venue Solana futures routing, risk checks, TP/SL, and operator-safe execution through api.imperial.space.",
+      "avatar": "🐱",
+      "tags": [
+        "clawd",
+        "imperial",
+        "perps",
+        "phoenix",
+        "solana",
+        "trading",
+        "cheshire-terminal"
+      ],
+      "category": "trading",
+      "author": "cheshire-terminal",
+      "createdAt": "2026-07-23",
+      "oneShot": true,
+      "featured": true,
+      "openingMessage": "Clawd online — Imperial perps desk. I route Solana futures through Imperial (Phoenix / Jupiter / Flash / GMTrade). Tell me symbol, side, risk budget, and whether we observe or prepare a live order.",
+      "openingQuestions": [
+        "What symbol and side (long/short) are we looking at?",
+        "Observe-only, paper, or live with JWT?",
+        "Max loss per trade as % of risk capital?",
+        "Prefer Phoenix maker flow or best-route market?"
+      ],
+      "tokenUsage": 900,
+      "capabilities": [
+        "read-only",
+        "swap-execution"
+      ],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/clawd-imperial-perps.json",
+        "chat": "/agents/chat?agent=clawd-imperial-perps",
+        "mint": "/agents/mint?template=clawd-imperial-perps",
+        "mcp": "/api/agents/catalog/clawd-imperial-perps.json",
+        "registration": "/api/agents/registry/clawd-imperial-perps.json",
+        "fork": "ct-agents design --from clawd-imperial-perps"
       }
     }
   ],
@@ -3944,6 +4030,49 @@
       }
     },
     {
+      "identifier": "clawd-imperial-perps",
+      "title": "Clawd",
+      "description": "Imperial perps agent: multi-venue Solana futures routing, risk checks, TP/SL, and operator-safe execution through api.imperial.space.",
+      "avatar": "🐱",
+      "tags": [
+        "clawd",
+        "imperial",
+        "perps",
+        "phoenix",
+        "solana",
+        "trading",
+        "cheshire-terminal"
+      ],
+      "category": "trading",
+      "author": "cheshire-terminal",
+      "createdAt": "2026-07-23",
+      "oneShot": true,
+      "featured": true,
+      "openingMessage": "Clawd online — Imperial perps desk. I route Solana futures through Imperial (Phoenix / Jupiter / Flash / GMTrade). Tell me symbol, side, risk budget, and whether we observe or prepare a live order.",
+      "openingQuestions": [
+        "What symbol and side (long/short) are we looking at?",
+        "Observe-only, paper, or live with JWT?",
+        "Max loss per trade as % of risk capital?",
+        "Prefer Phoenix maker flow or best-route market?"
+      ],
+      "tokenUsage": 900,
+      "capabilities": [
+        "read-only",
+        "swap-execution"
+      ],
+      "metaplexSkills": [],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/clawd-imperial-perps.json",
+        "chat": "/agents/chat?agent=clawd-imperial-perps",
+        "mint": "/agents/mint?template=clawd-imperial-perps",
+        "mcp": "/api/agents/catalog/clawd-imperial-perps.json",
+        "registration": "/api/agents/registry/clawd-imperial-perps.json",
+        "fork": "ct-agents design --from clawd-imperial-perps"
+      }
+    },
+    {
       "identifier": "airdrop-hunter",
       "title": "DeFi Airdrop Hunter",
       "description": "Cheshire Terminal agent: Identify and strategize for potential protocol airdrops",
@@ -7069,6 +7198,69 @@
         "design": "ct-agents design --from blank"
       },
       "sourceFile": "blank.template.json"
+    },
+    {
+      "templateId": "clawd-imperial-perps",
+      "name": "Clawd · Imperial Perps",
+      "description": "Fork of Clawd as an Imperial multi-venue Solana perps agent (Phoenix-first, JWT trading, risk ladder).",
+      "category": "trading",
+      "avatar": "🐱",
+      "variables": [
+        {
+          "name": "identifier",
+          "default": "clawd-imperial-perps",
+          "description": "Agent id",
+          "required": true
+        },
+        {
+          "name": "author",
+          "default": "your-name",
+          "description": "Owner"
+        },
+        {
+          "name": "title",
+          "default": "Clawd",
+          "description": "Display name"
+        }
+      ],
+      "scaffold": {
+        "author": "cheshire-terminal",
+        "identifier": "clawd-imperial-perps",
+        "schemaVersion": 1,
+        "homepage": "https://cheshireterminal.ai/agents",
+        "summary": "Clawd Imperial perps agent scaffold",
+        "meta": {
+          "title": "Clawd",
+          "description": "Imperial perps agent for Solana futures routing via api.imperial.space.",
+          "avatar": "🐱",
+          "tags": [
+            "clawd",
+            "imperial",
+            "perps",
+            "phoenix",
+            "trading"
+          ],
+          "category": "trading"
+        },
+        "config": {
+          "systemRole": "You are Clawd, Imperial perps agent. Use https://api.imperial.space. JWT auth via mobile/connect + exchange. Prefer observe → confirm-each before live. Phoenix-first when route quality allows. Never request keys. Attach TP/SL on entries when possible.",
+          "openingMessage": "Clawd — Imperial perps. Symbol, side, risk %, and mode?",
+          "openingQuestions": [
+            "Which market?",
+            "Observe or live?",
+            "Risk per trade?",
+            "Phoenix preferred?"
+          ],
+          "displayMode": "chat"
+        },
+        "examples": []
+      },
+      "deploy": {
+        "template": "/api/agents/templates/clawd-imperial-perps.json",
+        "create": "/agents/mint?fromTemplate=clawd-imperial-perps",
+        "design": "ct-agents design --from clawd-imperial-perps"
+      },
+      "sourceFile": "clawd-imperial-perps.template.json"
     },
     {
       "templateId": "defi-strategist",

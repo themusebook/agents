@@ -1,7 +1,7 @@
 {
   "schemaVersion": "openclawd.templates.index.v1",
-  "generatedAt": "2026-07-23T22:08:45.423Z",
-  "count": 4,
+  "generatedAt": "2026-07-23T22:24:49.260Z",
+  "count": 5,
   "designCli": "ct-agents design",
   "templates": [
     {
@@ -12,6 +12,15 @@
       "avatar": "🧩",
       "endpoint": "/api/agents/templates/blank.json",
       "design": "ct-agents design --from blank"
+    },
+    {
+      "id": "clawd-imperial-perps",
+      "name": "Clawd · Imperial Perps",
+      "description": "Fork of Clawd as an Imperial multi-venue Solana perps agent (Phoenix-first, JWT trading, risk ladder).",
+      "category": "trading",
+      "avatar": "🐱",
+      "endpoint": "/api/agents/templates/clawd-imperial-perps.json",
+      "design": "ct-agents design --from clawd-imperial-perps"
     },
     {
       "id": "defi-strategist",

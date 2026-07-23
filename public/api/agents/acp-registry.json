@@ -1,7 +1,7 @@
 {
   "schemaVersion": "openclawd.acp.registry.v1",
   "protocol": "Agent Commerce Protocol",
-  "generatedAt": "2026-07-23T22:08:45.423Z",
+  "generatedAt": "2026-07-23T22:24:49.260Z",
   "host": "https://cheshireterminal.ai",
   "discover": {
     "catalog": "https://cheshireterminal.ai/api/agents/catalog",
@@ -112,13 +112,13 @@
     ]
   },
   "stats": {
-    "totalAgents": 137,
-    "totalOneShots": 1,
-    "totalFeatured": 5,
-    "totalTemplates": 4,
+    "totalAgents": 138,
+    "totalOneShots": 2,
+    "totalFeatured": 6,
+    "totalTemplates": 5,
     "byCategory": {
       "defi": 62,
-      "trading": 14,
+      "trading": 15,
       "security": 6,
       "infrastructure": 5,
       "platform": 3,
@@ -135,7 +135,7 @@
       "education": 2
     },
     "metaplexEnabledAgents": 18,
-    "tradingCapableAgents": 3,
+    "tradingCapableAgents": 4,
     "launchCapableAgents": 0,
     "mintCapableAgents": 4
   },
@@ -2398,6 +2398,32 @@
       ]
     },
     {
+      "id": "clawd-imperial-perps",
+      "title": "Clawd",
+      "category": "trading",
+      "capabilities": [
+        "read-only",
+        "swap-execution"
+      ],
+      "metaplexSkills": [],
+      "oneShot": true,
+      "featured": true,
+      "endpoints": {
+        "catalog": "https://cheshireterminal.ai/api/agents/catalog/clawd-imperial-perps.json",
+        "registration": "https://cheshireterminal.ai/api/agents/registry/clawd-imperial-perps.json",
+        "a2a": "https://cheshireterminal.ai/api/agents/a2a",
+        "mint": "https://cheshireterminal.ai/agents/mint?template=clawd-imperial-perps"
+      },
+      "registrations": [
+        {
+          "agentId": "openclawd:clawd-imperial-perps",
+          "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+          "status": "pending-onchain-registration",
+          "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawd-imperial-perps.json"
+        }
+      ]
+    },
+    {
       "id": "airdrop-hunter",
       "title": "DeFi Airdrop Hunter",
       "category": "trading",
@@ -3438,6 +3464,11 @@
       "id": "blank",
       "name": "Blank Agent",
       "endpoint": "https://cheshireterminal.ai/api/agents/templates/blank.json"
+    },
+    {
+      "id": "clawd-imperial-perps",
+      "name": "Clawd · Imperial Perps",
+      "endpoint": "https://cheshireterminal.ai/api/agents/templates/clawd-imperial-perps.json"
     },
     {
       "id": "defi-strategist",

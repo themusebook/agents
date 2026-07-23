@@ -117,13 +117,37 @@ function loadAgentsFromDir(dir) {
     .filter(Boolean);
 }
 
+/** Package agents that must appear in the hub catalog even when src/ is primary. */
+const PACKAGE_CATALOG_EXTRAS = ['clawd-imperial-perps.json'];
+
 function loadAgents() {
-  const dir = resolveAgentSourceDir();
-  if (!dir) {
+  // Primary: local src/ (full hub) when present, else published agents/.
+  const primary = resolveAgentSourceDir();
+  if (!primary) {
     console.warn('⚠ no agent source dir (src/ or agents/) — catalog agents will be registry-only');
     return [];
   }
-  return loadAgentsFromDir(dir);
+  const agents = loadAgentsFromDir(primary);
+  const seen = new Set(agents.map((a) => a.identifier));
+
+  // Overlay a small allowlist from agents/ so new package-only defs (Clawd Imperial)
+  // ship in the catalog without double-counting the whole agents/ tree.
+  if (fs.existsSync(AGENTS_DIR) && primary !== AGENTS_DIR) {
+    for (const file of PACKAGE_CATALOG_EXTRAS) {
+      const fullPath = path.join(AGENTS_DIR, file);
+      if (!fs.existsSync(fullPath)) continue;
+      const raw = readJson(fullPath);
+      if (!raw?.meta && !raw?.config) continue;
+      const id = raw.identifier || path.basename(file, '.json');
+      if (seen.has(id)) continue;
+      const overlay = loadAgentsFromDir(AGENTS_DIR).find((a) => a.identifier === id);
+      if (overlay) {
+        agents.push(overlay);
+        seen.add(id);
+      }
+    }
+  }
+  return agents;
 }
 
 function loadSupplementalRegistryAgents(existingIds) {

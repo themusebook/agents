@@ -4,9 +4,17 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const EXPECTED_TOTAL = 137;
-const EXPECTED_ONE_SHOTS = ['solana-pumpfun-bot'];
-const EXPECTED_FEATURED = ['clawd-agents-perps-runtime', 'clawd-livekit-voice', 'mechaplex-mech-builder', 'solana-pumpfun-bot', 'solana-vulcan-clawd-autonomous-perps'];
+// Primary hub agents (src/) + package agents/ merges (e.g. clawd-imperial-perps).
+const EXPECTED_TOTAL = 138;
+const EXPECTED_ONE_SHOTS = ['clawd-imperial-perps', 'solana-pumpfun-bot'];
+const EXPECTED_FEATURED = [
+  'clawd-agents-perps-runtime',
+  'clawd-imperial-perps',
+  'clawd-livekit-voice',
+  'mechaplex-mech-builder',
+  'solana-pumpfun-bot',
+  'solana-vulcan-clawd-autonomous-perps',
+];
 const CANONICAL_API = 'https://cheshireterminal.ai/api/agents';
 const FORBIDDEN_PATTERNS = [/www\.x402\.wtf/, /clawd\.click/];
 
