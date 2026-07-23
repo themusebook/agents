@@ -53,6 +53,24 @@
       "description": "Vulcan/Phoenix + Imperial entrypoints.",
       "skills": ["vulcan", "imperial"]
     },
+    "imperial": {
+      "label": "Imperial perps (Clawd desk)",
+      "description": "Full Imperial skill pack for clawd-imperial-perps — routing, risk, TP/SL, margin, grid, TWAP.",
+      "skills": [
+        "imperial",
+        "imperial-execution-modes",
+        "imperial-trade-execution",
+        "imperial-risk-management",
+        "imperial-market-intel",
+        "imperial-portfolio-intel",
+        "imperial-position-management",
+        "imperial-tpsl-management",
+        "imperial-margin-operations",
+        "imperial-grid-trading",
+        "imperial-twap-execution",
+        "imperial-skills-index"
+      ]
+    },
     "solana-dev": {
       "label": "Solana developer",
       "description": "Solana development + formal verification starters.",
