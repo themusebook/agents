@@ -639,6 +639,9 @@ ${DIM}  schema: clawdAgentSchema.v1 · package: cheshire-terminal-agents${RESET}
 }
 
 function printAgentPreview(agent) {
+  const skillNames = Array.isArray(agent.skills)
+    ? agent.skills.map((s) => s.slug || s.name).filter(Boolean).join(', ')
+    : '';
   console.log(`
 ${BOLD}── draft ──────────────────────────────────────────${RESET}
   ${CYAN}id${RESET}       ${agent.identifier}
@@ -646,9 +649,111 @@ ${BOLD}── draft ────────────────────
   ${CYAN}author${RESET}   ${agent.author}
   ${CYAN}category${RESET} ${agent.meta?.category}
   ${CYAN}tags${RESET}     ${(agent.meta?.tags || []).join(', ')}
+  ${CYAN}skills${RESET}   ${skillNames || DIM + '(none — Skill Hub refs optional)' + RESET}
   ${CYAN}role${RESET}     ${String(agent.config?.systemRole || '').replace(/\s+/g, ' ').slice(0, 120)}…
 ${BOLD}───────────────────────────────────────────────────${RESET}
 `);
+}
+
+/**
+ * Interactive Skill Hub picker — attaches refs only unless user opts into install.
+ * Does not vendor 595 skills; catalog is fetched on demand.
+ */
+async function pickSkillsInteractive(rl, agent) {
+  const attach = (
+    await question(
+      rl,
+      `${CYAN}attach Skill Hub skills?${RESET} ${DIM}(y/N — catalog fetched on demand, not bundled)${RESET}`,
+      'n'
+    )
+  ).toLowerCase();
+  if (attach !== 'y' && attach !== 'yes') return agent;
+
+  try {
+    const { loadSkillCatalog, loadSkillHubIndex, searchSkills, resolveSkillRefs, attachSkillsToAgent, installSkillsSparse, DEFAULT_INSTALL_DIR } =
+      await import('./skillHub.js');
+    const index = loadSkillHubIndex(ROOT);
+    console.log(`\n${DIM}packs:${RESET} ${Object.keys(index.packs || {}).join(', ') || '(none)'}`);
+    console.log(`${DIM}featured:${RESET} ${(index.featured || []).slice(0, 8).join(', ')}`);
+    console.log(
+      `${DIM}enter slugs/packs comma-separated, or /search term, or pack id (e.g. cheshire-core)${RESET}`
+    );
+
+    let tokens = [];
+    while (true) {
+      const ans = await question(rl, `${CYAN}skills${RESET}`, 'metaplex-agent');
+      if (!ans) break;
+      if (ans.startsWith('/')) {
+        const { skills, warning } = await loadSkillCatalog({ root: ROOT });
+        if (warning) console.log(`${YELLOW}${warning}${RESET}`);
+        const hits = searchSkills(skills, ans.slice(1), { limit: 15 });
+        if (!hits.length) {
+          console.log(`${YELLOW}no matches${RESET}`);
+          continue;
+        }
+        hits.forEach((s, i) => {
+          console.log(
+            `  ${YELLOW}${i + 1}${RESET}  ${GREEN}${s.slug}${RESET}  ${DIM}[${s.category}]${RESET}`
+          );
+        });
+        const pick = await question(rl, `${CYAN}numbers or slugs${RESET}`, '1');
+        const parts = pick.split(/[,\s]+/).filter(Boolean);
+        for (const p of parts) {
+          const n = parseInt(p, 10);
+          if (!Number.isNaN(n) && hits[n - 1]) tokens.push(hits[n - 1].slug);
+          else tokens.push(p);
+        }
+        break;
+      }
+      tokens = parseSkillList(ans);
+      break;
+    }
+
+    if (!tokens.length) return agent;
+
+    const { skills: catalog, warning } = await loadSkillCatalog({ root: ROOT });
+    if (warning) console.log(`${YELLOW}${warning}${RESET}`);
+    const { skills: picked, expansions, missing } = resolveSkillRefs(tokens, catalog, index);
+    for (const line of expansions) console.log(`${DIM}${line}${RESET}`);
+    if (missing.length) {
+      console.log(`${RED}unknown: ${missing.join(', ')}${RESET}`);
+      return agent;
+    }
+    console.log(
+      `${GREEN}selected${RESET} ${picked.map((s) => s.slug).join(', ')} ${DIM}(refs only)${RESET}`
+    );
+    let next = attachSkillsToAgent(agent, picked, index);
+
+    const doInstall = (
+      await question(
+        rl,
+        `${CYAN}download only these skills now?${RESET} ${DIM}(y/N → ./.agents/skills)${RESET}`,
+        'n'
+      )
+    ).toLowerCase();
+    if (doInstall === 'y' || doInstall === 'yes') {
+      const { results } = await installSkillsSparse(picked, {
+        root: ROOT,
+        targetDir: DEFAULT_INSTALL_DIR,
+        force: false,
+      });
+      for (const r of results) {
+        console.log(
+          r.status === 'error'
+            ? `  ${RED}✗${RESET} ${r.slug}: ${r.error}`
+            : `  ${GREEN}✓${RESET} ${r.slug} (${r.status})`
+        );
+      }
+    } else {
+      console.log(
+        `${DIM}later: ct-agents skills install ${picked.map((s) => s.slug).join(' ')}${RESET}`
+      );
+    }
+    return next;
+  } catch (err) {
+    console.log(`${RED}skill picker failed: ${err.message}${RESET}`);
+    return agent;
+  }
 }
 
 async function pickFromList(rl, items, { pageSize = 12, label = 'template' } = {}) {
@@ -854,6 +959,7 @@ ${BOLD}Main menu${RESET}
       });
 
       agent = await editAgentFields(rl, agent);
+      agent = await pickSkillsInteractive(rl, agent);
       printAgentPreview(agent);
 
       const result = validateAgent(agent);
