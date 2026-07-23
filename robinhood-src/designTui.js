@@ -440,6 +440,10 @@ function parseArgs(argv) {
     else if (a === '--author') args.author = argv[++i];
     else if (a === '--title') args.title = argv[++i];
     else if (a === '--category') args.category = argv[++i];
+    else if (a === '--skills' || a === '-s') args.skills = argv[++i];
+    else if (a === '--install-skills') args.installSkills = true;
+    else if (a === '--via-skillhub-cli') args.viaSkillhubCli = true;
+    else if (a === '--skills-target') args.skillsTarget = argv[++i];
     else if (a === '--list' || a === '-l') args.list = true;
     else if (a === '--validate' || a === '-V') args.validate = argv[++i];
     else if (a === '--blank') args.blank = true;
@@ -450,6 +454,55 @@ function parseArgs(argv) {
   return args;
 }
 
+function parseSkillList(raw) {
+  if (!raw) return [];
+  if (Array.isArray(raw)) return raw;
+  return String(raw)
+    .split(/[,\s]+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+}
+
+async function applySkillsToAgent(agent, skillTokens, {
+  root = ROOT,
+  install = false,
+  viaCli = false,
+  targetDir,
+} = {}) {
+  if (!skillTokens.length) return { agent, installed: null };
+
+  const {
+    loadSkillCatalog,
+    resolveSkillRefs,
+    attachSkillsToAgent,
+    installSkillsSparse,
+    installSkillsViaCli,
+    DEFAULT_INSTALL_DIR,
+  } = await import('./skillHub.js');
+
+  const { skills: catalog, index, warning } = await loadSkillCatalog({ root });
+  if (warning) console.error(`${YELLOW}${warning}${RESET}`);
+  const { skills: picked, expansions, missing } = resolveSkillRefs(skillTokens, catalog, index);
+  for (const line of expansions) console.log(`${DIM}${line}${RESET}`);
+  if (missing.length) {
+    throw new Error(`Unknown skill(s): ${missing.join(', ')}. Run: ct-agents skills search <q>`);
+  }
+  let next = attachSkillsToAgent(agent, picked, index);
+  let installed = null;
+  if (install && picked.length) {
+    const dest = targetDir || DEFAULT_INSTALL_DIR;
+    if (viaCli) {
+      installed = await installSkillsViaCli(
+        picked.map((s) => s.slug),
+        { targetDir: dest, force: true }
+      );
+    } else {
+      installed = await installSkillsSparse(picked, { root, targetDir: dest, force: false });
+    }
+  }
+  return { agent: next, installed, picked };
+}
+
 export function printDesignHelp() {
   console.log(`
 ${BOLD}${CYAN}ct-agents design${RESET} — template-driven agent forge (TUI)
@@ -458,10 +511,12 @@ ${BOLD}Interactive:${RESET}
   ${CYAN}ct-agents design${RESET}
   ${CYAN}ct-agents forge${RESET}
 
-${BOLD}Non-interactive:${RESET}
+${BOLD}Non-interactive / oneshot:${RESET}
   ${CYAN}ct-agents design --list${RESET}
   ${CYAN}ct-agents design --blank --id my-bot --out ./my-bot.json${RESET}
   ${CYAN}ct-agents design --from defi-yield-farmer --id my-yield --out ./agents/my-yield.json${RESET}
+  ${CYAN}ct-agents design --from blank --id forge-bot --skills metaplex-agent,cheshire-core --out ./forge-bot.json${RESET}
+  ${CYAN}ct-agents design --from blank --id forge-bot --skills trading --install-skills${RESET}
   ${CYAN}ct-agents design --validate ./agents/my-yield.json${RESET}
 
 ${BOLD}Flags:${RESET}
@@ -471,10 +526,18 @@ ${BOLD}Flags:${RESET}
   --title <title>     Display title
   --author <name>     Author field
   --category <cat>    One of: ${CATEGORIES.join(', ')}
+  --skills, -s <list> Comma-separated Skill Hub slugs or packs (refs only by default)
+  --install-skills    Also download ONLY selected skills into ./.agents/skills
+  --via-skillhub-cli  Use npx github:Solizardking/skills for install (packs)
+  --skills-target DIR Override install directory
   --out, -o <path>    Write JSON to path (default: ./agents/<id>.json)
   --list, -l          List all forkable templates
   --validate, -V      Validate an agent JSON file against clawdAgentSchema.v1
   --json              Machine-readable list/validate output
+
+${BOLD}Skills:${RESET}
+  Full Skill Hub (595) is ${DIM}not${RESET} bundled — see ${CYAN}ct-agents skills --help${RESET}
+  Hub: https://github.com/Solizardking/skillhub-main
 `);
 }
 
