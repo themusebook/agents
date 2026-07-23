@@ -1,3 +1,6 @@
 .DS_Store
 cli/dist/
 cloudflare-agent-api/.wrangler/
+
+# Local app source — not published to GitHub
+src/
