@@ -130,6 +130,16 @@ const env = {
   // Official @elizaos/plugin-clawdbrowser catalog
   CLAWDBROWSER_TOOLS_MD:
     process.env.CLAWDBROWSER_TOOLS_MD || clawdBrowserTools,
+  // Pass through trading keys if present (DeepSeek + DFlow + Helius)
+  ...(process.env.DEEPSEEK_API_KEY
+    ? { DEEPSEEK_API_KEY: process.env.DEEPSEEK_API_KEY }
+    : {}),
+  ...(process.env.DFLOW_API_KEY
+    ? { DFLOW_API_KEY: process.env.DFLOW_API_KEY }
+    : {}),
+  ...(process.env.HELIUS_RPC_URL
+    ? { HELIUS_RPC_URL: process.env.HELIUS_RPC_URL }
+    : {}),
 };
 
 console.log("[start-eliza-clawd] character:", characterPath);
