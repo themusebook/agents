@@ -1,0 +1,23 @@
+{
+  "name": "Clawd",
+  "slug": "clawd",
+  "characterFile": "clawd-character.md",
+  "template": "knowledge/clawd-character.md",
+  "source": "characters/clawd.json",
+  "generatedAt": "2026-08-05T02:08:33.652Z",
+  "files": [
+    "knowledge-banner.svg",
+    "knowledge-inject-flow.svg",
+    "clawd-character.md",
+    "README.md",
+    "facts.jsonl",
+    "codebase-facts.jsonl",
+    "api-behaviors.jsonl",
+    "patterns.jsonl",
+    "anti-patterns.jsonl",
+    "gotchas.jsonl",
+    "decisions.jsonl",
+    "architecture-pieces.md",
+    "uploads/.gitkeep"
+  ]
+}

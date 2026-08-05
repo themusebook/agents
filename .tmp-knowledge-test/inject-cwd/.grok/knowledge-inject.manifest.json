@@ -1,0 +1,165 @@
+{
+  "generatedAt": "2026-08-05T02:08:35.210Z",
+  "packageRoot": "/Users/8bit/agents/agents",
+  "cwd": "/Users/8bit/agents/agents/.tmp-knowledge-test/inject-cwd",
+  "inputPaths": [
+    "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge"
+  ],
+  "sourceCount": 16,
+  "okCount": 16,
+  "factCount": 18,
+  "excerptCount": 4,
+  "rulesPath": "/Users/8bit/agents/agents/.tmp-knowledge-test/inject-cwd/.grok/rules/knowledge-inject.md",
+  "dryRun": false,
+  "sources": [
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/README.md",
+      "relative": "../user-knowledge/README.md",
+      "ok": true,
+      "reason": ".md",
+      "factCount": 0,
+      "textBytes": 1341
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/anti-patterns.jsonl",
+      "relative": "../user-knowledge/anti-patterns.jsonl",
+      "ok": true,
+      "reason": "jsonl",
+      "factCount": 1,
+      "textBytes": 0
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/api-behaviors.jsonl",
+      "relative": "../user-knowledge/api-behaviors.jsonl",
+      "ok": true,
+      "reason": "jsonl",
+      "factCount": 1,
+      "textBytes": 0
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/architecture-pieces.md",
+      "relative": "../user-knowledge/architecture-pieces.md",
+      "ok": true,
+      "reason": ".md",
+      "factCount": 0,
+      "textBytes": 499
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/clawd-character.md",
+      "relative": "../user-knowledge/clawd-character.md",
+      "ok": true,
+      "reason": ".md",
+      "factCount": 0,
+      "textBytes": 4994
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/codebase-facts.jsonl",
+      "relative": "../user-knowledge/codebase-facts.jsonl",
+      "ok": true,
+      "reason": "jsonl",
+      "factCount": 3,
+      "textBytes": 0
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/decisions.jsonl",
+      "relative": "../user-knowledge/decisions.jsonl",
+      "ok": true,
+      "reason": "jsonl",
+      "factCount": 1,
+      "textBytes": 0
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/facts.jsonl",
+      "relative": "../user-knowledge/facts.jsonl",
+      "ok": true,
+      "reason": "jsonl",
+      "factCount": 6,
+      "textBytes": 0
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/gotchas.jsonl",
+      "relative": "../user-knowledge/gotchas.jsonl",
+      "ok": true,
+      "reason": "jsonl",
+      "factCount": 1,
+      "textBytes": 0
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/knowledge-banner.svg",
+      "relative": "../user-knowledge/knowledge-banner.svg",
+      "ok": true,
+      "reason": ".svg",
+      "factCount": 0,
+      "textBytes": 7461
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/knowledge-inject-flow.svg",
+      "relative": "../user-knowledge/knowledge-inject-flow.svg",
+      "ok": true,
+      "reason": ".svg",
+      "factCount": 0,
+      "textBytes": 3476
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/knowledge.manifest.json",
+      "relative": "../user-knowledge/knowledge.manifest.json",
+      "ok": true,
+      "reason": "json",
+      "factCount": 0,
+      "textBytes": 551
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/patterns.jsonl",
+      "relative": "../user-knowledge/patterns.jsonl",
+      "ok": true,
+      "reason": "jsonl",
+      "factCount": 4,
+      "textBytes": 0
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/upload.manifest.json",
+      "relative": "../user-knowledge/upload.manifest.json",
+      "ok": true,
+      "reason": "json",
+      "factCount": 0,
+      "textBytes": 806
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/uploads/extra-facts.jsonl",
+      "relative": "../user-knowledge/uploads/extra-facts.jsonl",
+      "ok": true,
+      "reason": "jsonl",
+      "factCount": 1,
+      "textBytes": 0
+    },
+    {
+      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/uploads/operator-notes.md",
+      "relative": "../user-knowledge/uploads/operator-notes.md",
+      "ok": true,
+      "reason": ".md",
+      "factCount": 0,
+      "textBytes": 55
+    }
+  ],
+  "factIds": [
+    "fact-2e3b1e3b",
+    "fact-2708bae8",
+    "cbfact-6e2e00c9",
+    "cbfact-ad118c50",
+    "cbfact-7e68d505",
+    "decision-174f6822",
+    "fact-460e2b2f",
+    "fact-da1a331a",
+    "fact-b5d8541a",
+    "fact-e80082df",
+    "fact-c3c5dbc1",
+    "fact-a3583f9e",
+    "anti-1741d0f3",
+    "pattern-50a9e5a2",
+    "pattern-e6014b3b",
+    "pattern-e17cec53",
+    "pattern-d43d39a3",
+    "fact-upload-001"
+  ],
+  "hash": "c3b7fb21c95aed98fee3c3abf8902ff0c3c28c785940c00ea0a025dbedab796c"
+}

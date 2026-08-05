@@ -1,0 +1,8 @@
+status=0
+✓ knowledge inject
+  rules: /Users/8bit/agents/agents/.tmp-knowledge-test/inject-cwd/.grok/rules/knowledge-inject.md
+  manifest: /Users/8bit/agents/agents/.tmp-knowledge-test/inject-cwd/.grok/knowledge-inject.manifest.json
+  ok files: 16/16
+  facts: 18
+  excerpts: 4
+

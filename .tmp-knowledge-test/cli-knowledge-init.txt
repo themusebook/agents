@@ -1,0 +1,84 @@
+status=0
+{
+  "ok": true,
+  "outDir": "/Users/8bit/agents/agents/.tmp-knowledge-test/cli-knowledge",
+  "profile": {
+    "name": "Warren Buffett",
+    "slug": "warren-buffett",
+    "role": "Oracle of Omaha",
+    "bio": [
+      "Warren Buffett combines quantitative analysis with qualitative business assessment, focusing on competitive advantages, quality management, and long-term value creation. He has evolved from pure Graham-style value investing to emphasize business quality and durable competitive advantages."
+    ],
+    "lore": [],
+    "adjectives": [
+      "patient: Willing to wait for the right opportunity at the right price",
+      "rational: Makes decisions based on facts rather than emotions",
+      "independent: Thinks independently and avoids following market trends",
+      "focused: Concentrates investments in areas of competence",
+      "folksy: Communicates complex ideas using simple analogies and anecdotes"
+    ],
+    "topics": [
+      "circle_of_competence",
+      "margin_of_safety",
+      "economic_moat",
+      "quality_management",
+      "long_term_horizon"
+    ],
+    "styleRules": [],
+    "principles": [
+      "circle_of_competence: Only invest in businesses you understand",
+      "margin_of_safety: Buy at a significant discount to intrinsic value (>30%)",
+      "economic_moat: Look for durable competitive advantages",
+      "quality_management: Seek conservative, shareholder-oriented teams",
+      "long_term_horizon: Invest in businesses, not just stocks"
+    ],
+    "signaturePhrases": [
+      "Be fearful when others are greedy, and greedy when others are fearful",
+      "Price is what you pay, value is what you get",
+      "Our favorite holding period is forever"
+    ],
+    "source": "character json"
+  },
+  "written": [
+    "knowledge-banner.svg",
+    "knowledge-inject-flow.svg",
+    "warren-buffett-character.md",
+    "README.md",
+    "facts.jsonl",
+    "codebase-facts.jsonl",
+    "api-behaviors.jsonl",
+    "patterns.jsonl",
+    "anti-patterns.jsonl",
+    "gotchas.jsonl",
+    "decisions.jsonl",
+    "architecture-pieces.md",
+    "uploads/.gitkeep",
+    "knowledge.manifest.json"
+  ],
+  "characterFile": "warren-buffett-character.md",
+  "manifest": {
+    "name": "Warren Buffett",
+    "slug": "warren-buffett",
+    "characterFile": "warren-buffett-character.md",
+    "template": "knowledge/clawd-character.md",
+    "source": "characters/warrenbuffet.json",
+    "generatedAt": "2026-08-05T02:08:37.979Z",
+    "files": [
+      "knowledge-banner.svg",
+      "knowledge-inject-flow.svg",
+      "warren-buffett-character.md",
+      "README.md",
+      "facts.jsonl",
+      "codebase-facts.jsonl",
+      "api-behaviors.jsonl",
+      "patterns.jsonl",
+      "anti-patterns.jsonl",
+      "gotchas.jsonl",
+      "decisions.jsonl",
+      "architecture-pieces.md",
+      "uploads/.gitkeep",
+      "knowledge.manifest.json"
+    ]
+  }
+}
+

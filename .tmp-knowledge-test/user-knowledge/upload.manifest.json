@@ -1,0 +1,21 @@
+{
+  "outDir": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge",
+  "destRoot": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/uploads",
+  "uploaded": [
+    {
+      "source": "/Users/8bit/agents/agents/.tmp-knowledge-test/upload-src/extra-facts.jsonl",
+      "dest": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/uploads/extra-facts.jsonl",
+      "relative": "uploads/extra-facts.jsonl",
+      "bytes": 449
+    },
+    {
+      "source": "/Users/8bit/agents/agents/.tmp-knowledge-test/upload-src/operator-notes.md",
+      "dest": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/uploads/operator-notes.md",
+      "relative": "uploads/operator-notes.md",
+      "bytes": 55
+    }
+  ],
+  "skipped": [],
+  "errors": [],
+  "at": "2026-08-05T02:08:33.778Z"
+}
