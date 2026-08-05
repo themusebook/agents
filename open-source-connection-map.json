@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "description": "Canonical OSS ↔ product hub connection map for cheshire-terminal-agents. Product pages /agents and /eliza-agents stay wired to these four Solizardking GitHub repos.",
+  "productHubs": {
+    "agents": "https://cheshireterminal.ai/agents",
+    "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
+    "cli": "https://cheshireterminal.ai/cli"
+  },
+  "github": {
+    "agents": "https://github.com/Solizardking/agents",
+    "cli": "https://github.com/Solizardking/cli",
+    "eliza": "https://github.com/Solizardking/eliza",
+    "cheshireTerminal": "https://github.com/Solizardking/cheshire-terminal"
+  },
+  "repos": [
+    {
+      "id": "agents",
+      "url": "https://github.com/Solizardking/agents",
+      "role": "Agent catalog definitions + forge scaffolds",
+      "siteHub": "/agents",
+      "npm": "cheshire-terminal-agents"
+    },
+    {
+      "id": "cli",
+      "url": "https://github.com/Solizardking/cli",
+      "role": "Official site CLI (status, skills, eliza:*, registry, arena)",
+      "siteHub": "/cli",
+      "npm": "cheshire-terminal-cli"
+    },
+    {
+      "id": "eliza",
+      "url": "https://github.com/Solizardking/eliza",
+      "role": "elizaOS fork + cheshire-eliza character/body generator",
+      "siteHub": "/eliza-agents",
+      "package": "@elizaos/cheshire-eliza"
+    },
+    {
+      "id": "cheshire-terminal",
+      "url": "https://github.com/Solizardking/cheshire-terminal",
+      "role": "Main product app (server, client, API, hub pages)",
+      "siteHub": "/"
+    }
+  ]
+}

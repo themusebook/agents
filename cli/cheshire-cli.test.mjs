@@ -300,7 +300,26 @@ describe("live site commands (network)", () => {
     assert.match(result.endpoints.cliHub, /\/cli/);
     assert.match(result.endpoints.elizaAgents || "", /\/eliza-agents/);
     assert.match(result.endpoints.elizaStatus || "", /\/api\/eliza-agents\/status/);
-    assert.equal(result.endpoints.agentsGithub, "https://github.com/solizardking/agents");
+    assert.equal(result.endpoints.agentsGithub, "https://github.com/Solizardking/agents");
+    assert.equal(result.endpoints.cliGithub, "https://github.com/Solizardking/cli");
+    assert.equal(result.endpoints.elizaGithub, "https://github.com/Solizardking/eliza");
+    assert.equal(
+      result.endpoints.cheshireTerminalGithub,
+      "https://github.com/Solizardking/cheshire-terminal",
+    );
+    assert.equal(result.openSource?.github?.agents, "https://github.com/Solizardking/agents");
+    assert.equal(result.openSource?.github?.cli, "https://github.com/Solizardking/cli");
+    assert.equal(result.openSource?.github?.eliza, "https://github.com/Solizardking/eliza");
+    assert.equal(
+      result.openSource?.github?.cheshireTerminal,
+      "https://github.com/Solizardking/cheshire-terminal",
+    );
+    assert.equal(result.openSource?.productHubs?.agents, "https://cheshireterminal.ai/agents");
+    assert.equal(
+      result.openSource?.productHubs?.elizaAgents,
+      "https://cheshireterminal.ai/eliza-agents",
+    );
+    assert.equal(result.openSource?.repos?.length, 4);
     assert.equal(result.credentials.envApiKey, "CHESHIRE_API_KEY");
     assert.equal(result.npm?.package, "cheshire-terminal-cli");
     assert.match(result.npm?.install || "", /cheshire-terminal-cli/);

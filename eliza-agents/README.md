@@ -6,10 +6,15 @@ Surface for **[cheshireterminal.ai/eliza-agents](https://cheshireterminal.ai/eli
 
 | Surface | Location |
 | --- | --- |
+| Product hub (this surface) | https://cheshireterminal.ai/eliza-agents |
+| Agent hub | https://cheshireterminal.ai/agents |
 | Eliza fork | https://github.com/Solizardking/eliza |
 | Agents catalog repo | https://github.com/Solizardking/agents |
+| Site CLI repo | https://github.com/Solizardking/cli |
+| Main product repo | https://github.com/Solizardking/cheshire-terminal |
 | Plugins + character source | `agents/eliza/plugins/*`, `agents/eliza/packages/cheshire-eliza` |
-| Catalog manifest | [catalog.json](./catalog.json) |
+| Catalog manifest | [catalog.json](./catalog.json) (includes full `openSource` map) |
+| Package OSS map | [../open-source-connection-map.json](../open-source-connection-map.json) |
 | Solizard character JSON | [characters/solizard-eliza.json](./characters/solizard-eliza.json) |
 | Knowledge & RAG | [docs/KNOWLEDGE_RAG.md](./docs/KNOWLEDGE_RAG.md) |
 | Package knowledge corpus | [`../knowledge`](../knowledge) |

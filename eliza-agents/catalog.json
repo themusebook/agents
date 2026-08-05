@@ -3,6 +3,47 @@
   "product": "cheshireterminal.ai/eliza-agents",
   "elizaFork": "https://github.com/Solizardking/eliza",
   "agentsRepo": "https://github.com/Solizardking/agents",
+  "cliRepo": "https://github.com/Solizardking/cli",
+  "cheshireTerminalRepo": "https://github.com/Solizardking/cheshire-terminal",
+  "openSource": {
+    "productHubs": {
+      "agents": "https://cheshireterminal.ai/agents",
+      "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
+      "cli": "https://cheshireterminal.ai/cli"
+    },
+    "github": {
+      "agents": "https://github.com/Solizardking/agents",
+      "cli": "https://github.com/Solizardking/cli",
+      "eliza": "https://github.com/Solizardking/eliza",
+      "cheshireTerminal": "https://github.com/Solizardking/cheshire-terminal"
+    },
+    "repos": [
+      {
+        "id": "agents",
+        "url": "https://github.com/Solizardking/agents",
+        "role": "Agent catalog definitions + forge scaffolds",
+        "siteHub": "/agents"
+      },
+      {
+        "id": "cli",
+        "url": "https://github.com/Solizardking/cli",
+        "role": "Official site CLI (cheshire-terminal-cli)",
+        "siteHub": "/cli"
+      },
+      {
+        "id": "eliza",
+        "url": "https://github.com/Solizardking/eliza",
+        "role": "elizaOS fork + cheshire-eliza",
+        "siteHub": "/eliza-agents"
+      },
+      {
+        "id": "cheshire-terminal",
+        "url": "https://github.com/Solizardking/cheshire-terminal",
+        "role": "Main product app",
+        "siteHub": "/"
+      }
+    ]
+  },
   "knowledge": {
     "plugin": "@elizaos/plugin-knowledge",
     "docs": "https://docs.elizaos.ai/plugin-registry/knowledge",
