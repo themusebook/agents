@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "product": "cheshireterminal.ai/eliza-agents",
   "elizaFork": "https://github.com/Solizardking/eliza",
   "agentsRepo": "https://github.com/Solizardking/agents",
@@ -27,12 +27,20 @@
     }
   ],
   "characters": [
-    {
-      "id": "solizard-cheshire",
-      "name": "Solizard",
-      "source": "eliza/packages/cheshire-eliza/src/characters/solizard-cheshire.ts",
-      "catalogCharacter": "characters/solizard-eliza.json",
-      "description": "Dual-rail operator agent: forge, E2B computer, Hermes/Honcho memory"
-    }
-  ]
+    { "id": "alice", "file": "alice-character-json.json" },
+    { "id": "bengraham", "file": "bengraham.json" },
+    { "id": "billackman", "file": "billackman.json" },
+    { "id": "cathiewood", "file": "cathiewood.json" },
+    { "id": "charliemunger", "file": "charliemunger.json" },
+    { "id": "cheshire", "file": "cheshire-character-json.json" },
+    { "id": "clawd", "file": "clawd.json" },
+    { "id": "hedgefund", "file": "hedgefund.json" },
+    { "id": "mad-hatter", "file": "mad-hatter-character-json.json" },
+    { "id": "solizard-cheshire", "file": "solizard-eliza.json" },
+    { "id": "warrenbuffet", "file": "warrenbuffet.json" }
+  ],
+  "packs": {
+    "perps": "clawd-agents-perps (cheshire-terminal)",
+    "defiLocales": "defi-agents/locales (cheshire-terminal)"
+  }
 }
