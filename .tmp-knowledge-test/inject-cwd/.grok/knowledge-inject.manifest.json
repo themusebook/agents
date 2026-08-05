@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T04:00:46.276Z",
+  "generatedAt": "2026-08-05T04:07:08.094Z",
   "packageRoot": "/Users/8bit/agents/agents",
   "cwd": "/Users/8bit/agents/agents/.tmp-knowledge-test/inject-cwd",
   "inputPaths": [
@@ -161,5 +161,5 @@
     "pattern-d43d39a3",
     "fact-upload-001"
   ],
-  "hash": "c0881e57f951dd90ce437e5997b9f631c3099587b976594d22eaadd5d708ecf8"
+  "hash": "54384e5ba3442faa250fcfc8aa6801624a9a12fcf5d13b64488207533bbc3be6"
 }

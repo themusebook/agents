@@ -148,9 +148,19 @@ Full catalog is fetched on demand; installs pull **only** the slugs you select.
 | `ct-agents design --list` | List forkable templates (agents + scaffolds + characters) |
 | `ct-agents design --from <id>` | Non-interactive fork |
 | `ct-agents design --validate <file>` | Schema-check an agent JSON |
-| `ct-agents catalog` | Print catalog stats (agents, categories, hub) |
+| `ct-agents catalog` | Print catalog stats (agents, one-shots, featured, categories, hub) |
 | `ct-agents templates` | List scaffold templates from the catalog |
-| `ct-agents skills` | List deployable skill directories |
+| `ct-agents skills` | Skill Hub picker (remote packs — no install bloat) |
+| `ct-agents skills packs` | List local suite under `skills/` (11 top-level) |
+| `ct-agents skills search <q>` | Search Skill Hub |
+| `ct-agents skills install <slug>` | Sparse-fetch one skill into `./.agents/skills` |
+| `ct-agents dna list` | List `characters/*.json` seeds for DNA generation |
+| `ct-agents dna generate --from <id> --out <dir>` | Write IDENTITY/SOUL/USER/TOOLS bundle |
+| `ct-agents knowledge list` | List package corpus under `knowledge/` |
+| `ct-agents knowledge init --from clawd --out <dir>` | Scaffold a personal knowledge folder |
+| `ct-agents knowledge upload <files> --out <dir>` | Add notes/docs into a knowledge folder |
+| `ct-agents knowledge inject <dir>` | Write `.grok/rules/knowledge-inject.md` |
+| `ct-agents knowledge eliza-docs` | Prepare corpus as elizaOS `docs/` for RAG |
 | `ct-agents registry` | Print on-chain registry index |
 | `ct-agents schema` | Show `clawdAgentSchema` info |
 | `ct-agents serve [--port]` | Local static API from `public/` |
@@ -159,7 +169,9 @@ Full catalog is fetched on demand; installs pull **only** the slugs you select.
 ```bash
 npx cheshire-terminal-agents design --list
 npx cheshire-terminal-agents catalog
-npx cheshire-terminal-agents skills
+npx cheshire-terminal-agents skills packs
+npx cheshire-terminal-agents dna list
+npx cheshire-terminal-agents knowledge list
 npx cheshire-terminal-agents serve --port 8080
 ```
 
@@ -195,9 +207,12 @@ metadata + image ──► choose rails
 
 ```
  AGENT HUB        https://cheshireterminal.ai/agents
- CATALOG API      GET /api/agents/catalog          →  138 agents
+ ELIZA STUDIO     https://cheshireterminal.ai/eliza-agents
+ AGENT FORGE      https://cheshireterminal.ai/agents/forge
+ CLI HUB          https://cheshireterminal.ai/cli
+ CATALOG API      GET /api/agents/catalog          →  138 agents · 2 one-shots · 6 featured
  REGISTRY         GET /api/agents/registry          →  on-chain docs
- TEMPLATES        GET /api/agents/templates          →  scaffolds
+ TEMPLATES        GET /api/agents/templates          →  5 scaffolds
  ACP DISCOVERY    GET /.well-known/acp.json         →  protocol
  AI PLUGIN        GET /.well-known/ai-plugin.json   →  chat-gpt
  ASSETS           /assets/*.svg                     →  forge art
@@ -205,7 +220,22 @@ metadata + image ──► choose rails
 
 ```bash
 curl -fsS https://cheshireterminal.ai/api/agents/catalog | jq '.stats'
+# local mirrors after: ct-agents serve --port 8080
+curl -fsS http://localhost:8080/api/agents/catalog | jq '.stats'
 ```
+
+Package-local surfaces (CLI, not HTTP):
+
+| Surface | Command | Path |
+|---------|---------|------|
+| Catalog stats | `ct-agents catalog` | `agents-catalog.json` |
+| DNA templates | `ct-agents dna …` | `dna/`, `characters/` |
+| Knowledge corpus | `ct-agents knowledge …` | `knowledge/` |
+| Suite skills | `ct-agents skills packs` | `skills/` + `skills/suite-index.json` |
+| Eliza catalog | (studio hub) | `eliza-agents/catalog.json` |
+| ZK primitives | (package) | `zk-primitives/` |
+| Robinhood schema/src | (library) | `robinhood-schema/`, `robinhood-src/` |
+| OSS hub map | — | `open-source-connection-map.json` |
 
 ---
 
@@ -333,16 +363,28 @@ Primary product hubs (see `open-source-connection-map.json`):
 # 1. Install
 npm i -g cheshire-terminal-agents
 
-# 2. Browse the catalog
+# 2. Catalog (138 agents · 2 one-shots · 6 featured)
 ct-agents catalog
 
-# 3. List skills
-ct-agents skills
+# 3. Skills — remote Skill Hub + local Robinhood suite (11 top-level)
+ct-agents skills packs
+ct-agents skills search vulcan
 
-# 4. Schema info
+# 4. Design / forge an agent from a catalog template
+ct-agents design --list
+ct-agents design --from clawd-imperial-perps --id my-perps --out ./agents/my-perps.json
+
+# 5. Agentic DNA from character seeds
+ct-agents dna list
+ct-agents dna generate --from clawd --out ./my-clawd-dna
+
+# 6. Knowledge corpus (package + your uploads)
+ct-agents knowledge list
+ct-agents knowledge init --from clawd --out ./my-knowledge
+ct-agents knowledge upload ./notes.md --out ./my-knowledge
+
+# 7. Schema + local API
 ct-agents schema
-
-# 5. Serve the local API
 ct-agents serve --port 8080
 ```
 
@@ -351,8 +393,21 @@ From any project (after `npm i cheshire-terminal-agents`):
 ```js
 import catalog from 'cheshire-terminal-agents/catalog'
 // or load agents-catalog.json via package exports
-console.log('Clawd Agents ready')
+console.log(catalog.stats) // totalAgents, totalOneShots, totalFeatured, …
 ```
+
+**Related package surfaces**
+
+| Path | Role |
+|------|------|
+| `eliza-agents/` | Eliza studio catalog + characters → [cheshireterminal.ai/eliza-agents](https://cheshireterminal.ai/eliza-agents) |
+| `eliza/` | Nested Solizardking/eliza fork checkout |
+| `dna/` | Blank IDENTITY/SOUL/USER/TOOLS templates |
+| `knowledge/` | Injectable JSONL + markdown swarm memory |
+| `skills/` | Cheshire Robinhood skill suite (`suite-index.json`) |
+| `zk-primitives/` | Nullifier + compressed-state ZK package |
+| `robinhood-schema/` · `robinhood-src/` | RH agent schema + CLI loaders (design/DNA/knowledge) |
+| `characters/` | 10 persona seeds for design + DNA |
 
 Root agent scaffolds: `agent-template.json` · `agent-template-full.json` · `agent-template-attested.json`.
 
@@ -392,9 +447,16 @@ Root agent scaffolds: `agent-template.json` · `agent-template-full.json` · `ag
 ```bash
 npm run build      # rebuild agents-catalog.json + validate
 npm run validate   # schema / catalog checks
-npm test           # same as validate
+npm test           # catalog + smoke-readme + dna + knowledge + eliza/zk paths + OSS map
 npm run catalog    # print compact stats JSON
+npm run test:dna
+npm run test:knowledge
+npm run test:eliza-zk
+npm run verify:oss
 node bin/ct-agents.js catalog
+node bin/ct-agents.js dna list
+node bin/ct-agents.js knowledge list
+node bin/ct-agents.js skills packs --json
 node bin/ct-agents.js --help
 ```
 
