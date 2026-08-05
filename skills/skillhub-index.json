@@ -84,8 +84,10 @@
   },
   "notes": [
     "This package does NOT vendor the 595 Skill Hub bodies.",
+    "ct-agents skills (TTY) opens the multi-select TUI/REPL — pick skills without bloat.",
     "ct-agents skills list|search uses the remote catalog (cached).",
     "ct-agents design --skills a,b only attaches references by default.",
-    "ct-agents design --skills a,b --install-skills downloads only selected skills into ./.agents/skills."
+    "ct-agents design --skills a,b --install-skills downloads only selected skills into ./.agents/skills.",
+    "Browser picker: ct-agents serve → /skills-picker.html"
   ]
 }

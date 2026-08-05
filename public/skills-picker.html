@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skill Hub Picker · Cheshire Terminal Agents</title>
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #121820;
+      --border: #1e2a38;
+      --text: #e7eef7;
+      --muted: #8b9bb0;
+      --accent: #3dd6c6;
+      --accent2: #7c5cff;
+      --warn: #f0b429;
+      --danger: #ff6b6b;
+      --ok: #3dd68c;
+      --chip: #1a2430;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% -10%, #1a2740 0%, transparent 55%),
+                  radial-gradient(900px 500px at 100% 0%, #1a1430 0%, transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+    header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: space-between;
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      background: rgba(11, 15, 20, 0.85);
+      z-index: 10;
+    }
+    h1 {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    h1 span { color: var(--accent); }
+    .sub { color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem; }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.25rem 6rem;
+    }
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 0.6rem;
+      margin-bottom: 0.9rem;
+    }
+    @media (max-width: 720px) {
+      .toolbar { grid-template-columns: 1fr; }
+    }
+    input, select, button {
+      font: inherit;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
+      padding: 0.65rem 0.8rem;
+    }
+    input:focus, select:focus, button:focus {
+      outline: 2px solid color-mix(in srgb, var(--accent) 50%, transparent);
+      outline-offset: 1px;
+    }
+    button {
+      cursor: pointer;
+      background: linear-gradient(180deg, #1a2a36, #121820);
+    }
+    button.primary {
+      background: linear-gradient(180deg, #2a8f86, #1f6f68);
+      border-color: #2a9e93;
+      font-weight: 600;
+    }
+    button.ghost { background: transparent; color: var(--muted); }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.9rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .chip {
+      background: var(--chip);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+    }
+    .chip strong { color: var(--accent); font-weight: 600; }
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 1rem;
+    }
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+    }
+    .list {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--panel) 90%, transparent);
+      overflow: hidden;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 0.65rem;
+      padding: 0.75rem 0.9rem;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      align-items: start;
+    }
+    .row:last-child { border-bottom: 0; }
+    .row:hover { background: rgba(61, 214, 198, 0.06); }
+    .row.selected { background: rgba(61, 214, 198, 0.1); }
+    .row input { margin-top: 0.2rem; accent-color: var(--accent); }
+    .slug {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92rem;
+      color: var(--accent);
+    }
+    .meta { color: var(--muted); font-size: 0.8rem; margin-top: 0.15rem; }
+    .desc { color: #c5d0de; font-size: 0.86rem; margin-top: 0.25rem; line-height: 1.35; }
+    .side {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--panel);
+      padding: 0.9rem;
+      position: sticky;
+      top: 5.5rem;
+      align-self: start;
+    }
+    .side h2 {
+      margin: 0 0 0.6rem;
+      font-size: 0.95rem;
+    }
+    .side ul {
+      list-style: none;
+      margin: 0 0 0.8rem;
+      padding: 0;
+      max-height: 40vh;
+      overflow: auto;
+    }
+    .side li {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.8rem;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      gap: 0.4rem;
+    }
+    .side li button {
+      padding: 0.1rem 0.4rem;
+      font-size: 0.75rem;
+      color: var(--danger);
+    }
+    .actions { display: grid; gap: 0.5rem; }
+    pre {
+      background: #0a0e13;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.7rem;
+      font-size: 0.72rem;
+      overflow: auto;
+      color: #b7c7db;
+      max-height: 180px;
+    }
+    .banner {
+      margin-bottom: 1rem;
+      padding: 0.75rem 0.9rem;
+      border-radius: 12px;
+      border: 1px solid color-mix(in srgb, var(--warn) 40%, var(--border));
+      background: rgba(240, 180, 41, 0.08);
+      color: #f3d48a;
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+    .empty { padding: 2rem; text-align: center; color: var(--muted); }
+    footer {
+      margin-top: 1.5rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Skill Hub <span>Picker</span></h1>
+      <div class="sub">Choose skills for your agent — never install the whole hub</div>
+    </div>
+    <div class="stats" id="header-stats">
+      <span class="chip">loading…</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="banner">
+      Full Skill Hub stays remote (~595 playbooks). This UI only builds a <strong>selection</strong>.
+      Copy the install command or skill refs JSON — sparse install pulls <em>only</em> what you picked into
+      <code>./.agents/skills</code>.
+    </div>
+
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="Search slug, name, category, description…" autocomplete="off" />
+      <select id="pack">
+        <option value="">All packs</option>
+      </select>
+      <select id="category">
+        <option value="">All categories</option>
+      </select>
+    </div>
+
+    <div class="stats" id="filter-stats"></div>
+
+    <div class="layout">
+      <div class="list" id="list">
+        <div class="empty">Loading catalog…</div>
+      </div>
+
+      <aside class="side">
+        <h2>Selected <span id="sel-count">(0)</span></h2>
+        <ul id="selected-list"></ul>
+        <div class="actions">
+          <button type="button" class="primary" id="btn-cmd">Copy install command</button>
+          <button type="button" id="btn-json">Copy skills[] refs JSON</button>
+          <button type="button" id="btn-page">Select visible page</button>
+          <button type="button" class="ghost" id="btn-clear">Clear selection</button>
+        </div>
+        <p class="meta" style="margin-top:0.8rem">CLI equivalent:</p>
+        <pre id="cmd-preview">ct-agents skills</pre>
+        <p class="meta" style="margin-top:0.6rem">
+          Or run the terminal multi-select TUI:<br />
+          <code>ct-agents skills pick</code>
+        </p>
+      </aside>
+    </div>
+
+    <footer>
+      Catalog source: local packs index + remote Skill Hub when available.
+      Local suite is always available offline via <code>ct-agents skills packs</code>.
+      Hub: <a href="https://github.com/Solizardking/skillhub-main" target="_blank" rel="noreferrer">skillhub-main</a>
+      · Product: <a href="https://cheshireterminal.ai/agents" target="_blank" rel="noreferrer">cheshireterminal.ai/agents</a>
+    </footer>
+  </main>
+
+  <script>
+    const INSTALL_BASE = 'npx --yes github:Solizardking/skills install';
+    const HUB = 'https://github.com/Solizardking/skillhub-main';
+    // Prefer remote Skill Hub catalog; fall back to packs from skillhub-index if blocked/offline.
+    const CATALOG_URLS = [
+      'https://raw.githubusercontent.com/Solizardking/skillhub-main/main/catalog.json',
+      'https://cdn.jsdelivr.net/gh/Solizardking/skillhub-main@main/catalog.json',
+    ];
+
+    // Embedded offline packs/featured from package index (no skill bodies).
+    const OFFLINE_PACKS = {
+      "cheshire-core": {
+        "label": "Cheshire / Robinhood core",
+        "skills": [
+          "robinhood-agent-forge",
+          "cheshire-agent-registries",
+          "cheshire-agent-identity-registry",
+          "cheshire-omni-mint",
+          "cheshire-zk-omni",
+          "rh-bonded-launch"
+        ]
+      },
+      "metaplex": { "label": "Metaplex Agent", "skills": ["metaplex-agent"] },
+      "trading": { "label": "Trading stack", "skills": ["vulcan", "imperial"] },
+      "imperial": {
+        "label": "Imperial perps",
+        "skills": [
+          "imperial", "imperial-execution-modes", "imperial-trade-execution",
+          "imperial-risk-management", "imperial-market-intel", "imperial-portfolio-intel",
+          "imperial-position-management", "imperial-tpsl-management", "imperial-margin-operations",
+          "imperial-grid-trading", "imperial-twap-execution", "imperial-skills-index"
+        ]
+      },
+      "solana-dev": { "label": "Solana developer", "skills": ["solana-dev", "solana-formal-verification"] },
+      "pump": { "label": "Pump.fun", "skills": ["pumpfun", "pump-token-lifecycle", "pump-bonding-curve"] }
+    };
+    const FEATURED = [
+      "metaplex-agent", "cheshire-terminal-agents", "robinhood-agent-forge",
+      "cheshire-agent-registries", "cheshire-omni-mint", "cheshire-zk-omni",
+      "rh-bonded-launch", "rh-launchpad-v3", "solana-dev", "pumpfun", "vulcan", "imperial"
+    ];
+
+    const state = {
+      skills: [],
+      source: 'offline',
+      selected: new Set(),
+      query: '',
+      pack: '',
+      category: '',
+      pageSize: 80,
+    };
+
+    const $ = (id) => document.getElementById(id);
+
+    function offlineCatalog() {
+      const seen = new Set();
+      const out = [];
+      const push = (slug, category) => {
+        if (!slug || seen.has(slug)) return;
+        seen.add(slug);
+        out.push({
+          slug,
+          name: slug.split('/').pop(),
+          description: `Skill Hub skill: ${slug}`,
+          category: category || 'Featured',
+        });
+      };
+      for (const s of FEATURED) push(s, 'Featured');
+      for (const [id, pack] of Object.entries(OFFLINE_PACKS)) {
+        for (const s of pack.skills || []) push(s, pack.label || id);
+      }
+      return out;
+    }
+
+    async function loadCatalog() {
+      for (const url of CATALOG_URLS) {
+        try {
+          const res = await fetch(url, { headers: { accept: 'application/json' } });
+          if (!res.ok) throw new Error(String(res.status));
+          const data = await res.json();
+          if (Array.isArray(data) && data.length) {
+            state.skills = data.map((s) => ({
+              slug: s.slug || s.name || s.id,
+              name: s.name || s.slug,
+              description: s.description || '',
+              category: s.category || 'Utilities',
+            })).filter((s) => s.slug);
+            state.source = 'remote';
+            return;
+          }
+        } catch (_) { /* try next */ }
+      }
+      state.skills = offlineCatalog();
+      state.source = 'offline-packs';
+    }
+
+    function filtered() {
+      let list = state.skills;
+      if (state.pack && OFFLINE_PACKS[state.pack]) {
+        const set = new Set(OFFLINE_PACKS[state.pack].skills || []);
+        list = list.filter((s) => set.has(s.slug));
+      }
+      if (state.category) {
+        const c = state.category.toLowerCase();
+        list = list.filter((s) => String(s.category || '').toLowerCase().includes(c));
+      }
+      if (state.query) {
+        const terms = state.query.toLowerCase().split(/\s+/).filter(Boolean);
+        list = list.filter((s) => {
+          const hay = `${s.slug} ${s.name || ''} ${s.category || ''} ${s.description || ''}`.toLowerCase();
+          return terms.every((t) => hay.includes(t));
+        });
+      }
+      return list;
+    }
+
+    function installCmd() {
+      const slugs = Array.from(state.selected);
+      if (!slugs.length) return 'ct-agents skills pick   # multi-select TUI';
+      return `ct-agents skills install ${slugs.join(' ')}`;
+    }
+
+    function refsJson() {
+      return Array.from(state.selected).map((slug) => {
+        const s = state.skills.find((x) => x.slug === slug) || { slug };
+        return {
+          name: s.name || slug,
+          slug,
+          enabled: true,
+          source: 'skillhub',
+          hub: HUB,
+          category: s.category,
+          description: s.description ? String(s.description).slice(0, 240) : undefined,
+          install: `${INSTALL_BASE} ${slug}`,
+          path: `skills/${slug}`,
+        };
+      });
+    }
+
+    function renderSelected() {
+      $('sel-count').textContent = `(${state.selected.size})`;
+      const ul = $('selected-list');
+      ul.innerHTML = '';
+      for (const slug of state.selected) {
+        const li = document.createElement('li');
+        li.innerHTML = `<span>${slug}</span>`;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = '×';
+        btn.addEventListener('click', () => {
+          state.selected.delete(slug);
+          render();
+        });
+        li.appendChild(btn);
+        ul.appendChild(li);
+      }
+      $('cmd-preview').textContent = installCmd();
+    }
+
+    function renderList() {
+      const list = filtered();
+      const el = $('list');
+      el.innerHTML = '';
+      const page = list.slice(0, state.pageSize);
+      if (!page.length) {
+        el.innerHTML = `<div class="empty">No skills match. Clear filters or search.</div>`;
+        return;
+      }
+      for (const s of page) {
+        const row = document.createElement('label');
+        row.className = 'row' + (state.selected.has(s.slug) ? ' selected' : '');
+        const checked = state.selected.has(s.slug) ? 'checked' : '';
+        const desc = String(s.description || '').replace(/\s+/g, ' ').slice(0, 140);
+        row.innerHTML = `
+          <input type="checkbox" data-slug="${s.slug}" ${checked} />
+          <div>
+            <div class="slug">${s.slug}</div>
+            <div class="meta">${s.category || '—'} · ${s.name || ''}</div>
+            ${desc ? `<div class="desc">${desc}</div>` : ''}
+          </div>
+        `;
+        row.querySelector('input').addEventListener('change', (e) => {
+          if (e.target.checked) state.selected.add(s.slug);
+          else state.selected.delete(s.slug);
+          renderSelected();
+          row.classList.toggle('selected', e.target.checked);
+        });
+        el.appendChild(row);
+      }
+      if (list.length > state.pageSize) {
+        const more = document.createElement('div');
+        more.className = 'empty';
+        more.textContent = `Showing ${state.pageSize} of ${list.length} — refine search to narrow.`;
+        el.appendChild(more);
+      }
+    }
+
+    function renderStats() {
+      const list = filtered();
+      $('header-stats').innerHTML = `
+        <span class="chip"><strong>${state.skills.length}</strong> catalog</span>
+        <span class="chip">source <strong>${state.source}</strong></span>
+        <span class="chip"><strong>${state.selected.size}</strong> selected</span>
+      `;
+      $('filter-stats').innerHTML = `
+        <span class="chip">${list.length} match filter</span>
+        <span class="chip">sparse target <strong>./.agents/skills</strong></span>
+      `;
+    }
+
+    function fillFilters() {
+      const packSel = $('pack');
+      for (const [id, pack] of Object.entries(OFFLINE_PACKS)) {
+        const opt = document.createElement('option');
+        opt.value = id;
+        opt.textContent = `${id} — ${pack.label || id}`;
+        packSel.appendChild(opt);
+      }
+      const cats = Array.from(new Set(state.skills.map((s) => s.category).filter(Boolean))).sort();
+      const catSel = $('category');
+      for (const c of cats) {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        catSel.appendChild(opt);
+      }
+    }
+
+    function render() {
+      renderStats();
+      renderList();
+      renderSelected();
+    }
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+        return true;
+      }
+    }
+
+    $('q').addEventListener('input', (e) => {
+      state.query = e.target.value.trim();
+      render();
+    });
+    $('pack').addEventListener('change', (e) => {
+      state.pack = e.target.value;
+      if (state.pack && OFFLINE_PACKS[state.pack]) {
+        for (const s of OFFLINE_PACKS[state.pack].skills || []) state.selected.add(s);
+      }
+      render();
+    });
+    $('category').addEventListener('change', (e) => {
+      state.category = e.target.value;
+      render();
+    });
+    $('btn-clear').addEventListener('click', () => {
+      state.selected.clear();
+      render();
+    });
+    $('btn-page').addEventListener('click', () => {
+      for (const s of filtered().slice(0, state.pageSize)) state.selected.add(s.slug);
+      render();
+    });
+    $('btn-cmd').addEventListener('click', async () => {
+      await copyText(installCmd());
+      $('btn-cmd').textContent = 'Copied!';
+      setTimeout(() => { $('btn-cmd').textContent = 'Copy install command'; }, 1200);
+    });
+    $('btn-json').addEventListener('click', async () => {
+      await copyText(JSON.stringify(refsJson(), null, 2));
+      $('btn-json').textContent = 'Copied!';
+      setTimeout(() => { $('btn-json').textContent = 'Copy skills[] refs JSON'; }, 1200);
+    });
+
+    (async () => {
+      await loadCatalog();
+      fillFilters();
+      render();
+    })();
+  </script>
+</body>
+</html>

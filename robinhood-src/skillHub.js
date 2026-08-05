@@ -383,6 +383,12 @@ ${BOLD}${CYAN}ct-agents skills${RESET} — Skill Hub picker (no install bloat)
 Skills are NOT bundled (595 live on Skill Hub). This CLI fetches the catalog
 on demand and installs only what you select.
 
+${BOLD}Interactive (recommended):${RESET}
+  ${CYAN}ct-agents skills${RESET}                 Multi-select TUI/REPL (TTY default)
+  ${CYAN}ct-agents skills pick${RESET}            Same — browse, toggle, sparse-install
+  ${CYAN}ct-agents skills tui${RESET} / ${CYAN}repl${RESET}      Aliases for pick
+  Web picker when serving:   ${DIM}http://localhost:3000/skills-picker.html${RESET}
+
 ${BOLD}Commands:${RESET}
   ${CYAN}ct-agents skills list${RESET} [--json] [--refresh]
   ${CYAN}ct-agents skills search <query>${RESET} [--json]
@@ -404,13 +410,37 @@ ${BOLD}Hub:${RESET} https://github.com/Solizardking/skillhub-main
 
 export async function runSkillsCli(argv = [], root = ROOT) {
   const args = parseSkillsArgs(argv);
-  if (args.flags.help || args._.length === 0) {
+
+  // No subcommand: TTY → interactive multi-select picker; else print help
+  if (args.flags.help) {
+    printSkillsHelp();
+    return 0;
+  }
+  if (args._.length === 0) {
+    if (process.stdin.isTTY) {
+      const { runSkillsTui } = await import('./skillsTui.js');
+      return runSkillsTui({
+        root,
+        targetDir: args.flags.target || DEFAULT_INSTALL_DIR,
+        refresh: Boolean(args.flags.refresh),
+      });
+    }
     printSkillsHelp();
     return 0;
   }
 
   const cmd = args._[0];
   const rest = args._.slice(1);
+
+  // Interactive multi-select TUI / REPL
+  if (cmd === 'pick' || cmd === 'tui' || cmd === 'repl' || cmd === 'browse') {
+    const { runSkillsTui } = await import('./skillsTui.js');
+    return runSkillsTui({
+      root,
+      targetDir: args.flags.target || DEFAULT_INSTALL_DIR,
+      refresh: Boolean(args.flags.refresh),
+    });
+  }
 
   if (cmd === 'packs') {
     const index = loadSkillHubIndex(root);

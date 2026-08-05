@@ -115,11 +115,17 @@ ct-agents design --from blank --id forge-bot \
   --install-skills \
   --out ./forge-bot.json
 
-# Skill Hub browser (595 skills stay remote)
+# Skill Hub multi-select TUI / REPL (595 skills stay remote)
+ct-agents skills              # interactive picker — toggle, then sparse-install
+ct-agents skills pick         # same
 ct-agents skills packs
 ct-agents skills search vulcan
 ct-agents skills install metaplex-agent          # sparse fetch of one skill
 ct-agents skills attach ./forge-bot.json trading # add refs to existing agent
+
+# Browser multi-select UI (after serve)
+ct-agents serve
+# open http://localhost:3000/skills-picker.html
 
 # validate a definition
 ct-agents design --validate ./agents/my-yield-bot.json
@@ -150,10 +156,11 @@ Full catalog is fetched on demand; installs pull **only** the slugs you select.
 | `ct-agents design --validate <file>` | Schema-check an agent JSON |
 | `ct-agents catalog` | Print catalog stats (agents, one-shots, featured, categories, hub) |
 | `ct-agents templates` | List scaffold templates from the catalog |
-| `ct-agents skills` | Skill Hub picker (remote packs — no install bloat) |
-| `ct-agents skills packs` | List local suite under `skills/` (11 top-level) |
+| `ct-agents skills` / `skills pick` | **Multi-select TUI** — browse catalog, toggle skills, sparse-install only picks |
+| `ct-agents skills packs` | Curated packs (cheshire-core, trading, imperial, …) |
 | `ct-agents skills search <q>` | Search Skill Hub |
 | `ct-agents skills install <slug>` | Sparse-fetch one skill into `./.agents/skills` |
+| `ct-agents serve` → `/skills-picker.html` | Browser multi-select UI (copy install cmd / refs JSON) |
 | `ct-agents dna list` | List `characters/*.json` seeds for DNA generation |
 | `ct-agents dna generate --from <id> --out <dir>` | Write IDENTITY/SOUL/USER/TOOLS bundle |
 | `ct-agents knowledge list` | List package corpus under `knowledge/` |

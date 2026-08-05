@@ -507,16 +507,27 @@ Manual UI:
 **CLI:**
 
 ```bash
+ct-agents skills                                 # multi-select TUI/REPL (TTY)
+ct-agents skills pick                            # same
 ct-agents skills packs
 ct-agents skills search vulcan
 ct-agents skills install metaplex-agent          # sparse
 ct-agents design --from blank --id bot --skills cheshire-core,metaplex-agent --out ./bot.json
 ct-agents design --skills trading --install-skills --id bot --out ./bot.json
+ct-agents serve                                  # then open /skills-picker.html
 ```
+
+**Interactive surfaces (shipped in this package):**
+
+| Surface | Path | Role |
+|---------|------|------|
+| TUI/REPL | `robinhood-src/skillsTui.js` via `ct-agents skills` | Multi-select, packs, search, sparse install |
+| Design flow | `designTui` → `pickSkillsForAgent` | Same picker while forging an agent |
+| Browser UI | `public/skills-picker.html` | Checkbox multi-select; copy install cmd / refs JSON |
 
 **Web integration (monorepo):**
 
-1. Builder skill picker should call the same remote catalog URL (or proxy `GET /api/skills` from skillhub public API) — never bundle skill bodies in the SPA bundle.
+1. Builder skill picker should call the same remote catalog URL (or proxy `GET /api/skills` from skillhub public API) — never bundle skill bodies in the SPA bundle. Local preview: `skills-picker.html`.
 2. On deploy, store `skills[]` refs on the user-agent record; install to runtime skill root only when the operator enables skills.
 3. Prefer sparse raw GitHub fetch or `npx github:Solizardking/skills install <slugs>` over cloning the whole hub.
 

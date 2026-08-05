@@ -201,8 +201,9 @@ const COMMANDS = {
     console.log(`${CYAN}  http://localhost:${port}/api/agents/catalog${RESET}`);
     console.log(`${CYAN}  http://localhost:${port}/api/agents/registry${RESET}`);
     console.log(`${CYAN}  http://localhost:${port}/api/agents/templates${RESET}`);
+    console.log(`${CYAN}  http://localhost:${port}/skills-picker.html${RESET}  ${DIM}# multi-select skills (no bloat)${RESET}`);
     console.log(`${CYAN}  http://localhost:${port}/.well-known/acp.json${RESET}`);
-    console.log(`${DIM}  design locally: ct-agents design${RESET}\n`);
+    console.log(`${DIM}  design locally: ct-agents design · skills TUI: ct-agents skills pick${RESET}\n`);
 
     server.listen(port, () => {
       console.log(`${GREEN}✓ Listening on port ${port}${RESET}`);
@@ -218,7 +219,8 @@ ${BOLD}Usage:${RESET}
   ${CYAN}npx cheshire-terminal-agents design --list${RESET} List forkable templates
   ${CYAN}npx cheshire-terminal-agents design --from <id> --id <new> --skills metaplex-agent --out ./agent.json${RESET}
   ${CYAN}npx cheshire-terminal-agents forge${RESET}        Alias for design (oneshot OK)
-  ${CYAN}npx cheshire-terminal-agents skills${RESET}       Skill Hub picker (remote, no bloat)
+  ${CYAN}npx cheshire-terminal-agents skills${RESET}       Multi-select Skill Hub TUI (no bloat)
+  ${CYAN}npx cheshire-terminal-agents skills pick${RESET}  Browse / toggle / sparse-install
   ${CYAN}npx cheshire-terminal-agents skills search vulcan${RESET}
   ${CYAN}npx cheshire-terminal-agents skills install metaplex-agent${RESET}
   ${CYAN}npx cheshire-terminal-agents serve${RESET}        Start the API server
@@ -237,16 +239,22 @@ ${BOLD}Install globally:${RESET}
   ${YELLOW}npm i -g cheshire-terminal-agents${RESET}
   ${YELLOW}ct-agents design${RESET}          ${DIM}# interactive template forge${RESET}
   ${YELLOW}ct-agents design --from defi-yield-farmer --id my-yield --skills cheshire-core --out ./my-yield.json${RESET}
+  ${YELLOW}ct-agents skills${RESET}                         ${DIM}# multi-select TUI — pick what you need${RESET}
   ${YELLOW}ct-agents skills install metaplex-agent${RESET}  ${DIM}# download only that skill${RESET}
   ${YELLOW}ct-agents dna generate --from warrenbuffet --out ./buffett-dna${RESET}  ${DIM}# agentic DNA bundle${RESET}
 
 ${BOLD}Design flow:${RESET}
   1. Pick a catalog agent, character, or blank scaffold as a template
   2. Customize identifier / title / systemRole / tags
-  3. Optionally attach Skill Hub skills (refs only — 595 skills stay remote)
+  3. Optionally open the Skill Hub multi-select picker (refs only — 595 stay remote)
   4. Validate against ${MAGENTA}clawdAgentSchema.v1${RESET}
   5. Write a local agent JSON you own
-  6. Optional: ${CYAN}--install-skills${RESET} pulls only selected skills into ./.agents/skills
+  6. Optional: sparse-install selected skills into ./.agents/skills (never the full hub)
+
+${BOLD}Skill picker (avoid bloat):${RESET}
+  ${CYAN}ct-agents skills${RESET}          interactive TUI — list, search, multi-select, install only picks
+  ${CYAN}ct-agents skills packs${RESET}    curated packs (cheshire-core, trading, imperial, …)
+  ${CYAN}ct-agents serve${RESET} then open ${MAGENTA}/skills-picker.html${RESET} for a browser multi-select UI
 
 ${BOLD}Agentic DNA:${RESET}
   1. ${CYAN}ct-agents dna list${RESET} — browse ${MAGENTA}characters/*.json${RESET} seeds
