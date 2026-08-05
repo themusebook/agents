@@ -1,0 +1,31 @@
+{
+  "worker": {
+    "name": "clawdbot-install",
+    "metadataEndpoints": [
+      "/.well-known/clawdbot-install.json",
+      "/.well-known/clawdbot-zk.json",
+      "/zk",
+      "/zk.json",
+      "/metadata.json",
+      "/catalog",
+      "/routes"
+    ]
+  },
+  "vars": {
+    "DEFAULT_ZK_PRIMITIVES_DIR": "$HOME/.clawdbot/src/zk-primitives",
+    "PROJECT_REPO": "https://github.com/Solizardking/clawdbot-go",
+    "ECOSYSTEM_HUB": "https://github.com/solizardking/solana-clawd",
+    "X402_GATEWAY": "https://zk.x402.wtf",
+    "TERMINAL_URL": "https://cheshireterminal.ai",
+    "ZK_AGENT_PACKAGE": "@clawd/zk-shark-agent",
+    "ZK_CLIENT_PACKAGE": "@clawd/zk-client",
+    "ZK_PROGRAM_ID": "CLAWDzk11111111111111111111111111111111111"
+  },
+  "trustGate": {
+    "inspect": "observer",
+    "verifyProofShape": "observer",
+    "computeNullifier": "observer",
+    "buildInstruction": "dry-run",
+    "signAndSend": "delegated"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "name": "Clawd ZK Primitives",
+  "slug": "clawd-zk-primitives",
+  "status": "production-candidate-circuit-gated",
+  "category": "infrastructure",
+  "description": "Nullifiers, Groth16 proof preparation, and Light Protocol compressed-state helpers for Solana-native Clawd and ZK Shark agents.",
+  "integratedFrom": "/Users/8bit/zk-router/zk-primitives",
+  "packageManager": "pnpm",
+  "docs": {
+    "readme": "README.md",
+    "reference": "zk.md",
+    "architecture": "docs/ARCHITECTURE.md",
+    "integration": "docs/INTEGRATION.md",
+    "edgeDistribution": "docs/EDGE_DISTRIBUTION.md",
+    "piedpiperAdaptation": "docs/PIEDPIPER_ADAPTATION.md"
+  },
+  "roots": {
+    "agent": "agent",
+    "client": "client",
+    "configs": "configs",
+    "docs": "docs",
+    "programs": "programs",
+    "tests": "tests"
+  },
+  "packages": {
+    "agent": {
+      "name": "@clawd/zk-shark-agent",
+      "path": "agent",
+      "skill": "agent/SKILL.md",
+      "manifest": "agent/agent.json",
+      "binary": "zk-shark-agent",
+      "binaryAliases": ["shark-of-all-streets", "clawd-zk-agent"]
+    },
+    "client": {
+      "name": "@clawd/zk-client",
+      "path": "client"
+    },
+    "program": {
+      "name": "clawd-zk",
+      "path": "programs/clawd-zk",
+      "programId": "CLAWDzk11111111111111111111111111111111111"
+    }
+  },
+  "operations": [
+    "publish_attestation",
+    "consume_attestation",
+    "commit_encrypted_state",
+    "verify_proof",
+    "compute_nullifier"
+  ],
+  "distribution": {
+    "cloudflareWorker": "../cloudflare/install-worker.js",
+    "wranglerConfig": "../wrangler.toml",
+    "metadataEndpoints": [
+      "/.well-known/clawdbot-install.json",
+      "/.well-known/clawdbot-zk.json",
+      "/.well-known/zk-primitives.json",
+      "/zk",
+      "/zk.json",
+      "/metadata.json",
+      "/catalog",
+      "/routes"
+    ],
+    "publicInstallHosts": [
+      "https://install.onchainai.fund",
+      "https://install.x402.wtf",
+      "https://x402.wtf/clawdbot",
+      "https://zk.x402.wtf/clawdbot"
+    ],
+    "configExample": "configs/cloudflare-worker.example.json"
+  },
+  "environment": {
+    "requiredForOnchainActions": ["CLAWD_ZK_RPC_URL"],
+    "optional": [
+      "CLAWD_ZK_PROGRAM_ID",
+      "CLAWD_ZK_PHOTON_URL",
+      "CLAWD_ZK_API_KEY",
+      "CLAWD_ZK_COMMITMENT",
+      "CLAWD_ZK_KEYPAIR",
+      "CLAWD_ZK_NETWORK",
+      "ZK_SHARK_RPC_URL",
+      "ZK_SHARK_PROGRAM_ID",
+      "ZK_SHARK_PHOTON_URL",
+      "ZK_SHARK_API_KEY",
+      "ZK_SHARK_COMMITMENT",
+      "ZK_SHARK_KEYPAIR",
+      "ZK_SHARK_NETWORK"
+    ]
+  },
+  "catalogIntegration": {
+    "runtimeCommand": "clawdbot catalog zk",
+    "skillsRootEnv": "CLAWDBOT_SKILLS_DIR",
+    "agentsRootEnv": "CLAWDBOT_AGENTS_DIR",
+    "zkRootEnv": "CLAWDBOT_ZK_PRIMITIVES_DIR",
+    "defaultSkillsRoot": "/Users/8bit/skills/skills",
+    "defaultAgentsRoot": "/Users/8bit/agents/agents/src"
+  },
+  "trustGate": {
+    "default": "observer",
+    "onchainBuildInstruction": "dry-run",
+    "signAndSendTransaction": "delegated"
+  }
+}

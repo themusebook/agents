@@ -1,7 +1,9 @@
     Blocking waiting for file lock on package cache
     Blocking waiting for file lock on package cache
-   2.862120375s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint: fingerprint error for agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter)/Check { test: false }/TargetInner { ..: lib_target("agent_minter", ["cdylib", "lib"], "/Users/8bit/agents/agents/agent-minter/src/lib.rs", Edition2021) }
-   2.862144208s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/agent-minter-dbbe8bad93b00d8d/lib-agent_minter`
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+  13.909873333s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint: fingerprint error for agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter)/Check { test: false }/TargetInner { ..: lib_target("agent_minter", ["cdylib", "lib"], "/Users/8bit/agents/agents/agent-minter/src/lib.rs", Edition2021) }
+  13.910598250s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/agent-minter-dbbe8bad93b00d8d/lib-agent_minter`
 
 Caused by:
     No such file or directory (os error 2)
@@ -24,8 +26,8 @@ Stack backtrace:
   14: std::rt::lang_start::<()>::{closure#0}
   15: std::rt::lang_start_internal
   16: _main
-   3.072137833s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint: fingerprint error for solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle)/Check { test: false }/TargetInner { ..: lib_target("solana_gpt_oracle", ["cdylib", "lib"], "/Users/8bit/agents/agents/solana-gpt-oracle/src/lib.rs", Edition2021) }
-   3.072151458s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/solana-gpt-oracle-8249f7000d97cf64/lib-solana_gpt_oracle`
+  15.376809167s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint: fingerprint error for solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle)/Check { test: false }/TargetInner { ..: lib_target("solana_gpt_oracle", ["cdylib", "lib"], "/Users/8bit/agents/agents/solana-gpt-oracle/src/lib.rs", Edition2021) }
+  15.376821750s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/solana-gpt-oracle-8249f7000d97cf64/lib-solana_gpt_oracle`
 
 Caused by:
     No such file or directory (os error 2)
@@ -49,8 +51,8 @@ Stack backtrace:
   15: std::rt::lang_start::<()>::{closure#0}
   16: std::rt::lang_start_internal
   17: _main
-   3.072725542s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint: fingerprint error for ephemeral-rollups-sdk v0.2.4/Check { test: false }/TargetInner { ..: lib_target("ephemeral_rollups_sdk", ["lib"], "/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ephemeral-rollups-sdk-0.2.4/src/lib.rs", Edition2021) }
-   3.072729875s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/ephemeral-rollups-sdk-9dfadd3db768a1d8/lib-ephemeral_rollups_sdk`
+  15.378886458s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint: fingerprint error for ephemeral-rollups-sdk v0.2.4/Check { test: false }/TargetInner { ..: lib_target("ephemeral_rollups_sdk", ["lib"], "/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ephemeral-rollups-sdk-0.2.4/src/lib.rs", Edition2021) }
+  15.378902792s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/ephemeral-rollups-sdk-9dfadd3db768a1d8/lib-ephemeral_rollups_sdk`
 
 Caused by:
     No such file or directory (os error 2)
@@ -75,8 +77,8 @@ Stack backtrace:
   16: std::rt::lang_start::<()>::{closure#0}
   17: std::rt::lang_start_internal
   18: _main
-   3.110858625s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint: fingerprint error for agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter)/Check { test: true }/TargetInner { ..: lib_target("agent_minter", ["cdylib", "lib"], "/Users/8bit/agents/agents/agent-minter/src/lib.rs", Edition2021) }
-   3.110872917s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/agent-minter-08ab9f088097f21b/test-lib-agent_minter`
+  16.034454792s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint: fingerprint error for agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter)/Check { test: true }/TargetInner { ..: lib_target("agent_minter", ["cdylib", "lib"], "/Users/8bit/agents/agents/agent-minter/src/lib.rs", Edition2021) }
+  16.034473250s  INFO prepare_target{force=false package_id=agent-minter v0.1.0 (/Users/8bit/agents/agents/agent-minter) target="agent_minter"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/agent-minter/target/debug/.fingerprint/agent-minter-08ab9f088097f21b/test-lib-agent_minter`
 
 Caused by:
     No such file or directory (os error 2)

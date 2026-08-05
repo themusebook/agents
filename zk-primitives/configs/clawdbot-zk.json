@@ -1,0 +1,17 @@
+{
+  "network": "mainnet",
+  "programId": "CLAWDzk11111111111111111111111111111111111",
+  "rpcUrlEnv": "CLAWD_ZK_RPC_URL",
+  "photonUrlEnv": "CLAWD_ZK_PHOTON_URL",
+  "commitment": "confirmed",
+  "lightTreesFile": "configs/light-trees.yaml",
+  "agentPackage": "@clawd/zk-agent",
+  "clientPackage": "@clawd/zk-client",
+  "trustGateDefaults": {
+    "inspect": "observer",
+    "verify": "observer",
+    "nullifier": "observer",
+    "buildInstruction": "dry-run",
+    "sendTransaction": "delegated"
+  }
+}

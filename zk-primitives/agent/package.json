@@ -1,0 +1,75 @@
+{
+  "name": "@clawd/zk-shark-agent",
+  "version": "0.1.0",
+  "description": "ZK Shark, the Shark of All Streets agent: an intent-routable wrapper around @clawd/zk-client for nullifiers, Groth16 proofs, and Light Protocol primitives.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "zk-shark-agent": "./dist/cli.js",
+    "shark-of-all-streets": "./dist/cli.js",
+    "clawd-zk-agent": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./agent": {
+      "import": "./dist/agent.js",
+      "types": "./dist/agent.d.ts"
+    },
+    "./intents": {
+      "import": "./dist/intents.js",
+      "types": "./dist/intents.d.ts"
+    },
+    "./cli": {
+      "import": "./dist/cli.js",
+      "types": "./dist/cli.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "SKILL.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo",
+    "start": "node ./dist/cli.js",
+    "inspect": "node ./dist/cli.js inspect"
+  },
+  "keywords": [
+    "solana",
+    "zk",
+    "light-protocol",
+    "clawd",
+    "zk-shark",
+    "shark-of-all-streets",
+    "ordinals",
+    "agent",
+    "nullifier",
+    "groth16",
+    "attestation",
+    "zk-shark-agent"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@clawd/zk-client": "workspace:*",
+    "@solana/kit": "^2.1.0",
+    "@solana/web3.js": "^1.95.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
