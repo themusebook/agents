@@ -1,0 +1,70 @@
+{
+  "name": "cheshire-terminal",
+  "description": "Cheshire Terminal CLI defaults — site registration, skills, agents, dual-rail forge.",
+  "version": "1.0.0",
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "siteUrl": "https://cheshireterminal.ai",
+  "env": {
+    "CHESHIRE_SITE_URL": "https://cheshireterminal.ai",
+    "CHESHIRE_API_KEY": ""
+  },
+  "services": [
+    {
+      "name": "dashboard",
+      "endpoint": "https://cheshireterminal.ai",
+      "description": "Main dashboard — agent discovery, skills, forge, x402"
+    },
+    {
+      "name": "api",
+      "endpoint": "https://cheshireterminal.ai/api",
+      "description": "REST API for skills, agents, auth, registry"
+    },
+    {
+      "name": "gateway",
+      "endpoint": "https://cheshireterminal.ai/gateway",
+      "description": "Developer gateway portal — API keys, OpenAPI, branded /api/gateway/* routes"
+    },
+    {
+      "name": "agents",
+      "endpoint": "https://cheshireterminal.ai/agents",
+      "description": "Agent hub"
+    },
+    {
+      "name": "mcp",
+      "endpoint": "https://cheshireterminal.ai/mcp",
+      "description": "Model Context Protocol server"
+    },
+    {
+      "name": "x402",
+      "endpoint": "https://cheshireterminal.ai/x402",
+      "description": "x402 payment gateway"
+    }
+  ],
+  "capabilities": {
+    "solana": {
+      "enabled": true,
+      "rpcUrl": "${SOLANA_RPC_URL}",
+      "walletSupport": true
+    },
+    "robinhood": {
+      "enabled": true,
+      "chains": [4663, 46630]
+    },
+    "mcp": {
+      "enabled": true
+    },
+    "payment": {
+      "enabled": true,
+      "protocols": ["x402"],
+      "tokens": ["USDC", "CLAWD"]
+    }
+  },
+  "permissions": {
+    "defaults": {
+      "trade": "ask",
+      "sign": "deny",
+      "spend": "deny",
+      "transfer": "ask"
+    }
+  }
+}

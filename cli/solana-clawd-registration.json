@@ -1,0 +1,39 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "Cheshire Terminal",
+  "description": "Cheshire Terminal agent framework for autonomous operators on Solana and Robinhood Chain — market data, wallet tracking, dual-rail identity, and multi-agent orchestration via cheshireterminal.ai.",
+  "image": "https://cheshireterminal.ai/og-image.png",
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://cheshireterminal.ai",
+      "version": "1.0"
+    },
+    {
+      "name": "MCP",
+      "endpoint": "https://cheshireterminal.ai/mcp",
+      "version": "2026-04-12"
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://cheshireterminal.ai/.well-known/agent-card.json",
+      "version": "0.3.0"
+    },
+    {
+      "name": "api",
+      "endpoint": "https://cheshireterminal.ai/api",
+      "version": "1.0"
+    },
+    {
+      "name": "gateway",
+      "endpoint": "https://cheshireterminal.ai/gateway",
+      "version": "1.0"
+    }
+  ],
+  "active": true,
+  "registrations": [],
+  "supportedTrust": [
+    "wallet-verified",
+    "token-holder"
+  ]
+}

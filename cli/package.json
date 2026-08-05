@@ -1,0 +1,88 @@
+{
+  "name": "cheshire-terminal-cli",
+  "version": "1.1.0",
+  "description": "Open-source Cheshire Terminal CLI — public status/skills/agents/eliza-agents, optional SIWS and developer API keys, agent registry, arena. Hub: https://cheshireterminal.ai/cli",
+  "type": "module",
+  "license": "MIT",
+  "author": "Cheshire Terminal <operators@cheshireterminal.ai>",
+  "contributors": [
+    "x402solana"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solizardking/cli.git"
+  },
+  "homepage": "https://cheshireterminal.ai/cli",
+  "bugs": {
+    "url": "https://github.com/Solizardking/cli/issues"
+  },
+  "keywords": [
+    "cheshire-terminal",
+    "cheshire-cli",
+    "cheshire-terminal-cli",
+    "solana",
+    "cli",
+    "siws",
+    "agent-registry",
+    "skills",
+    "gateway",
+    "x402",
+    "mcp",
+    "agents",
+    "eliza",
+    "elizaos",
+    "metaplex",
+    "robinhood-chain"
+  ],
+  "bin": {
+    "cheshire-cli": "bin/cheshire-cli.js",
+    "cheshire-terminal-cli": "bin/cheshire-cli.js",
+    "ct-cli": "bin/cheshire-cli.js",
+    "clawd-cli": "bin/cheshire-cli.js"
+  },
+  "exports": {
+    ".": "./src/index.mjs",
+    "./package.json": "./package.json",
+    "./registration": "./cheshire-registration.json",
+    "./config": "./cheshire-config.json"
+  },
+  "main": "./src/index.mjs",
+  "files": [
+    "bin",
+    "cheshire-cli.mjs",
+    "cheshire-cli.sh",
+    "cheshire-register.mjs",
+    "clawd-cli.sh",
+    "clawd-connect.sh",
+    "src",
+    "assets",
+    "cheshire-registration.json",
+    "cheshire-config.json",
+    "clawd-registration.json",
+    "clawd-openclaw-config.json",
+    "solana-clawd-registration.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "optionalDependencies": {
+    "cheshire-terminal-agents": "^1.48.0"
+  },
+  "scripts": {
+    "start": "node ./bin/cheshire-cli.js",
+    "cli": "node ./bin/cheshire-cli.js",
+    "help": "node ./bin/cheshire-cli.js help",
+    "status": "node ./bin/cheshire-cli.js status",
+    "sync": "node ./bin/cheshire-cli.js sync",
+    "test": "node --test ./cheshire-cli.test.mjs ./arena-register.test.mjs",
+    "prepack": "node --check bin/cheshire-cli.js && node --check cheshire-cli.mjs && node --check src/config.mjs && node --check src/client.mjs && node --check src/catalog.mjs && node --check src/commands.mjs && node --check src/index.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "sideEffects": false
+}

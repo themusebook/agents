@@ -1,0 +1,95 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "cheshire-terminal",
+  "description": "Cheshire Terminal — voice-controlled Solana terminal powered by $CLAWD. Agent hub, dual-rail forge (Robinhood Chain + Solana Metaplex), skills marketplace, MCP, and x402 settlement on cheshireterminal.ai.",
+  "image": "https://cheshireterminal.ai/og-image.png",
+  "services": [
+    {
+      "name": "dashboard",
+      "endpoint": "https://cheshireterminal.ai",
+      "description": "Main hub — agents, forge, skills, terminal, x402 gateway"
+    },
+    {
+      "name": "api",
+      "endpoint": "https://cheshireterminal.ai/api",
+      "description": "REST API — developer status, skills, auth, agent registry, Metaplex agents"
+    },
+    {
+      "name": "gateway",
+      "endpoint": "https://cheshireterminal.ai/gateway",
+      "description": "Developer API gateway portal — scoped ct_sk_ keys, OpenAPI, catalog, llms.txt (/api/gateway/* alias)"
+    },
+    {
+      "name": "gateway-api",
+      "endpoint": "https://cheshireterminal.ai/api/gateway",
+      "description": "Branded gateway API prefix — status, openapi.json, catalog, skills (same keys as /api/*)"
+    },
+    {
+      "name": "agents",
+      "endpoint": "https://cheshireterminal.ai/agents",
+      "description": "Open agent hub and catalog"
+    },
+    {
+      "name": "forge",
+      "endpoint": "https://cheshireterminal.ai/agents/forge",
+      "description": "Dual-rail identity forge (Robinhood ERC-8004 + Solana Metaplex)"
+    },
+    {
+      "name": "agent-registry",
+      "endpoint": "https://cheshireterminal.ai/agent-registry",
+      "description": "Public agent registry UI (proxy to registry.cheshireterminal.ai)"
+    },
+    {
+      "name": "mcp",
+      "endpoint": "https://cheshireterminal.ai/mcp",
+      "description": "Model Context Protocol server"
+    },
+    {
+      "name": "x402",
+      "endpoint": "https://cheshireterminal.ai/x402",
+      "description": "x402 payment gateway — SPL USDC + $CLAWD settlement"
+    },
+    {
+      "name": "websocket",
+      "endpoint": "wss://cheshireterminal.ai/ws",
+      "description": "Real-time streaming for on-chain events and agent communication"
+    }
+  ],
+  "x402Support": true,
+  "active": true,
+  "registrations": [],
+  "supportedTrust": [
+    "wallet-verified",
+    "token-holder",
+    "solana-mainnet",
+    "robinhood-chain"
+  ],
+  "capabilities": {
+    "blockchain": ["solana", "robinhood-chain"],
+    "readonly": false,
+    "trading": {
+      "enabled": true,
+      "requireApproval": true,
+      "protocols": ["jupiter", "dflow", "phoenix", "pump.fun"]
+    },
+    "tools": [
+      "helius-das",
+      "helius-rpc",
+      "jupiter-price",
+      "jupiter-swap",
+      "metaplex-core",
+      "cheshire-agent-forge",
+      "agent-registry"
+    ],
+    "models": {
+      "default": "xai/grok-4.20-beta",
+      "reasoning": "xai/grok-4.20-beta"
+    }
+  },
+  "lineage": {
+    "product": "cheshire-terminal",
+    "site": "https://cheshireterminal.ai",
+    "agentsPackage": "cheshire-terminal-agents",
+    "chain": ["solana", "robinhood-chain"]
+  }
+}

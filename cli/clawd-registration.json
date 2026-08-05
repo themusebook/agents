@@ -1,0 +1,84 @@
+{
+  "type": "https://eips.ethereum.org/EIPS/eip-8004#registration-v1",
+  "name": "cheshire-terminal",
+  "description": "Cheshire Terminal — the open agent hub and dual-rail forge on cheshireterminal.ai. Skills marketplace, MCP, Metaplex + Robinhood Chain identity, x402 settlement.",
+  "image": "https://cheshireterminal.ai/og-image.png",
+  "services": [
+    {
+      "name": "dashboard",
+      "endpoint": "https://cheshireterminal.ai",
+      "description": "Main dashboard — agent discovery, skills marketplace, x402 payment gateway"
+    },
+    {
+      "name": "api",
+      "endpoint": "https://cheshireterminal.ai/api",
+      "description": "REST API for skills, agents, auth, and registry operations"
+    },
+    {
+      "name": "gateway",
+      "endpoint": "https://cheshireterminal.ai/gateway",
+      "description": "Developer API gateway — scoped keys, OpenAPI, /api/gateway/* brand alias"
+    },
+    {
+      "name": "marketplace",
+      "endpoint": "https://cheshireterminal.ai/api/skills",
+      "description": "Skills catalog API"
+    },
+    {
+      "name": "x402",
+      "endpoint": "https://cheshireterminal.ai/x402",
+      "description": "x402 payment gateway — SPL USDC + $CLAWD settlement"
+    },
+    {
+      "name": "websocket",
+      "endpoint": "wss://cheshireterminal.ai/ws",
+      "description": "Real-time streaming for on-chain events and agent communication"
+    },
+    {
+      "name": "mcp",
+      "endpoint": "https://cheshireterminal.ai/mcp",
+      "description": "Model Context Protocol server"
+    },
+    {
+      "name": "agents",
+      "endpoint": "https://cheshireterminal.ai/agents",
+      "description": "Open agent hub"
+    }
+  ],
+  "x402Support": true,
+  "active": true,
+  "registrations": [],
+  "supportedTrust": [
+    "wallet-verified",
+    "token-holder",
+    "solana-mainnet",
+    "robinhood-chain"
+  ],
+  "capabilities": {
+    "blockchain": ["solana", "robinhood-chain"],
+    "readonly": false,
+    "trading": {
+      "enabled": true,
+      "requireApproval": true,
+      "protocols": ["jupiter", "dflow", "phoenix", "pump.fun"]
+    },
+    "tools": [
+      "helius-das",
+      "helius-rpc",
+      "jupiter-price",
+      "jupiter-swap",
+      "metaplex-core",
+      "cheshire-agent-forge"
+    ],
+    "models": {
+      "default": "xai/grok-4.20-beta",
+      "reasoning": "xai/grok-4.20-beta"
+    }
+  },
+  "lineage": {
+    "product": "cheshire-terminal",
+    "site": "https://cheshireterminal.ai",
+    "agentsPackage": "cheshire-terminal-agents",
+    "runtime": "cheshire-cli"
+  }
+}
