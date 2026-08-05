@@ -289,10 +289,14 @@ export function hubLinks(siteUrl) {
 
 /**
  * Try optional cheshire-terminal-agents package for local catalog (not required).
+ * Resolution order:
+ *  1. Installed npm package (exports ./catalog → agentCatalog.js)
+ *  2. Monorepo sibling at ../agents-catalog.json (when this CLI lives under agents/cli)
  */
 export async function tryLoadLocalPackageCatalog() {
+  // 1) npm package (preferred when both are installed)
   try {
-    const mod = await import("cheshire-terminal-agents");
+    const mod = await import("cheshire-terminal-agents/catalog");
     const ids =
       typeof mod.listCatalogIdentifiers === "function"
         ? mod.listCatalogIdentifiers()
@@ -300,12 +304,53 @@ export async function tryLoadLocalPackageCatalog() {
     return {
       available: true,
       package: "cheshire-terminal-agents",
-      count: ids.length,
-      identifiers: ids,
+      source: "npm:cheshire-terminal-agents/catalog",
+      siteHub: "https://cheshireterminal.ai/agents",
+      count: Array.isArray(ids) ? ids.length : 0,
+      identifiers: Array.isArray(ids) ? ids : [],
       loadAgent:
         typeof mod.loadAgentWithLocale === "function"
           ? (id) => mod.loadAgentWithLocale(id, "en")
           : null,
+      cli: {
+        connect: "npx cheshire-terminal-agents connect",
+        catalog: "npx cheshire-terminal-agents catalog",
+        design: "npx cheshire-terminal-agents design",
+      },
+    };
+  } catch {
+    /* fall through */
+  }
+
+  // 2) monorepo sibling (agents/cli → agents/agents-catalog.json)
+  try {
+    const { readFile } = await import("node:fs/promises");
+    const { dirname, join } = await import("node:path");
+    const { fileURLToPath } = await import("node:url");
+    const here = dirname(fileURLToPath(import.meta.url));
+    const siblingCatalog = join(here, "..", "..", "agents-catalog.json");
+    const raw = await readFile(siblingCatalog, "utf8");
+    const catalog = JSON.parse(raw);
+    const agents = Array.isArray(catalog.agents) ? catalog.agents : [];
+    const ids = agents
+      .map((a) => a.identifier || a.id)
+      .filter(Boolean);
+    return {
+      available: true,
+      package: "cheshire-terminal-agents",
+      source: "monorepo:../agents-catalog.json",
+      siteHub: catalog.hub?.agents || catalog.hub?.gallery || "https://cheshireterminal.ai/agents",
+      cliHub: catalog.hub?.cli || "https://cheshireterminal.ai/cli",
+      count: ids.length,
+      identifiers: ids,
+      stats: catalog.stats || null,
+      hub: catalog.hub || null,
+      loadAgent: null,
+      cli: {
+        connect: "npx cheshire-terminal-agents connect",
+        catalog: "npx cheshire-terminal-agents catalog",
+        design: "npx cheshire-terminal-agents design",
+      },
     };
   } catch {
     return {
@@ -314,7 +359,13 @@ export async function tryLoadLocalPackageCatalog() {
       count: 0,
       identifiers: [],
       loadAgent: null,
+      siteHub: "https://cheshireterminal.ai/agents",
+      cliHub: "https://cheshireterminal.ai/cli",
       hint: "npm i cheshire-terminal-agents  # optional dual-rail forge catalog",
+      cli: {
+        connect: "npx cheshire-terminal-agents connect",
+        catalog: "npx cheshire-terminal-agents catalog",
+      },
     };
   }
 }

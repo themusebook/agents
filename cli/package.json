@@ -1,6 +1,6 @@
 {
   "name": "cheshire-terminal-cli",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Open-source Cheshire Terminal CLI — public status/skills/agents/eliza-agents, optional SIWS and developer API keys, agent registry, arena. Hub: https://cheshireterminal.ai/cli",
   "type": "module",
   "license": "MIT",
@@ -65,7 +65,7 @@
     "LICENSE"
   ],
   "optionalDependencies": {
-    "cheshire-terminal-agents": "^1.48.0"
+    "cheshire-terminal-agents": "^1.48.4"
   },
   "scripts": {
     "start": "node ./bin/cheshire-cli.js",

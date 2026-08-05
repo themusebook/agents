@@ -1,7 +1,7 @@
 {
   "name": "cheshire-terminal-agents",
-  "version": "1.48.3",
-  "description": "♾️  Clawd Agents — dual-chain agent catalog + design TUI. Fork any agent as a template, customize against clawdAgentSchema.v1, validate, and ship. 138 catalog agents, scaffolds, characters, skills, Metaplex/Robinhood forge surfaces. npx cheshire-terminal-agents design",
+  "version": "1.48.4",
+  "description": "♾️  Clawd Agents — dual-chain agent catalog + design TUI. Fork any agent as a template, customize against clawdAgentSchema.v1, validate, and ship. 139 catalog agents, scaffolds, characters, skills, Metaplex/Robinhood forge surfaces. npx cheshire-terminal-agents design",
   "type": "module",
   "sideEffects": false,
   "license": "MIT",
@@ -132,6 +132,6 @@
     "viem": "^2.38.0"
   },
   "optionalDependencies": {
-    "cheshire-terminal-agents": "^1.48.3"
+    "cheshire-terminal-cli": "^1.1.1"
   }
 }

@@ -1,7 +1,7 @@
 {
   "$schema": "https://cheshireterminal.ai/schema/clawdAgentCatalog.v1.json",
   "apiVersion": "1.0",
-  "generatedAt": "2026-07-23T22:24:49.260Z",
+  "generatedAt": "2026-08-05T04:44:46.766Z",
   "hub": {
     "gallery": "https://cheshireterminal.ai/agents",
     "agents": "https://cheshireterminal.ai/agents",
@@ -14,7 +14,7 @@
     "catalog": "https://cheshireterminal.ai/api/agents/catalog"
   },
   "stats": {
-    "totalAgents": 138,
+    "totalAgents": 139,
     "totalOneShots": 2,
     "totalFeatured": 6,
     "totalTemplates": 5,
@@ -25,6 +25,7 @@
       "infrastructure": 5,
       "platform": 3,
       "dev-tools": 3,
+      "orchestration": 1,
       "payments": 25,
       "nft": 2,
       "character": 6,
@@ -36,7 +37,7 @@
       "governance": 1,
       "education": 2
     },
-    "metaplexEnabledAgents": 18,
+    "metaplexEnabledAgents": 19,
     "tradingCapableAgents": 4,
     "launchCapableAgents": 0,
     "mintCapableAgents": 4
@@ -90,7 +91,7 @@
       }
     ],
     "coverage": {
-      "agent-registry": 18,
+      "agent-registry": 19,
       "core": 7,
       "token-metadata": 2,
       "genesis": 1,
@@ -224,6 +225,11 @@
       "id": "character",
       "label": "Character",
       "icon": "🎭"
+    },
+    {
+      "id": "orchestration",
+      "label": "Orchestration",
+      "icon": "🕸️"
     }
   ],
   "deployPaths": [
@@ -1121,6 +1127,57 @@
         "mcp": "/api/agents/catalog/clawdex.json",
         "registration": "/api/agents/registry/clawdex.json",
         "fork": "ct-agents design --from clawdex"
+      }
+    },
+    {
+      "identifier": "elizero",
+      "title": "eliZERO",
+      "description": "First elizaOS Zero agent powered by $CLAWD — flat-loop Zero engine, six-law harness, x402 payments, birth funding.",
+      "avatar": "E0",
+      "tags": [
+        "eliza",
+        "elizero",
+        "zero",
+        "clawd",
+        "solana",
+        "x402",
+        "zk",
+        "first-agent",
+        "token-gated"
+      ],
+      "category": "orchestration",
+      "author": "Clawd Labs · zero-clawd",
+      "createdAt": "2026-08-04",
+      "oneShot": false,
+      "featured": false,
+      "openingMessage": "eliZERO online. First eliza Zero agent. Powered by $CLAWD. Flat loop. Zero recursion. What should we verify?",
+      "openingQuestions": [
+        "Who is eliZERO?",
+        "Show $CLAWD powering config",
+        "Run a Zero attested dry task",
+        "Explain zero recursion vs nested agents"
+      ],
+      "tokenUsage": null,
+      "capabilities": [
+        "clawd-token-gating",
+        "x402-payments",
+        "zero-attestation",
+        "paper-trading",
+        "ooda-loop",
+        "agent-birth-funding"
+      ],
+      "metaplexSkills": [
+        "agent-registry"
+      ],
+      "payment": null,
+      "agentToken": null,
+      "deploy": {
+        "json": "/api/agents/catalog/elizero.json",
+        "chat": "/agents/chat?agent=elizero",
+        "mint": "/agents/mint?template=elizero",
+        "mcp": "/api/agents/catalog/elizero.json",
+        "registration": "/api/agents/registry/elizero.json",
+        "fork": "ct-agents design --from elizero"
       }
     },
     {

@@ -243,7 +243,29 @@ describe("offline connect command", () => {
     assert.equal(result.siteUrl, "https://cheshireterminal.ai");
     assert.equal(result.endpoints.cliHub, "https://cheshireterminal.ai/cli");
     assert.equal(result.hubs.cli, "https://cheshireterminal.ai/cli");
+    assert.equal(result.hubs.agents, "https://cheshireterminal.ai/agents");
     assert.equal(result.npm?.hub, "https://cheshireterminal.ai/cli");
+    assert.equal(result.productHubs?.agents, "https://cheshireterminal.ai/agents");
+    assert.equal(result.productHubs?.cli, "https://cheshireterminal.ai/cli");
+    assert.equal(result.forgePackage?.connect, "npx cheshire-terminal-agents connect");
+    assert.equal(result.forgePackage?.catalog, "npx cheshire-terminal-agents catalog");
+    assert.equal(result.forgePackage?.siteHub, "https://cheshireterminal.ai/agents");
+  });
+
+  it("tryLoadLocalPackageCatalog finds monorepo sibling agents-catalog", async () => {
+    const { tryLoadLocalPackageCatalog } = await import("./src/catalog.mjs");
+    const local = await tryLoadLocalPackageCatalog();
+    assert.equal(local.package, "cheshire-terminal-agents");
+    // monorepo or npm — either is fine when available
+    if (local.available) {
+      assert.ok(local.count > 0, "expected catalog agent ids");
+      assert.match(String(local.siteHub || ""), /cheshireterminal\.ai\/agents/);
+      assert.equal(local.cli?.connect, "npx cheshire-terminal-agents connect");
+      assert.equal(local.cli?.catalog, "npx cheshire-terminal-agents catalog");
+    } else {
+      assert.ok(local.hint);
+      assert.equal(local.cli?.connect, "npx cheshire-terminal-agents connect");
+    }
   });
 });
 

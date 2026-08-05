@@ -95,8 +95,9 @@ Eliza agents studio (@elizaos/cheshire-eliza → /eliza-agents):
                  [--no-forge] [--browser-use] [--system-extra "…"]
   eliza:deploy --name <n> [same flags as generate]   # deploy plan + character JSON
 
-Optional dual-rail forge package (separate npm):
-  npx cheshire-terminal-agents
+Optional dual-rail forge package (separate npm → /agents):
+  npx cheshire-terminal-agents connect     # product hubs (agents ↔ cli)
+  npx cheshire-terminal-agents catalog     # catalog stats · hubs (/agents + /cli)
   npx cheshire-terminal-agents design --list
   npx cheshire-terminal-agents design --from <id> --id my-bot --out ./my-bot.json
 
@@ -1466,11 +1467,24 @@ export async function cmdConnect(options = {}) {
     forgePackage: {
       npm: "cheshire-terminal-agents",
       bin: "cheshire-terminal-agents",
+      siteHub: "https://cheshireterminal.ai/agents",
       docs: "https://www.npmjs.com/package/cheshire-terminal-agents",
+      connect: "npx cheshire-terminal-agents connect",
+      catalog: "npx cheshire-terminal-agents catalog",
+      design: "npx cheshire-terminal-agents design",
+    },
+    productHubs: {
+      agents: hubs.agents || "https://cheshireterminal.ai/agents",
+      cli: hubs.cli || "https://cheshireterminal.ai/cli",
+      elizaAgents: hubs.elizaAgents || "https://cheshireterminal.ai/eliza-agents",
+      forge: hubs.forge || "https://cheshireterminal.ai/agents/forge",
     },
     next: [
       `npm i -g ${CLI_PACKAGE_NAME}`,
+      `${CLI_NAME} connect`,
       `${CLI_NAME} status`,
+      `npx cheshire-terminal-agents catalog`,
+      `npx cheshire-terminal-agents connect`,
       `${CLI_NAME} register:user --wallet <pubkey>`,
       `${CLI_NAME} set-key --api-key ct_sk_…`,
       `${CLI_NAME} register:agent --dry-run`,

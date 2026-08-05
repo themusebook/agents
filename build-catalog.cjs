@@ -440,6 +440,7 @@ function build() {
       { id: 'voice-council', label: 'Voice Council', icon: '🎙️' },
       { id: 'community', label: 'Community', icon: '👥' },
       { id: 'character', label: 'Character', icon: '🎭' },
+      { id: 'orchestration', label: 'Orchestration', icon: '🕸️' },
     ],
     deployPaths: [
       {

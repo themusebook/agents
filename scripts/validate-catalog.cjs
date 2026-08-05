@@ -5,7 +5,7 @@ const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
 // Primary hub agents (src/) + package agents/ merges (e.g. clawd-imperial-perps).
-const EXPECTED_TOTAL = 138;
+const EXPECTED_TOTAL = 139;
 const EXPECTED_ONE_SHOTS = ['clawd-imperial-perps', 'solana-pumpfun-bot'];
 const EXPECTED_FEATURED = [
   'clawd-agents-perps-runtime',

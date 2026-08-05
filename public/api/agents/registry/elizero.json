@@ -1,0 +1,97 @@
+{
+  "schemaVersion": "erc-8004-agent-registration-v1",
+  "protocol": "metaplex-agent-registry",
+  "name": "eliZERO",
+  "description": "First elizaOS Zero agent powered by $CLAWD — flat-loop Zero engine, six-law harness, x402 payments, birth funding.",
+  "image": "https://cheshireterminal.ai/nich.jpg",
+  "external_url": "https://cheshireterminal.ai/agents/elizero",
+  "active": true,
+  "createdAt": "2026-08-04",
+  "updatedAt": "2026-08-05T04:44:46.766Z",
+  "tags": [
+    "eliza",
+    "elizero",
+    "zero",
+    "clawd",
+    "solana",
+    "x402",
+    "zk",
+    "first-agent",
+    "token-gated"
+  ],
+  "categories": [
+    "orchestration"
+  ],
+  "owner": {
+    "organization": "OpenClawd",
+    "website": "https://cheshireterminal.ai",
+    "token": {
+      "symbol": "CLAWD",
+      "chain": "solana",
+      "mint": "8cHzQHUS2s2h8TzCmfqPKYiM4dSt4roa3n7MyRLApump"
+    }
+  },
+  "services": [
+    {
+      "name": "web",
+      "endpoint": "https://cheshireterminal.ai/agents/elizero"
+    },
+    {
+      "name": "A2A",
+      "endpoint": "https://cheshireterminal.ai/api/agents/a2a",
+      "version": "0.3.0"
+    },
+    {
+      "name": "catalog",
+      "endpoint": "https://cheshireterminal.ai/api/agents/catalog/elizero.json"
+    },
+    {
+      "name": "registration",
+      "endpoint": "https://cheshireterminal.ai/api/agents/registry/elizero.json"
+    }
+  ],
+  "registrations": [
+    {
+      "agentId": "openclawd:elizero",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/elizero.json"
+    }
+  ],
+  "supportedTrust": [
+    "reputation",
+    "crypto-economic",
+    "token-gated"
+  ],
+  "metaplex": {
+    "programs": [
+      "agent-registry"
+    ],
+    "sdk": "@metaplex-foundation/mpl-agent-registry",
+    "expectedIdentity": {
+      "asset": null,
+      "agentIdentityPda": null,
+      "assetSignerPda": null,
+      "executiveProfilePda": null
+    },
+    "registrationFlow": [
+      "mint MPL Core agent asset",
+      "register AgentIdentity with this registrationUri",
+      "optionally register an executive profile",
+      "delegate execution only after operator review"
+    ]
+  },
+  "openclawd": {
+    "identifier": "elizero",
+    "capabilities": [
+      "clawd-token-gating",
+      "x402-payments",
+      "zero-attestation",
+      "paper-trading",
+      "ooda-loop",
+      "agent-birth-funding"
+    ],
+    "payment": null,
+    "agentToken": null
+  }
+}

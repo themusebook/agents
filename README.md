@@ -19,11 +19,11 @@ Ship Clawd / Cheshire-schema agents, then register them on **Robinhood Chain** (
 
 <p align="center">
   <img alt="Node.js 18.18+" src="https://img.shields.io/badge/Node-%3E%3D18.18-5fa04e?style=flat-square&logo=nodedotjs&logoColor=white" />
-  <img alt="138 catalog agents" src="https://img.shields.io/badge/catalog-138_agents-75f58b?style=flat-square" />
+  <img alt="139 catalog agents" src="https://img.shields.io/badge/catalog-139_agents-75f58b?style=flat-square" />
   <img alt="11 suite skills" src="https://img.shields.io/badge/skills-11_suite_(31_SKILL.md)-c084fc?style=flat-square" />
   <img alt="Solana mainnet-beta" src="https://img.shields.io/badge/Solana-mainnet--beta-9f8cff?style=flat-square&logo=solana&logoColor=white" />
   <img alt="Robinhood Chain 4663" src="https://img.shields.io/badge/Robinhood_Chain-4663-75f58b?style=flat-square" />
-  <img alt="npm v1.48.3" src="https://img.shields.io/badge/npm-v1.48.3-cb3837?style=flat-square&logo=npm&logoColor=white" />
+  <img alt="npm v1.48.4" src="https://img.shields.io/badge/npm-v1.48.4-cb3837?style=flat-square&logo=npm&logoColor=white" />
 </p>
 
 ```
@@ -33,12 +33,12 @@ Ship Clawd / Cheshire-schema agents, then register them on **Robinhood Chain** (
  ██║     ██║     ██╔══██║██║███╗██║██║  ██║    ██╔══██║██║   ██║██╔══╝  ██║╚██╗██║   ██║   ╚════██║
  ╚██████╗███████╗██║  ██║╚███╔███╔╝██████╔╝    ██║  ██║╚██████╔╝███████╗██║ ╚████║   ██║   ███████║
   ╚═════╝╚══════╝╚═╝  ╚═╝ ╚══╝╚══╝ ╚═════╝     ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝
-                         ✦ dual-chain agent forge · cheshire-terminal-agents@1.48.3 ✦
+                         ✦ dual-chain agent forge · cheshire-terminal-agents@1.48.4 ✦
 ```
 
 **Clawd Agents** ships as [`cheshire-terminal-agents`](https://www.npmjs.com/package/cheshire-terminal-agents) on npm — the open catalog + forge package for:
 
-1. **Agent catalog** — 138 dual-chain agent definitions, character personas, locales, and schema validation  
+1. **Agent catalog** — 139 dual-chain agent definitions, character personas, locales, and schema validation  
 2. **Identity forge** — dual-rail registration (Robinhood Chain EVM + Solana SVM) with fail-closed safety  
 
 Hosted surfaces: [agent hub](https://cheshireterminal.ai/agents) · [eliza studio](https://cheshireterminal.ai/eliza-agents) · [agent forge](https://cheshireterminal.ai/agents/forge) · [CLI hub](https://cheshireterminal.ai/cli) · [catalog API](https://cheshireterminal.ai/api/agents/catalog)
@@ -212,7 +212,7 @@ npx cheshire-terminal-agents serve --port 8080
 
 | Surface | Included | Boundary |
 |---------|----------|----------|
-| **Agent catalog** | 138 agents in `agents-catalog.json`, 54 JSON defs under `agents/`, 10 characters, locales, schema | Prompts + metadata — not a custody runtime |
+| **Agent catalog** | 139 agents in `agents-catalog.json`, 54 JSON defs under `agents/`, 10 characters, locales, schema | Prompts + metadata — not a custody runtime |
 | **CLI** | `cheshire-terminal-agents` · `ct-agents` → `bin/ct-agents.js` | No silent wallet broadcast |
 | **Skills** | 11 suite skills under `skills/` (31 `SKILL.md` incl. nested `rh-crypto-agent` pack) | Instruction content — pin like code |
 | **DNA** | Continuity templates + `ct-agents dna` generator (`dna/`) | Session identity — not runtime custody |
@@ -241,7 +241,7 @@ metadata + image ──► choose rails
  ELIZA STUDIO     https://cheshireterminal.ai/eliza-agents
  AGENT FORGE      https://cheshireterminal.ai/agents/forge
  CLI HUB          https://cheshireterminal.ai/cli
- CATALOG API      GET /api/agents/catalog          →  138 agents · 2 one-shots · 6 featured
+ CATALOG API      GET /api/agents/catalog          →  139 agents · 2 one-shots · 6 featured
  REGISTRY         GET /api/agents/registry          →  on-chain docs
  TEMPLATES        GET /api/agents/templates          →  5 scaffolds
  ACP DISCOVERY    GET /.well-known/acp.json         →  protocol
@@ -276,11 +276,11 @@ Facts from `agents-catalog.json` (rebuild with `npm run build`):
 
 | Metric | Count |
 |--------|------:|
-| **Agents** | **138** |
+| **Agents** | **139** |
 | One-shots | 2 |
 | Featured | 6 |
 | Templates | 5 |
-| Categories | 16 |
+| Categories | 17 |
 | Character profiles (`characters/`) | 10 |
 | Agent JSON defs (`agents/`) | 54 |
 | Suite skills (`skills/suite-index.json`) | 11 |
@@ -303,6 +303,7 @@ Facts from `agents-catalog.json` (rebuild with `npm run build`):
 | voice-council | 2 |
 | nft | 2 |
 | education | 2 |
+| orchestration | 1 |
 | tools | 1 |
 | programming | 1 |
 | research | 1 |
@@ -325,7 +326,7 @@ Facts from `agents-catalog.json` (rebuild with `npm run build`):
 
 | Package | npm | Status |
 |---------|-----|--------|
-| **Clawd Agents / forge** | [`cheshire-terminal-agents@1.48.3`](https://www.npmjs.com/package/cheshire-terminal-agents) | **Published** · bins `cheshire-terminal-agents`, `ct-agents` |
+| **Clawd Agents / forge** | [`cheshire-terminal-agents@1.48.4`](https://www.npmjs.com/package/cheshire-terminal-agents) | **Published** · bins `cheshire-terminal-agents`, `ct-agents` |
 | Zero Clawd runtime | [`clawdbot-go`](https://www.npmjs.com/package/clawdbot-go) | Optional companion |
 | `@cheshire/clawd-agent-tui` | — | **Private** (source only in `packages/clawd-agent-tui`) |
 | `@cheshire/headless-agent` | — | **Private** (source only in `packages/headless-agent`) |
@@ -336,7 +337,7 @@ Facts from `agents-catalog.json` (rebuild with `npm run build`):
 # published package only
 npm view cheshire-terminal-agents name version bin
 # name = cheshire-terminal-agents
-# version = 1.48.3
+# version = 1.48.4
 # bin.cheshire-terminal-agents = bin/ct-agents.js
 # bin.ct-agents = bin/ct-agents.js
 ```
@@ -348,7 +349,7 @@ npm view cheshire-terminal-agents name version bin
 ```
 clawd-agents / cheshire-terminal-agents
 ├── agents/              # 54 agent definition JSON files
-├── agents-catalog.json  # built catalog (138 agents · 2 one-shots · 6 featured)
+├── agents-catalog.json  # built catalog (139 agents · 2 one-shots · 6 featured)
 ├── bin/ct-agents.js     # CLI entry (npm bins)
 ├── characters/          # 10 character profiles (+ package.json)
 ├── dna/                 # agentic DNA continuity templates
@@ -374,7 +375,7 @@ clawd-agents / cheshire-terminal-agents
 ├── skills/              # 11 suite skills (31 SKILL.md w/ nested pack)
 ├── zk-primitives/       # ZK nullifier + compressed-state package
 ├── open-source-connection-map.json  # product hubs ↔ GitHub repos
-└── package.json         # name: cheshire-terminal-agents @ 1.48.3
+└── package.json         # name: cheshire-terminal-agents @ 1.48.4
 ```
 
 Primary product hubs (see `open-source-connection-map.json`):
@@ -394,7 +395,7 @@ Primary product hubs (see `open-source-connection-map.json`):
 # 1. Install
 npm i -g cheshire-terminal-agents
 
-# 2. Catalog (138 agents · 2 one-shots · 6 featured)
+# 2. Catalog (139 agents · 2 one-shots · 6 featured)
 ct-agents catalog
 
 # 3. Skills — remote Skill Hub + local Robinhood suite (11 top-level)
@@ -505,7 +506,7 @@ node scripts/smoke-readme-npm.cjs
 |-------|-------|
 | Product | **Clawd Agents** |
 | npm name | `cheshire-terminal-agents` |
-| Version | **1.48.3** |
+| Version | **1.48.4** |
 | Bins | `cheshire-terminal-agents`, `ct-agents` |
 | License | MIT |
 | Agent hub | https://cheshireterminal.ai/agents |
@@ -516,8 +517,8 @@ node scripts/smoke-readme-npm.cjs
         ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
        ██                                          ██
        ██  CLAWD AGENTS                            ██
-       ██  cheshire-terminal-agents@1.48.3         ██
-       ██  138 agents · 2 one-shots · 6 featured   ██
+       ██  cheshire-terminal-agents@1.48.4         ██
+       ██  139 agents · 2 one-shots · 6 featured   ██
        ██  cheshireterminal.ai/agents              ██
        ██  cheshireterminal.ai/cli                 ██
        ██                                          ██
