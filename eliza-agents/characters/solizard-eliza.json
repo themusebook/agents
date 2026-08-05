@@ -18,6 +18,8 @@
   "plugins": [
     "@elizaos/plugin-sql",
     "@elizaos/plugin-bootstrap",
+    "@elizaos/plugin-openai",
+    "@elizaos/plugin-knowledge",
     "@elizaos/plugin-robinhood",
     "@elizaos/plugin-solana-forging",
     "@elizaos/plugin-e2b-computer",
@@ -27,7 +29,14 @@
     "secrets": {
       "HERMES_API_KEY": "${HERMES_API_KEY}",
       "HONCHO_API_KEY": "${HONCHO_API_KEY}",
-      "E2B_API_KEY": "${E2B_API_KEY}"
+      "E2B_API_KEY": "${E2B_API_KEY}",
+      "OPENAI_API_KEY": "${OPENAI_API_KEY}"
+    },
+    "knowledge": {
+      "plugin": "@elizaos/plugin-knowledge",
+      "docs": "https://docs.elizaos.ai/plugin-registry/knowledge",
+      "loadDocsOnStartup": true,
+      "prepare": "ct-agents knowledge eliza-docs --from knowledge --out ./docs"
     }
   },
   "eliza": {

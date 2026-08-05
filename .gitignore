@@ -2,5 +2,5 @@
 cli/dist/
 cloudflare-agent-api/.wrangler/
 
-# Local app source — not published to GitHub
-src/
+# Local app source — not published to GitHub (repo root only; do not ignore nested package src/)
+/src/

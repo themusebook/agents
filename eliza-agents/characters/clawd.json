@@ -105,7 +105,10 @@
       "enabled": true,
       "priority": "required",
       "path": "skills/x402-payment-verification",
-      "provides": ["PAYMENT_SESSION", "VAULT_ACCESS"]
+      "provides": [
+        "PAYMENT_SESSION",
+        "VAULT_ACCESS"
+      ]
     },
     {
       "name": "solana-attestation-skill",
@@ -141,6 +144,20 @@
     "proofOfExecution": {
       "type": "x402-vault-delegation",
       "verified": false
+    }
+  },
+  "plugins": [
+    "@elizaos/plugin-knowledge",
+    "@elizaos/plugin-openai",
+    "@elizaos/plugin-bootstrap",
+    "@elizaos/plugin-sql"
+  ],
+  "settings": {
+    "knowledge": {
+      "plugin": "@elizaos/plugin-knowledge",
+      "docs": "https://docs.elizaos.ai/plugin-registry/knowledge",
+      "loadDocsOnStartup": true,
+      "prepare": "ct-agents knowledge eliza-docs --from knowledge --out ./docs"
     }
   }
 }

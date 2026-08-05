@@ -1,9 +1,51 @@
 {
-  "version": "0.1.2",
+  "version": "0.1.3",
   "product": "cheshireterminal.ai/eliza-agents",
   "elizaFork": "https://github.com/Solizardking/eliza",
   "agentsRepo": "https://github.com/Solizardking/agents",
+  "knowledge": {
+    "plugin": "@elizaos/plugin-knowledge",
+    "docs": "https://docs.elizaos.ai/plugin-registry/knowledge",
+    "quickStart": "https://docs.elizaos.ai/plugin-registry/knowledge/quick-start",
+    "localGuide": "docs/KNOWLEDGE_RAG.md",
+    "packageCorpus": "../knowledge",
+    "zkDocs": "../zk-primitives/docs",
+    "cli": {
+      "init": "ct-agents knowledge init --from clawd --out ./my-knowledge",
+      "upload": "ct-agents knowledge upload <files> --out ./my-knowledge",
+      "elizaDocs": "ct-agents knowledge eliza-docs --from knowledge --out ./docs",
+      "inject": "ct-agents knowledge inject ./my-knowledge"
+    },
+    "env": [
+      "OPENAI_API_KEY",
+      "LOAD_DOCS_ON_STARTUP",
+      "KNOWLEDGE_PATH",
+      "CTX_KNOWLEDGE_ENABLED"
+    ]
+  },
+  "relatedPackages": {
+    "zkPrimitives": "../zk-primitives",
+    "knowledge": "../knowledge",
+    "characters": "../characters"
+  },
   "plugins": [
+    {
+      "name": "@elizaos/plugin-knowledge",
+      "path": "npm:@elizaos/plugin-knowledge",
+      "capabilities": [
+        "rag",
+        "document-upload",
+        "semantic-search",
+        "load-docs-on-startup"
+      ],
+      "env": [
+        "OPENAI_API_KEY",
+        "LOAD_DOCS_ON_STARTUP",
+        "KNOWLEDGE_PATH",
+        "CTX_KNOWLEDGE_ENABLED"
+      ],
+      "docs": "https://docs.elizaos.ai/plugin-registry/knowledge"
+    },
     {
       "name": "@elizaos/plugin-robinhood",
       "path": "plugins/plugin-robinhood",
