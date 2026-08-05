@@ -10,13 +10,19 @@
   "homepage": "https://cheshireterminal.ai/agents",
   "summary": "Clawd Imperial perps agent scaffold",
   "knowledgeCount": 0,
-  "pluginCount": 0,
+  "pluginCount": 12,
   "tokenUsage": 900,
   "meta": {
     "title": "Clawd",
     "description": "Imperial perps agent for Solana futures routing via api.imperial.space.",
     "avatar": "🐱",
-    "tags": ["clawd", "imperial", "perps", "phoenix", "trading"],
+    "tags": [
+      "clawd",
+      "imperial",
+      "perps",
+      "phoenix",
+      "trading"
+    ],
     "category": "trading"
   },
   "config": {
@@ -31,8 +37,125 @@
     "displayMode": "chat"
   },
   "variables": [
-    { "name": "identifier", "default": "clawd-imperial-perps", "description": "Agent id", "required": true },
-    { "name": "author", "default": "your-name", "description": "Owner" },
-    { "name": "title", "default": "Clawd", "description": "Display name" }
+    {
+      "name": "identifier",
+      "default": "clawd-imperial-perps",
+      "description": "Agent id",
+      "required": true
+    },
+    {
+      "name": "author",
+      "default": "your-name",
+      "description": "Owner"
+    },
+    {
+      "name": "title",
+      "default": "Clawd",
+      "description": "Display name"
+    }
+  ],
+  "skills": [
+    {
+      "name": "imperial",
+      "slug": "imperial",
+      "enabled": true,
+      "priority": "primary",
+      "source": "skillhub",
+      "hub": "https://github.com/Solizardking/skillhub-main",
+      "description": "Entry-point skill for Imperial perpetual routing on Solana.",
+      "install": "npx --yes github:Solizardking/skills install imperial",
+      "path": "skills/imperial"
+    },
+    {
+      "name": "imperial-trade-execution",
+      "slug": "imperial-trade-execution",
+      "enabled": true,
+      "priority": "required",
+      "source": "skillhub",
+      "hub": "https://github.com/Solizardking/skillhub-main",
+      "install": "npx --yes github:Solizardking/skills install imperial-trade-execution",
+      "path": "skills/imperial-trade-execution"
+    },
+    {
+      "name": "imperial-risk-management",
+      "slug": "imperial-risk-management",
+      "enabled": true,
+      "priority": "required",
+      "source": "skillhub",
+      "install": "npx --yes github:Solizardking/skills install imperial-risk-management",
+      "path": "skills/imperial-risk-management"
+    },
+    {
+      "name": "imperial-market-intel",
+      "slug": "imperial-market-intel",
+      "enabled": true,
+      "source": "skillhub",
+      "install": "npx --yes github:Solizardking/skills install imperial-market-intel",
+      "path": "skills/imperial-market-intel"
+    },
+    {
+      "name": "imperial-portfolio-intel",
+      "slug": "imperial-portfolio-intel",
+      "enabled": true,
+      "source": "skillhub",
+      "install": "npx --yes github:Solizardking/skills install imperial-portfolio-intel",
+      "path": "skills/imperial-portfolio-intel"
+    },
+    {
+      "name": "imperial-position-management",
+      "slug": "imperial-position-management",
+      "enabled": true,
+      "source": "skillhub",
+      "install": "npx --yes github:Solizardking/skills install imperial-position-management",
+      "path": "skills/imperial-position-management"
+    },
+    {
+      "name": "imperial-tpsl-management",
+      "slug": "imperial-tpsl-management",
+      "enabled": true,
+      "source": "skillhub",
+      "install": "npx --yes github:Solizardking/skills install imperial-tpsl-management",
+      "path": "skills/imperial-tpsl-management"
+    },
+    {
+      "name": "imperial-margin-operations",
+      "slug": "imperial-margin-operations",
+      "enabled": true,
+      "source": "skillhub",
+      "install": "npx --yes github:Solizardking/skills install imperial-margin-operations",
+      "path": "skills/imperial-margin-operations"
+    },
+    {
+      "name": "imperial-execution-modes",
+      "slug": "imperial-execution-modes",
+      "enabled": true,
+      "source": "skillhub",
+      "install": "npx --yes github:Solizardking/skills install imperial-execution-modes",
+      "path": "skills/imperial-execution-modes"
+    },
+    {
+      "name": "imperial-grid-trading",
+      "slug": "imperial-grid-trading",
+      "enabled": true,
+      "source": "skillhub",
+      "install": "npx --yes github:Solizardking/skills install imperial-grid-trading",
+      "path": "skills/imperial-grid-trading"
+    },
+    {
+      "name": "imperial-twap-execution",
+      "slug": "imperial-twap-execution",
+      "enabled": true,
+      "source": "skillhub",
+      "install": "npx --yes github:Solizardking/skills install imperial-twap-execution",
+      "path": "skills/imperial-twap-execution"
+    },
+    {
+      "name": "imperial-skills-index",
+      "slug": "imperial-skills-index",
+      "enabled": true,
+      "source": "skillhub",
+      "install": "npx --yes github:Solizardking/skills install imperial-skills-index",
+      "path": "skills/imperial-skills-index"
+    }
   ]
 }

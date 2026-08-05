@@ -115,6 +115,12 @@ ct-agents design --from blank --id forge-bot \
   --install-skills \
   --out ./forge-bot.json
 
+# birth any catalog agent: inherit skills[] + sparse-install them
+ct-agents design --from clawd-imperial-perps --id my-imperial \
+  --install-skills \
+  --skills-target ./.agents/skills \
+  --out ./my-imperial.json
+
 # Skill Hub multi-select TUI / REPL (595 skills stay remote)
 ct-agents skills              # interactive picker — toggle, then sparse-install
 ct-agents skills pick         # same

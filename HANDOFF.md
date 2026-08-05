@@ -514,7 +514,16 @@ ct-agents skills search vulcan
 ct-agents skills install metaplex-agent          # sparse
 ct-agents design --from blank --id bot --skills cheshire-core,metaplex-agent --out ./bot.json
 ct-agents design --skills trading --install-skills --id bot --out ./bot.json
+# birth: fork catalog agent and sparse-install its declared skills[]
+ct-agents design --from clawd-imperial-perps --id my-imperial --install-skills --skills-target ./.agents/skills
 ct-agents serve                                  # then open /skills-picker.html
+```
+
+**Install-at-birth rules (2026-08-05):**
+
+1. `resolveTemplate` prefers `kind=agent` over same-id scaffold so `skills[]` are not dropped.
+2. `--install-skills` sparse-installs **all** `agent.skills[]` after fork (template-inherited + `--skills`), not only when `--skills` tokens are present.
+3. Tests: `npm run test:install-at-birth` (evidence under `EVIDENCE_DIR` when set).
 ```
 
 **Interactive surfaces (shipped in this package):**

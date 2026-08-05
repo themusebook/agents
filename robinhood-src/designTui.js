@@ -159,25 +159,30 @@ export function loadTemplateCatalog(root = ROOT) {
 function materializeScaffold(raw) {
   if (raw.identifier && raw.config && raw.meta) {
     // Already a clawd-shaped agent embedded in the template file
-    return {
+    const agent = {
       author: raw.author || 'your-name',
       identifier: raw.identifier,
       schemaVersion: 1,
       homepage: raw.homepage || 'https://cheshireterminal.ai/agents',
       createdAt: new Date().toISOString().slice(0, 10),
       summary: raw.summary || raw.meta?.description || '',
-      knowledgeCount: 0,
-      pluginCount: 0,
+      knowledgeCount: raw.knowledgeCount ?? 0,
+      pluginCount: raw.pluginCount ?? (Array.isArray(raw.skills) ? raw.skills.length : 0),
       tokenUsage: raw.tokenUsage || 0,
       meta: { ...raw.meta },
       config: { ...raw.config },
       examples: raw.examples || [],
     };
+    // Preserve Skill Hub refs declared on scaffolds so birth can install them
+    if (Array.isArray(raw.skills) && raw.skills.length) {
+      agent.skills = JSON.parse(JSON.stringify(raw.skills));
+    }
+    return agent;
   }
 
   // Variable-driven scaffold
   const vars = Object.fromEntries((raw.variables || []).map((v) => [v.name, v.default ?? '']));
-  return blankAgent({
+  const agent = blankAgent({
     identifier: vars.identifier || raw.templateId || 'my-agent',
     title: vars.title || raw.templateName || 'My Agent',
     description: vars.description || raw.templateDescription || 'Custom agent',
@@ -186,6 +191,11 @@ function materializeScaffold(raw) {
     systemRole: vars.systemRole || 'You are a helpful Cheshire Terminal agent.',
     author: vars.author || 'your-name',
   });
+  if (Array.isArray(raw.skills) && raw.skills.length) {
+    agent.skills = JSON.parse(JSON.stringify(raw.skills));
+    agent.pluginCount = raw.skills.length;
+  }
+  return agent;
 }
 
 function characterToAgent(character, id) {
@@ -463,13 +473,29 @@ function parseSkillList(raw) {
     .filter(Boolean);
 }
 
+/** Extract skill slugs from agent.skills[] refs (template-inherited or attached). */
+export function skillTokensFromAgent(agent) {
+  if (!agent || !Array.isArray(agent.skills)) return [];
+  const tokens = [];
+  for (const s of agent.skills) {
+    if (!s) continue;
+    if (typeof s === 'string') {
+      tokens.push(s);
+      continue;
+    }
+    const slug = s.slug || s.name || s.path;
+    if (slug) tokens.push(String(slug).replace(/^skills\//, ''));
+  }
+  return tokens.filter(Boolean);
+}
+
 async function applySkillsToAgent(agent, skillTokens, {
   root = ROOT,
   install = false,
   viaCli = false,
   targetDir,
 } = {}) {
-  if (!skillTokens.length) return { agent, installed: null };
+  if (!skillTokens.length) return { agent, installed: null, picked: [] };
 
   const {
     loadSkillCatalog,
@@ -490,17 +516,56 @@ async function applySkillsToAgent(agent, skillTokens, {
   let next = attachSkillsToAgent(agent, picked, index);
   let installed = null;
   if (install && picked.length) {
-    const dest = targetDir || DEFAULT_INSTALL_DIR;
-    if (viaCli) {
-      installed = await installSkillsViaCli(
-        picked.map((s) => s.slug),
-        { targetDir: dest, force: true }
-      );
-    } else {
-      installed = await installSkillsSparse(picked, { root, targetDir: dest, force: false });
-    }
+    installed = await installPickedSkills(picked, {
+      root,
+      viaCli,
+      targetDir: targetDir || DEFAULT_INSTALL_DIR,
+    });
   }
   return { agent: next, installed, picked };
+}
+
+/**
+ * Sparse-install skills already declared on agent.skills[] (birth path).
+ * Does not require --skills tokens — template-inherited refs are enough.
+ */
+async function installSkillsAtBirth(agent, {
+  root = ROOT,
+  viaCli = false,
+  targetDir,
+} = {}) {
+  const tokens = skillTokensFromAgent(agent);
+  if (!tokens.length) return { installed: null, picked: [] };
+
+  const { loadSkillCatalog, resolveSkillRefs, DEFAULT_INSTALL_DIR } = await import('./skillHub.js');
+
+  const { skills: catalog, index, warning } = await loadSkillCatalog({ root });
+  if (warning) console.error(`${YELLOW}${warning}${RESET}`);
+  const { skills: picked, missing } = resolveSkillRefs(tokens, catalog, index);
+  // Template may declare skillhub slugs not yet in cached catalog — still try sparse fetch
+  const resolved =
+    picked.length > 0
+      ? picked
+      : tokens.map((slug) => ({ slug, name: path.basename(slug) }));
+  if (missing.length) {
+    console.error(
+      `${YELLOW}skill resolve soft-miss (will try sparse): ${missing.join(', ')}${RESET}`
+    );
+  }
+  const dest = targetDir || DEFAULT_INSTALL_DIR;
+  const installed = await installPickedSkills(resolved, { root, viaCli, targetDir: dest });
+  return { installed, picked: resolved };
+}
+
+async function installPickedSkills(picked, { root, viaCli, targetDir }) {
+  const { installSkillsSparse, installSkillsViaCli } = await import('./skillHub.js');
+  if (viaCli) {
+    return installSkillsViaCli(
+      picked.map((s) => s.slug),
+      { targetDir, force: true }
+    );
+  }
+  return installSkillsSparse(picked, { root, targetDir, force: false });
 }
 
 export function printDesignHelp() {
@@ -517,6 +582,7 @@ ${BOLD}Non-interactive / oneshot:${RESET}
   ${CYAN}ct-agents design --from defi-yield-farmer --id my-yield --out ./agents/my-yield.json${RESET}
   ${CYAN}ct-agents design --from blank --id forge-bot --skills metaplex-agent,cheshire-core --out ./forge-bot.json${RESET}
   ${CYAN}ct-agents design --from blank --id forge-bot --skills trading --install-skills${RESET}
+  ${CYAN}ct-agents design --from clawd-imperial-perps --id my-imperial --install-skills --skills-target ./.agents/skills${RESET}
   ${CYAN}ct-agents design --validate ./agents/my-yield.json${RESET}
 
 ${BOLD}Flags:${RESET}
@@ -527,17 +593,19 @@ ${BOLD}Flags:${RESET}
   --author <name>     Author field
   --category <cat>    One of: ${CATEGORIES.join(', ')}
   --skills, -s <list> Comma-separated Skill Hub slugs or packs (refs only by default)
-  --install-skills    Also download ONLY selected skills into ./.agents/skills
+  --install-skills    At birth: sparse-download agent.skills[] (template + --skills) into target
   --via-skillhub-cli  Use npx github:Solizardking/skills for install (packs)
-  --skills-target DIR Override install directory
+  --skills-target DIR Override install directory (default ./.agents/skills)
   --out, -o <path>    Write JSON to path (default: ./agents/<id>.json)
   --list, -l          List all forkable templates
   --validate, -V      Validate an agent JSON file against clawdAgentSchema.v1
   --json              Machine-readable list/validate output
 
-${BOLD}Skills:${RESET}
-  Full Skill Hub (595) is ${DIM}not${RESET} bundled — see ${CYAN}ct-agents skills --help${RESET}
-  Hub: https://github.com/Solizardking/skillhub-main
+${BOLD}Skills at birth:${RESET}
+  Catalog agents may declare ${CYAN}skills[]${RESET} refs. ${CYAN}--install-skills${RESET} downloads ${BOLD}only those${RESET}
+  (plus any ${CYAN}--skills${RESET} you add) — never the full Skill Hub.
+  Prefer agent templates over same-id scaffolds (e.g. clawd-imperial-perps).
+  Full hub: ${CYAN}ct-agents skills --help${RESET} · https://github.com/Solizardking/skillhub-main
 `);
 }
 
@@ -589,14 +657,31 @@ function groupBy(arr, keyFn) {
   return out;
 }
 
-function resolveTemplate(catalog, fromId) {
+/**
+ * Resolve a forkable template by id.
+ * On id collision (e.g. scaffold + agent both "clawd-imperial-perps"), prefer
+ * kind=agent so birth inherits skills[] declared on the catalog agent.
+ */
+export function resolveTemplate(catalog, fromId) {
   if (!fromId) return null;
   const needle = fromId.toLowerCase();
-  return (
-    catalog.find((t) => t.id.toLowerCase() === needle) ||
-    catalog.find((t) => t.id.toLowerCase().includes(needle)) ||
-    catalog.find((t) => t.title.toLowerCase().includes(needle))
-  );
+  const kindRank = { agent: 0, character: 1, minted: 2, scaffold: 3 };
+
+  const exact = catalog.filter((t) => t.id.toLowerCase() === needle);
+  if (exact.length === 1) return exact[0];
+  if (exact.length > 1) {
+    exact.sort((a, b) => (kindRank[a.kind] ?? 9) - (kindRank[b.kind] ?? 9));
+    return exact[0];
+  }
+
+  // Partial id match — still prefer agent over scaffold
+  for (const kind of ['agent', 'character', 'minted', 'scaffold']) {
+    const hit = catalog.find(
+      (t) => t.kind === kind && t.id.toLowerCase().includes(needle)
+    );
+    if (hit) return hit;
+  }
+  return catalog.find((t) => t.title.toLowerCase().includes(needle)) || null;
 }
 
 function defaultOutPath(identifier) {
@@ -985,28 +1070,63 @@ export async function runDesignTui(argv = process.argv.slice(2), root = ROOT) {
     if (args.author) agent.author = args.author;
     if (args.category) agent.meta.category = args.category;
 
+    // Attach any extra --skills (refs). Install is handled next so template-inherited
+    // skills[] also install at birth when --install-skills is set.
     const skillTokens = parseSkillList(args.skills);
     let installed = null;
-    if (skillTokens.length) {
-      try {
+    try {
+      if (skillTokens.length) {
         const applied = await applySkillsToAgent(agent, skillTokens, {
           root,
-          install: Boolean(args.installSkills),
+          install: false,
           viaCli: Boolean(args.viaSkillhubCli),
           targetDir: args.skillsTarget,
         });
         agent = applied.agent;
-        installed = applied.installed;
         if (!args.json && applied.picked?.length) {
           console.log(
-            `${GREEN}skills${RESET} ${applied.picked.map((s) => s.slug).join(', ')}` +
-              (args.installSkills ? ' (installed sparse)' : ' (refs only — no bloat)')
+            `${GREEN}skills attached${RESET} ${applied.picked.map((s) => s.slug).join(', ')} ${DIM}(refs)${RESET}`
           );
         }
-      } catch (err) {
-        console.error(`${RED}${err.message}${RESET}`);
-        return 1;
       }
+
+      // Birth path: sparse-install ALL skills on the forked agent (template + --skills)
+      if (args.installSkills) {
+        const birth = await installSkillsAtBirth(agent, {
+          root,
+          viaCli: Boolean(args.viaSkillhubCli),
+          targetDir: args.skillsTarget,
+        });
+        installed = birth.installed;
+        if (!args.json) {
+          const n = birth.picked?.length || 0;
+          if (n) {
+            console.log(
+              `${GREEN}skills at birth${RESET} sparse-install ${n} → ${args.skillsTarget || './.agents/skills'}`
+            );
+            if (installed?.results) {
+              for (const r of installed.results) {
+                console.log(
+                  r.status === 'error'
+                    ? `  ${RED}✗${RESET} ${r.slug}: ${r.error}`
+                    : `  ${GREEN}✓${RESET} ${r.slug} (${r.status})`
+                );
+              }
+            }
+          } else {
+            console.log(
+              `${YELLOW}--install-skills set but agent has no skills[] — add --skills <slug|pack>${RESET}`
+            );
+          }
+        }
+      } else if (!args.json && agent.skills?.length) {
+        console.log(
+          `${DIM}skills refs only (${agent.skills.length}) — birth install: add --install-skills${RESET}`
+        );
+      }
+    } catch (err) {
+      console.error(`${RED}${err.message}${RESET}`);
+      return 1;
     }
 
     const result = validateAgent(agent, path.join(root, 'schema', 'clawdAgentSchema.v1.json'));
@@ -1019,7 +1139,22 @@ export async function runDesignTui(argv = process.argv.slice(2), root = ROOT) {
     const out = path.resolve(args.out || defaultOutPath(agent.identifier));
     writeAgentFile(agent, out);
     if (args.json) {
-      console.log(JSON.stringify({ ok: true, path: out, agent, installed }, null, 2));
+      console.log(
+        JSON.stringify(
+          {
+            ok: true,
+            path: out,
+            agent,
+            installed,
+            skillCount: agent.skills?.length || 0,
+            templateKind: args.from
+              ? resolveTemplate(catalog, args.from)?.kind || null
+              : 'blank',
+          },
+          null,
+          2
+        )
+      );
     } else {
       console.log(`${GREEN}✓ wrote${RESET} ${out}`);
       console.log(`  template: ${args.from || 'blank'} → ${agent.identifier}`);
@@ -1027,7 +1162,10 @@ export async function runDesignTui(argv = process.argv.slice(2), root = ROOT) {
         console.log(`  skills:   ${agent.skills.map((s) => s.slug || s.name).join(', ')}`);
         if (!args.installSkills) {
           console.log(
-            `  install:  ct-agents skills install ${agent.skills.map((s) => s.slug || s.name).join(' ')}`
+            `  install:  ct-agents design --from ${args.from || 'blank'} --id ${agent.identifier} --install-skills`
+          );
+          console.log(
+            `            ct-agents skills install ${agent.skills.map((s) => s.slug || s.name).join(' ')}`
           );
         }
       }
