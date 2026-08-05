@@ -1,6 +1,6 @@
 # 🚀 Solana Clawd Agent Deployment Guide
 
-There are **four paths** to getting your agent live on the [Solana Clawd hub](https://x402.wtf/agents). Pick the one that matches how much control you want.
+There are **four paths** to getting your agent live on the primary product hub at [cheshireterminal.ai/agents](https://cheshireterminal.ai/agents) (Eliza studio: [cheshireterminal.ai/eliza-agents](https://cheshireterminal.ai/eliza-agents)). Legacy x402.wtf gallery URLs in the steps below are historical CDN examples where still deployed.
 
 For payment-gated agents, deployment spans two repo layers:
 

@@ -62,7 +62,13 @@
       "/catalog",
       "/routes"
     ],
+    "productHubs": [
+      "https://cheshireterminal.ai/agents",
+      "https://cheshireterminal.ai/eliza-agents",
+      "https://cheshireterminal.ai"
+    ],
     "publicInstallHosts": [
+      "https://cheshireterminal.ai",
       "https://install.onchainai.fund",
       "https://install.x402.wtf",
       "https://x402.wtf/clawdbot",

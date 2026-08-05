@@ -1,6 +1,6 @@
 # Solana Clawd Agent Examples: What Makes Them Work
 
-Real agents living in the [/agents](https://x402.wtf/agents) hub, with breakdowns showing why they're effective. Use these as starting templates — copy, adapt, ship.
+Real agents living in the [cheshireterminal.ai/agents](https://cheshireterminal.ai/agents) hub (catalog package: `cheshire-terminal-agents`), with breakdowns showing why they're effective. Use these as starting templates — copy, adapt, ship.
 
 ---
 

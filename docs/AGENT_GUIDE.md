@@ -2,7 +2,7 @@
 
 ## Overview
 
-Agents on **Solana Clawd** are specialized AI assistants designed to handle specific tasks across the Solana DeFi, trading, NFT, and SPL-token ecosystem. This guide shows you how to create, publish, and deploy agents into our hub at [/agents](https://x402.wtf/agents) so other builders can install and run them.
+Agents on **Solana Clawd / Cheshire Terminal** are specialized AI assistants designed to handle specific tasks across the Solana DeFi, trading, NFT, and SPL-token ecosystem. This guide shows you how to create, publish, and deploy agents into the product hub at [cheshireterminal.ai/agents](https://cheshireterminal.ai/agents) (and [eliza-agents](https://cheshireterminal.ai/eliza-agents)) so other builders can install and run them.
 
 Every agent you publish becomes:
 
