@@ -1,0 +1,22 @@
+{
+  "name": "@openclawd/dna-clawd",
+  "version": "1.0.0",
+  "description": "Agentic DNA bundle for Clawd — identity, soul, tools, user continuity.",
+  "characterSeed": "clawd",
+  "characterFile": "characters/clawd.json",
+  "local_personas": [
+    "persona.json"
+  ],
+  "dna": [
+    "IDENTITY.md",
+    "SOUL.md",
+    "TOOLS.md",
+    "USER.md",
+    "BOOTSTRAP.md"
+  ],
+  "generated": {
+    "at": "2026-08-05T02:03:45.839Z",
+    "by": "cheshire-terminal-agents dna generate",
+    "out": "generated-dna"
+  }
+}

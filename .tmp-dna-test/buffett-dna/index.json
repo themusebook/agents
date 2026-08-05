@@ -1,0 +1,22 @@
+{
+  "name": "@openclawd/dna-warren-buffett",
+  "version": "1.0.0",
+  "description": "Agentic DNA bundle for Warren Buffett — identity, soul, tools, user continuity.",
+  "characterSeed": "warrenbuffet",
+  "characterFile": "characters/warrenbuffet.json",
+  "local_personas": [
+    "persona.json"
+  ],
+  "dna": [
+    "IDENTITY.md",
+    "SOUL.md",
+    "TOOLS.md",
+    "USER.md",
+    "BOOTSTRAP.md"
+  ],
+  "generated": {
+    "at": "2026-08-05T02:03:45.970Z",
+    "by": "cheshire-terminal-agents dna generate",
+    "out": "buffett-dna"
+  }
+}

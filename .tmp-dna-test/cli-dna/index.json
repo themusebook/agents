@@ -1,0 +1,22 @@
+{
+  "name": "@openclawd/dna-cheshire",
+  "version": "1.0.0",
+  "description": "Agentic DNA bundle for Cheshire — identity, soul, tools, user continuity.",
+  "characterSeed": "cheshire-character-json",
+  "characterFile": "characters/cheshire-character-json.json",
+  "local_personas": [
+    "persona.json"
+  ],
+  "dna": [
+    "IDENTITY.md",
+    "SOUL.md",
+    "TOOLS.md",
+    "USER.md",
+    "BOOTSTRAP.md"
+  ],
+  "generated": {
+    "at": "2026-08-05T02:03:47.412Z",
+    "by": "cheshire-terminal-agents dna generate",
+    "out": "cli-dna"
+  }
+}

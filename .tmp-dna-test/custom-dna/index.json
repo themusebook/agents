@@ -1,0 +1,22 @@
+{
+  "name": "@openclawd/dna-nova",
+  "version": "1.0.0",
+  "description": "Agentic DNA bundle for Nova — identity, soul, tools, user continuity.",
+  "characterSeed": "custom",
+  "characterFile": null,
+  "local_personas": [
+    "persona.json"
+  ],
+  "dna": [
+    "IDENTITY.md",
+    "SOUL.md",
+    "TOOLS.md",
+    "USER.md",
+    "BOOTSTRAP.md"
+  ],
+  "generated": {
+    "at": "2026-08-05T02:03:45.983Z",
+    "by": "cheshire-terminal-agents dna generate",
+    "out": "custom-dna"
+  }
+}

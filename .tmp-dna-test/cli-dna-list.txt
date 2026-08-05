@@ -1,0 +1,103 @@
+{
+  "count": 14,
+  "characters": [
+    {
+      "id": "alice-character-json",
+      "file": "characters/alice-character-json.json",
+      "name": "Alice",
+      "format": "eliza",
+      "index": 0
+    },
+    {
+      "id": "bengraham",
+      "file": "characters/bengraham.json",
+      "name": "Benjamin Graham",
+      "format": "eliza",
+      "index": 0
+    },
+    {
+      "id": "billackman",
+      "file": "characters/billackman.json",
+      "name": "Bill Ackman",
+      "format": "eliza",
+      "index": 0
+    },
+    {
+      "id": "cathiewood",
+      "file": "characters/cathiewood.json",
+      "name": "Cathie Wood",
+      "format": "investor",
+      "index": 0
+    },
+    {
+      "id": "charliemunger",
+      "file": "characters/charliemunger.json",
+      "name": "Charlie Munger",
+      "format": "eliza",
+      "index": 0
+    },
+    {
+      "id": "cheshire-character-json",
+      "file": "characters/cheshire-character-json.json",
+      "name": "Cheshire",
+      "format": "eliza",
+      "index": 0
+    },
+    {
+      "id": "clawd",
+      "file": "characters/clawd.json",
+      "name": "Clawd",
+      "format": "eliza",
+      "index": 0
+    },
+    {
+      "id": "hedgefund#ben-graham",
+      "file": "characters/hedgefund.json",
+      "name": "Ben Graham",
+      "format": "investor",
+      "index": 0
+    },
+    {
+      "id": "hedgefund#warren-buffett",
+      "file": "characters/hedgefund.json",
+      "name": "Warren Buffett",
+      "format": "investor",
+      "index": 1
+    },
+    {
+      "id": "hedgefund#charlie-munger",
+      "file": "characters/hedgefund.json",
+      "name": "Charlie Munger",
+      "format": "investor",
+      "index": 2
+    },
+    {
+      "id": "hedgefund#bill-ackman",
+      "file": "characters/hedgefund.json",
+      "name": "Bill Ackman",
+      "format": "investor",
+      "index": 3
+    },
+    {
+      "id": "hedgefund#cathie-wood",
+      "file": "characters/hedgefund.json",
+      "name": "Cathie Wood",
+      "format": "investor",
+      "index": 4
+    },
+    {
+      "id": "mad-hatter-character-json",
+      "file": "characters/mad-hatter-character-json.json",
+      "name": "Mad Hatter",
+      "format": "eliza",
+      "index": 0
+    },
+    {
+      "id": "warrenbuffet",
+      "file": "characters/warrenbuffet.json",
+      "name": "Warren Buffett",
+      "format": "investor",
+      "index": 0
+    }
+  ]
+}
