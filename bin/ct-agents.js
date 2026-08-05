@@ -62,6 +62,13 @@ async function runSkills(argv) {
   process.exit(code ?? 0);
 }
 
+async function runDna(argv) {
+  const modPath = path.join(ROOT, 'robinhood-src', 'dnaGenerate.js');
+  const { runDnaCli } = await import(pathToFileURL(modPath).href);
+  const code = await runDnaCli(argv, ROOT);
+  process.exit(code ?? 0);
+}
+
 const COMMANDS = {
   version: () => {
     showBoot();
@@ -129,6 +136,9 @@ const COMMANDS = {
 
   // skills — Skill Hub picker (remote catalog; no install bloat)
   skills: (argv) => runSkills(argv),
+
+  // dna — generate agentic DNA bundles from character seeds or free-form identity
+  dna: (argv) => runDna(argv),
 
   serve: () => {
     const port = parseInt(process.argv[3] || process.env.PORT || '3000', 10);
@@ -204,6 +214,8 @@ ${BOLD}Usage:${RESET}
   ${CYAN}npx cheshire-terminal-agents serve${RESET}        Start the API server
   ${CYAN}npx cheshire-terminal-agents catalog${RESET}      Print agent catalog stats
   ${CYAN}npx cheshire-terminal-agents templates${RESET}    List scaffold templates
+  ${CYAN}npx cheshire-terminal-agents dna list${RESET}       List character seeds for DNA generation
+  ${CYAN}npx cheshire-terminal-agents dna generate --from clawd --out ./my-dna${RESET}
   ${CYAN}npx cheshire-terminal-agents registry${RESET}     Print registry index
   ${CYAN}npx cheshire-terminal-agents schema${RESET}       Show agent schema info
   ${CYAN}npx cheshire-terminal-agents --help${RESET}       Show this help
@@ -213,6 +225,7 @@ ${BOLD}Install globally:${RESET}
   ${YELLOW}ct-agents design${RESET}          ${DIM}# interactive template forge${RESET}
   ${YELLOW}ct-agents design --from defi-yield-farmer --id my-yield --skills cheshire-core --out ./my-yield.json${RESET}
   ${YELLOW}ct-agents skills install metaplex-agent${RESET}  ${DIM}# download only that skill${RESET}
+  ${YELLOW}ct-agents dna generate --from warrenbuffet --out ./buffett-dna${RESET}  ${DIM}# agentic DNA bundle${RESET}
 
 ${BOLD}Design flow:${RESET}
   1. Pick a catalog agent, character, or blank scaffold as a template
@@ -221,6 +234,12 @@ ${BOLD}Design flow:${RESET}
   4. Validate against ${MAGENTA}clawdAgentSchema.v1${RESET}
   5. Write a local agent JSON you own
   6. Optional: ${CYAN}--install-skills${RESET} pulls only selected skills into ./.agents/skills
+
+${BOLD}Agentic DNA:${RESET}
+  1. ${CYAN}ct-agents dna list${RESET} — browse ${MAGENTA}characters/*.json${RESET} seeds
+  2. ${CYAN}ct-agents dna generate --from <id> --out ./my-dna${RESET} — write IDENTITY/SOUL/USER/TOOLS
+  3. Or free-form: ${CYAN}ct-agents dna generate --name Nova --vibe "sharp" --out ./nova-dna${RESET}
+  4. Point your agent workspace at the output directory for session continuity
 
 ${BOLD}Endpoints:${RESET}
   ${MAGENTA}https://cheshireterminal.ai/agents${RESET}          Agent hub
@@ -246,6 +265,8 @@ if (!cmd) {
   await runDesign(args.slice(1));
 } else if (cmd === 'skills') {
   await runSkills(args.slice(1));
+} else if (cmd === 'dna') {
+  await runDna(args.slice(1));
 } else if (COMMANDS[cmd]) {
   const result = COMMANDS[cmd](args.slice(1));
   if (result && typeof result.then === 'function') await result;
