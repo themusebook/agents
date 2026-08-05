@@ -23,8 +23,10 @@
 
 **Corpus:** this directory ·
 **Inject:** [`npm run knowledge:inject`](../package.json) ·
+**Upload your own:** [`ct-agents knowledge init|upload|inject`](../robinhood-src/knowledgeUpload.js) ·
 **Rules out:** [`.grok/rules/knowledge-inject.md`](../.grok/rules/knowledge-inject.md) ·
 **Pipeline:** [`scripts/knowledge-inject.mjs`](../scripts/knowledge-inject.mjs) ·
+**Character template:** [`clawd-character.md`](./clawd-character.md) ·
 **Tests:** `npm run test:knowledge-inject`
 
 </div>
@@ -135,6 +137,24 @@ Each JSONL file contains one fact per line:
 | `medium` | Observed once reliably   | Single source, clear evidence |
 | `low`    | Suspected but unverified | Inference, needs confirmation |
 
+## 📤 Upload your own knowledge folder
+
+Scaffold a personal pack modeled on **`clawd-character.md`** (Lore · Voice · Style Rules · Agent Knowledge Summary), then drop your files:
+
+```bash
+# 1) Init from Clawd (or any characters/*.json seed)
+npx cheshire-terminal-agents knowledge init --from clawd --out ./my-knowledge
+
+# 2) Upload your notes / dumps / jsonl
+npx cheshire-terminal-agents knowledge upload ./notes.md ./research/ --out ./my-knowledge
+
+# 3) Validate shape + inject into harness rules
+npx cheshire-terminal-agents knowledge validate ./my-knowledge
+npx cheshire-terminal-agents knowledge inject ./my-knowledge
+```
+
+Also: `npm run knowledge` → same CLI. Package corpus files in this directory remain the default inject source when you run inject with no args.
+
 ## ⚡ One-shot inject (harness system instructions)
 
 Drop knowledge files (`.md`, `.txt`, `.json`, `.jsonl`, `.pdf`, images) into
@@ -145,6 +165,8 @@ Drop knowledge files (`.md`, `.txt`, `.json`, `.jsonl`, `.pdf`, images) into
 npm run knowledge:inject
 # or
 node scripts/knowledge-inject.mjs
+# or
+npx cheshire-terminal-agents knowledge inject
 
 # Extra uploads + default corpus
 node scripts/knowledge-inject.mjs knowledge/ path/to/upload.pdf notes.txt
