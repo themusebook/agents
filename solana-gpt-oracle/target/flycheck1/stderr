@@ -1,8 +1,6 @@
     Blocking waiting for file lock on package cache
-    Blocking waiting for file lock on package cache
-    Blocking waiting for file lock on package cache
-   0.580930833s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint: fingerprint error for solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle)/Check { test: false }/TargetInner { ..: lib_target("solana_gpt_oracle", ["cdylib", "lib"], "/Users/8bit/agents/agents/solana-gpt-oracle/src/lib.rs", Edition2021) }
-   0.581151083s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/solana-gpt-oracle-d39d7837a3cefc91/lib-solana_gpt_oracle`
+   2.260175250s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint: fingerprint error for solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle)/Check { test: false }/TargetInner { ..: lib_target("solana_gpt_oracle", ["cdylib", "lib"], "/Users/8bit/agents/agents/solana-gpt-oracle/src/lib.rs", Edition2021) }
+   2.260880083s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/solana-gpt-oracle-d39d7837a3cefc91/lib-solana_gpt_oracle`
 
 Caused by:
     No such file or directory (os error 2)
@@ -25,8 +23,8 @@ Stack backtrace:
   14: std::rt::lang_start::<()>::{closure#0}
   15: std::rt::lang_start_internal
   16: _main
-   0.687131416s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint: fingerprint error for ephemeral-rollups-sdk v0.2.4/Check { test: false }/TargetInner { ..: lib_target("ephemeral_rollups_sdk", ["lib"], "/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ephemeral-rollups-sdk-0.2.4/src/lib.rs", Edition2021) }
-   0.687143916s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/ephemeral-rollups-sdk-4031b5427885af68/lib-ephemeral_rollups_sdk`
+   2.621875708s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint: fingerprint error for ephemeral-rollups-sdk v0.2.4/Check { test: false }/TargetInner { ..: lib_target("ephemeral_rollups_sdk", ["lib"], "/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/ephemeral-rollups-sdk-0.2.4/src/lib.rs", Edition2021) }
+   2.621888958s  INFO prepare_target{force=false package_id=ephemeral-rollups-sdk v0.2.4 target="ephemeral_rollups_sdk"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/ephemeral-rollups-sdk-4031b5427885af68/lib-ephemeral_rollups_sdk`
 
 Caused by:
     No such file or directory (os error 2)
@@ -50,8 +48,8 @@ Stack backtrace:
   15: std::rt::lang_start::<()>::{closure#0}
   16: std::rt::lang_start_internal
   17: _main
-   0.714856041s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint: fingerprint error for solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle)/Check { test: true }/TargetInner { ..: lib_target("solana_gpt_oracle", ["cdylib", "lib"], "/Users/8bit/agents/agents/solana-gpt-oracle/src/lib.rs", Edition2021) }
-   0.714868375s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/solana-gpt-oracle-6b99de86923d23a6/test-lib-solana_gpt_oracle`
+   2.715158042s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint: fingerprint error for solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle)/Check { test: true }/TargetInner { ..: lib_target("solana_gpt_oracle", ["cdylib", "lib"], "/Users/8bit/agents/agents/solana-gpt-oracle/src/lib.rs", Edition2021) }
+   2.715191625s  INFO prepare_target{force=false package_id=solana-gpt-oracle v0.1.0 (/Users/8bit/agents/agents/solana-gpt-oracle) target="solana_gpt_oracle"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/8bit/agents/agents/solana-gpt-oracle/target/debug/.fingerprint/solana-gpt-oracle-6b99de86923d23a6/test-lib-solana_gpt_oracle`
 
 Caused by:
     No such file or directory (os error 2)
