@@ -19,7 +19,7 @@ Ship Clawd / Cheshire-schema agents, then register them on **Robinhood Chain** (
 <p align="center">
   <img alt="Node.js 18.18+" src="https://img.shields.io/badge/Node-%3E%3D18.18-5fa04e?style=flat-square&logo=nodedotjs&logoColor=white" />
   <img alt="138 catalog agents" src="https://img.shields.io/badge/catalog-138_agents-75f58b?style=flat-square" />
-  <img alt="31 skills" src="https://img.shields.io/badge/skills-31-c084fc?style=flat-square" />
+  <img alt="11 suite skills" src="https://img.shields.io/badge/skills-11_suite_(31_SKILL.md)-c084fc?style=flat-square" />
   <img alt="Solana mainnet-beta" src="https://img.shields.io/badge/Solana-mainnet--beta-9f8cff?style=flat-square&logo=solana&logoColor=white" />
   <img alt="Robinhood Chain 4663" src="https://img.shields.io/badge/Robinhood_Chain-4663-75f58b?style=flat-square" />
   <img alt="npm v1.48.3" src="https://img.shields.io/badge/npm-v1.48.3-cb3837?style=flat-square&logo=npm&logoColor=white" />
@@ -169,9 +169,14 @@ npx cheshire-terminal-agents serve --port 8080
 
 | Surface | Included | Boundary |
 |---------|----------|----------|
-| **Agent catalog** | 138 agents in `agents-catalog.json`, 53 JSON defs under `agents/`, 11 characters, locales, schema | Prompts + metadata — not a custody runtime |
+| **Agent catalog** | 138 agents in `agents-catalog.json`, 54 JSON defs under `agents/`, 10 characters, locales, schema | Prompts + metadata — not a custody runtime |
 | **CLI** | `cheshire-terminal-agents` · `ct-agents` → `bin/ct-agents.js` | No silent wallet broadcast |
-| **Skills** | 31 deployable skill modules under `skills/` | Instruction content — pin like code |
+| **Skills** | 11 suite skills under `skills/` (31 `SKILL.md` incl. nested `rh-crypto-agent` pack) | Instruction content — pin like code |
+| **DNA** | Continuity templates + `ct-agents dna` generator (`dna/`) | Session identity — not runtime custody |
+| **Knowledge** | Injectable corpus + `ct-agents knowledge` CLI (`knowledge/`) | Memory/RAG content — not a vector DB host |
+| **Eliza surfaces** | `eliza-agents/` catalog + nested `eliza/` fork checkout | Studio hub at [/eliza-agents](https://cheshireterminal.ai/eliza-agents) |
+| **Robinhood rails** | `robinhood-schema/`, `robinhood-src/`, forge skills | Unsigned intents — wallet signs elsewhere |
+| **ZK primitives** | `zk-primitives/` nullifier + compressed-state package | Circuit-gated proofs — separate from catalog prompts |
 | **REST / discovery** | `public/api/agents/*`, `.well-known/acp.json`, `ai-plugin.json` | Hosted hub is source of truth for live chain config |
 | **Nested packages** | Source under `packages/*` (TUI, headless, LZ, trust) | **Private / unpublished** — not on npm |
 | **Optional companion** | [`clawdbot-go`](https://www.npmjs.com/package/clawdbot-go) Zero Clawd runtime | Separate package — not a hard dependency |
@@ -211,33 +216,36 @@ Facts from `agents-catalog.json` (rebuild with `npm run build`):
 | Metric | Count |
 |--------|------:|
 | **Agents** | **138** |
-| One-shots | 1 |
-| Featured | 5 |
-| Categories | 15 |
-| Character profiles (`characters/`) | 11 |
-| Agent JSON defs (`agents/`) | 53 |
-| Deployable skills | 31 |
+| One-shots | 2 |
+| Featured | 6 |
+| Templates | 5 |
+| Categories | 16 |
+| Character profiles (`characters/`) | 10 |
+| Agent JSON defs (`agents/`) | 54 |
+| Suite skills (`skills/suite-index.json`) | 11 |
+| Skill docs (`SKILL.md`, incl. nested pack) | 31 |
 | Locale files | ~759 |
 
 ### Category breakdown
 
 | Category | Agents |
 |----------|-------:|
-| defi | 64 |
+| defi | 62 |
 | payments | 25 |
-| trading | 13 |
+| trading | 15 |
+| character | 6 |
 | security | 6 |
 | infrastructure | 5 |
-| platform | 4 |
-| tools | 4 |
+| platform | 3 |
 | dev-tools | 3 |
-| voice-council | 3 |
-| crypto | 2 |
-| governance | 2 |
-| education | 2 |
+| crypto | 3 |
+| voice-council | 2 |
 | nft | 2 |
+| education | 2 |
+| tools | 1 |
 | programming | 1 |
 | research | 1 |
+| governance | 1 |
 
 ### Featured agents
 
@@ -248,6 +256,7 @@ Facts from `agents-catalog.json` (rebuild with `npm run build`):
 | **Mechaplex · Mech Builder** | `platform` | featured |
 | **Solana PumpFun/PumpSwap Copy Trading Bot** | `trading` | one-shot · featured |
 | **Vulcan CLAWD Autonomous Perps** | `trading` | featured |
+| **Clawd** (Imperial perps) | `trading` | one-shot · featured |
 
 ---
 
@@ -277,11 +286,16 @@ npm view cheshire-terminal-agents name version bin
 
 ```
 clawd-agents / cheshire-terminal-agents
-├── agents/              # 53 agent definition JSON files
-├── characters/          # 11 character profiles
+├── agents/              # 54 agent definition JSON files
+├── agents-catalog.json  # built catalog (138 agents · 2 one-shots · 6 featured)
 ├── bin/ct-agents.js     # CLI entry (npm bins)
-├── docs/                # documentation
+├── characters/          # 10 character profiles (+ package.json)
+├── dna/                 # agentic DNA continuity templates
+├── docs/                # package docs (API, deploy, guides)
+├── eliza/               # nested Solizardking/eliza fork checkout
+├── eliza-agents/        # eliza studio surface + catalog.json
 ├── examples/            # robinhood + solana templates
+├── knowledge/           # injectable knowledge corpus (JSONL + md)
 ├── locales/             # i18n overlays (~759 files)
 ├── packages/            # private nested packages (not published)
 │   ├── clawd-agent-tui/
@@ -292,13 +306,24 @@ clawd-agents / cheshire-terminal-agents
 │   ├── .well-known/     # acp.json · ai-plugin.json
 │   ├── api/agents/      # catalog · registry · templates
 │   └── assets/          # animated SVG banners
-├── robinhood-src/       # catalog loaders + bridge
+├── robinhood-schema/    # Cheshire agent schema (Robinhood Chain)
+├── robinhood-src/       # catalog loaders, design TUI, DNA/knowledge CLI
 ├── schema/              # clawdAgentSchema
 ├── scripts/             # build + validate
-├── skills/              # 31 deployable skills
-├── agents-catalog.json  # built catalog (138 agents)
+├── skills/              # 11 suite skills (31 SKILL.md w/ nested pack)
+├── zk-primitives/       # ZK nullifier + compressed-state package
+├── open-source-connection-map.json  # product hubs ↔ GitHub repos
 └── package.json         # name: cheshire-terminal-agents @ 1.48.3
 ```
+
+Primary product hubs (see `open-source-connection-map.json`):
+
+| Hub | URL |
+|-----|-----|
+| Agents | https://cheshireterminal.ai/agents |
+| Eliza agents | https://cheshireterminal.ai/eliza-agents |
+| CLI | https://cheshireterminal.ai/cli |
+| Agent forge | https://cheshireterminal.ai/agents/forge |
 
 ---
 
@@ -397,7 +422,7 @@ node scripts/smoke-readme-npm.cjs
        ██                                          ██
        ██  CLAWD AGENTS                            ██
        ██  cheshire-terminal-agents@1.48.3         ██
-       ██  138 agents · 1 one-shot · 5 featured    ██
+       ██  138 agents · 2 one-shots · 6 featured   ██
        ██  cheshireterminal.ai/agents              ██
        ██                                          ██
         ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀

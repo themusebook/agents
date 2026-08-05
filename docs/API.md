@@ -4,14 +4,16 @@
 
 The **Solana Clawd Agents API** is a RESTful JSON + MCP + A2A surface providing access to production-ready AI agent definitions for Solana DeFi, trading, NFT, and on-chain workflows. All agents are auto-translated to 18 languages.
 
-This is the data layer behind the [/agents](https://x402.wtf/agents) hub — anything you see there (install buttons, agent cards, localized prompts, on-chain registration) is driven by these endpoints.
+This is the data layer behind the primary product hubs — [cheshireterminal.ai/agents](https://cheshireterminal.ai/agents) and [cheshireterminal.ai/eliza-agents](https://cheshireterminal.ai/eliza-agents). Install buttons, agent cards, localized prompts, and on-chain registration on those hubs are driven by these endpoints (and the published `cheshire-terminal-agents` catalog).
 
-For paid agents, this API layer is only one half of the system. The payment runtime behind x402-backed agents lives in [`../../solana-clawd-x402/`](../../solana-clawd-x402/README.md). Use [`X402_IMPLEMENTATION.md`](./X402_IMPLEMENTATION.md) to map API-facing agent IDs to the gateway, Worker, SDK, and vault implementation.
+For paid agents, this API layer is only one half of the system. The payment runtime behind x402-backed agents lives in [`../../solana-clawd-x402/`](../../solana-clawd-x402/README.md). Use [`X402_IMPLEMENTATION.md`](./X402_IMPLEMENTATION.md) to map API-facing agent IDs to the gateway, Worker, SDK, and vault implementation. Historical x402.wtf URLs below remain valid as secondary/legacy CDN examples where still deployed.
 
 ### Base URLs
 
-- Static JSON API (CDN): `https://x402.wtf`
-- Hub + dynamic endpoints: `https://x402.wtf`
+- **Primary agent hub:** `https://cheshireterminal.ai/agents`
+- **Eliza agents hub:** `https://cheshireterminal.ai/eliza-agents`
+- **Catalog API:** `https://cheshireterminal.ai/api/agents/catalog`
+- Static JSON / legacy CDN: `https://x402.wtf` (historical host; prefer cheshireterminal.ai for product surfaces)
 - MCP Streamable HTTP: `https://modelcontextprotocol.name/mcp/solana-clawd agents`
 
 ---
@@ -411,9 +413,11 @@ See [CHANGELOG.md](../CHANGELOG.md) for version history, new agents, and schema 
 
 - **Repo**: <https://github.com/clawdsolana/OpenClawd>
 - **Issues**: <https://github.com/clawdsolana/OpenClawd/issues>
-- **Hub**: <https://x402.wtf/agents>
-- **Registry**: <https://x402.wtf/agents-registry>
-- **Mint**: <https://x402.wtf/agents-mint>
+- **Hub**: <https://cheshireterminal.ai/agents>
+- **Eliza agents**: <https://cheshireterminal.ai/eliza-agents>
+- **Forge**: <https://cheshireterminal.ai/agents/forge>
+- **Registry API**: <https://cheshireterminal.ai/api/agents/registry>
+- **Legacy registry/mint (x402 era)**: <https://x402.wtf/agents-registry> · <https://x402.wtf/agents-mint>
 - **Contributing**: see [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ---

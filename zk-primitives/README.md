@@ -18,6 +18,9 @@
 > layer for the Clawd agent fleet — and yes, its mascot is a
 > shark. 🦈 More on that below.
 
+**Product hubs:** [cheshireterminal.ai/agents](https://cheshireterminal.ai/agents) · [eliza-agents](https://cheshireterminal.ai/eliza-agents) · [cheshireterminal.ai](https://cheshireterminal.ai)  
+**Agents package:** [Solizardking/agents](https://github.com/Solizardking/agents) (`zk-primitives/` surface) · legacy install edge notes may still reference x402 hosts as secondary history.
+
 ---
 
 ## 🍿 The 30-second version
