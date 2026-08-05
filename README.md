@@ -40,7 +40,23 @@ Ship Clawd / Cheshire-schema agents, then register them on **Robinhood Chain** (
 1. **Agent catalog** — 138 dual-chain agent definitions, character personas, locales, and schema validation  
 2. **Identity forge** — dual-rail registration (Robinhood Chain EVM + Solana SVM) with fail-closed safety  
 
-Hosted surfaces: [agent hub](https://cheshireterminal.ai/agents) · [agent forge](https://cheshireterminal.ai/agents/forge) · [catalog API](https://cheshireterminal.ai/api/agents/catalog)
+Hosted surfaces: [agent hub](https://cheshireterminal.ai/agents) · [eliza studio](https://cheshireterminal.ai/eliza-agents) · [agent forge](https://cheshireterminal.ai/agents/forge) · [CLI hub](https://cheshireterminal.ai/cli) · [catalog API](https://cheshireterminal.ai/api/agents/catalog)
+
+### Open-source companion repos
+
+| Repo | Role | Site hub |
+|------|------|----------|
+| **[Solizardking/agents](https://github.com/Solizardking/agents)** (this package) | Agent catalog + forge scaffolds | [/agents](https://cheshireterminal.ai/agents) |
+| **[Solizardking/cli](https://github.com/Solizardking/cli)** | Official site CLI (`cheshire-terminal-cli`) | [/cli](https://cheshireterminal.ai/cli) |
+| **[Solizardking/eliza](https://github.com/Solizardking/eliza)** | elizaOS fork + `@elizaos/cheshire-eliza` | [/eliza-agents](https://cheshireterminal.ai/eliza-agents) |
+| **[Solizardking/cheshire-terminal](https://github.com/Solizardking/cheshire-terminal)** | Main product app (server, client, API) | [cheshireterminal.ai](https://cheshireterminal.ai) |
+
+```bash
+# discover product hubs + all four GitHub sources from the CLI
+npx cheshire-terminal-cli connect
+npx cheshire-terminal-cli eliza:status
+npx cheshire-terminal-cli agents:list
+```
 
 ---
 
