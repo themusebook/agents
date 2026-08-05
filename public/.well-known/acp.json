@@ -3,7 +3,15 @@
   "protocol": "Agent Commerce Protocol",
   "generatedAt": "2026-07-23T22:24:49.260Z",
   "host": "https://cheshireterminal.ai",
+  "productHubs": {
+    "agents": "https://cheshireterminal.ai/agents",
+    "cli": "https://cheshireterminal.ai/cli",
+    "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
+    "forge": "https://cheshireterminal.ai/agents/forge"
+  },
   "discover": {
+    "agentsHub": "https://cheshireterminal.ai/agents",
+    "cliHub": "https://cheshireterminal.ai/cli",
     "catalog": "https://cheshireterminal.ai/api/agents/catalog",
     "registry": "https://cheshireterminal.ai/api/agents/registry",
     "templates": "https://cheshireterminal.ai/api/agents/templates",

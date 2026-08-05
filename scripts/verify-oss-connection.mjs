@@ -15,6 +15,7 @@ const root = join(__dirname, "..");
 const REQUIRED = {
   productHubs: [
     "https://cheshireterminal.ai/agents",
+    "https://cheshireterminal.ai/cli",
     "https://cheshireterminal.ai/eliza-agents",
   ],
   github: [

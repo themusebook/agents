@@ -12,6 +12,15 @@ const require = createRequire(import.meta.url);
 const pkg = require('../package.json');
 const catalog = require('../agents-catalog.json');
 
+/** Canonical product hubs from open-source-connection-map.json (agents + cli + eliza). */
+function loadOssMap() {
+  try {
+    return require('../open-source-connection-map.json');
+  } catch {
+    return null;
+  }
+}
+
 const BOLD = '\x1b[1m';
 const CYAN = '\x1b[36m';
 const GREEN = '\x1b[32m';
@@ -84,14 +93,64 @@ const COMMANDS = {
 
   catalog: () => {
     const stats = catalog.stats || catalog;
+    const oss = loadOssMap();
+    const hub = {
+      ...(catalog.hub || {}),
+      agents: catalog.hub?.agents || catalog.hub?.gallery || 'https://cheshireterminal.ai/agents',
+      cli: catalog.hub?.cli || oss?.productHubs?.cli || 'https://cheshireterminal.ai/cli',
+      forge: catalog.hub?.forge || 'https://cheshireterminal.ai/agents/forge',
+      elizaAgents: catalog.hub?.elizaAgents || oss?.productHubs?.elizaAgents || 'https://cheshireterminal.ai/eliza-agents',
+    };
     console.log(JSON.stringify({
       agents: stats.totalAgents,
       oneShots: stats.totalOneShots,
       featured: stats.totalFeatured,
       templates: stats.totalTemplates,
       categories: stats.byCategory ? Object.keys(stats.byCategory) : [],
-      hub: catalog.hub || null,
+      hub,
+      productHubs: oss?.productHubs || {
+        agents: hub.agents,
+        elizaAgents: hub.elizaAgents,
+        cli: hub.cli,
+      },
       design: 'ct-agents design',
+      siteCli: 'npx cheshire-terminal-cli connect',
+    }, null, 2));
+  },
+
+  /** Print product hubs + GitHub sources (wired to /agents and /cli). */
+  connect: () => {
+    const oss = loadOssMap() || {
+      productHubs: {
+        agents: 'https://cheshireterminal.ai/agents',
+        elizaAgents: 'https://cheshireterminal.ai/eliza-agents',
+        cli: 'https://cheshireterminal.ai/cli',
+      },
+      github: {
+        agents: 'https://github.com/Solizardking/agents',
+        cli: 'https://github.com/Solizardking/cli',
+        eliza: 'https://github.com/Solizardking/eliza',
+        cheshireTerminal: 'https://github.com/Solizardking/cheshire-terminal',
+      },
+    };
+    console.log(JSON.stringify({
+      package: pkg.name,
+      version: pkg.version,
+      productHubs: oss.productHubs,
+      github: oss.github,
+      thisPackage: {
+        npm: 'cheshire-terminal-agents',
+        siteHub: 'https://cheshireterminal.ai/agents',
+        design: 'ct-agents design',
+        catalog: 'ct-agents catalog',
+      },
+      siteCli: {
+        npm: 'cheshire-terminal-cli',
+        siteHub: 'https://cheshireterminal.ai/cli',
+        connect: 'npx cheshire-terminal-cli connect',
+        agentsList: 'npx cheshire-terminal-cli agents:list',
+      },
+      map: 'open-source-connection-map.json',
     }, null, 2));
   },
 
@@ -224,7 +283,8 @@ ${BOLD}Usage:${RESET}
   ${CYAN}npx cheshire-terminal-agents skills search vulcan${RESET}
   ${CYAN}npx cheshire-terminal-agents skills install metaplex-agent${RESET}
   ${CYAN}npx cheshire-terminal-agents serve${RESET}        Start the API server
-  ${CYAN}npx cheshire-terminal-agents catalog${RESET}      Print agent catalog stats
+  ${CYAN}npx cheshire-terminal-agents catalog${RESET}      Print agent catalog stats (+ /agents + /cli hubs)
+  ${CYAN}npx cheshire-terminal-agents connect${RESET}      Product hubs + GitHub sources (agents ↔ cli)
   ${CYAN}npx cheshire-terminal-agents templates${RESET}    List scaffold templates
   ${CYAN}npx cheshire-terminal-agents dna list${RESET}       List character seeds for DNA generation
   ${CYAN}npx cheshire-terminal-agents dna generate --from clawd --out ./my-dna${RESET}
@@ -268,11 +328,18 @@ ${BOLD}Knowledge folder (upload your own):${RESET}
   3. ${CYAN}ct-agents knowledge inject ./my-knowledge${RESET} — write ${MAGENTA}.grok/rules/knowledge-inject.md${RESET}
   4. Package corpus lives in ${MAGENTA}knowledge/${RESET} (JSONL + character markdown)
 
-${BOLD}Endpoints:${RESET}
-  ${MAGENTA}https://cheshireterminal.ai/agents${RESET}          Agent hub
-  ${MAGENTA}https://cheshireterminal.ai/api/agents/catalog${RESET}   catalog
-  ${MAGENTA}https://cheshireterminal.ai/api/agents/registry${RESET}  On-chain registry
+${BOLD}Product hubs (this package ↔ site):${RESET}
+  ${MAGENTA}https://cheshireterminal.ai/agents${RESET}              Agent hub (this npm package)
+  ${MAGENTA}https://cheshireterminal.ai/cli${RESET}                 Site CLI hub (cheshire-terminal-cli)
+  ${MAGENTA}https://cheshireterminal.ai/eliza-agents${RESET}        Eliza studio
+  ${MAGENTA}https://cheshireterminal.ai/agents/forge${RESET}        Dual-chain forge
+  ${MAGENTA}https://cheshireterminal.ai/api/agents/catalog${RESET}  Catalog API
+  ${MAGENTA}https://cheshireterminal.ai/api/agents/registry${RESET} On-chain registry
   ${MAGENTA}https://cheshireterminal.ai/api/agents/templates${RESET} Scaffolds
+
+${BOLD}Connect map:${RESET}
+  ${CYAN}ct-agents connect${RESET}                 Print product hubs + GitHub sources (JSON)
+  ${CYAN}npx cheshire-terminal-cli connect${RESET} Site CLI companion (status / agents / skills)
 `);
   },
 };

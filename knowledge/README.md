@@ -21,8 +21,8 @@
 
 ### *Curated swarm memory — anti-patterns · decisions · facts · gotchas · patterns — one-shot inject into harness system instructions*
 
-**Product hubs:** [Agent hub](https://cheshireterminal.ai/agents) · [Eliza agents](https://cheshireterminal.ai/eliza-agents) · [CLI hub](https://cheshireterminal.ai/cli)  
-**Package:** [`cheshire-terminal-agents`](https://www.npmjs.com/package/cheshire-terminal-agents) · **OSS map:** [`open-source-connection-map.json`](../open-source-connection-map.json)
+**Product hubs:** [Agent hub](https://cheshireterminal.ai/agents) · [CLI hub](https://cheshireterminal.ai/cli) · [Eliza agents](https://cheshireterminal.ai/eliza-agents)  
+**Package:** [`cheshire-terminal-agents`](https://www.npmjs.com/package/cheshire-terminal-agents) · **Site CLI:** [`cheshire-terminal-cli`](https://www.npmjs.com/package/cheshire-terminal-cli) (`npx cheshire-terminal-cli connect`) · **OSS map:** [`open-source-connection-map.json`](../open-source-connection-map.json)
 
 **Corpus:** this directory ·
 **Inject:** [`npm run knowledge:inject`](../package.json) ·

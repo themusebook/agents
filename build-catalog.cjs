@@ -390,9 +390,14 @@ function build() {
     generatedAt: new Date().toISOString(),
     hub: {
       gallery: `${HOST}/agents`,
+      agents: `${HOST}/agents`,
+      forge: `${HOST}/agents/forge`,
       mint: `${HOST}/agents/mint`,
+      cli: `${HOST}/cli`,
+      elizaAgents: `${HOST}/eliza-agents`,
       registry: `${HOST}/api/agents/registry`,
       api: `${HOST}/api/agents`,
+      catalog: `${HOST}/api/agents/catalog`,
     },
     stats: {
       totalAgents: agents.length,

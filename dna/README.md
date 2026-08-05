@@ -2,7 +2,7 @@
 
 Blank continuity templates for Clawd / OpenClawd / Eliza-style agents.
 
-**Product hub:** [cheshireterminal.ai/agents](https://cheshireterminal.ai/agents) · **Eliza studio:** [cheshireterminal.ai/eliza-agents](https://cheshireterminal.ai/eliza-agents) · **Package:** [`cheshire-terminal-agents`](https://www.npmjs.com/package/cheshire-terminal-agents)
+**Product hubs:** [agents](https://cheshireterminal.ai/agents) · [cli](https://cheshireterminal.ai/cli) · [eliza-agents](https://cheshireterminal.ai/eliza-agents) · **Package:** [`cheshire-terminal-agents`](https://www.npmjs.com/package/cheshire-terminal-agents)
 
 | File | Role |
 | --- | --- |

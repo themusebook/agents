@@ -11,6 +11,7 @@ Ship Clawd / Cheshire-schema agents, then register them on **Robinhood Chain** (
 
 <p align="center">
   <a href="https://cheshireterminal.ai/agents"><img alt="Open Agent Hub" src="https://img.shields.io/badge/OPEN_AGENT_HUB-75f58b?style=for-the-badge&labelColor=07140d" /></a>
+  <a href="https://cheshireterminal.ai/cli"><img alt="Open CLI Hub" src="https://img.shields.io/badge/OPEN_CLI_HUB-38bdf8?style=for-the-badge&labelColor=0b1220" /></a>
   <a href="https://cheshireterminal.ai/agents/forge"><img alt="Open Agent Forge" src="https://img.shields.io/badge/OPEN_AGENT_FORGE-c084fc?style=for-the-badge&labelColor=12081f" /></a>
   <a href="https://www.npmjs.com/package/cheshire-terminal-agents"><img alt="npm cheshire-terminal-agents" src="https://img.shields.io/badge/npm-cheshire--terminal--agents-ff8ad8?style=for-the-badge&labelColor=1b0b18" /></a>
   <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/LICENSE-MIT-9f8cff?style=for-the-badge&labelColor=100b1d" /></a>
@@ -52,11 +53,26 @@ Hosted surfaces: [agent hub](https://cheshireterminal.ai/agents) · [eliza studi
 | **[Solizardking/cheshire-terminal](https://github.com/Solizardking/cheshire-terminal)** | Main product app (server, client, API) | [cheshireterminal.ai](https://cheshireterminal.ai) |
 
 ```bash
-# discover product hubs + all four GitHub sources from the CLI
+# this package — product hubs + GitHub sources (agents ↔ cli)
+npx cheshire-terminal-agents connect
+npx cheshire-terminal-agents catalog
+
+# official site CLI companion (cheshireterminal.ai/cli)
 npx cheshire-terminal-cli connect
 npx cheshire-terminal-cli eliza:status
 npx cheshire-terminal-cli agents:list
 ```
+
+### How this package connects to the site
+
+| Site surface | Role | This package |
+|--------------|------|--------------|
+| **[cheshireterminal.ai/agents](https://cheshireterminal.ai/agents)** | Live agent hub + forge + catalog API | Source of truth: `agents-catalog.json`, `ct-agents catalog`, design TUI |
+| **[cheshireterminal.ai/cli](https://cheshireterminal.ai/cli)** | Official site CLI docs / install | Companion npm: `cheshire-terminal-cli` · local map via `ct-agents connect` |
+| **[cheshireterminal.ai/eliza-agents](https://cheshireterminal.ai/eliza-agents)** | Eliza studio | `eliza-agents/` + nested `eliza/` fork |
+| **[cheshireterminal.ai/agents/forge](https://cheshireterminal.ai/agents/forge)** | Dual-chain identity forge | Design/skills/DNA surfaces in this repo |
+
+Canonical wiring lives in [`open-source-connection-map.json`](./open-source-connection-map.json) (also exported as `cheshire-terminal-agents/open-source-connection-map`).
 
 ---
 
@@ -160,7 +176,8 @@ Full catalog is fetched on demand; installs pull **only** the slugs you select.
 | `ct-agents design --list` | List forkable templates (agents + scaffolds + characters) |
 | `ct-agents design --from <id>` | Non-interactive fork |
 | `ct-agents design --validate <file>` | Schema-check an agent JSON |
-| `ct-agents catalog` | Print catalog stats (agents, one-shots, featured, categories, hub) |
+| `ct-agents catalog` | Print catalog stats + product hubs (`/agents`, `/cli`, forge, eliza) |
+| `ct-agents connect` | Print OSS map: product hubs + GitHub sources (agents ↔ cli) |
 | `ct-agents templates` | List scaffold templates from the catalog |
 | `ct-agents skills` / `skills pick` | **Multi-select TUI** — browse catalog, toggle skills, sparse-install only picks |
 | `ct-agents skills packs` | Curated packs (cheshire-core, trading, imperial, …) |
@@ -182,6 +199,7 @@ Full catalog is fetched on demand; installs pull **only** the slugs you select.
 ```bash
 npx cheshire-terminal-agents design --list
 npx cheshire-terminal-agents catalog
+npx cheshire-terminal-agents connect
 npx cheshire-terminal-agents skills packs
 npx cheshire-terminal-agents dna list
 npx cheshire-terminal-agents knowledge list
@@ -490,7 +508,9 @@ node scripts/smoke-readme-npm.cjs
 | Version | **1.48.3** |
 | Bins | `cheshire-terminal-agents`, `ct-agents` |
 | License | MIT |
-| Hub | https://cheshireterminal.ai/agents |
+| Agent hub | https://cheshireterminal.ai/agents |
+| CLI hub | https://cheshireterminal.ai/cli |
+| Site CLI package | [`cheshire-terminal-cli`](https://www.npmjs.com/package/cheshire-terminal-cli) |
 
 ```
         ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -499,6 +519,7 @@ node scripts/smoke-readme-npm.cjs
        ██  cheshire-terminal-agents@1.48.3         ██
        ██  138 agents · 2 one-shots · 6 featured   ██
        ██  cheshireterminal.ai/agents              ██
+       ██  cheshireterminal.ai/cli                 ██
        ██                                          ██
         ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
 ```

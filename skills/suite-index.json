@@ -5,6 +5,9 @@
   "description": "First-class agent skills for Robinhood Chain registries, Agent Forge, dual-rail omni mint (Solana+RH+zk-omni), bonded launch, Launchpad V3, and zk-omni messaging. Hosted under robinhood-agents/skills and served via /api/skills when the monorepo is scanned.",
   "product": {
     "hub": "https://cheshireterminal.ai/agents",
+    "agents": "https://cheshireterminal.ai/agents",
+    "cli": "https://cheshireterminal.ai/cli",
+    "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
     "forge": "https://cheshireterminal.ai/agents/forge",
     "registry": "https://cheshireterminal.ai/agent-registry",
     "rhLaunch": "https://cheshireterminal.ai/rh-launch",

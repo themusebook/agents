@@ -105,6 +105,30 @@ if (totalAgents == null) {
   ok(`README agent count matches catalog (${totalAgents})`);
 }
 
+// Product hubs: agents + cli (cheshireterminal.ai)
+const REQUIRED_HUBS = [
+  'https://cheshireterminal.ai/agents',
+  'https://cheshireterminal.ai/cli',
+];
+for (const hub of REQUIRED_HUBS) {
+  if (!readme.includes(hub)) {
+    fail(`README must link product hub ${hub}`);
+  } else {
+    ok(`README links ${hub}`);
+  }
+}
+const catalogHub = catalog.hub || {};
+if (!(catalogHub.agents || catalogHub.gallery || '').includes('cheshireterminal.ai/agents')) {
+  fail('agents-catalog.json hub must include agents gallery');
+} else {
+  ok('catalog.hub points at /agents');
+}
+if (!(catalogHub.cli || '').includes('cheshireterminal.ai/cli')) {
+  fail('agents-catalog.json hub.cli must be https://cheshireterminal.ai/cli');
+} else {
+  ok('catalog.hub.cli points at /cli');
+}
+
 // Description brands Clawd
 if (!/Clawd Agents/i.test(pkg.description || '')) {
   fail('package.json description must brand Clawd Agents');
@@ -183,6 +207,18 @@ if (parsed) {
   } else {
     ok('CLI catalog agents matches agents-catalog.json stats');
   }
+  const hubAgents = parsed.hub?.agents || parsed.hub?.gallery || parsed.productHubs?.agents || '';
+  const hubCli = parsed.hub?.cli || parsed.productHubs?.cli || '';
+  if (!String(hubAgents).includes('cheshireterminal.ai/agents')) {
+    fail('ct-agents catalog must expose hub.agents → cheshireterminal.ai/agents');
+  } else {
+    ok('ct-agents catalog hub.agents → /agents');
+  }
+  if (!String(hubCli).includes('cheshireterminal.ai/cli')) {
+    fail('ct-agents catalog must expose hub.cli → cheshireterminal.ai/cli');
+  } else {
+    ok('ct-agents catalog hub.cli → /cli');
+  }
   try {
     const p2 = JSON.parse(catalogRuns[1].trim());
     if (p2.agents !== parsed.agents) {
@@ -193,6 +229,39 @@ if (parsed) {
   } catch (e) {
     fail(`catalog run2 not JSON: ${e.message}`);
   }
+}
+
+// ct-agents connect — agents + cli product hubs
+const connectRuns = [];
+for (let i = 0; i < 2; i++) {
+  const r = runCli(['connect']);
+  if (r.status !== 0) {
+    fail(`ct-agents connect run ${i + 1} exited ${r.status}: ${r.stderr}`);
+  }
+  connectRuns.push(stripAnsi(r.stdout));
+}
+writeScratch('cli-connect.log', connectRuns.join('\n--- run 2 ---\n'));
+try {
+  const conn = JSON.parse(connectRuns[0].trim());
+  const ph = conn.productHubs || {};
+  if (!(ph.agents || '').includes('cheshireterminal.ai/agents')) {
+    fail('ct-agents connect missing productHubs.agents');
+  } else {
+    ok('ct-agents connect → /agents');
+  }
+  if (!(ph.cli || '').includes('cheshireterminal.ai/cli')) {
+    fail('ct-agents connect missing productHubs.cli');
+  } else {
+    ok('ct-agents connect → /cli');
+  }
+  if (conn.thisPackage?.siteHub !== 'https://cheshireterminal.ai/agents') {
+    fail('ct-agents connect thisPackage.siteHub must be agents hub');
+  }
+  if (conn.siteCli?.siteHub !== 'https://cheshireterminal.ai/cli') {
+    fail('ct-agents connect siteCli.siteHub must be cli hub');
+  }
+} catch (e) {
+  fail(`ct-agents connect output is not JSON: ${e.message}`);
 }
 
 // README excerpt for evidence

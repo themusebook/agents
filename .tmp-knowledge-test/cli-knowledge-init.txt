@@ -62,7 +62,7 @@ status=0
     "characterFile": "warren-buffett-character.md",
     "template": "knowledge/clawd-character.md",
     "source": "characters/warrenbuffet.json",
-    "generatedAt": "2026-08-05T04:10:55.551Z",
+    "generatedAt": "2026-08-05T04:24:34.842Z",
     "files": [
       "knowledge-banner.svg",
       "knowledge-inject-flow.svg",

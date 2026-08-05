@@ -3,7 +3,7 @@
   "name_for_human": "Cheshire Terminal Solana Agents",
   "name_for_model": "cheshire_terminal_solana_agents",
   "description_for_human": "Cheshire Terminal Solana Agents Solana-native agent registry with catalog JSON, ACP discovery, x402 gateway routing, skill discovery, Telegram gateway hooks, and Metaplex Agent Registry documents.",
-  "description_for_model": "Use Cheshire Terminal Solana Agents to discover Solana-native agents and skills on cheshireterminal.ai. Canonical surfaces include https://cheshireterminal.ai/agents, https://cheshireterminal.ai/skills, https://cheshireterminal.ai/gateway, and https://cheshireterminal.ai/telegram.",
+  "description_for_model": "Use Cheshire Terminal Solana Agents to discover Solana-native agents and skills on cheshireterminal.ai. Canonical surfaces include https://cheshireterminal.ai/agents (agent hub + catalog), https://cheshireterminal.ai/cli (site CLI), https://cheshireterminal.ai/eliza-agents, https://cheshireterminal.ai/skills, https://cheshireterminal.ai/gateway, and https://cheshireterminal.ai/telegram.",
   "auth": {
     "type": "none"
   },
@@ -16,10 +16,18 @@
   "legal_info_url": "https://github.com/cheshire-terminal-solana-agents/solana-clawd/blob/main/agents/LICENSE",
   "agent_registry": {
     "hub": "https://cheshireterminal.ai/agents",
+    "cli": "https://cheshireterminal.ai/cli",
+    "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
+    "forge": "https://cheshireterminal.ai/agents/forge",
     "catalog": "https://cheshireterminal.ai/api/clawd/browser-agents/catalog",
     "registry": "https://cheshireterminal.ai/api/clawd/browser-agents/registry",
     "templates": "https://cheshireterminal.ai/api/clawd/browser-agents/templates",
     "acp": "https://cheshireterminal.ai/api/clawd/browser-agents/acp-registry.json"
+  },
+  "product_hubs": {
+    "agents": "https://cheshireterminal.ai/agents",
+    "cli": "https://cheshireterminal.ai/cli",
+    "elizaAgents": "https://cheshireterminal.ai/eliza-agents"
   },
   "skill_registry": {
     "hub": "https://cheshireterminal.ai/skills",
