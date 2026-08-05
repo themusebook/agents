@@ -117,18 +117,26 @@ config.ui = {
 mkdirSync(stateDir, { recursive: true });
 writeFileSync(configPath, JSON.stringify(config, null, 2) + "\n");
 
+const clawdBrowserTools =
+  process.env.CLAWDBROWSER_TOOLS_MD ||
+  "/Users/8bit/ClawdBrowser/tools.md";
+
 const env = {
   ...process.env,
   ELIZA_AGENT_CHARACTER_PATH: characterPath,
   ELIZA_STATE_DIR: stateDir,
   // Project skills also load when cwd is eliza
   ELIZA_NAMESPACE: process.env.ELIZA_NAMESPACE || "eliza",
+  // Official @elizaos/plugin-clawdbrowser catalog
+  CLAWDBROWSER_TOOLS_MD:
+    process.env.CLAWDBROWSER_TOOLS_MD || clawdBrowserTools,
 };
 
 console.log("[start-eliza-clawd] character:", characterPath);
 console.log("[start-eliza-clawd] name:     ", agentEntry.name);
 console.log("[start-eliza-clawd] state:    ", stateDir);
 console.log("[start-eliza-clawd] skills:   ", managedSkills);
+console.log("[start-eliza-clawd] tools.md: ", env.CLAWDBROWSER_TOOLS_MD);
 console.log("[start-eliza-clawd] eliza:    ", elizaDir);
 
 if (dryRun) {
