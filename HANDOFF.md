@@ -524,7 +524,6 @@ ct-agents serve                                  # then open /skills-picker.html
 1. `resolveTemplate` prefers `kind=agent` over same-id scaffold so `skills[]` are not dropped.
 2. `--install-skills` sparse-installs **all** `agent.skills[]` after fork (template-inherited + `--skills`), not only when `--skills` tokens are present.
 3. Tests: `npm run test:install-at-birth` (evidence under `EVIDENCE_DIR` when set).
-```
 
 **Interactive surfaces (shipped in this package):**
 
