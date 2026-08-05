@@ -59,6 +59,9 @@
     "design": "node bin/ct-agents.js design",
     "forge": "node bin/ct-agents.js forge",
     "serve": "node bin/ct-agents.js serve",
+    "eliza:clawd": "node scripts/start-eliza-clawd.mjs",
+    "eliza:clawd:dev": "node scripts/start-eliza-clawd.mjs --dev",
+    "eliza:clawd:verify": "node scripts/verify-eliza-clawd.mjs && bun scripts/verify-eliza-clawd-runtime.mjs",
     "prepublishOnly": "node build-catalog.cjs && node scripts/validate-catalog.cjs"
   },
   "engines": {

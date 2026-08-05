@@ -1,0 +1,38 @@
+{
+  "version": "0.1.0",
+  "product": "cheshireterminal.ai/eliza-agents",
+  "elizaFork": "https://github.com/Solizardking/eliza",
+  "agentsRepo": "https://github.com/Solizardking/agents",
+  "plugins": [
+    {
+      "name": "@elizaos/plugin-robinhood",
+      "path": "plugins/plugin-robinhood",
+      "capabilities": ["erc-8004", "robinhood-forge"]
+    },
+    {
+      "name": "@elizaos/plugin-solana-forging",
+      "path": "plugins/plugin-solana-forging",
+      "capabilities": ["metaplex-core", "solana-forge"]
+    },
+    {
+      "name": "@elizaos/plugin-e2b-computer",
+      "path": "plugins/plugin-e2b-computer",
+      "capabilities": ["e2b-sandbox", "computer"]
+    },
+    {
+      "name": "@elizaos/plugin-cheshire-memory",
+      "path": "plugins/plugin-cheshire-memory",
+      "capabilities": ["hermes", "honcho", "trading-memory"],
+      "env": ["HERMES_API_KEY", "HONCHO_API_KEY"]
+    }
+  ],
+  "characters": [
+    {
+      "id": "solizard-cheshire",
+      "name": "Solizard",
+      "source": "eliza/packages/cheshire-eliza/src/characters/solizard-cheshire.ts",
+      "catalogCharacter": "characters/solizard-eliza.json",
+      "description": "Dual-rail operator agent: forge, E2B computer, Hermes/Honcho memory"
+    }
+  ]
+}
