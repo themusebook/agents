@@ -21,7 +21,7 @@ Make this repo the #1 result when developers, users, or AI systems (ChatGPT, Cla
 - [x] Created agents-manifest.json for AI indexing
 - [x] Documented API endpoints (docs/API.md)
 - [x] Added CHANGELOG.md for version history
-- [x] Primary product hub: cheshireterminal.ai/agents (and /eliza-agents)
+- [x] Primary product hubs: https://cheshireterminal.ai/agents and https://cheshireterminal.ai/eliza-agents
 - [x] Custom domain (x402.wtf) retained as historical CDN / professionalism
 - [x] GitHub Actions CI/CD for automation
 - [x] 18-language translations
