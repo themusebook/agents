@@ -11,7 +11,7 @@ cloudflare-agent-api/.wrangler/
 .tigris-agent-store/
 .membrain-agent-store/
 .tmp-tigris-test/
-
+.env
 # Official Tigris / Skill Hub bodies — restore with skills-lock.json
 .agents/skills/
 node_modules
