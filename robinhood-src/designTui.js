@@ -153,7 +153,11 @@ export function loadTemplateCatalog(root = ROOT) {
     });
   }
 
-  return items;
+  return items.sort((left, right) => {
+    if (left.id === 'elizero') return -1;
+    if (right.id === 'elizero') return 1;
+    return 0;
+  });
 }
 
 function materializeScaffold(raw) {

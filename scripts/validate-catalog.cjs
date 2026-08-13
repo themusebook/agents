@@ -6,11 +6,13 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 // Primary hub agents (src/) + package agents/ merges (e.g. clawd-imperial-perps).
 const EXPECTED_TOTAL = 139;
-const EXPECTED_ONE_SHOTS = ['clawd-imperial-perps', 'solana-pumpfun-bot'];
+const EXPECTED_PREMIERE = 'elizero';
+const EXPECTED_ONE_SHOTS = ['clawd-imperial-perps', 'elizero', 'solana-pumpfun-bot'];
 const EXPECTED_FEATURED = [
   'clawd-agents-perps-runtime',
   'clawd-imperial-perps',
   'clawd-livekit-voice',
+  'elizero',
   'mechaplex-mech-builder',
   'solana-pumpfun-bot',
   'solana-vulcan-clawd-autonomous-perps',
@@ -77,6 +79,23 @@ for (const template of catalog.templates) {
 assert(
   fs.existsSync(path.join(ROOT, 'public/api/agents/templates', 'index.json')),
   'missing templates index.json'
+);
+
+assert(
+  catalog.stats.premiereAgent === EXPECTED_PREMIERE,
+  `bad premiereAgent: ${catalog.stats.premiereAgent}`
+);
+assert(
+  catalog.oneShots[0]?.identifier === EXPECTED_PREMIERE,
+  `premiere must lead one-shots, got ${catalog.oneShots[0]?.identifier}`
+);
+assert(
+  catalog.featured[0]?.identifier === EXPECTED_PREMIERE,
+  `premiere must lead featured, got ${catalog.featured[0]?.identifier}`
+);
+assert(
+  catalog.agents[0]?.identifier === EXPECTED_PREMIERE,
+  `premiere must lead agents, got ${catalog.agents[0]?.identifier}`
 );
 
 const oneShots = catalog.oneShots.map((agent) => agent.identifier).sort();

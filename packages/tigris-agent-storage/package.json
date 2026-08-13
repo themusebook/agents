@@ -1,0 +1,16 @@
+{
+  "name": "@cheshire/tigris-agent-storage",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Tigris-backed Clawd agent storage: event-driven writer→watcher handoffs, self-provisioned buckets. Source of truth: robinhood-src/tigrisStorage.js",
+  "exports": {
+    ".": "../../robinhood-src/tigrisStorage.js"
+  },
+  "scripts": {
+    "test": "node ../../scripts/test-tigris-storage.cjs"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}

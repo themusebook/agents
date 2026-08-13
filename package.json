@@ -51,6 +51,7 @@
     "./dna/*": "./dna/*",
     "./knowledge": "./robinhood-src/knowledgeUpload.js",
     "./knowledge/*": "./knowledge/*",
+    "./storage": "./robinhood-src/tigrisStorage.js",
     "./characters/*": "./characters/*",
     "./eliza-agents/*": "./eliza-agents/*",
     "./zk-primitives/*": "./zk-primitives/*",
@@ -62,7 +63,8 @@
     "build": "node build-catalog.cjs && node scripts/validate-catalog.cjs && echo '✓ catalog built'",
     "validate": "node scripts/validate-catalog.cjs",
     "verify:oss": "node scripts/verify-oss-connection.mjs",
-    "test": "node scripts/validate-catalog.cjs && node scripts/smoke-readme-npm.cjs && node scripts/test-dna-generate.cjs && node scripts/test-knowledge-upload.cjs && node scripts/test-eliza-zk-paths.cjs && node scripts/test-skills-tui.cjs && node scripts/test-install-at-birth.cjs && node scripts/verify-oss-connection.mjs && node bin/ct-agents.js design --list --json > /dev/null && node bin/ct-agents.js skills packs --json > /dev/null",
+    "test": "node scripts/validate-catalog.cjs && node scripts/smoke-readme-npm.cjs && node scripts/test-dna-generate.cjs && node scripts/test-knowledge-upload.cjs && node scripts/test-eliza-zk-paths.cjs && node scripts/test-skills-tui.cjs && node scripts/test-install-at-birth.cjs && node scripts/test-tigris-storage.cjs && node scripts/verify-oss-connection.mjs && node bin/ct-agents.js design --list --json > /dev/null && node bin/ct-agents.js skills packs --json > /dev/null",
+    "test:tigris": "node scripts/test-tigris-storage.cjs",
     "test:skills-tui": "node scripts/test-skills-tui.cjs",
     "test:install-at-birth": "node scripts/test-install-at-birth.cjs",
     "test:dna": "node scripts/test-dna-generate.cjs",
@@ -74,6 +76,7 @@
     "knowledge:eliza-docs": "node bin/ct-agents.js knowledge eliza-docs --from knowledge --out ./docs --force",
     "dna": "node bin/ct-agents.js dna",
     "skills": "node bin/ct-agents.js skills",
+    "storage": "node bin/ct-agents.js storage",
     "smoke:readme": "node scripts/smoke-readme-npm.cjs",
     "catalog": "node -e \"import('./agents-catalog.json').then(c => { const s=c.stats||c; console.log(JSON.stringify({agents:s.totalAgents,oneShots:s.totalOneShots,featured:s.totalFeatured,templates:s.totalTemplates,categories:Object.keys(s.byCategory||{}).length},null,2)) })\"",
     "start": "node bin/ct-agents.js design",
@@ -125,13 +128,16 @@
     "build-catalog.cjs",
     "README.md",
     "LICENSE",
-    "AGENTS.md"
+    "AGENTS.md",
+    "TIGRIS.md",
+    "skills-lock.json"
   ],
   "dependencies": {
     "@solana/web3.js": "^1.98.4",
     "viem": "^2.38.0"
   },
   "optionalDependencies": {
+    "@tigrisdata/storage": "^3.18.0",
     "cheshire-terminal-cli": "^1.1.1"
   }
 }

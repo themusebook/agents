@@ -1,0 +1,52 @@
+{
+  "author": "OpenClawd",
+  "createdAt": "2026-04-23",
+  "homepage": "https://github.com/x402agent/openclawd",
+  "identifier": "attested-plugin-template",
+  "manifest": "https://plugin.delivery/attested-plugin/manifest.json",
+  "meta": {
+    "avatar": "⛓️",
+    "description": "[OpenClawd] Attested plugin with on-chain verification via Solana Attestation Service - formal verification via QEDGen, vault-secured agent wallet, and Metaplex integration",
+    "tags": [
+      "attestation",
+      "formal-verification",
+      "solana",
+      "vault",
+      "metaplex",
+      "openclawd"
+    ],
+    "title": "Attested Plugin Template"
+  },
+  "schemaVersion": 1,
+  "attestation": {
+    "enabled": true,
+    "service": "solana-attestation-service",
+    "program_id": "22zoJMtdu4tQc2PzL74ZUT7FrwgB1Udec8DdW4yw4BdG",
+    "verification_levels": [
+      "formal_verified",
+      "audit_verified",
+      "community_verified"
+    ],
+    "credential_authority": "OpenClawd Plugin Authority"
+  },
+  "capabilities": {
+    "attestation": {
+      "create_attestation": true,
+      "verify_attestation": true,
+      "tokenize_attestation": false
+    },
+    "formalVerification": {
+      "qedgen_integration": true,
+      "proof_hash_verification": true
+    },
+    "vault": {
+      "hermes_integration": true,
+      "wallet_custody_at_birth": true
+    }
+  },
+  "registry": {
+    "protocol": "8004",
+    "program_id": "Ag8004rWo8ao8AUKhLk78iv2nLQpZMyBPXiAh5QLbFiE",
+    "verified": true
+  }
+}

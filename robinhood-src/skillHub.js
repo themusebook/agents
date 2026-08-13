@@ -405,6 +405,7 @@ ${BOLD}Install targets:${RESET}
   Skill Hub CLI:          ${DIM}npx github:Solizardking/skills install <slugs>${RESET}
 
 ${BOLD}Hub:${RESET} https://github.com/Solizardking/skillhub-main
+${BOLD}Tigris (official):${RESET} npx skills add tigrisdata/skills --skill '*' --agent cursor -y --copy
 `);
 }
 
@@ -452,6 +453,9 @@ export async function runSkillsCli(argv = [], root = ROOT) {
         console.log(`  ${GREEN}${id}${RESET}  ${pack.label || ''}`);
         console.log(`    ${DIM}${pack.description || ''}${RESET}`);
         console.log(`    skills: ${(pack.skills || []).join(', ')}`);
+        if (pack.installOfficial) {
+          console.log(`    official: ${pack.installOfficial}`);
+        }
       }
       console.log(`\n${DIM}Featured:${RESET} ${(index.featured || []).join(', ')}\n`);
     }

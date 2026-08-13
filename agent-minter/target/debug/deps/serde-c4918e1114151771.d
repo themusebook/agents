@@ -1,0 +1,14 @@
+/Users/8bit/solana-clawd-agent-kit-2/agents/agent-minter/target/debug/deps/serde-c4918e1114151771.d: /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/8bit/solana-clawd-agent-kit-2/agents/agent-minter/target/debug/build/serde-8bb1e3f9de916953/out/private.rs
+
+/Users/8bit/solana-clawd-agent-kit-2/agents/agent-minter/target/debug/deps/libserde-c4918e1114151771.rlib: /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/8bit/solana-clawd-agent-kit-2/agents/agent-minter/target/debug/build/serde-8bb1e3f9de916953/out/private.rs
+
+/Users/8bit/solana-clawd-agent-kit-2/agents/agent-minter/target/debug/deps/libserde-c4918e1114151771.rmeta: /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /Users/8bit/solana-clawd-agent-kit-2/agents/agent-minter/target/debug/build/serde-8bb1e3f9de916953/out/private.rs
+
+/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/Users/8bit/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/Users/8bit/solana-clawd-agent-kit-2/agents/agent-minter/target/debug/build/serde-8bb1e3f9de916953/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/8bit/solana-clawd-agent-kit-2/agents/agent-minter/target/debug/build/serde-8bb1e3f9de916953/out

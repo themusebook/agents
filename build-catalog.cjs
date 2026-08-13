@@ -23,6 +23,7 @@ const WELL_KNOWN_DIR = path.join(PUBLIC_DIR, '.well-known');
 const HOST = process.env.OPENCLAWD_BASE_URL || 'https://cheshireterminal.ai';
 const LEGACY_WWW_HOSTS = [`https://www.${'x402.wtf'}`, `http://www.${'x402.wtf'}`, `https://www.${'cheshireterminal.ai'}`, `http://www.${'cheshireterminal.ai'}`];
 const CLAWD_MINT = '8cHzQHUS2s2h8TzCmfqPKYiM4dSt4roa3n7MyRLApump';
+const PREMIERE_AGENT_ID = 'elizero';
 const SUPPLEMENTAL_REGISTRY_TARGET = 44;
 const SUPPLEMENTAL_REGISTRY_EXCLUDE = new Set([
   'apy-vs-apr-educator',
@@ -118,7 +119,96 @@ function loadAgentsFromDir(dir) {
 }
 
 /** Package agents that must appear in the hub catalog even when src/ is primary. */
-const PACKAGE_CATALOG_EXTRAS = ['clawd-imperial-perps.json'];
+const PACKAGE_CATALOG_EXTRAS = ['clawd-imperial-perps.json', 'elizero.json'];
+
+function pinPremiere(list) {
+  return [...list].sort((left, right) => {
+    if (left.identifier === PREMIERE_AGENT_ID) return -1;
+    if (right.identifier === PREMIERE_AGENT_ID) return 1;
+    return 0;
+  });
+}
+
+function loadExistingCatalogById() {
+  const map = new Map();
+  if (!fs.existsSync(PUBLIC_CATALOG_DIR)) return map;
+  for (const file of fs.readdirSync(PUBLIC_CATALOG_DIR)) {
+    if (!file.endsWith('.json') || file === 'index.json') continue;
+    try {
+      const doc = readJson(path.join(PUBLIC_CATALOG_DIR, file));
+      const id = doc.identifier || path.basename(file, '.json');
+      map.set(id, doc);
+    } catch {
+      // skip malformed catalog snapshots
+    }
+  }
+  return map;
+}
+
+function catalogRowFromExisting(doc, identifier) {
+  const capabilities = doc.solana?.capabilities || [];
+  const tags = doc.meta?.tags || [];
+  const metaplexSkills =
+    doc.solana?.metaplexSkills || deriveMetaplexSkills(capabilities, tags);
+  return {
+    identifier,
+    title: doc.meta?.title || identifier,
+    description: doc.meta?.description || '',
+    avatar: doc.meta?.avatar || '🤖',
+    tags,
+    category: doc.meta?.category || 'defi',
+    author: doc.author || 'openclawd',
+    createdAt: doc.createdAt || null,
+    oneShot: doc.oneShot === true,
+    featured: doc.featured === true,
+    openingMessage: doc.config?.openingMessage || null,
+    openingQuestions: doc.config?.openingQuestions || [],
+    tokenUsage: doc.tokenUsage || null,
+    capabilities,
+    metaplexSkills,
+    payment: doc.payment || null,
+    agentToken: doc.agentToken || null,
+    deploy: {
+      json: `/api/agents/catalog/${encodeURIComponent(identifier)}.json`,
+      chat: `/agents/chat?agent=${encodeURIComponent(identifier)}`,
+      mint: `/agents/mint?template=${encodeURIComponent(identifier)}`,
+      mcp: `/api/agents/catalog/${encodeURIComponent(identifier)}.json`,
+      registration: `/api/agents/registry/${encodeURIComponent(identifier)}.json`,
+      fork: `ct-agents design --from ${encodeURIComponent(identifier)}`,
+    },
+    rawCatalog: doc,
+  };
+}
+
+function mergeSourceOntoCatalog(sourceAgents, existingCatalog) {
+  const overlay = new Map(sourceAgents.map((agent) => [agent.identifier, agent]));
+  const merged = [];
+  const seen = new Set();
+  const prevAgents = fs.existsSync(OUTPUT) ? readJson(OUTPUT).agents || [] : [];
+
+  for (const row of prevAgents) {
+    const id = row.identifier;
+    if (!id || seen.has(id)) continue;
+    seen.add(id);
+    if (overlay.has(id)) {
+      merged.push(overlay.get(id));
+      continue;
+    }
+    const doc = existingCatalog.get(id);
+    merged.push(doc ? catalogRowFromExisting(doc, id) : row);
+  }
+
+  for (const extra of sourceAgents) {
+    if (seen.has(extra.identifier)) continue;
+    // A prior hub snapshot already defines membership. Only admit the premiere
+    // overlay when the snapshot omitted it; do not re-import the whole agents/ tree.
+    if (prevAgents.length > 0 && extra.identifier !== PREMIERE_AGENT_ID) continue;
+    seen.add(extra.identifier);
+    merged.push(extra);
+  }
+
+  return merged;
+}
 
 function loadAgents() {
   // Primary: local src/ (full hub) when present, else published agents/.
@@ -150,7 +240,7 @@ function loadAgents() {
   return agents;
 }
 
-function loadSupplementalRegistryAgents(existingIds) {
+function loadSupplementalRegistryAgents(existingIds, existingCatalog) {
   if (!fs.existsSync(PUBLIC_REGISTRY_DIR)) return [];
 
   const files = fs
@@ -161,39 +251,45 @@ function loadSupplementalRegistryAgents(existingIds) {
   return files
     .map((file) => readJson(path.join(PUBLIC_REGISTRY_DIR, file)))
     .filter((doc) => doc?.active !== false)
-    .map(registryDocToAgent)
+    .map((doc) => registryDocToAgent(doc, existingCatalog))
     .filter((agent) => agent.identifier && !existingIds.has(agent.identifier))
     .filter((agent) => !SUPPLEMENTAL_REGISTRY_EXCLUDE.has(agent.identifier))
     .sort((left, right) => left.identifier.localeCompare(right.identifier))
     .slice(0, SUPPLEMENTAL_REGISTRY_TARGET);
 }
 
-function registryDocToAgent(doc) {
+function registryDocToAgent(doc, existingCatalog = new Map()) {
   const identifier =
     doc.openclawd?.identifier || doc.registrations?.[0]?.agentId?.replace(/^openclawd:/, '');
-  const category = doc.categories?.[0] || 'defi';
-  const capabilities = doc.openclawd?.capabilities || [];
+  const existing = existingCatalog.get(identifier) || null;
+  const category = existing?.meta?.category || doc.categories?.[0] || 'defi';
+  const capabilities = existing?.solana?.capabilities || doc.openclawd?.capabilities || [];
+  const tags = existing?.meta?.tags || doc.tags || [];
   const metaplexSkills =
-    doc.metaplex?.programs || deriveMetaplexSkills(capabilities, doc.tags || []);
+    existing?.solana?.metaplexSkills ||
+    doc.metaplex?.programs ||
+    deriveMetaplexSkills(capabilities, tags);
+  const oneShot = existing?.oneShot === true;
+  const featured = existing?.featured === true;
 
   return {
     identifier,
-    title: doc.name || identifier,
-    description: doc.description || '',
-    avatar: doc.image || '🤖',
-    tags: doc.tags || [],
+    title: existing?.meta?.title || doc.name || identifier,
+    description: existing?.meta?.description || doc.description || '',
+    avatar: existing?.meta?.avatar || doc.image || '🤖',
+    tags,
     category,
-    author: 'openclawd',
-    createdAt: doc.createdAt || null,
-    oneShot: false,
-    featured: false,
-    openingMessage: null,
-    openingQuestions: [],
-    tokenUsage: null,
+    author: existing?.author || 'openclawd',
+    createdAt: existing?.createdAt || doc.createdAt || null,
+    oneShot,
+    featured,
+    openingMessage: existing?.config?.openingMessage || null,
+    openingQuestions: existing?.config?.openingQuestions || [],
+    tokenUsage: existing?.tokenUsage || null,
     capabilities,
     metaplexSkills,
-    payment: doc.openclawd?.payment || null,
-    agentToken: doc.openclawd?.agentToken || null,
+    payment: existing?.payment || doc.openclawd?.payment || null,
+    agentToken: existing?.agentToken || doc.openclawd?.agentToken || null,
     deploy: {
       json: `/api/agents/catalog/${encodeURIComponent(identifier)}.json`,
       chat: `/agents/chat?agent=${encodeURIComponent(identifier)}`,
@@ -201,19 +297,19 @@ function registryDocToAgent(doc) {
       mcp: `/api/agents/catalog/${encodeURIComponent(identifier)}.json`,
       registration: `/api/agents/registry/${encodeURIComponent(identifier)}.json`,
     },
-    rawCatalog: {
+    rawCatalog: existing || {
       identifier,
       author: 'openclawd',
       homepage: `${HOST}/agents/${encodeURIComponent(identifier)}`,
       createdAt: doc.createdAt || null,
-      oneShot: false,
-      featured: false,
+      oneShot,
+      featured,
       schemaVersion: 1,
       meta: {
         title: doc.name || identifier,
         description: doc.description || '',
         avatar: doc.image || '🤖',
-        tags: doc.tags || [],
+        tags,
         category,
       },
       config: {
@@ -299,15 +395,19 @@ function countByCategory(agents) {
 }
 
 function build() {
+  const existingCatalog = loadExistingCatalogById();
   const sourceAgents = loadAgents();
-  const agents = [
-    ...sourceAgents,
-    ...loadSupplementalRegistryAgents(new Set(sourceAgents.map((agent) => agent.identifier))),
-  ];
+  const merged = mergeSourceOntoCatalog(sourceAgents, existingCatalog);
+  const seen = new Set(merged.map((agent) => agent.identifier));
+  const supplemental =
+    merged.length > 0
+      ? []
+      : loadSupplementalRegistryAgents(seen, existingCatalog);
+  const agents = pinPremiere([...merged, ...supplemental]);
   const templates = loadTemplates();
 
-  const oneShots = agents.filter((a) => a.oneShot);
-  const featured = agents.filter((a) => a.featured);
+  const oneShots = pinPremiere(agents.filter((a) => a.oneShot));
+  const featured = pinPremiere(agents.filter((a) => a.featured));
 
   // Aggregate Metaplex skill coverage across the whole catalog so /agents can
   // render a single shared skill rail and surface per-agent badges.
@@ -404,6 +504,7 @@ function build() {
       totalOneShots: oneShots.length,
       totalFeatured: featured.length,
       totalTemplates: templates.length,
+      premiereAgent: PREMIERE_AGENT_ID,
       byCategory: countByCategory(agents),
       metaplexEnabledAgents: agents.filter((a) => a.metaplexSkills.length > 0).length,
       tradingCapableAgents: agents.filter((a) => a.capabilities.includes('swap-execution')).length,

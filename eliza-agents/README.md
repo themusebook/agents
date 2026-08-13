@@ -37,7 +37,7 @@ LOAD_DOCS_ON_STARTUP=true
 KNOWLEDGE_PATH=./docs
 ```
 
-Characters in this catalog (e.g. Solizard, Clawd) list `@elizaos/plugin-knowledge` so agents can store/retrieve PDFs, MD, JSONL, and answer with semantic search. Full guide: [docs/KNOWLEDGE_RAG.md](./docs/KNOWLEDGE_RAG.md).
+Characters in this catalog (e.g. **eliZERO** premiere, Solizard, Clawd) list `@elizaos/plugin-knowledge` so agents can store/retrieve PDFs, MD, JSONL, and answer with semantic search. Full guide: [docs/KNOWLEDGE_RAG.md](./docs/KNOWLEDGE_RAG.md).
 
 ## Required secrets (memory + computer + RAG)
 
@@ -54,7 +54,7 @@ OPENAI_API_KEY=   # embeddings for @elizaos/plugin-knowledge (or OpenRouter)
 eliza-agents/
   catalog.json
   README.md
-  characters/          # eliza character seeds (clawd, solizard, …)
+  characters/          # eliza character seeds (eliZERO premiere, clawd, solizard, …)
   docs/
     WIRING.md
     KNOWLEDGE_RAG.md

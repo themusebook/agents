@@ -1,10 +1,17 @@
 {
   "schemaVersion": "openclawd.metaplex.registry.index.v1",
-  "generatedAt": "2026-08-05T04:44:46.766Z",
+  "generatedAt": "2026-08-13T17:03:30.860Z",
   "registry": "metaplex-agent-registry",
   "host": "https://cheshireterminal.ai",
   "count": 139,
   "agents": [
+    {
+      "id": "elizero",
+      "name": "eliZERO",
+      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/elizero.json",
+      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
+      "status": "pending-onchain-registration"
+    },
     {
       "id": "cheshire-terminal",
       "name": "Cheshire Terminal",
@@ -72,13 +79,6 @@
       "id": "clawdex",
       "name": "Clawdex",
       "registrationUri": "https://cheshireterminal.ai/api/agents/registry/clawdex.json",
-      "agentRegistry": "solana:mainnet:metaplex-agent-registry",
-      "status": "pending-onchain-registration"
-    },
-    {
-      "id": "elizero",
-      "name": "eliZERO",
-      "registrationUri": "https://cheshireterminal.ai/api/agents/registry/elizero.json",
       "agentRegistry": "solana:mainnet:metaplex-agent-registry",
       "status": "pending-onchain-registration"
     },

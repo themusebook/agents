@@ -85,6 +85,13 @@ async function runKnowledge(argv) {
   process.exit(code ?? 0);
 }
 
+async function runStorage(argv) {
+  const modPath = path.join(ROOT, 'robinhood-src', 'tigrisStorage.js');
+  const { runTigrisStorageCli } = await import(pathToFileURL(modPath).href);
+  const code = await runTigrisStorageCli(argv, ROOT);
+  process.exit(code ?? 0);
+}
+
 const COMMANDS = {
   version: () => {
     showBoot();
@@ -105,6 +112,7 @@ const COMMANDS = {
       agents: stats.totalAgents,
       oneShots: stats.totalOneShots,
       featured: stats.totalFeatured,
+      premiere: stats.premiereAgent || 'elizero',
       templates: stats.totalTemplates,
       categories: stats.byCategory ? Object.keys(stats.byCategory) : [],
       hub,
@@ -209,6 +217,10 @@ const COMMANDS = {
   // knowledge — init/upload/inject personal knowledge/ folders (clawd-character.md shaped)
   knowledge: (argv) => runKnowledge(argv),
 
+  // storage — Tigris object store + event-driven agent handoffs (no polling)
+  storage: (argv) => runStorage(argv),
+  tigris: (argv) => runStorage(argv),
+
   serve: () => {
     const port = parseInt(process.argv[3] || process.env.PORT || '3000', 10);
     const PUBLIC = path.join(ROOT, 'public');
@@ -291,6 +303,9 @@ ${BOLD}Usage:${RESET}
   ${CYAN}npx cheshire-terminal-agents knowledge list${RESET}  List package knowledge corpus
   ${CYAN}npx cheshire-terminal-agents knowledge init --from clawd --out ./my-knowledge${RESET}
   ${CYAN}npx cheshire-terminal-agents knowledge upload ./notes.md --out ./my-knowledge${RESET}
+  ${CYAN}npx cheshire-terminal-agents storage status${RESET}    Tigris agent storage + handoff status
+  ${CYAN}npx cheshire-terminal-agents storage handoff --from elizero --to hedgedna --file ./report.json${RESET}
+  ${CYAN}npx cheshire-terminal-agents storage webhook --port 8788${RESET}
   ${CYAN}npx cheshire-terminal-agents registry${RESET}     Print registry index
   ${CYAN}npx cheshire-terminal-agents schema${RESET}       Show agent schema info
   ${CYAN}npx cheshire-terminal-agents --help${RESET}       Show this help
@@ -328,7 +343,13 @@ ${BOLD}Knowledge folder (upload your own):${RESET}
   3. ${CYAN}ct-agents knowledge inject ./my-knowledge${RESET} — write ${MAGENTA}.grok/rules/knowledge-inject.md${RESET}
   4. Package corpus lives in ${MAGENTA}knowledge/${RESET} (JSONL + character markdown)
 
-${BOLD}Product hubs (this package ↔ site):${RESET}
+${BOLD}Tigris storage (event-driven handoffs, no polling):${RESET}
+  1. ${CYAN}ct-agents storage provision --agent elizero --url https://host/webhook${RESET} — bucket + notification rule
+  2. ${CYAN}ct-agents storage put --from elizero --file ./report.json${RESET} — writer PutObject
+  3. ${CYAN}ct-agents storage webhook --port 8788${RESET} — Tigris POSTs here; watcher GetObject
+  4. ${CYAN}ct-agents storage handoff --from elizero --to hedgedna --file ./report.json${RESET} — envelope under ${MAGENTA}handoffs/${RESET}
+
+
   ${MAGENTA}https://cheshireterminal.ai/agents${RESET}              Agent hub (this npm package)
   ${MAGENTA}https://cheshireterminal.ai/cli${RESET}                 Site CLI hub (cheshire-terminal-cli)
   ${MAGENTA}https://cheshireterminal.ai/eliza-agents${RESET}        Eliza studio
@@ -363,6 +384,8 @@ if (!cmd) {
   await runDna(args.slice(1));
 } else if (cmd === 'knowledge') {
   await runKnowledge(args.slice(1));
+} else if (cmd === 'storage' || cmd === 'tigris') {
+  await runStorage(args.slice(1));
 } else if (COMMANDS[cmd]) {
   const result = COMMANDS[cmd](args.slice(1));
   if (result && typeof result.then === 'function') await result;

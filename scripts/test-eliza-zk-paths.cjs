@@ -30,6 +30,8 @@ ok(exists("eliza-agents/characters"), "eliza-agents/characters directory");
 
 if (exists("eliza-agents/catalog.json")) {
   const cat = readJson("eliza-agents/catalog.json");
+  ok(cat.premiereCharacter === "elizero", "catalog.premiereCharacter is elizero");
+  ok(Array.isArray(cat.characters) && cat.characters[0]?.id === "elizero", "eliZERO leads eliza character list");
   ok(typeof cat.elizaFork === "string" && cat.elizaFork.includes("Solizardking/eliza"), "catalog.elizaFork");
   ok(typeof cat.agentsRepo === "string" && cat.agentsRepo.includes("Solizardking/agents"), "catalog.agentsRepo");
   ok(cat.openSource && cat.openSource.github, "catalog.openSource.github present");

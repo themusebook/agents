@@ -80,10 +80,38 @@
       "label": "Pump.fun",
       "description": "Launch + lifecycle skills.",
       "skills": ["pumpfun", "pump-token-lifecycle", "pump-bonding-curve"]
+    },
+    "tigris": {
+      "label": "Tigris agent storage",
+      "description": "Clawd writer→watcher handoffs plus official Tigris skills.sh playbooks. Sparse-install tigris-agent-storage here; restore official bodies with npx skills add.",
+      "skills": ["tigris-agent-storage"],
+      "browse": "https://skills.sh/tigrisdata/skills",
+      "installOfficial": "npx skills add tigrisdata/skills --skill '*' --agent cursor -y --copy",
+      "lockfile": "skills-lock.json",
+      "contextFile": "TIGRIS.md",
+      "officialSkills": [
+        "tigris-sdk-guide",
+        "tigris-object-operations",
+        "file-storage",
+        "tigris-image-optimization",
+        "tigris-static-assets",
+        "tigris-bucket-management",
+        "tigris-lifecycle-management",
+        "tigris-security-access-control",
+        "tigris-snapshots-forking",
+        "tigris-snapshots-recovery",
+        "tigris-s3-migration",
+        "tigris-backup-export",
+        "tigris-egress-optimizer",
+        "tigris-agent-kit",
+        "tigris-python-sdk",
+        "openclaw-backup"
+      ]
     }
   },
   "notes": [
     "This package does NOT vendor the 595 Skill Hub bodies.",
+    "Official Tigris skills come from tigrisdata/skills (skills.sh), not skillhub-main. See pack tigris.installOfficial and TIGRIS.md.",
     "ct-agents skills (TTY) opens the multi-select TUI/REPL — pick skills without bloat.",
     "ct-agents skills list|search uses the remote catalog (cached).",
     "ct-agents design --skills a,b only attaches references by default.",

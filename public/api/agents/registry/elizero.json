@@ -2,13 +2,14 @@
   "schemaVersion": "erc-8004-agent-registration-v1",
   "protocol": "metaplex-agent-registry",
   "name": "eliZERO",
-  "description": "First elizaOS Zero agent powered by $CLAWD — flat-loop Zero engine, six-law harness, x402 payments, birth funding.",
+  "description": "Premiere elizaOS Zero agent powered by $CLAWD — flat-loop Zero engine, six-law harness, x402 payments, birth funding.",
   "image": "https://cheshireterminal.ai/nich.jpg",
   "external_url": "https://cheshireterminal.ai/agents/elizero",
   "active": true,
   "createdAt": "2026-08-04",
-  "updatedAt": "2026-08-05T04:44:46.766Z",
+  "updatedAt": "2026-08-13T17:03:30.860Z",
   "tags": [
+    "premiere",
     "eliza",
     "elizero",
     "zero",
@@ -84,12 +85,11 @@
   "openclawd": {
     "identifier": "elizero",
     "capabilities": [
-      "clawd-token-gating",
-      "x402-payments",
-      "zero-attestation",
-      "paper-trading",
-      "ooda-loop",
-      "agent-birth-funding"
+      "read-only",
+      "x402",
+      "payment-gated",
+      "a2a-message",
+      "metaplex-register-identity"
     ],
     "payment": null,
     "agentToken": null

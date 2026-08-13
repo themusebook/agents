@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "skills": {
+    "conventional-commits": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/conventional-commits/SKILL.md",
+      "computedHash": "306552bc23618f5d446b8a4448cb5f32daa25d68ae1e47230aaa698f62c553d4"
+    },
+    "file-storage": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/file-storage/SKILL.md",
+      "computedHash": "ae6888dd3be6fa7eebd3952a539b944dbfec86c2a4318b29273deaec2926ed72"
+    },
+    "go-table-driven-tests": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/go-table-driven-tests/SKILL.md",
+      "computedHash": "f549bddc1cc8b5a1c2910f8e2affd997d35c6f848a13fed0d21ea6796c683577"
+    },
+    "openclaw-backup": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/openclaw-backup/SKILL.md",
+      "computedHash": "5ec4029571b6ce73383dade55a6fb5f8186ac4ee4ddff63b9d7358d72db2eb94"
+    },
+    "tigris-agent-kit": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-agent-kit/SKILL.md",
+      "computedHash": "e84192cf18d8792a47ed4ddc5bead91ce121973c94bdb85586b0fd830e8d7c5b"
+    },
+    "tigris-backup-export": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-backup-export/SKILL.md",
+      "computedHash": "c2d01c9a9a3feb92b307f0546f984a0944b24f5e255adde55e4df734ac766be6"
+    },
+    "tigris-bucket-management": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-bucket-management/SKILL.md",
+      "computedHash": "815258a09357925254f35f1e429a934ff66e74cb91589ee85b4c3d427529f1ea"
+    },
+    "tigris-egress-optimizer": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-egress-optimizer/SKILL.md",
+      "computedHash": "172ef78b1c9a9bdf48a7d626a44a5e8c37673d89aec1204f066bb8d68b0ace90"
+    },
+    "tigris-image-optimization": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-image-optimization/SKILL.md",
+      "computedHash": "adb42ffc4117e53197d402cb6aa3b11f99843579ea1fb944eeda04f680c6ff08"
+    },
+    "tigris-lifecycle-management": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-lifecycle-management/SKILL.md",
+      "computedHash": "5a7ca6f46a0c872486ff377bd2bb1a89df1122236843b13d02d5c13f902131cd"
+    },
+    "tigris-object-operations": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-object-operations/SKILL.md",
+      "computedHash": "5bb9180d39e0e5e39d228e28c7db5762bd4a86f34d85c92829a512a2e53ac27d"
+    },
+    "tigris-python-sdk": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-python-sdk/SKILL.md",
+      "computedHash": "c913c230a64de9fffb4082dabc8bc5b6bfe35cdbb9cee0045598affdc254d661"
+    },
+    "tigris-s3-migration": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-s3-migration/SKILL.md",
+      "computedHash": "2d19297b22e94bcb4e9b4001412f00044613dde12583abd4c9532e23594012cf"
+    },
+    "tigris-sdk-guide": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-sdk-guide/SKILL.md",
+      "computedHash": "b421a62389fa59c11c60d2d2d98bc31eda8caab03a4c490e01375635f45cfbad"
+    },
+    "tigris-security-access-control": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-security-access-control/SKILL.md",
+      "computedHash": "b48aaecb389ea9d475f58c63e42fbc47a35c34aa89e792e66b5c9de2b606f3a4"
+    },
+    "tigris-snapshots-forking": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-snapshots-forking/SKILL.md",
+      "computedHash": "f6172d06e3e4b12f9a8c34b299d75f446625cc8e50e8958a417e2b0768da3f2a"
+    },
+    "tigris-snapshots-recovery": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-snapshots-recovery/SKILL.md",
+      "computedHash": "f5a35dedce23c1ac7b7618f5dab4128f9979065c2164e8f567e153b793bdc5e6"
+    },
+    "tigris-static-assets": {
+      "source": "tigrisdata/skills",
+      "sourceType": "github",
+      "skillPath": "skills/tigris-static-assets/SKILL.md",
+      "computedHash": "a77f023e29b92bb6e298a8baa75db9c7b0267aa2e00ef0ce98f796dfd36d4862"
+    }
+  }
+}
