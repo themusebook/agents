@@ -13,7 +13,11 @@
       "agents": "https://cheshireterminal.ai/agents",
       "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
       "cli": "https://cheshireterminal.ai/cli",
-      "skills": "https://cheshireterminal.ai/skills"
+      "skills": "https://cheshireterminal.ai/skills",
+      "skillsStore": "https://cheshireterminal.ai/skills-store",
+      "arena": "https://cheshireterminal.ai/arena",
+      "registry": "https://cheshireterminal.ai/registry",
+      "mcp": "https://cheshireterminal.ai/mcp"
     },
     "github": {
       "agents": "https://github.com/Solizardking/agents",
@@ -27,7 +31,19 @@
     "local": {
       "skillhub": "../skillhub-main",
       "skillsDir": "../skillhub-main/skills",
-      "robinhoodAgents": "../cheshire-terminal-main/robinhood-agents"
+      "robinhoodAgents": "../cheshire-terminal-main/robinhood-agents",
+      "cheshireTerminal": "../cheshire-terminal-main",
+      "surfaces": {
+        "skills": "../cheshire-terminal-main/skills",
+        "skillsStore": "../cheshire-terminal-main/skills-store",
+        "agents": "../cheshire-terminal-main/agents",
+        "client": "../cheshire-terminal-main/client",
+        "mcpServer": "../cheshire-terminal-main/mcp-server",
+        "registry": "../cheshire-terminal-main/registry",
+        "agentArena": "../cheshire-terminal-main/agent-arena",
+        "agentArenaSkill": "../cheshire-terminal-main/agent-arena-skill",
+        "cli": "../cheshire-terminal-main/cli"
+      }
     },
     "repos": [
       {

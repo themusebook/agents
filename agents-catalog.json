@@ -1,7 +1,7 @@
 {
   "$schema": "https://cheshireterminal.ai/schema/clawdAgentCatalog.v1.json",
   "apiVersion": "1.0",
-  "generatedAt": "2026-08-13T19:14:33.373Z",
+  "generatedAt": "2026-08-13T19:43:05.882Z",
   "hub": {
     "gallery": "https://cheshireterminal.ai/agents",
     "agents": "https://cheshireterminal.ai/agents",
@@ -12,7 +12,14 @@
     "skills": "https://cheshireterminal.ai/skills",
     "registry": "https://cheshireterminal.ai/api/agents/registry",
     "api": "https://cheshireterminal.ai/api/agents",
-    "catalog": "https://cheshireterminal.ai/api/agents/catalog"
+    "catalog": "https://cheshireterminal.ai/api/agents/catalog",
+    "memory": {
+      "source": "membrain",
+      "package": "packages/membrain",
+      "grpc": "localhost:9090",
+      "http": "http://127.0.0.1:9091",
+      "cli": "ct-agents memory"
+    }
   },
   "stats": {
     "totalAgents": 139,
@@ -20,6 +27,7 @@
     "totalFeatured": 7,
     "totalTemplates": 5,
     "premiereAgent": "elizero",
+    "memorySource": "membrain",
     "byCategory": {
       "orchestration": 1,
       "defi": 62,

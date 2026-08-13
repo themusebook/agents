@@ -2,6 +2,17 @@
 
 Skills define *how* tools work. This file is for *your* specifics — the stuff that's unique to your setup.
 
+## Membrain memory (default source)
+
+```bash
+ct-agents memory status
+ct-agents memory ingest --summary "session note"
+ct-agents memory retrieve --query "what did we decide"
+ct-agents memory context
+```
+
+Env: `MEMBRAIN_ADAPTER=file|memory|live` · `MEMBRAIN_HTTP_URL` · `MEMBRAIN_GRPC`
+
 ## What Goes Here
 
 Things like:

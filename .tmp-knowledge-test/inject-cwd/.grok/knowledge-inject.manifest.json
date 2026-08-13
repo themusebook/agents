@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-05T04:44:14.714Z",
-  "packageRoot": "/Users/8bit/agents/agents",
-  "cwd": "/Users/8bit/agents/agents/.tmp-knowledge-test/inject-cwd",
+  "generatedAt": "2026-08-13T19:45:45.640Z",
+  "packageRoot": "/Users/8bit/solana-clawd-agent-kit-2/agents",
+  "cwd": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/inject-cwd",
   "inputPaths": [
-    "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge"
+    "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge"
   ],
   "sourceCount": 16,
   "okCount": 16,
   "factCount": 18,
   "excerptCount": 4,
-  "rulesPath": "/Users/8bit/agents/agents/.tmp-knowledge-test/inject-cwd/.grok/rules/knowledge-inject.md",
+  "rulesPath": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/inject-cwd/.grok/rules/knowledge-inject.md",
   "dryRun": false,
   "sources": [
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/README.md",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/README.md",
       "relative": "../user-knowledge/README.md",
       "ok": true,
       "reason": ".md",
@@ -21,7 +21,7 @@
       "textBytes": 1341
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/anti-patterns.jsonl",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/anti-patterns.jsonl",
       "relative": "../user-knowledge/anti-patterns.jsonl",
       "ok": true,
       "reason": "jsonl",
@@ -29,7 +29,7 @@
       "textBytes": 0
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/api-behaviors.jsonl",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/api-behaviors.jsonl",
       "relative": "../user-knowledge/api-behaviors.jsonl",
       "ok": true,
       "reason": "jsonl",
@@ -37,7 +37,7 @@
       "textBytes": 0
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/architecture-pieces.md",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/architecture-pieces.md",
       "relative": "../user-knowledge/architecture-pieces.md",
       "ok": true,
       "reason": ".md",
@@ -45,7 +45,7 @@
       "textBytes": 499
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/clawd-character.md",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/clawd-character.md",
       "relative": "../user-knowledge/clawd-character.md",
       "ok": true,
       "reason": ".md",
@@ -53,7 +53,7 @@
       "textBytes": 4994
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/codebase-facts.jsonl",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/codebase-facts.jsonl",
       "relative": "../user-knowledge/codebase-facts.jsonl",
       "ok": true,
       "reason": "jsonl",
@@ -61,7 +61,7 @@
       "textBytes": 0
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/decisions.jsonl",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/decisions.jsonl",
       "relative": "../user-knowledge/decisions.jsonl",
       "ok": true,
       "reason": "jsonl",
@@ -69,7 +69,7 @@
       "textBytes": 0
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/facts.jsonl",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/facts.jsonl",
       "relative": "../user-knowledge/facts.jsonl",
       "ok": true,
       "reason": "jsonl",
@@ -77,7 +77,7 @@
       "textBytes": 0
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/gotchas.jsonl",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/gotchas.jsonl",
       "relative": "../user-knowledge/gotchas.jsonl",
       "ok": true,
       "reason": "jsonl",
@@ -85,7 +85,7 @@
       "textBytes": 0
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/knowledge-banner.svg",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/knowledge-banner.svg",
       "relative": "../user-knowledge/knowledge-banner.svg",
       "ok": true,
       "reason": ".svg",
@@ -93,7 +93,7 @@
       "textBytes": 7461
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/knowledge-inject-flow.svg",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/knowledge-inject-flow.svg",
       "relative": "../user-knowledge/knowledge-inject-flow.svg",
       "ok": true,
       "reason": ".svg",
@@ -101,7 +101,7 @@
       "textBytes": 3476
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/knowledge.manifest.json",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/knowledge.manifest.json",
       "relative": "../user-knowledge/knowledge.manifest.json",
       "ok": true,
       "reason": "json",
@@ -109,7 +109,7 @@
       "textBytes": 551
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/patterns.jsonl",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/patterns.jsonl",
       "relative": "../user-knowledge/patterns.jsonl",
       "ok": true,
       "reason": "jsonl",
@@ -117,15 +117,15 @@
       "textBytes": 0
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/upload.manifest.json",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/upload.manifest.json",
       "relative": "../user-knowledge/upload.manifest.json",
       "ok": true,
       "reason": "json",
       "factCount": 0,
-      "textBytes": 806
+      "textBytes": 914
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/uploads/extra-facts.jsonl",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/uploads/extra-facts.jsonl",
       "relative": "../user-knowledge/uploads/extra-facts.jsonl",
       "ok": true,
       "reason": "jsonl",
@@ -133,7 +133,7 @@
       "textBytes": 0
     },
     {
-      "path": "/Users/8bit/agents/agents/.tmp-knowledge-test/user-knowledge/uploads/operator-notes.md",
+      "path": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/user-knowledge/uploads/operator-notes.md",
       "relative": "../user-knowledge/uploads/operator-notes.md",
       "ok": true,
       "reason": ".md",
@@ -161,5 +161,5 @@
     "pattern-d43d39a3",
     "fact-upload-001"
   ],
-  "hash": "446b8d3db65dcbe582052f0b9f0f5589b70921fd5063d8b440c2a32453446317"
+  "hash": "248682683bd724b58fc1ab87fb375a9e08ad650f2798244550908662274608fa"
 }

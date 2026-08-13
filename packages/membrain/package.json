@@ -1,0 +1,16 @@
+{
+  "name": "@cheshire/membrain",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Membrain selective memory daemon (Go) + catalog agent host. Source of truth for JS: robinhood-src/membrainMemory.js",
+  "exports": {
+    ".": "../../robinhood-src/membrainMemory.js"
+  },
+  "scripts": {
+    "test": "node ../../scripts/test-membrain-memory.cjs"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}

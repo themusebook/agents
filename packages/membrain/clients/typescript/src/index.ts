@@ -1,0 +1,48 @@
+export {
+  MembraneClient,
+  type IngestEventOptions,
+  type IngestObservationOptions,
+  type IngestOutcomeOptions,
+  type IngestToolOutputOptions,
+  type IngestWorkingStateOptions,
+  type MembraneClientOptions,
+  type RetrieveOptions
+} from "./client";
+export { MembraneError, type MembraneErrorOptions } from "./internal/grpc";
+
+export {
+  AuditAction,
+  DecayCurve,
+  DeletionPolicy,
+  EdgeKind,
+  MemoryType,
+  OutcomeStatus,
+  ProvenanceKind,
+  RevisionStatus,
+  Sensitivity,
+  TaskState,
+  ValidityMode,
+  createDefaultTrustContext,
+  type AuditAction as AuditActionType,
+  type AuditEntry,
+  type DecayCurve as DecayCurveType,
+  type DecayProfile,
+  type DeletionPolicy as DeletionPolicyType,
+  type EdgeKind as EdgeKindType,
+  type JsonObject,
+  type Lifecycle,
+  type MemoryRecord,
+  type MemoryType as MemoryTypeType,
+  type OutcomeStatus as OutcomeStatusType,
+  type Provenance,
+  type ProvenanceKind as ProvenanceKindType,
+  type ProvenanceSource,
+  type Relation,
+  type RetrieveResult,
+  type RevisionStatus as RevisionStatusType,
+  type SelectionResult,
+  type Sensitivity as SensitivityType,
+  type TaskState as TaskStateType,
+  type TrustContext,
+  type ValidityMode as ValidityModeType
+} from "./types";

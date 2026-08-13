@@ -26,6 +26,7 @@
 
 **Corpus:** this directory ·
 **Inject:** [`npm run knowledge:inject`](../package.json) ·
+**Runtime memory:** [`ct-agents memory`](../robinhood-src/membrainMemory.js) (Membrain) ·
 **Upload your own:** [`ct-agents knowledge init|upload|inject`](../robinhood-src/knowledgeUpload.js) ·
 **Rules out:** [`.grok/rules/knowledge-inject.md`](../.grok/rules/knowledge-inject.md) ·
 **Pipeline:** [`scripts/knowledge-inject.mjs`](../scripts/knowledge-inject.mjs) ·

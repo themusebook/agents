@@ -26,6 +26,35 @@ DNA lives in `agents/elizero/` (character, clawd-power, IDENTITY/SOUL/USER/TOOLS
 Hub entry: `agents/elizero.json`. Validate: `node agents/elizero/validate.mjs`.  
 Mint: `8cHzQHUS2s2h8TzCmfqPKYiM4dSt4roa3n7MyRLApump`. Do not invent decimals.
 
+## Membrain (default agent memory)
+
+Selective memory for catalog agents lives in `packages/membrain` (Go daemon + TS/Python/OpenClawd clients).  
+Node host: `robinhood-src/membrainMemory.js`. CLI: `ct-agents memory`.  
+Runtime default: every agent uses Membrain unless `config.memory.source` is `"none"`.  
+JSON HTTP `:9091` for JS agents; gRPC `:9090` for native clients. File adapter: `.membrain-agent-store/`.
+
+Validate daemon: `make -C packages/membrain test`. Host tests: `npm run test:membrain`.
+
+## Cheshire Terminal (local product checkout)
+
+Resolve the sibling app when present — do not vendor it:
+
+`../cheshire-terminal-main` (override with `CLAWD_CHESHIRE_TERMINAL_ROOT`)
+
+Surfaces this package talks to:
+
+- `skills/` · `skills-store/`
+- `agents/` · `client/`
+- `mcp-server/` · `registry/`
+- `robinhood-agents/`
+- `agent-arena/` · `agent-arena-skill/`
+- `cli/`
+
+CLI: `ct-agents connect` · `ct-agents acp` · `ct-agents a2a`
+
+ACP well-known: `public/.well-known/acp.json`  
+A2A premiere server: eliZERO at `/a2a/elizero` (HTTP+JSON). Client peers: eliZERO, ZK Shark, Cheshire Terminal.
+
 ## Robinhood agents (local forge checkout)
 
 Use the full dual-rail forge tree when present — do not copy it into this package:

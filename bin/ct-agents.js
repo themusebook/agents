@@ -92,6 +92,27 @@ async function runStorage(argv) {
   process.exit(code ?? 0);
 }
 
+async function runMemory(argv) {
+  const modPath = path.join(ROOT, 'robinhood-src', 'membrainMemory.js');
+  const { runMembrainCli } = await import(pathToFileURL(modPath).href);
+  const code = await runMembrainCli(argv, ROOT);
+  process.exit(code ?? 0);
+}
+
+async function runAcp(argv) {
+  const modPath = path.join(ROOT, 'robinhood-src', 'acp.js');
+  const { runAcpCli } = await import(pathToFileURL(modPath).href);
+  const code = await runAcpCli(argv, ROOT);
+  process.exit(code ?? 0);
+}
+
+async function runA2a(argv) {
+  const modPath = path.join(ROOT, 'robinhood-src', 'a2a.js');
+  const { runA2aCli } = await import(pathToFileURL(modPath).href);
+  const code = await runA2aCli(argv, ROOT);
+  process.exit(code ?? 0);
+}
+
 const COMMANDS = {
   version: () => {
     showBoot();
@@ -129,7 +150,11 @@ const COMMANDS = {
   },
 
   /** Print product hubs + GitHub sources (wired to /agents, /skills, /cli). */
-  connect: () => {
+  connect: async () => {
+    const { cheshireTerminalConnectInfo } = await import(
+      pathToFileURL(path.join(ROOT, 'robinhood-src', 'cheshireTerminalRoot.js')).href
+    );
+    const ct = cheshireTerminalConnectInfo(ROOT);
     const oss = loadOssMap() || {
       productHubs: {
         agents: 'https://cheshireterminal.ai/agents',
@@ -151,7 +176,7 @@ const COMMANDS = {
     console.log(JSON.stringify({
       package: pkg.name,
       version: pkg.version,
-      productHubs: oss.productHubs,
+      productHubs: { ...ct.productHubs, ...oss.productHubs },
       github: oss.github,
       skills: {
         product: oss.productHubs?.skills || 'https://cheshireterminal.ai/skills',
@@ -184,6 +209,25 @@ const COMMANDS = {
         deployments: 'deployments/',
         contracts: 'contracts/',
         env: 'CLAWD_ROBINHOOD_AGENTS_ROOT',
+      },
+      cheshireTerminal: {
+        product: ct.product,
+        github: ct.github,
+        local: ct.local,
+        resolved: ct.resolved,
+        env: ct.env,
+        surfaces: ct.surfaces,
+      },
+      acp: oss.protocols?.acp || {
+        wellKnown: 'https://cheshireterminal.ai/.well-known/acp.json',
+        local: 'public/.well-known/acp.json',
+        cli: 'ct-agents acp',
+      },
+      a2a: oss.protocols?.a2a || {
+        elizero: 'https://cheshireterminal.ai/a2a/elizero',
+        zkShark: 'https://cheshireterminal.ai/a2a/zk-shark',
+        productCard: 'https://cheshireterminal.ai/.well-known/agent-card.json',
+        cli: 'ct-agents a2a',
       },
       map: 'open-source-connection-map.json',
     }, null, 2));
@@ -248,7 +292,15 @@ const COMMANDS = {
   storage: (argv) => runStorage(argv),
   tigris: (argv) => runStorage(argv),
 
-  serve: () => {
+  // memory — Membrain selective memory (default source for catalog agents)
+  memory: (argv) => runMemory(argv),
+  membrain: (argv) => runMemory(argv),
+
+  // acp / a2a — Agent Commerce Protocol + Agent-to-Agent HTTP+JSON
+  acp: (argv) => runAcp(argv),
+  a2a: (argv) => runA2a(argv),
+
+  serve: async () => {
     const port = parseInt(process.argv[3] || process.env.PORT || '3000', 10);
     const PUBLIC = path.join(ROOT, 'public');
 
@@ -262,7 +314,20 @@ const COMMANDS = {
       '.png': 'image/png',
     };
 
-    const server = http.createServer((req, res) => {
+    const { handleProtocolRequest } = await import(
+      pathToFileURL(path.join(ROOT, 'robinhood-src', 'protocolHttp.js')).href
+    );
+
+    const server = http.createServer(async (req, res) => {
+      try {
+        const handled = await handleProtocolRequest(req, res, { root: ROOT });
+        if (handled) return;
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: err instanceof Error ? err.message : String(err) }));
+        return;
+      }
+
       let url = req.url.split('?')[0];
       if (url === '/') url = '/api/agents/index.json';
       if (url === '/api/agents') url = '/api/agents/index.json';
@@ -301,6 +366,10 @@ const COMMANDS = {
     console.log(`${CYAN}  http://localhost:${port}/api/agents/templates${RESET}`);
     console.log(`${CYAN}  http://localhost:${port}/skills-picker.html${RESET}  ${DIM}# multi-select skills (no bloat)${RESET}`);
     console.log(`${CYAN}  http://localhost:${port}/.well-known/acp.json${RESET}`);
+    console.log(`${CYAN}  http://localhost:${port}/.well-known/agent-card.json${RESET}  ${DIM}# A2A product card${RESET}`);
+    console.log(`${CYAN}  http://localhost:${port}/a2a/elizero/.well-known/agent-card.json${RESET}`);
+    console.log(`${CYAN}  http://localhost:${port}/api/agents/acp${RESET}  ${DIM}# ACP discovery${RESET}`);
+    console.log(`${CYAN}  http://localhost:${port}/api/a2a/peers${RESET}`);
     console.log(`${DIM}  design locally: ct-agents design · skills TUI: ct-agents skills pick${RESET}\n`);
 
     server.listen(port, () => {
@@ -333,6 +402,12 @@ ${BOLD}Usage:${RESET}
   ${CYAN}npx cheshire-terminal-agents storage status${RESET}    Tigris agent storage + handoff status
   ${CYAN}npx cheshire-terminal-agents storage handoff --from elizero --to hedgedna --file ./report.json${RESET}
   ${CYAN}npx cheshire-terminal-agents storage webhook --port 8788${RESET}
+  ${CYAN}npx cheshire-terminal-agents memory status${RESET}     Membrain memory (default source)
+  ${CYAN}npx cheshire-terminal-agents memory ingest --agent elizero --summary "…"${RESET}
+  ${CYAN}npx cheshire-terminal-agents memory retrieve --agent elizero --query "SOL swap"${RESET}
+  ${CYAN}npx cheshire-terminal-agents acp${RESET}           ACP discovery (well-known + catalog)
+  ${CYAN}npx cheshire-terminal-agents a2a${RESET}           A2A card + peers (eliZERO premiere)
+  ${CYAN}npx cheshire-terminal-agents a2a send --text "who are you"${RESET}
   ${CYAN}npx cheshire-terminal-agents registry${RESET}     Print registry index
   ${CYAN}npx cheshire-terminal-agents schema${RESET}       Show agent schema info
   ${CYAN}npx cheshire-terminal-agents --help${RESET}       Show this help
@@ -376,6 +451,16 @@ ${BOLD}Tigris storage (event-driven handoffs, no polling):${RESET}
   3. ${CYAN}ct-agents storage webhook --port 8788${RESET} — Tigris POSTs here; watcher GetObject
   4. ${CYAN}ct-agents storage handoff --from elizero --to hedgedna --file ./report.json${RESET} — envelope under ${MAGENTA}handoffs/${RESET}
 
+${BOLD}Membrain memory (default source for catalog agents):${RESET}
+  1. ${CYAN}ct-agents memory status${RESET} — adapter + daemon + record counts
+  2. ${CYAN}ct-agents memory ingest --agent elizero --summary "swap filled"${RESET} — episodic event
+  3. ${CYAN}ct-agents memory retrieve --agent elizero --query "evaluate SOL swap"${RESET}
+  4. ${CYAN}ct-agents memory start${RESET} — run ${MAGENTA}packages/membrain${RESET} daemon (gRPC :9090, JSON HTTP :9091)
+
+${BOLD}ACP + A2A:${RESET}
+  ${CYAN}ct-agents acp${RESET} / ${CYAN}acp discover${RESET} / ${CYAN}acp list${RESET} / ${CYAN}acp show elizero${RESET}
+  ${CYAN}ct-agents a2a${RESET} / ${CYAN}a2a peers${RESET} / ${CYAN}a2a send --text "who are you"${RESET}
+  Local HTTP: ${CYAN}ct-agents serve${RESET} then ${MAGENTA}/.well-known/acp.json${RESET} · ${MAGENTA}/a2a/elizero${RESET}
 
   ${MAGENTA}https://cheshireterminal.ai/agents${RESET}              Agent hub (this npm package)
   ${MAGENTA}https://cheshireterminal.ai/cli${RESET}                 Site CLI hub (cheshire-terminal-cli)
@@ -413,6 +498,12 @@ if (!cmd) {
   await runKnowledge(args.slice(1));
 } else if (cmd === 'storage' || cmd === 'tigris') {
   await runStorage(args.slice(1));
+} else if (cmd === 'memory' || cmd === 'membrain') {
+  await runMemory(args.slice(1));
+} else if (cmd === 'acp') {
+  await runAcp(args.slice(1));
+} else if (cmd === 'a2a') {
+  await runA2a(args.slice(1));
 } else if (COMMANDS[cmd]) {
   const result = COMMANDS[cmd](args.slice(1));
   if (result && typeof result.then === 'function') await result;

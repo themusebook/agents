@@ -116,6 +116,13 @@
         "tigris-python-sdk",
         "openclaw-backup"
       ]
+    },
+    "membrain": {
+      "label": "Membrain memory",
+      "description": "Default selective memory source for catalog agents. Typed ingest, retrieve, auto-context. Daemon in packages/membrain.",
+      "skills": ["membrain-memory"],
+      "cli": "ct-agents memory",
+      "package": "packages/membrain"
     }
   },
   "notes": [

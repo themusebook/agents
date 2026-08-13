@@ -57,6 +57,13 @@ async function main() {
   assert.equal(conn.skills.agentsGithub, 'https://github.com/Solizardking/agents');
   assert.equal(conn.github.robinhoodAgents, 'https://github.com/Solizardking/robinhood-agents');
   assert.match(conn.robinhood.local, /robinhood-agents/);
+  assert.ok(conn.cheshireTerminal?.surfaces?.agentArena, 'connect lists agent-arena');
+  assert.ok(conn.cheshireTerminal?.surfaces?.agentArenaSkill, 'connect lists agent-arena-skill');
+  assert.ok(conn.cheshireTerminal?.surfaces?.registry, 'connect lists registry');
+  assert.ok(conn.cheshireTerminal?.surfaces?.cli, 'connect lists cli');
+  assert.equal(conn.acp.cli, 'ct-agents acp');
+  assert.equal(conn.a2a.cli, 'ct-agents a2a');
+  assert.equal(conn.productHubs.arena, 'https://cheshireterminal.ai/arena');
 
   // skills-picker.html exists for serve
   const fs = require('fs');

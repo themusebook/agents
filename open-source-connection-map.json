@@ -1,11 +1,15 @@
 {
-  "version": "1.1.0",
-  "description": "Canonical OSS ↔ product hub connection map for cheshire-terminal-agents. /agents and /eliza-agents stay wired to Solizardking GitHub repos; /skills is wired to Solizardking/skills + skillhub-main (local checkout when present).",
+  "version": "1.2.0",
+  "description": "Canonical OSS ↔ product hub connection map for cheshire-terminal-agents. Product hubs include /agents, /cli, /eliza-agents, /skills, /skills-store, /arena, /registry, /mcp. Local cheshire-terminal-main surfaces are resolved when present (not vendored). ACP + A2A live in this package.",
   "productHubs": {
     "agents": "https://cheshireterminal.ai/agents",
     "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
     "cli": "https://cheshireterminal.ai/cli",
-    "skills": "https://cheshireterminal.ai/skills"
+    "skills": "https://cheshireterminal.ai/skills",
+    "skillsStore": "https://cheshireterminal.ai/skills-store",
+    "arena": "https://cheshireterminal.ai/arena",
+    "registry": "https://cheshireterminal.ai/registry",
+    "mcp": "https://cheshireterminal.ai/mcp"
   },
   "github": {
     "agents": "https://github.com/Solizardking/agents",
@@ -21,7 +25,36 @@
     "skillsDir": "../skillhub-main/skills",
     "env": "CLAWD_SKILLHUB_ROOT",
     "robinhoodAgents": "../cheshire-terminal-main/robinhood-agents",
-    "robinhoodAgentsEnv": "CLAWD_ROBINHOOD_AGENTS_ROOT"
+    "robinhoodAgentsEnv": "CLAWD_ROBINHOOD_AGENTS_ROOT",
+    "cheshireTerminal": "../cheshire-terminal-main",
+    "cheshireTerminalEnv": "CLAWD_CHESHIRE_TERMINAL_ROOT",
+    "membrain": "packages/membrain",
+    "membrainEnv": "MEMBRAIN_HTTP_URL",
+    "surfaces": {
+      "skills": "../cheshire-terminal-main/skills",
+      "skillsStore": "../cheshire-terminal-main/skills-store",
+      "agents": "../cheshire-terminal-main/agents",
+      "client": "../cheshire-terminal-main/client",
+      "mcpServer": "../cheshire-terminal-main/mcp-server",
+      "registry": "../cheshire-terminal-main/registry",
+      "robinhoodAgents": "../cheshire-terminal-main/robinhood-agents",
+      "agentArena": "../cheshire-terminal-main/agent-arena",
+      "agentArenaSkill": "../cheshire-terminal-main/agent-arena-skill",
+      "cli": "../cheshire-terminal-main/cli"
+    }
+  },
+  "protocols": {
+    "acp": {
+      "wellKnown": "https://cheshireterminal.ai/.well-known/acp.json",
+      "local": "public/.well-known/acp.json",
+      "cli": "ct-agents acp"
+    },
+    "a2a": {
+      "elizero": "https://cheshireterminal.ai/a2a/elizero",
+      "zkShark": "https://cheshireterminal.ai/a2a/zk-shark",
+      "productCard": "https://cheshireterminal.ai/.well-known/agent-card.json",
+      "cli": "ct-agents a2a"
+    }
   },
   "links": {
     "agentsToSkills": {

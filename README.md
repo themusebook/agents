@@ -71,6 +71,15 @@ npx cheshire-terminal-cli agents:list
 | **[cheshireterminal.ai/cli](https://cheshireterminal.ai/cli)** | Official site CLI docs / install | Companion npm: `cheshire-terminal-cli` · local map via `ct-agents connect` |
 | **[cheshireterminal.ai/eliza-agents](https://cheshireterminal.ai/eliza-agents)** | Eliza studio | `eliza-agents/` + nested `eliza/` fork |
 | **[cheshireterminal.ai/agents/forge](https://cheshireterminal.ai/agents/forge)** | Dual-chain identity forge | Design/skills/DNA surfaces in this repo |
+| **[cheshireterminal.ai/skills](https://cheshireterminal.ai/skills)** | Skill Hub | `ct-agents skills` · local `../cheshire-terminal-main/skills` |
+| **[cheshireterminal.ai/skills-store](https://cheshireterminal.ai/skills-store)** | Skills store | Local `../cheshire-terminal-main/skills-store` |
+| **[cheshireterminal.ai/arena](https://cheshireterminal.ai/arena)** | Agent arena | Local `agent-arena` + `agent-arena-skill` |
+| **[cheshireterminal.ai/registry](https://cheshireterminal.ai/registry)** | Google / MCP registry cards | Local `../cheshire-terminal-main/registry` |
+| **[cheshireterminal.ai/mcp](https://cheshireterminal.ai/mcp)** | Product MCP | Local `../cheshire-terminal-main/mcp-server` |
+| **[cheshireterminal.ai/.well-known/acp.json](https://cheshireterminal.ai/.well-known/acp.json)** | Agent Commerce Protocol | `ct-agents acp` · `ct-agents serve` |
+| **[cheshireterminal.ai/a2a/elizero](https://cheshireterminal.ai/a2a/elizero)** | A2A HTTP+JSON (eliZERO) | `ct-agents a2a` · peers: eliZERO, ZK Shark, Cheshire |
+
+Do not vendor `cheshire-terminal-main`. Override with `CLAWD_CHESHIRE_TERMINAL_ROOT`.
 
 Canonical wiring lives in [`open-source-connection-map.json`](./open-source-connection-map.json) (also exported as `cheshire-terminal-agents/open-source-connection-map`).
 
@@ -199,6 +208,11 @@ Full catalog is fetched on demand; installs pull **only** the slugs you select.
 | `ct-agents storage status` | Tigris agent storage + handoff status |
 | `ct-agents storage handoff --from elizero --to <id> --file <path>` | Writer→watcher envelope (no polling) |
 | `ct-agents storage webhook --port 8788` | Receive Tigris object notifications |
+| `ct-agents memory status` | Membrain memory (default source for catalog agents) |
+| `ct-agents memory ingest --agent elizero --summary "…"` | Write an episodic record |
+| `ct-agents memory retrieve --agent elizero --query "…"` | Trust-gated recall |
+| `ct-agents acp` / `acp discover` / `acp list` | Agent Commerce Protocol client + local server index |
+| `ct-agents a2a` / `a2a peers` / `a2a send --text "…"` | A2A HTTP+JSON (eliZERO server + Cheshire/ZK Shark client) |
 
 Official Tigris agent skills (SDK, buckets, objects, agent-kit) are **not** vendored. Restore from `skills-lock.json`:
 
@@ -238,7 +252,7 @@ npx cheshire-terminal-agents serve --port 8080
 | **Robinhood rails** | `robinhood-schema/`, `robinhood-src/`, forge skills | Unsigned intents — wallet signs elsewhere |
 | **ZK primitives** | `zk-primitives/` nullifier + compressed-state package | Circuit-gated proofs — separate from catalog prompts |
 | **REST / discovery** | `public/api/agents/*`, `.well-known/acp.json`, `ai-plugin.json` | Hosted hub is source of truth for live chain config |
-| **Nested packages** | Source under `packages/*` (TUI, headless, LZ, trust, Tigris storage) | **Private / unpublished** — not on npm |
+| **Nested packages** | Source under `packages/*` (TUI, headless, LZ, trust, Tigris storage, Membrain) | **Private / unpublished** — not on npm |
 | **Optional companion** | [`clawdbot-go`](https://www.npmjs.com/package/clawdbot-go) Zero Clawd runtime | Separate package — not a hard dependency |
 
 ```
@@ -280,6 +294,9 @@ Package-local surfaces (CLI, not HTTP):
 | DNA templates | `ct-agents dna …` | `dna/`, `characters/` |
 | Knowledge corpus | `ct-agents knowledge …` | `knowledge/` |
 | Tigris storage | `ct-agents storage …` | `robinhood-src/tigrisStorage.js` |
+| Membrain memory | `ct-agents memory …` | `robinhood-src/membrainMemory.js` · `packages/membrain` |
+| ACP | `ct-agents acp …` | `robinhood-src/acp.js` |
+| A2A | `ct-agents a2a …` | `robinhood-src/a2a.js` |
 | Suite skills | `ct-agents skills packs` | `skills/` + `skills/suite-index.json` |
 | Eliza catalog | (studio hub) | `eliza-agents/catalog.json` |
 | ZK primitives | (package) | `zk-primitives/` |
@@ -382,7 +399,10 @@ clawd-agents / cheshire-terminal-agents
 │   ├── clawd-agent-tui/
 │   ├── headless-agent/
 │   ├── layerzero-omnichain/
-│   └── solana-agent-trust/
+│   ├── membrain/        # Go memory daemon (default agent memory)
+│   ├── membrain-types/
+│   ├── solana-agent-trust/
+│   └── tigris-agent-storage/
 ├── public/
 │   ├── .well-known/     # acp.json · ai-plugin.json
 │   ├── api/agents/      # catalog · registry · templates
@@ -405,6 +425,11 @@ Primary product hubs (see `open-source-connection-map.json`):
 | Eliza agents | https://cheshireterminal.ai/eliza-agents |
 | CLI | https://cheshireterminal.ai/cli |
 | Agent forge | https://cheshireterminal.ai/agents/forge |
+| Skills | https://cheshireterminal.ai/skills |
+| Skills store | https://cheshireterminal.ai/skills-store |
+| Arena | https://cheshireterminal.ai/arena |
+| Registry | https://cheshireterminal.ai/registry |
+| MCP | https://cheshireterminal.ai/mcp |
 
 ---
 
@@ -434,7 +459,12 @@ ct-agents knowledge list
 ct-agents knowledge init --from clawd --out ./my-knowledge
 ct-agents knowledge upload ./notes.md --out ./my-knowledge
 
-# 7. Schema + local API
+# 7. Membrain memory (default source for every catalog agent)
+ct-agents memory status
+ct-agents memory ingest --agent elizero --summary "session note"
+ct-agents memory retrieve --agent elizero --query "what did we decide"
+
+# 8. Schema + local API
 ct-agents schema
 ct-agents serve --port 8080
 ```
@@ -454,7 +484,7 @@ console.log(catalog.stats) // totalAgents, totalOneShots, totalFeatured, …
 | `eliza-agents/` | Eliza studio catalog + characters → [cheshireterminal.ai/eliza-agents](https://cheshireterminal.ai/eliza-agents) |
 | `eliza/` | Nested Solizardking/eliza fork checkout |
 | `dna/` | Blank IDENTITY/SOUL/USER/TOOLS templates |
-| `knowledge/` | Injectable JSONL + markdown swarm memory |
+| `knowledge/` | Injectable JSONL + markdown swarm corpus (Membrain is runtime memory) |
 | `skills/` | Cheshire Robinhood skill suite (`suite-index.json`) |
 | `zk-primitives/` | Nullifier + compressed-state ZK package |
 | `robinhood-schema/` · `robinhood-src/` | RH agent schema + CLI loaders (design/DNA/knowledge) |
@@ -501,6 +531,7 @@ npm run validate   # schema / catalog checks
 npm test           # catalog + smoke-readme + dna + knowledge + eliza/zk paths + OSS map
 npm run catalog    # print compact stats JSON
 npm run test:dna
+npm run test:membrain
 npm run test:knowledge
 npm run test:eliza-zk
 npm run verify:oss

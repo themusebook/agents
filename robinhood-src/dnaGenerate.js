@@ -425,6 +425,17 @@ Things like:
 
 Skills are shared. Your setup is yours. Keeping them apart means you can update skills without losing your notes, and share skills without leaking infrastructure.
 
+## Membrain memory (default source)
+
+Catalog agents persist typed recall in Membrain (packages/membrain). DNA files are continuity; Membrain is retrieval.
+
+    ct-agents memory status
+    ct-agents memory ingest --agent ${profile.id || 'elizero'} --summary "session note"
+    ct-agents memory retrieve --query "what did we decide"
+    ct-agents memory context --agent ${profile.id || 'elizero'}
+
+Env: MEMBRAIN_ADAPTER=file|memory|live · MEMBRAIN_HTTP_URL · MEMBRAIN_GRPC
+
 ---
 
 Add whatever helps you do your job. This is your cheat sheet.

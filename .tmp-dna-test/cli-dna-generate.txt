@@ -1,7 +1,7 @@
 status=0
 {
   "ok": true,
-  "outDir": "/Users/8bit/agents/agents/.tmp-dna-test/cli-dna",
+  "outDir": "/Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-dna-test/cli-dna",
   "files": [
     "IDENTITY.md",
     "SOUL.md",

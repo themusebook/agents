@@ -140,6 +140,31 @@
         "knowledgeBases": {
           "type": "array",
           "items": { "$ref": "#/definitions/knowledgeBase" }
+        },
+        "memory": {
+          "type": "object",
+          "description": "Selective memory backend. Default source is Membrain (packages/membrain). Omitted agents still resolve to membrain at runtime.",
+          "additionalProperties": false,
+          "properties": {
+            "source": {
+              "type": "string",
+              "enum": ["membrain", "none"],
+              "default": "membrain"
+            },
+            "agentId": { "type": "string" },
+            "endpoint": {
+              "type": "string",
+              "description": "gRPC address for membraned (default localhost:9090)."
+            },
+            "http": {
+              "type": "string",
+              "description": "JSON HTTP URL for JS agents (default http://127.0.0.1:9091)."
+            },
+            "autoContext": { "type": "boolean", "default": true },
+            "contextLimit": { "type": "number", "minimum": 1 },
+            "minSalience": { "type": "number", "minimum": 0, "maximum": 1 },
+            "enabled": { "type": "boolean", "default": true }
+          }
         }
       }
     },

@@ -1,0 +1,132 @@
+# Membrane Python Client
+
+Python client library for the [Membrane](https://github.com/GustyCube/membrane) memory substrate.
+
+Communicates with the Membrane daemon over gRPC using the protobuf-defined
+`membrane.v1.MembraneService` contract.
+
+Several RPC fields still carry JSON-encoded payloads inside protobuf `bytes`
+fields, but the client handles that encoding internally.
+
+## Installation
+
+```bash
+pip install -e clients/python
+```
+
+Or install from the project root:
+
+```bash
+pip install -e clients/python[dev]   # includes pytest
+```
+
+## Quick Start
+
+```python
+from membrane import MembraneClient, Sensitivity, TrustContext
+
+# Connect to the running Membrane daemon
+client = MembraneClient("localhost:9090")
+
+# Ingest an event
+record = client.ingest_event(
+    event_kind="file_edit",
+    ref="src/main.py",
+    summary="Refactored authentication module",
+    sensitivity=Sensitivity.LOW,
+)
+print(f"Created record: {record.id}")
+
+# Retrieve memories relevant to a task
+trust = TrustContext(
+    max_sensitivity=Sensitivity.MEDIUM,
+    authenticated=True,
+    actor_id="agent-1",
+)
+records = client.retrieve("fix the login bug", trust=trust, limit=5)
+for r in records:
+    print(f"  [{r.type.value}] {r.id} (salience={r.salience:.2f})")
+
+# Reinforce a useful memory
+client.reinforce(record.id, actor="agent-1", rationale="Used successfully")
+
+# Clean up
+client.close()
+```
+
+### Context Manager
+
+```python
+with MembraneClient("localhost:9090") as client:
+    record = client.ingest_observation(
+        subject="user",
+        predicate="prefers",
+        obj={"language": "Python"},
+        sensitivity=Sensitivity.LOW,
+    )
+```
+
+## API Reference
+
+### Ingestion
+
+| Method | Description |
+|--------|-------------|
+| `ingest_event(event_kind, ref, ...)` | Ingest a raw event |
+| `ingest_tool_output(tool_name, ...)` | Ingest tool invocation output |
+| `ingest_observation(subject, predicate, obj, ...)` | Ingest a semantic triple |
+| `ingest_outcome(target_record_id, outcome_status, ...)` | Attach an outcome to an existing record |
+| `ingest_working_state(thread_id, state, ...)` | Ingest a working memory snapshot |
+
+### Retrieval
+
+| Method | Description |
+|--------|-------------|
+| `retrieve(task_descriptor, ...)` | Retrieve memories relevant to a task |
+| `retrieve_with_selection(task_descriptor, ...)` | Retrieve memories plus optional selector metadata |
+| `retrieve_by_id(record_id, ...)` | Retrieve a single record by ID |
+
+`retrieve()` remains the backward-compatible helper that returns only records.
+Use `retrieve_with_selection()` when you also need `{ records, selection }`.
+
+### Revision
+
+| Method | Description |
+|--------|-------------|
+| `supersede(old_id, new_record, actor, rationale)` | Replace a record with a new version |
+| `fork(source_id, forked_record, actor, rationale)` | Create a conditional variant |
+| `retract(record_id, actor, rationale)` | Soft-delete a record |
+| `merge(record_ids, merged_record, actor, rationale)` | Merge multiple records |
+| `contest(record_id, contesting_ref, actor, rationale)` | Mark a record as contested |
+
+### Reinforcement
+
+| Method | Description |
+|--------|-------------|
+| `reinforce(record_id, actor, rationale)` | Boost a record's salience |
+| `penalize(record_id, amount, actor, rationale)` | Reduce a record's salience |
+
+### Metrics
+
+| Method | Description |
+|--------|-------------|
+| `get_metrics()` | Get a snapshot of daemon metrics |
+
+## TLS & Authentication
+
+```python
+client = MembraneClient(
+    "membrane.example.com:443",
+    tls=True,                        # use TLS transport
+    tls_ca_cert="/path/to/ca.pem",   # optional custom CA
+    api_key="your-api-key",          # Bearer token auth
+    timeout=10.0,                    # default timeout in seconds
+)
+```
+
+## Requirements
+
+- Python >= 3.10
+- `grpcio >= 1.78.0`
+- `protobuf >= 6.31.1`
+- A running Membrane daemon (default: `localhost:9090`)

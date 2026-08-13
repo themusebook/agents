@@ -1,8 +1,9 @@
 status=0
 ✓ knowledge inject
-  rules: /Users/8bit/agents/agents/.tmp-knowledge-test/inject-cwd/.grok/rules/knowledge-inject.md
-  manifest: /Users/8bit/agents/agents/.tmp-knowledge-test/inject-cwd/.grok/knowledge-inject.manifest.json
+  rules: /Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/inject-cwd/.grok/rules/knowledge-inject.md
+  manifest: /Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-knowledge-test/inject-cwd/.grok/knowledge-inject.manifest.json
   ok files: 16/16
   facts: 18
   excerpts: 4
+  membrain: 18 facts → file (elizero)
 

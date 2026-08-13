@@ -6,7 +6,7 @@
   "homepage": "https://github.com/Solizardking/clawdbot-go/tree/main/agent/eliza/eliZERO",
   "summary": "Premiere elizaOS Zero agent powered by $CLAWD. Flat-loop Zero engine, six-law harness, x402 payments, and birth funding. DNA bundle: agents/elizero (character, clawd-power, IDENTITY/SOUL/USER/TOOLS). Upstream: zero-clawd/agent/eliza/eliZERO.",
   "knowledgeCount": 4,
-  "pluginCount": 7,
+  "pluginCount": 8,
   "tokenUsage": 0,
   "oneShot": true,
   "featured": true,
@@ -68,7 +68,16 @@
         "type": "file",
         "enabled": true
       }
-    ]
+    ],
+    "memory": {
+      "source": "membrain",
+      "agentId": "elizero",
+      "endpoint": "localhost:9090",
+      "http": "http://127.0.0.1:9091",
+      "autoContext": true,
+      "contextLimit": 8,
+      "minSalience": 0.3
+    }
   },
   "skills": [
     {
@@ -79,6 +88,15 @@
       "source": "local",
       "path": "agent/skills/clawd-token-ops",
       "description": "$CLAWD token gating, holder tiers, and birth funding."
+    },
+    {
+      "name": "membrain-memory",
+      "slug": "membrain-memory",
+      "enabled": true,
+      "priority": "required",
+      "source": "local",
+      "path": "skills/membrain-memory",
+      "description": "Membrain selective memory — default ingest/retrieve/context source for catalog agents."
     },
     {
       "name": "tigris-agent-storage",

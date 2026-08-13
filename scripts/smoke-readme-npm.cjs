@@ -264,6 +264,21 @@ try {
   } else {
     ok('ct-agents connect → github.com/Solizardking/skills');
   }
+  if (!conn.cheshireTerminal?.surfaces?.cli) {
+    fail('ct-agents connect missing cheshireTerminal.surfaces.cli');
+  } else {
+    ok('ct-agents connect → cheshire-terminal-main/cli');
+  }
+  if (conn.acp?.cli !== 'ct-agents acp') {
+    fail('ct-agents connect missing acp.cli');
+  } else {
+    ok('ct-agents connect → ACP');
+  }
+  if (conn.a2a?.cli !== 'ct-agents a2a') {
+    fail('ct-agents connect missing a2a.cli');
+  } else {
+    ok('ct-agents connect → A2A');
+  }
   if (conn.thisPackage?.siteHub !== 'https://cheshireterminal.ai/agents') {
     fail('ct-agents connect thisPackage.siteHub must be agents hub');
   }

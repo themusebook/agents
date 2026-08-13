@@ -21,6 +21,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { spawn } from 'child_process';
 import { resolveRobinhoodAgentsRoot } from './robinhoodAgentsRoot.js';
+import { findCheshireTerminalSkillMd } from './cheshireTerminalRoot.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -411,6 +412,12 @@ export async function installSkillsSparse(skillList, {
       if (rhSkill && fs.existsSync(rhSkill)) {
         fs.copyFileSync(rhSkill, destFile);
         results.push({ slug, status: 'copied-robinhood-agents', path: destFile });
+        continue;
+      }
+      const ctSkill = findCheshireTerminalSkillMd(slug, root);
+      if (ctSkill) {
+        fs.copyFileSync(ctSkill, destFile);
+        results.push({ slug, status: 'copied-cheshire-terminal', path: destFile });
         continue;
       }
       const localHub = resolveLocalSkillhub(root, index);

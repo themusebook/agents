@@ -18,7 +18,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createHash } from 'node:crypto';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -212,7 +212,7 @@ function renderRules({ sources, facts, excerpts }) {
   return `${lines.join('\n')}\n`;
 }
 
-function main() {
+async function main() {
   const flags = parseArgs(process.argv.slice(2));
   if (flags.help) {
     console.log(`Usage: node scripts/knowledge-inject.mjs [paths...] [--dry-run] [--out rules.md]`);
@@ -305,12 +305,34 @@ function main() {
   fs.writeFileSync(rulesPath, rulesBody, 'utf8');
   fs.writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
 
+  let membrain = null;
+  if (process.env.MEMBRAIN_SKIP_KNOWLEDGE_INGEST !== '1') {
+    try {
+      const { ingestKnowledgeFacts } = await import(
+        pathToFileURL(path.join(PACKAGE_ROOT, 'robinhood-src', 'membrainMemory.js')).href
+      );
+      membrain = await ingestKnowledgeFacts(facts, {
+        adapter: process.env.MEMBRAIN_ADAPTER || 'file',
+        agentId: process.env.CLAWD_PREMIERE_AGENT || 'elizero',
+        source: 'knowledge-inject',
+      });
+    } catch (err) {
+      membrain = { skipped: true, error: err.message };
+    }
+  }
+
   console.log(`✓ knowledge inject`);
   console.log(`  rules: ${rulesPath}`);
   console.log(`  manifest: ${manifestPath}`);
   console.log(`  ok files: ${okCount}/${sources.length}`);
   console.log(`  facts: ${facts.length}`);
   console.log(`  excerpts: ${excerpts.length}`);
+  if (membrain?.ingested) {
+    console.log(`  membrain: ${membrain.ingested} facts → ${membrain.adapter} (${membrain.agentId})`);
+  }
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

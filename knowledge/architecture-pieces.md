@@ -23,15 +23,15 @@ There are four moving parts in this repo whose names overlap in confusing ways. 
 │     clawd-standalone v1.3.0   │
 │     bin: clawd-standalone     │      ┌──────────────────────────────┐
 └──────────────────────────────┘      │ packages/membrain (Go)       │
-                                       │   github.com/.../membrane    │
-┌──────────────────────────────┐      │   - gRPC memory daemon       │
-│ gateway/  (root)              │      │   - SQLite + pgvector        │
-│   @openclawdsolana/gateway    │      │   bin/membraned              │
+                                       │   gRPC :9090 + JSON HTTP :9091│
+┌──────────────────────────────┐      │   SQLite + pgvector          │
+│ gateway/  (root)              │      │   bin/membraned              │
+│   @openclawdsolana/gateway    │      │   ct-agents memory           │
 │   v1.0.0 (private)            │      │                              │
 │   - Telegram bot              │      │ packages/membrain-types      │
 │   - Birdeye / Helius wrapper  │      │   @openclawdsolana/          │
 │   - Spawns leviathan agents   │      │   membrain-types v1.0.0      │
-└──────────────────────────────┘      │   (TS gRPC-web client)       │
+└──────────────────────────────┘      │   (TS client + Node host)    │
                                        └──────────────────────────────┘
 
 ┌──────────────────────────────┐      ┌──────────────────────────────┐

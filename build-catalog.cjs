@@ -499,6 +499,13 @@ function build() {
       registry: `${HOST}/api/agents/registry`,
       api: `${HOST}/api/agents`,
       catalog: `${HOST}/api/agents/catalog`,
+      memory: {
+        source: 'membrain',
+        package: 'packages/membrain',
+        grpc: 'localhost:9090',
+        http: 'http://127.0.0.1:9091',
+        cli: 'ct-agents memory',
+      },
     },
     stats: {
       totalAgents: agents.length,
@@ -506,6 +513,7 @@ function build() {
       totalFeatured: featured.length,
       totalTemplates: templates.length,
       premiereAgent: PREMIERE_AGENT_ID,
+      memorySource: 'membrain',
       byCategory: countByCategory(agents),
       metaplexEnabledAgents: agents.filter((a) => a.metaplexSkills.length > 0).length,
       tradingCapableAgents: agents.filter((a) => a.capabilities.includes('swap-execution')).length,

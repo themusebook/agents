@@ -20,7 +20,7 @@ Point an OpenClawd / Clawd / Eliza workspace at this directory so DNA files load
 Regenerate:
 
 ```bash
-npx cheshire-terminal-agents dna generate --from custom --out /Users/8bit/agents/agents/.tmp-dna-test/custom-dna --force
+npx cheshire-terminal-agents dna generate --from custom --out /Users/8bit/solana-clawd-agent-kit-2/agents/.tmp-dna-test/custom-dna --force
 ```
 
 Template ancestors live in package `dna/`.

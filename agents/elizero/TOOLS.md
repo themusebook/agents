@@ -57,6 +57,28 @@ ct-agents storage webhook --port 8788
 
 Env: `TIGRIS_STORAGE_BUCKET`, `TIGRIS_STORAGE_ACCESS_KEY_ID`, `TIGRIS_STORAGE_SECRET_ACCESS_KEY`, `TIGRIS_WEBHOOK_SECRET`. Sequence by object Last-Modified; handlers are idempotent on ETag.
 
+## Membrain memory (default source)
+
+Typed, revisable memory for this agent lives in **Membrain** (`packages/membrain`). DNA files are continuity; Membrain is recall.
+
+```bash
+ct-agents memory status
+ct-agents memory ingest --agent elizero --summary "Zero attested dry task completed"
+ct-agents memory retrieve --agent elizero --query "last attested run"
+ct-agents memory context --agent elizero
+ct-agents memory start
+```
+
+| Item | Value |
+| --- | --- |
+| Source | `membrain` |
+| Scope | `agent:elizero` |
+| gRPC | `localhost:9090` |
+| JSON HTTP | `http://127.0.0.1:9091` |
+| Skill | `skills/membrain-memory` |
+
+Env: `MEMBRAIN_ADAPTER=file|memory|live`, `MEMBRAIN_HTTP_URL`, `MEMBRAIN_GRPC`, `MEMBRAIN_API_KEY`. File adapter writes `.membrain-agent-store/`. Live talks to `membraned`.
+
 ## Catalog registration
 
 - DNA bundle (this folder): `agents/elizero/`  

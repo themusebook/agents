@@ -1,5 +1,5 @@
 {
-  "count": 14,
+  "count": 15,
   "characters": [
     {
       "id": "alice-character-json",
@@ -47,6 +47,13 @@
       "id": "clawd",
       "file": "characters/clawd.json",
       "name": "Clawd",
+      "format": "eliza",
+      "index": 0
+    },
+    {
+      "id": "elizero",
+      "file": "characters/elizero.json",
+      "name": "eliZERO",
       "format": "eliza",
       "index": 0
     },

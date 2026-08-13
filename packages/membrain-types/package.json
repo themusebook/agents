@@ -1,0 +1,10 @@
+{
+  "name": "@openclawdsolana/membrain-types",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "TypeScript types + gRPC-web client alias for Membrain. Implementation: packages/membrain/clients/typescript",
+  "exports": {
+    ".": "../membrain/clients/typescript/src/index.ts"
+  }
+}
