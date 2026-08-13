@@ -1,7 +1,11 @@
 /**
  * Skill Hub client — on-demand skill selection without bloating the npm install.
  *
- * Full catalog (~595 skills) lives at github.com/Solizardking/skillhub-main.
+ * Full catalog (~595 skills) lives at github.com/Solizardking/skillhub-main
+ * and installs via github.com/Solizardking/skills. Product hub:
+ * https://cheshireterminal.ai/skills — wired to https://cheshireterminal.ai/agents.
+ * Local checkout (when present): ../skillhub-main/skills (CLAWD_SKILLHUB_ROOT).
+ *
  * This package only ships skills/skillhub-index.json (tiny pointer + packs).
  *
  * Modes:
@@ -16,6 +20,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { spawn } from 'child_process';
+import { resolveRobinhoodAgentsRoot } from './robinhoodAgentsRoot.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -38,10 +43,17 @@ export function loadSkillHubIndex(root = ROOT) {
   const p = path.join(root, 'skills', 'skillhub-index.json');
   if (!fs.existsSync(p)) {
     return {
-      hub: { github: 'https://github.com/Solizardking/skillhub-main' },
+      hub: {
+        github: 'https://github.com/Solizardking/skillhub-main',
+        skillsRepo: 'https://github.com/Solizardking/skills',
+        product: 'https://cheshireterminal.ai/skills',
+        agents: 'https://cheshireterminal.ai/agents',
+      },
+      local: { checkout: '../skillhub-main' },
       remote: {
         catalogUrl:
           'https://raw.githubusercontent.com/Solizardking/skillhub-main/main/catalog.json',
+        productCatalogUrl: 'https://cheshireterminal.ai/api/skills',
         rawSkillBase:
           'https://raw.githubusercontent.com/Solizardking/skillhub-main/main/skills',
         installCommand: 'npx --yes github:Solizardking/skills install',
@@ -52,6 +64,58 @@ export function loadSkillHubIndex(root = ROOT) {
     };
   }
   return JSON.parse(fs.readFileSync(p, 'utf8'));
+}
+
+/** Prefer a sibling skillhub-main checkout over the network. */
+export function resolveLocalSkillhub(root = ROOT, index = loadSkillHubIndex(root)) {
+  const candidates = [
+    process.env.CLAWD_SKILLHUB_ROOT,
+    index.local?.checkout,
+    path.join(root, '..', 'skillhub-main'),
+  ].filter(Boolean);
+  for (const raw of candidates) {
+    const abs = path.isAbsolute(String(raw)) ? String(raw) : path.resolve(root, String(raw));
+    const skillsDir = path.join(abs, 'skills');
+    const catalogFile = path.join(abs, 'catalog.json');
+    let catalogExists = false;
+    let skillsExists = false;
+    try {
+      catalogExists = fs.existsSync(catalogFile);
+    } catch {
+      catalogExists = false;
+    }
+    try {
+      skillsExists = fs.existsSync(skillsDir);
+    } catch {
+      skillsExists = false;
+    }
+    if (catalogExists || skillsExists) {
+      return { root: abs, skillsDir, catalogFile: catalogExists ? catalogFile : null };
+    }
+  }
+  return null;
+}
+
+export function normalizeSkillCatalog(raw) {
+  if (Array.isArray(raw)) return raw;
+  if (Array.isArray(raw?.skills)) return raw.skills;
+  if (Array.isArray(raw?.items)) return raw.items;
+  if (Array.isArray(raw?.data)) return raw.data;
+  return [];
+}
+
+function asSkillEntry(s, extra = {}) {
+  if (typeof s === 'string') {
+    return { slug: s, name: path.basename(s), description: extra.description || '', category: extra.category || 'Skill Hub' };
+  }
+  const slug = s.slug || s.id || s.name;
+  if (!slug) return null;
+  return {
+    slug,
+    name: s.name || path.basename(slug),
+    description: s.description || s.summary || extra.description || '',
+    category: s.category || extra.category || 'Skill Hub',
+  };
 }
 
 function cachePaths(index) {
@@ -88,47 +152,67 @@ async function fetchText(url, { timeoutMs = 20_000 } = {}) {
 }
 
 /**
- * Load full Skill Hub catalog (595 entries). Cached on disk.
- * Falls back to featured+packs offline index when network fails.
+ * Load full Skill Hub catalog (595 entries).
+ * Order: local checkout → disk cache → product /skills API → GitHub raw → offline packs.
  */
 export async function loadSkillCatalog({ root = ROOT, forceRefresh = false } = {}) {
   const index = loadSkillHubIndex(root);
+  const local = resolveLocalSkillhub(root, index);
+  if (local?.catalogFile) {
+    const parsed = readJsonSafe(local.catalogFile);
+    const skills = normalizeSkillCatalog(parsed).map((s) => asSkillEntry(s)).filter(Boolean);
+    if (skills.length) {
+      return { skills, source: 'local-skillhub', index, local: local.root, fetchedAt: Date.now() };
+    }
+  }
+
   const { dir, catalog: catalogPath, meta: metaPath, ttl } = cachePaths(index);
 
   if (!forceRefresh && fs.existsSync(catalogPath) && fs.existsSync(metaPath)) {
     const meta = readJsonSafe(metaPath);
     if (meta?.fetchedAt && Date.now() - meta.fetchedAt < ttl) {
       const cached = readJsonSafe(catalogPath);
-      if (Array.isArray(cached) && cached.length) {
-        return { skills: cached, source: 'cache', index, fetchedAt: meta.fetchedAt };
+      const skills = normalizeSkillCatalog(cached).map((s) => asSkillEntry(s)).filter(Boolean);
+      if (skills.length) {
+        return { skills, source: 'cache', index, fetchedAt: meta.fetchedAt };
       }
     }
   }
 
-  const url = index.remote?.catalogUrl;
-  try {
-    if (!url) throw new Error('no catalogUrl in skillhub-index');
-    const text = await fetchText(url);
-    const skills = JSON.parse(text);
-    if (!Array.isArray(skills)) throw new Error('catalog is not an array');
-    fs.mkdirSync(dir, { recursive: true });
-    fs.writeFileSync(catalogPath, JSON.stringify(skills));
-    const fetchedAt = Date.now();
-    fs.writeFileSync(metaPath, JSON.stringify({ fetchedAt, url, count: skills.length }));
-    return { skills, source: 'remote', index, fetchedAt };
-  } catch (err) {
-    // Offline fallback: featured + packs only
-    const offline = buildOfflineCatalog(index);
-    if (offline.length) {
-      return {
-        skills: offline,
-        source: 'offline-index',
-        index,
-        warning: `remote catalog unavailable (${err.message}); using local packs/featured only`,
-      };
+  const urls = [
+    index.remote?.productCatalogUrl,
+    index.remote?.productCatalogAlt,
+    index.remote?.catalogUrl,
+    index.remote?.apiSkillsUrl,
+  ].filter(Boolean);
+
+  let lastErr = null;
+  for (const url of urls) {
+    try {
+      const text = await fetchText(url);
+      const skills = normalizeSkillCatalog(JSON.parse(text)).map((s) => asSkillEntry(s)).filter(Boolean);
+      if (!skills.length) throw new Error(`empty catalog at ${url}`);
+      fs.mkdirSync(dir, { recursive: true });
+      fs.writeFileSync(catalogPath, JSON.stringify(skills));
+      const fetchedAt = Date.now();
+      fs.writeFileSync(metaPath, JSON.stringify({ fetchedAt, url, count: skills.length }));
+      const source = String(url).includes('cheshireterminal.ai') ? 'product' : 'remote';
+      return { skills, source, index, fetchedAt };
+    } catch (err) {
+      lastErr = err;
     }
-    throw err;
   }
+
+  const offline = buildOfflineCatalog(index);
+  if (offline.length) {
+    return {
+      skills: offline,
+      source: 'offline-index',
+      index,
+      warning: `remote catalog unavailable (${lastErr?.message || 'no catalog'}); using local packs/featured only`,
+    };
+  }
+  throw lastErr || new Error('no catalogUrl in skillhub-index');
 }
 
 function buildOfflineCatalog(index) {
@@ -320,6 +404,24 @@ export async function installSkillsSparse(skillList, {
         results.push({ slug, status: 'copied-local', path: destFile });
         continue;
       }
+      const rh = resolveRobinhoodAgentsRoot(root);
+      const rhSkill = rh
+        ? path.join(rh.skillsDir, slug.replace(/\//g, path.sep), 'SKILL.md')
+        : null;
+      if (rhSkill && fs.existsSync(rhSkill)) {
+        fs.copyFileSync(rhSkill, destFile);
+        results.push({ slug, status: 'copied-robinhood-agents', path: destFile });
+        continue;
+      }
+      const localHub = resolveLocalSkillhub(root, index);
+      const hubSkill = localHub
+        ? path.join(localHub.skillsDir, slug.replace(/\//g, path.sep), 'SKILL.md')
+        : null;
+      if (hubSkill && fs.existsSync(hubSkill)) {
+        fs.copyFileSync(hubSkill, destFile);
+        results.push({ slug, status: 'copied-skillhub', path: destFile });
+        continue;
+      }
       const url = rawSkillUrl(index, slug, 'SKILL.md');
       const body = await fetchText(url);
       if (!body || body.length < 20) throw new Error('empty SKILL.md');
@@ -404,7 +506,9 @@ ${BOLD}Install targets:${RESET}
   default sparse target:  ${DIM}./.agents/skills${RESET}
   Skill Hub CLI:          ${DIM}npx github:Solizardking/skills install <slugs>${RESET}
 
-${BOLD}Hub:${RESET} https://github.com/Solizardking/skillhub-main
+${BOLD}Hub:${RESET} https://cheshireterminal.ai/skills
+${BOLD}GitHub:${RESET} https://github.com/Solizardking/skills · https://github.com/Solizardking/skillhub-main
+${BOLD}Agents:${RESET} https://cheshireterminal.ai/agents · https://github.com/Solizardking/agents
 ${BOLD}Tigris (official):${RESET} npx skills add tigrisdata/skills --skill '*' --agent cursor -y --copy
 `);
 }

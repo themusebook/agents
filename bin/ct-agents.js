@@ -107,6 +107,7 @@ const COMMANDS = {
       cli: catalog.hub?.cli || oss?.productHubs?.cli || 'https://cheshireterminal.ai/cli',
       forge: catalog.hub?.forge || 'https://cheshireterminal.ai/agents/forge',
       elizaAgents: catalog.hub?.elizaAgents || oss?.productHubs?.elizaAgents || 'https://cheshireterminal.ai/eliza-agents',
+      skills: catalog.hub?.skills || oss?.productHubs?.skills || 'https://cheshireterminal.ai/skills',
     };
     console.log(JSON.stringify({
       agents: stats.totalAgents,
@@ -120,43 +121,69 @@ const COMMANDS = {
         agents: hub.agents,
         elizaAgents: hub.elizaAgents,
         cli: hub.cli,
+        skills: hub.skills,
       },
       design: 'ct-agents design',
       siteCli: 'npx cheshire-terminal-cli connect',
     }, null, 2));
   },
 
-  /** Print product hubs + GitHub sources (wired to /agents and /cli). */
+  /** Print product hubs + GitHub sources (wired to /agents, /skills, /cli). */
   connect: () => {
     const oss = loadOssMap() || {
       productHubs: {
         agents: 'https://cheshireterminal.ai/agents',
         elizaAgents: 'https://cheshireterminal.ai/eliza-agents',
         cli: 'https://cheshireterminal.ai/cli',
+        skills: 'https://cheshireterminal.ai/skills',
       },
       github: {
         agents: 'https://github.com/Solizardking/agents',
         cli: 'https://github.com/Solizardking/cli',
         eliza: 'https://github.com/Solizardking/eliza',
         cheshireTerminal: 'https://github.com/Solizardking/cheshire-terminal',
+        skills: 'https://github.com/Solizardking/skills',
+        skillhub: 'https://github.com/Solizardking/skillhub-main',
       },
+      local: { skillhub: '../skillhub-main' },
     };
+    const localCheckout = oss.local?.skillsDir || '../skillhub-main/skills';
     console.log(JSON.stringify({
       package: pkg.name,
       version: pkg.version,
       productHubs: oss.productHubs,
       github: oss.github,
+      skills: {
+        product: oss.productHubs?.skills || 'https://cheshireterminal.ai/skills',
+        github: oss.github?.skills || 'https://github.com/Solizardking/skills',
+        skillhub: oss.github?.skillhub || 'https://github.com/Solizardking/skillhub-main',
+        local: process.env.CLAWD_SKILLHUB_ROOT || localCheckout,
+        install: 'npx --yes github:Solizardking/skills install',
+        agentsProduct: oss.productHubs?.agents || 'https://cheshireterminal.ai/agents',
+        agentsGithub: oss.github?.agents || 'https://github.com/Solizardking/agents',
+      },
       thisPackage: {
         npm: 'cheshire-terminal-agents',
         siteHub: 'https://cheshireterminal.ai/agents',
         design: 'ct-agents design',
         catalog: 'ct-agents catalog',
+        skillsCli: 'ct-agents skills',
       },
       siteCli: {
         npm: 'cheshire-terminal-cli',
         siteHub: 'https://cheshireterminal.ai/cli',
         connect: 'npx cheshire-terminal-cli connect',
         agentsList: 'npx cheshire-terminal-cli agents:list',
+      },
+      robinhood: {
+        product: 'https://cheshireterminal.ai/agents',
+        forge: 'https://cheshireterminal.ai/agents/forge',
+        github: oss.github?.robinhoodAgents || 'https://github.com/Solizardking/robinhood-agents',
+        local: process.env.CLAWD_ROBINHOOD_AGENTS_ROOT || oss.local?.robinhoodAgents || '../cheshire-terminal-main/robinhood-agents',
+        skills: 'skills/',
+        deployments: 'deployments/',
+        contracts: 'contracts/',
+        env: 'CLAWD_ROBINHOOD_AGENTS_ROOT',
       },
       map: 'open-source-connection-map.json',
     }, null, 2));

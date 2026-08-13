@@ -6,17 +6,28 @@
   "agentsRepo": "https://github.com/Solizardking/agents",
   "cliRepo": "https://github.com/Solizardking/cli",
   "cheshireTerminalRepo": "https://github.com/Solizardking/cheshire-terminal",
+  "skillsRepo": "https://github.com/Solizardking/skills",
+  "skillhubRepo": "https://github.com/Solizardking/skillhub-main",
   "openSource": {
     "productHubs": {
       "agents": "https://cheshireterminal.ai/agents",
       "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
-      "cli": "https://cheshireterminal.ai/cli"
+      "cli": "https://cheshireterminal.ai/cli",
+      "skills": "https://cheshireterminal.ai/skills"
     },
     "github": {
       "agents": "https://github.com/Solizardking/agents",
       "cli": "https://github.com/Solizardking/cli",
       "eliza": "https://github.com/Solizardking/eliza",
-      "cheshireTerminal": "https://github.com/Solizardking/cheshire-terminal"
+      "cheshireTerminal": "https://github.com/Solizardking/cheshire-terminal",
+      "skills": "https://github.com/Solizardking/skills",
+      "skillhub": "https://github.com/Solizardking/skillhub-main",
+      "robinhoodAgents": "https://github.com/Solizardking/robinhood-agents"
+    },
+    "local": {
+      "skillhub": "../skillhub-main",
+      "skillsDir": "../skillhub-main/skills",
+      "robinhoodAgents": "../cheshire-terminal-main/robinhood-agents"
     },
     "repos": [
       {
@@ -42,6 +53,24 @@
         "url": "https://github.com/Solizardking/cheshire-terminal",
         "role": "Main product app",
         "siteHub": "/"
+      },
+      {
+        "id": "skills",
+        "url": "https://github.com/Solizardking/skills",
+        "role": "Skill Hub installer",
+        "siteHub": "/skills"
+      },
+      {
+        "id": "skillhub-main",
+        "url": "https://github.com/Solizardking/skillhub-main",
+        "role": "Full Skill Hub catalog bodies",
+        "siteHub": "/skills"
+      },
+      {
+        "id": "robinhood-agents",
+        "url": "https://github.com/Solizardking/robinhood-agents",
+        "role": "Dual-rail forge SDK + ERC-8004 registries",
+        "siteHub": "/agents/forge"
       }
     ]
   },
@@ -68,7 +97,8 @@
   "relatedPackages": {
     "zkPrimitives": "../zk-primitives",
     "knowledge": "../knowledge",
-    "characters": "../characters"
+    "characters": "../characters",
+    "elizeroDna": "../agents/elizero"
   },
   "plugins": [
     {

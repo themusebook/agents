@@ -341,7 +341,10 @@ describe("live site commands (network)", () => {
       result.openSource?.productHubs?.elizaAgents,
       "https://cheshireterminal.ai/eliza-agents",
     );
-    assert.equal(result.openSource?.repos?.length, 4);
+    assert.equal(result.openSource?.productHubs?.skills, "https://cheshireterminal.ai/skills");
+    assert.equal(result.openSource?.github?.skills, "https://github.com/Solizardking/skills");
+    assert.equal(result.openSource?.github?.skillhub, "https://github.com/Solizardking/skillhub-main");
+    assert.equal(result.openSource?.repos?.length, 6);
     assert.equal(result.credentials.envApiKey, "CHESHIRE_API_KEY");
     assert.equal(result.npm?.package, "cheshire-terminal-cli");
     assert.match(result.npm?.install || "", /cheshire-terminal-cli/);

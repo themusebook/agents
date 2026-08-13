@@ -10,10 +10,10 @@
  * │ /skills                    │ GET /api/skills                              │
  * │ /agent-registry            │ registry.cheshireterminal.ai via /api/agent-registry │
  * │ Dual-rail forge (optional) │ npm cheshire-terminal-agents                 │
- * │ OSS (four repos)           │ agents · cli · eliza · cheshire-terminal     │
+ * │ OSS (six repos)            │ agents · cli · eliza · cheshire-terminal · skills · skillhub-main │
  */
 
-/** Canonical four Solizardking open-source repos (mirrors monorepo shared/open-source-repos). */
+/** Canonical Solizardking open-source repos (agents + cli + eliza + app + skills). */
 export const OPEN_SOURCE_REPOS = {
   agents: {
     id: "agents",
@@ -44,6 +44,18 @@ export const OPEN_SOURCE_REPOS = {
     siteHub: "/",
     role: "Main product app (server, client, API, hub pages)",
   },
+  skills: {
+    id: "skills",
+    url: "https://github.com/Solizardking/skills",
+    siteHub: "/skills",
+    role: "Skill Hub installer (npx github:Solizardking/skills install <slug>)",
+  },
+  skillhub: {
+    id: "skillhub-main",
+    url: "https://github.com/Solizardking/skillhub-main",
+    siteHub: "/skills",
+    role: "Full Skill Hub catalog bodies (~595 SKILL.md)",
+  },
 };
 
 export function openSourceGithubUrls() {
@@ -52,6 +64,8 @@ export function openSourceGithubUrls() {
     cli: OPEN_SOURCE_REPOS.cli.url,
     eliza: OPEN_SOURCE_REPOS.eliza.url,
     cheshireTerminal: OPEN_SOURCE_REPOS.cheshireTerminal.url,
+    skills: OPEN_SOURCE_REPOS.skills.url,
+    skillhub: OPEN_SOURCE_REPOS.skillhub.url,
   };
 }
 
@@ -71,6 +85,7 @@ export function openSourceDiscoveryFragment() {
       agents: "https://cheshireterminal.ai/agents",
       elizaAgents: "https://cheshireterminal.ai/eliza-agents",
       cli: "https://cheshireterminal.ai/cli",
+      skills: "https://cheshireterminal.ai/skills",
     },
   };
 }

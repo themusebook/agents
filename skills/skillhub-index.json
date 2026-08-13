@@ -2,16 +2,25 @@
   "$schema": "https://cheshireterminal.ai/schemas/skillhub-index.v1.json",
   "id": "cheshire-skillhub-index",
   "version": 1,
-  "description": "Lightweight Skill Hub pointer — no skill bodies ship with this package. Full catalog is fetched on demand from skillhub-main.",
+  "description": "Lightweight Skill Hub pointer — no skill bodies ship with this package. Full catalog is fetched on demand from skillhub-main, the product /skills API, or a local checkout.",
   "hub": {
     "github": "https://github.com/Solizardking/skillhub-main",
     "skillsRepo": "https://github.com/Solizardking/skills",
-    "product": "https://cheshireterminal.ai/agents",
+    "product": "https://cheshireterminal.ai/skills",
+    "agents": "https://cheshireterminal.ai/agents",
     "forge": "https://cheshireterminal.ai/agents/forge"
+  },
+  "local": {
+    "checkout": "../skillhub-main",
+    "skillsDir": "../skillhub-main/skills",
+    "catalog": "../skillhub-main/catalog.json",
+    "env": "CLAWD_SKILLHUB_ROOT"
   },
   "remote": {
     "catalogUrl": "https://raw.githubusercontent.com/Solizardking/skillhub-main/main/catalog.json",
     "apiSkillsUrl": "https://raw.githubusercontent.com/Solizardking/skillhub-main/main/public/api/skills.json",
+    "productCatalogUrl": "https://cheshireterminal.ai/api/skills",
+    "productCatalogAlt": "https://cheshireterminal.ai/api/skills/catalog",
     "rawSkillBase": "https://raw.githubusercontent.com/Solizardking/skillhub-main/main/skills",
     "installCommand": "npx --yes github:Solizardking/skills install",
     "cacheTtlMs": 86400000
@@ -111,6 +120,7 @@
   },
   "notes": [
     "This package does NOT vendor the 595 Skill Hub bodies.",
+    "Skill Hub sources (in order): local ../skillhub-main/skills, https://cheshireterminal.ai/skills, github.com/Solizardking/skills, github.com/Solizardking/skillhub-main. Wired to https://cheshireterminal.ai/agents and github.com/Solizardking/agents.",
     "Official Tigris skills come from tigrisdata/skills (skills.sh), not skillhub-main. See pack tigris.installOfficial and TIGRIS.md.",
     "ct-agents skills (TTY) opens the multi-select TUI/REPL — pick skills without bloat.",
     "ct-agents skills list|search uses the remote catalog (cached).",

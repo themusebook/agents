@@ -27,7 +27,8 @@
   "product_hubs": {
     "agents": "https://cheshireterminal.ai/agents",
     "cli": "https://cheshireterminal.ai/cli",
-    "elizaAgents": "https://cheshireterminal.ai/eliza-agents"
+    "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
+    "skills": "https://cheshireterminal.ai/skills"
   },
   "skill_registry": {
     "hub": "https://cheshireterminal.ai/skills",

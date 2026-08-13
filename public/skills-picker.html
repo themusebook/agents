@@ -257,8 +257,11 @@
     <footer>
       Catalog source: local packs index + remote Skill Hub when available.
       Local suite is always available offline via <code>ct-agents skills packs</code>.
-      Hub: <a href="https://github.com/Solizardking/skillhub-main" target="_blank" rel="noreferrer">skillhub-main</a>
-      · Product: <a href="https://cheshireterminal.ai/agents" target="_blank" rel="noreferrer">cheshireterminal.ai/agents</a>
+      Hub: <a href="https://cheshireterminal.ai/skills" target="_blank" rel="noreferrer">cheshireterminal.ai/skills</a>
+      · <a href="https://github.com/Solizardking/skills" target="_blank" rel="noreferrer">Solizardking/skills</a>
+      · <a href="https://github.com/Solizardking/skillhub-main" target="_blank" rel="noreferrer">skillhub-main</a>
+      · Agents: <a href="https://cheshireterminal.ai/agents" target="_blank" rel="noreferrer">cheshireterminal.ai/agents</a>
+      · <a href="https://github.com/Solizardking/agents" target="_blank" rel="noreferrer">Solizardking/agents</a>
     </footer>
   </main>
 
@@ -267,6 +270,8 @@
     const HUB = 'https://github.com/Solizardking/skillhub-main';
     // Prefer remote Skill Hub catalog; fall back to packs from skillhub-index if blocked/offline.
     const CATALOG_URLS = [
+      'https://cheshireterminal.ai/api/skills',
+      'https://cheshireterminal.ai/api/skills/catalog',
       'https://raw.githubusercontent.com/Solizardking/skillhub-main/main/catalog.json',
       'https://cdn.jsdelivr.net/gh/Solizardking/skillhub-main@main/catalog.json',
     ];

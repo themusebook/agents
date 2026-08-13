@@ -495,6 +495,7 @@ function build() {
       mint: `${HOST}/agents/mint`,
       cli: `${HOST}/cli`,
       elizaAgents: `${HOST}/eliza-agents`,
+      skills: `${HOST}/skills`,
       registry: `${HOST}/api/agents/registry`,
       api: `${HOST}/api/agents`,
       catalog: `${HOST}/api/agents/catalog`,

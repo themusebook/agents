@@ -6,6 +6,7 @@
   "product": {
     "hub": "https://cheshireterminal.ai/agents",
     "agents": "https://cheshireterminal.ai/agents",
+    "skills": "https://cheshireterminal.ai/skills",
     "cli": "https://cheshireterminal.ai/cli",
     "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
     "forge": "https://cheshireterminal.ai/agents/forge",
@@ -29,6 +30,7 @@
   "skillCount": 11,
   "notes": {
     "rh-crypto-agent": "Pack root (pack-index.json + nested skills); not a single SKILL.md. Nested skills are scanned recursively.",
-    "canonicalPath": "robinhood-agents/skills/<skill-id>/SKILL.md"
+    "canonicalPath": "robinhood-agents/skills/<skill-id>/SKILL.md",
+    "localCheckout": "../cheshire-terminal-main/robinhood-agents/skills"
   }
 }

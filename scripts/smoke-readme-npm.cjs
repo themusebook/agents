@@ -254,6 +254,16 @@ try {
   } else {
     ok('ct-agents connect → /cli');
   }
+  if (!(ph.skills || '').includes('cheshireterminal.ai/skills')) {
+    fail('ct-agents connect missing productHubs.skills');
+  } else {
+    ok('ct-agents connect → /skills');
+  }
+  if (!(conn.github?.skills || '').includes('Solizardking/skills')) {
+    fail('ct-agents connect missing github.skills');
+  } else {
+    ok('ct-agents connect → github.com/Solizardking/skills');
+  }
   if (conn.thisPackage?.siteHub !== 'https://cheshireterminal.ai/agents') {
     fail('ct-agents connect thisPackage.siteHub must be agents hub');
   }

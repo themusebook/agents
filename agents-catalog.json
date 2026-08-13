@@ -1,7 +1,7 @@
 {
   "$schema": "https://cheshireterminal.ai/schema/clawdAgentCatalog.v1.json",
   "apiVersion": "1.0",
-  "generatedAt": "2026-08-13T17:03:30.860Z",
+  "generatedAt": "2026-08-13T19:14:33.373Z",
   "hub": {
     "gallery": "https://cheshireterminal.ai/agents",
     "agents": "https://cheshireterminal.ai/agents",
@@ -9,6 +9,7 @@
     "mint": "https://cheshireterminal.ai/agents/mint",
     "cli": "https://cheshireterminal.ai/cli",
     "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
+    "skills": "https://cheshireterminal.ai/skills",
     "registry": "https://cheshireterminal.ai/api/agents/registry",
     "api": "https://cheshireterminal.ai/api/agents",
     "catalog": "https://cheshireterminal.ai/api/agents/catalog"

@@ -42,6 +42,21 @@ async function main() {
   });
   assert.equal(help.status, 0, help.stderr || help.stdout);
   assert.ok(/pick|multi-select|TUI/i.test(help.stdout), 'help should mention interactive picker');
+  assert.ok(/cheshireterminal\.ai\/skills/.test(help.stdout), 'help should mention product skills hub');
+  assert.ok(/Solizardking\/skills/.test(help.stdout), 'help should mention Solizardking/skills');
+
+  const connect = spawnSync(process.execPath, [BIN, 'connect'], {
+    cwd: ROOT,
+    encoding: 'utf8',
+  });
+  assert.equal(connect.status, 0, connect.stderr || connect.stdout);
+  const conn = JSON.parse(connect.stdout);
+  assert.equal(conn.productHubs.skills, 'https://cheshireterminal.ai/skills');
+  assert.equal(conn.github.skills, 'https://github.com/Solizardking/skills');
+  assert.equal(conn.github.skillhub, 'https://github.com/Solizardking/skillhub-main');
+  assert.equal(conn.skills.agentsGithub, 'https://github.com/Solizardking/agents');
+  assert.equal(conn.github.robinhoodAgents, 'https://github.com/Solizardking/robinhood-agents');
+  assert.match(conn.robinhood.local, /robinhood-agents/);
 
   // skills-picker.html exists for serve
   const fs = require('fs');

@@ -41,6 +41,8 @@ if (exists("eliza-agents/catalog.json")) {
     ok(String(g.cli || "").includes("Solizardking/cli"), "openSource.github.cli");
     ok(String(g.eliza || "").includes("Solizardking/eliza"), "openSource.github.eliza");
     ok(String(g.cheshireTerminal || "").includes("Solizardking/cheshire-terminal"), "openSource.github.cheshireTerminal");
+    ok(String(g.skills || "").includes("Solizardking/skills"), "openSource.github.skills");
+    ok(String(g.skillhub || "").includes("Solizardking/skillhub-main"), "openSource.github.skillhub");
   }
   if (cat.openSource?.productHubs) {
     ok(cat.openSource.productHubs.agents === "https://cheshireterminal.ai/agents", "productHubs.agents");
@@ -48,6 +50,7 @@ if (exists("eliza-agents/catalog.json")) {
       cat.openSource.productHubs.elizaAgents === "https://cheshireterminal.ai/eliza-agents",
       "productHubs.elizaAgents",
     );
+    ok(cat.openSource.productHubs.skills === "https://cheshireterminal.ai/skills", "productHubs.skills");
   }
 }
 

@@ -154,7 +154,12 @@ ct-agents design --validate ./agents/my-yield-bot.json
 ```
 
 **Skills without install bloat:** the 595 Skill Hub playbooks live at
-[Solizardking/skillhub-main](https://github.com/Solizardking/skillhub-main).
+[Solizardking/skillhub-main](https://github.com/Solizardking/skillhub-main)
+and installs via [Solizardking/skills](https://github.com/Solizardking/skills).
+Product hub: [cheshireterminal.ai/skills](https://cheshireterminal.ai/skills),
+wired to [cheshireterminal.ai/agents](https://cheshireterminal.ai/agents)
+and [github.com/Solizardking/agents](https://github.com/Solizardking/agents).
+Local checkout (when present): `../skillhub-main/skills`.
 This package only ships a tiny `skills/skillhub-index.json` pointer + curated packs.
 Full catalog is fetched on demand; installs pull **only** the slugs you select.
 
@@ -177,7 +182,7 @@ Full catalog is fetched on demand; installs pull **only** the slugs you select.
 | `ct-agents design --from <id>` | Non-interactive fork |
 | `ct-agents design --validate <file>` | Schema-check an agent JSON |
 | `ct-agents catalog` | Print catalog stats + product hubs (`/agents`, `/cli`, forge, eliza) |
-| `ct-agents connect` | Print OSS map: product hubs + GitHub sources (agents ↔ cli) |
+| `ct-agents connect` | Print OSS map: product hubs + GitHub sources (agents ↔ skills ↔ cli) |
 | `ct-agents templates` | List scaffold templates from the catalog |
 | `ct-agents skills` / `skills pick` | **Multi-select TUI** — browse catalog, toggle skills, sparse-install only picks |
 | `ct-agents skills packs` | Curated packs (cheshire-core, trading, imperial, …) |

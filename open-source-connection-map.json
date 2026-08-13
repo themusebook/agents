@@ -1,16 +1,35 @@
 {
-  "version": "1.0.0",
-  "description": "Canonical OSS ↔ product hub connection map for cheshire-terminal-agents. Product pages /agents and /eliza-agents stay wired to these four Solizardking GitHub repos.",
+  "version": "1.1.0",
+  "description": "Canonical OSS ↔ product hub connection map for cheshire-terminal-agents. /agents and /eliza-agents stay wired to Solizardking GitHub repos; /skills is wired to Solizardking/skills + skillhub-main (local checkout when present).",
   "productHubs": {
     "agents": "https://cheshireterminal.ai/agents",
     "elizaAgents": "https://cheshireterminal.ai/eliza-agents",
-    "cli": "https://cheshireterminal.ai/cli"
+    "cli": "https://cheshireterminal.ai/cli",
+    "skills": "https://cheshireterminal.ai/skills"
   },
   "github": {
     "agents": "https://github.com/Solizardking/agents",
     "cli": "https://github.com/Solizardking/cli",
     "eliza": "https://github.com/Solizardking/eliza",
-    "cheshireTerminal": "https://github.com/Solizardking/cheshire-terminal"
+    "cheshireTerminal": "https://github.com/Solizardking/cheshire-terminal",
+    "skills": "https://github.com/Solizardking/skills",
+    "skillhub": "https://github.com/Solizardking/skillhub-main",
+    "robinhoodAgents": "https://github.com/Solizardking/robinhood-agents"
+  },
+  "local": {
+    "skillhub": "../skillhub-main",
+    "skillsDir": "../skillhub-main/skills",
+    "env": "CLAWD_SKILLHUB_ROOT",
+    "robinhoodAgents": "../cheshire-terminal-main/robinhood-agents",
+    "robinhoodAgentsEnv": "CLAWD_ROBINHOOD_AGENTS_ROOT"
+  },
+  "links": {
+    "agentsToSkills": {
+      "from": "https://cheshireterminal.ai/agents",
+      "to": "https://cheshireterminal.ai/skills",
+      "githubFrom": "https://github.com/Solizardking/agents",
+      "githubTo": "https://github.com/Solizardking/skills"
+    }
   },
   "repos": [
     {
@@ -39,6 +58,25 @@
       "url": "https://github.com/Solizardking/cheshire-terminal",
       "role": "Main product app (server, client, API, hub pages)",
       "siteHub": "/"
+    },
+    {
+      "id": "skills",
+      "url": "https://github.com/Solizardking/skills",
+      "role": "Skill Hub installer (npx github:Solizardking/skills install <slug>)",
+      "siteHub": "/skills"
+    },
+    {
+      "id": "skillhub-main",
+      "url": "https://github.com/Solizardking/skillhub-main",
+      "role": "Full Skill Hub catalog (~595 SKILL.md bodies). Local checkout: ../skillhub-main/skills",
+      "siteHub": "/skills"
+    },
+    {
+      "id": "robinhood-agents",
+      "url": "https://github.com/Solizardking/robinhood-agents",
+      "role": "Dual-rail forge SDK, ERC-8004 registries, RH skills, zk-omni. Local: ../cheshire-terminal-main/robinhood-agents",
+      "siteHub": "/agents/forge",
+      "npm": "cheshire-terminal-agents"
     }
   ]
 }

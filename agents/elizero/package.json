@@ -1,0 +1,16 @@
+{
+  "name": "@openclawd/elizero",
+  "version": "1.0.0",
+  "description": "eliZERO — premiere elizaOS Zero agent powered by $CLAWD",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node validate.mjs",
+    "test": "node validate.mjs"
+  },
+  "files": [
+    "*.json",
+    "*.md",
+    "validate.mjs"
+  ]
+}

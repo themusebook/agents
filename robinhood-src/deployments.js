@@ -1,5 +1,7 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
+import { join } from "node:path";
 import { isAddress, isHex, keccak256 } from "viem";
+import { resolveRobinhoodAgentsRoot } from "./robinhoodAgentsRoot.js";
 
 const MANIFEST_FILES = Object.freeze({
   4663: "agent-registries-mainnet-4663.json",
@@ -20,10 +22,13 @@ function fail(file, message) {
 }
 
 function loadManifest(chainId, file) {
+  const local = resolveRobinhoodAgentsRoot();
+  const localFile = local ? join(local.deploymentsDir, file) : null;
   const url = new URL(`../deployments/${file}`, import.meta.url);
+  const source = localFile && existsSync(localFile) ? localFile : url;
   let manifest;
   try {
-    manifest = JSON.parse(readFileSync(url, "utf8"));
+    manifest = JSON.parse(readFileSync(source, "utf8"));
   } catch (error) {
     throw new Error(
       `Unable to load deployment manifest ${file}: ${error instanceof Error ? error.message : String(error)}`,

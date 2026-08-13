@@ -17,12 +17,15 @@ const REQUIRED = {
     "https://cheshireterminal.ai/agents",
     "https://cheshireterminal.ai/cli",
     "https://cheshireterminal.ai/eliza-agents",
+    "https://cheshireterminal.ai/skills",
   ],
   github: [
     "https://github.com/Solizardking/agents",
     "https://github.com/Solizardking/cli",
     "https://github.com/Solizardking/eliza",
     "https://github.com/Solizardking/cheshire-terminal",
+    "https://github.com/Solizardking/skills",
+    "https://github.com/Solizardking/skillhub-main",
   ],
 };
 
@@ -92,11 +95,11 @@ if (map) {
       failures.push(`map missing github repo: ${url}`);
     }
   }
-  if (!map.github || Object.keys(map.github).length < 4) {
-    failures.push("map.github must list all four repos");
+  if (!map.github || Object.keys(map.github).length < 6) {
+    failures.push("map.github must list agents, cli, eliza, cheshire-terminal, skills, skillhub");
   }
-  if (!Array.isArray(map.repos) || map.repos.length < 4) {
-    failures.push("map.repos must list all four repos");
+  if (!Array.isArray(map.repos) || map.repos.length < 6) {
+    failures.push("map.repos must list agents, cli, eliza, cheshire-terminal, skills, skillhub-main");
   }
 }
 
@@ -142,7 +145,7 @@ if (existsSync(cliCatalog)) {
       failures.push(`cli/src/catalog.mjs missing: ${url}`);
     }
   }
-  if (!text.includes("https://cheshireterminal.ai/agents") || !text.includes("https://cheshireterminal.ai/eliza-agents")) {
+  if (!text.includes("https://cheshireterminal.ai/agents") || !text.includes("https://cheshireterminal.ai/eliza-agents") || !text.includes("https://cheshireterminal.ai/skills")) {
     failures.push("cli/src/catalog.mjs missing product hub URLs");
   }
 }

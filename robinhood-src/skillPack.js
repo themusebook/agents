@@ -11,14 +11,29 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { resolveRobinhoodAgentsRoot } from "./robinhoodAgentsRoot.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 export const PACKAGE_ROOT = join(__dirname, "..");
+
+function suiteDir() {
+  const local = resolveRobinhoodAgentsRoot(PACKAGE_ROOT);
+  if (local?.skillsDir && existsSync(local.skillsDir)) return local.skillsDir;
+  return join(PACKAGE_ROOT, "skills");
+}
 
 /** Absolute path to the full skill suite (registry + forge + launch + packs). */
 export const RH_SKILLS_SUITE_DIR = join(PACKAGE_ROOT, "skills");
 
 export const RH_SKILLS_SUITE_INDEX_PATH = join(RH_SKILLS_SUITE_DIR, "suite-index.json");
+
+export function getRhSkillsSuiteDir() {
+  return suiteDir();
+}
+
+export function getRhSkillsSuiteIndexPath() {
+  return join(suiteDir(), "suite-index.json");
+}
 
 /** Absolute path to the vendored RH open skill pack (pack-index + skill dirs). */
 export const RH_CRYPTO_AGENT_PACK_DIR = join(
@@ -26,6 +41,10 @@ export const RH_CRYPTO_AGENT_PACK_DIR = join(
   "skills",
   "rh-crypto-agent",
 );
+
+export function getRhCryptoAgentPackDir() {
+  return join(suiteDir(), "rh-crypto-agent");
+}
 
 export const RH_CRYPTO_AGENT_PACK_INDEX_PATH = join(
   RH_CRYPTO_AGENT_PACK_DIR,
@@ -53,12 +72,14 @@ export const RH_CRYPTO_AGENT_CATALOG_PATH = join(
  * }}
  */
 export function loadRhCryptoAgentPackIndex() {
-  if (!existsSync(RH_CRYPTO_AGENT_PACK_INDEX_PATH)) {
+  const packDir = getRhCryptoAgentPackDir();
+  const packIndex = join(packDir, "pack-index.json");
+  if (!existsSync(packIndex)) {
     throw new Error(
-      `RH skill pack missing pack-index at ${RH_CRYPTO_AGENT_PACK_INDEX_PATH}`,
+      `RH skill pack missing pack-index at ${packIndex}`,
     );
   }
-  const pack = JSON.parse(readFileSync(RH_CRYPTO_AGENT_PACK_INDEX_PATH, "utf8"));
+  const pack = JSON.parse(readFileSync(packIndex, "utf8"));
   if (!Array.isArray(pack.skills)) {
     throw new Error("pack-index.json skills must be an array");
   }
@@ -69,7 +90,7 @@ export function loadRhCryptoAgentPackIndex() {
  * Absolute path for CLAWDBOT_SKILLS_DIR (pack root containing skill folders).
  */
 export function getRhCryptoAgentSkillsDir() {
-  return RH_CRYPTO_AGENT_PACK_DIR;
+  return getRhCryptoAgentPackDir();
 }
 
 /**
@@ -95,7 +116,7 @@ export function inspectRhCryptoAgentPack() {
   const skills = [];
   const missing = [];
   for (const id of pack.skills) {
-    const skillDir = join(RH_CRYPTO_AGENT_PACK_DIR, id);
+    const skillDir = join(getRhCryptoAgentPackDir(), id);
     const skillMd = join(skillDir, "SKILL.md");
     const okDir = existsSync(skillDir) && statSync(skillDir).isDirectory();
     const okMd = existsSync(skillMd);
@@ -120,8 +141,9 @@ export function inspectRhCryptoAgentPack() {
  * @returns {Array<{ slug: string, name: string, description?: string, tags?: string[] }>}
  */
 export function loadRhCryptoAgentCatalog() {
-  if (!existsSync(RH_CRYPTO_AGENT_CATALOG_PATH)) return [];
-  const raw = JSON.parse(readFileSync(RH_CRYPTO_AGENT_CATALOG_PATH, "utf8"));
+  const catalogPath = join(getRhCryptoAgentPackDir(), "catalog.json");
+  if (!existsSync(catalogPath)) return [];
+  const raw = JSON.parse(readFileSync(catalogPath, "utf8"));
   return Array.isArray(raw) ? raw : [];
 }
 
@@ -129,7 +151,7 @@ export function loadRhCryptoAgentCatalog() {
  * Directory entries under the pack that look like skills (have SKILL.md),
  * including any not listed in pack-index (diagnostic only).
  */
-export function listSkillDirectoriesWithSkillMd(root = RH_CRYPTO_AGENT_PACK_DIR) {
+export function listSkillDirectoriesWithSkillMd(root = getRhCryptoAgentPackDir()) {
   if (!existsSync(root)) return [];
   return readdirSync(root)
     .filter((name) => {
@@ -147,17 +169,18 @@ export function listSkillDirectoriesWithSkillMd(root = RH_CRYPTO_AGENT_PACK_DIR)
  * Environment snippet operators can export for clawdbot discovery.
  */
 export function clawdbotSkillsDirExportLine() {
-  return `export CLAWDBOT_SKILLS_DIR="${RH_CRYPTO_AGENT_PACK_DIR}"`;
+  return `export CLAWDBOT_SKILLS_DIR="${getRhCryptoAgentPackDir()}"`;
 }
 
 /**
  * Load suite-index.json for top-level robinhood-agents skills.
  */
 export function loadRhSkillsSuiteIndex() {
-  if (!existsSync(RH_SKILLS_SUITE_INDEX_PATH)) {
-    throw new Error(`suite-index missing at ${RH_SKILLS_SUITE_INDEX_PATH}`);
+  const indexPath = getRhSkillsSuiteIndexPath();
+  if (!existsSync(indexPath)) {
+    throw new Error(`suite-index missing at ${indexPath}`);
   }
-  const pack = JSON.parse(readFileSync(RH_SKILLS_SUITE_INDEX_PATH, "utf8"));
+  const pack = JSON.parse(readFileSync(indexPath, "utf8"));
   if (!Array.isArray(pack.skills)) {
     throw new Error("suite-index.json skills must be an array");
   }
@@ -182,7 +205,7 @@ export function inspectRhSkillsSuite() {
   const missing = [];
 
   for (const id of suite.skills) {
-    const skillDir = join(RH_SKILLS_SUITE_DIR, id);
+    const skillDir = join(getRhSkillsSuiteDir(), id);
     const skillMd = join(skillDir, "SKILL.md");
     const okDir = existsSync(skillDir) && statSync(skillDir).isDirectory();
 
@@ -221,5 +244,5 @@ export function inspectRhSkillsSuite() {
 
 /** CLAWDBOT export pointing at the full suite (includes nested packs). */
 export function clawdbotSuiteSkillsDirExportLine() {
-  return `export CLAWDBOT_SKILLS_DIR="${RH_SKILLS_SUITE_DIR}"`;
+  return `export CLAWDBOT_SKILLS_DIR="${getRhSkillsSuiteDir()}"`;
 }

@@ -9,6 +9,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { existsSync, readFileSync } from "node:fs";
+import { resolveRobinhoodAgentsRoot } from "./robinhoodAgentsRoot.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const INSTALL_MARKER = path.join(ROOT, "packages", ".install-marker.json");
@@ -72,6 +73,11 @@ export function listPackageIds() {
 export function resolvePackageDir(id) {
   const entry = PACKAGE_CATALOG.find((row) => row.id === id);
   if (!entry) throw new Error(`Unknown package id: ${id}`);
+  const local = resolveRobinhoodAgentsRoot(ROOT);
+  if (local) {
+    const abs = path.join(local.root, entry.path);
+    if (existsSync(abs)) return abs;
+  }
   return path.join(ROOT, entry.path);
 }
 
@@ -80,7 +86,10 @@ export function resolvePackageDir(id) {
  */
 export function inspectPackages() {
   return PACKAGE_CATALOG.map((entry) => {
-    const abs = path.join(ROOT, entry.path);
+    const local = resolveRobinhoodAgentsRoot(ROOT);
+    const abs = local && existsSync(path.join(local.root, entry.path))
+      ? path.join(local.root, entry.path)
+      : path.join(ROOT, entry.path);
     const packageJsonPath = path.join(abs, "package.json");
     let packageJson = null;
     if (existsSync(packageJsonPath)) {

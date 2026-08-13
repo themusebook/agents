@@ -65,6 +65,7 @@
     "verify:oss": "node scripts/verify-oss-connection.mjs",
     "test": "node scripts/validate-catalog.cjs && node scripts/smoke-readme-npm.cjs && node scripts/test-dna-generate.cjs && node scripts/test-knowledge-upload.cjs && node scripts/test-eliza-zk-paths.cjs && node scripts/test-skills-tui.cjs && node scripts/test-install-at-birth.cjs && node scripts/test-tigris-storage.cjs && node scripts/verify-oss-connection.mjs && node bin/ct-agents.js design --list --json > /dev/null && node bin/ct-agents.js skills packs --json > /dev/null",
     "test:tigris": "node scripts/test-tigris-storage.cjs",
+    "test:elizero": "node agents/elizero/validate.mjs",
     "test:skills-tui": "node scripts/test-skills-tui.cjs",
     "test:install-at-birth": "node scripts/test-install-at-birth.cjs",
     "test:dna": "node scripts/test-dna-generate.cjs",
