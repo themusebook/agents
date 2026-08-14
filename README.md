@@ -57,6 +57,12 @@ Hosted surfaces: [agent hub](https://cheshireterminal.ai/agents) · [eliza studi
 npx cheshire-terminal-agents connect
 npx cheshire-terminal-agents catalog
 
+# from this git checkout (no global install — `ct-agents` is not on PATH until npm i -g / npm link)
+node bin/ct-agents.js connect
+node bin/ct-agents.js acp
+node bin/ct-agents.js a2a send --text 'who are you'
+node bin/ct-agents.js serve
+
 # official site CLI companion (cheshireterminal.ai/cli)
 npx cheshire-terminal-cli connect
 npx cheshire-terminal-cli eliza:status
@@ -94,8 +100,18 @@ npx cheshire-terminal-agents
 # or explicit
 npx cheshire-terminal-agents design
 
-# install globally (bins: cheshire-terminal-agents · ct-agents)
-npm i -g cheshire-terminal-agents
+# from this git checkout — bin is ./bin/ct-agents.js (zsh: command not found: ct-agents
+# until you install globally or npm link)
+node bin/ct-agents.js connect
+node bin/ct-agents.js acp
+node bin/ct-agents.js a2a send --text 'show CLAWD mint'
+node bin/ct-agents.js serve
+# same as: npx . connect   or   npm run acp
+
+# put `ct-agents` on PATH
+npm i -g cheshire-terminal-agents    # published package
+# or, from this directory:
+npm link                             # bins: cheshire-terminal-agents · ct-agents
 ct-agents design
 ct-agents catalog
 ct-agents serve
@@ -104,7 +120,7 @@ ct-agents serve
 npm i cheshire-terminal-agents
 ```
 
-Requires **Node.js `>=18.18`** (ESM).
+Requires **Node.js `>=18.18`** (ESM). Bare `ct-agents` only works after `npm i -g` or `npm link`. In zsh, quote `--text` with **single quotes** so `$CLAWD` is not expanded as an empty env var.
 
 ### Design your own agent (TUI)
 
@@ -213,18 +229,12 @@ Full catalog is fetched on demand; installs pull **only** the slugs you select.
 | `ct-agents memory retrieve --agent elizero --query "…"` | Trust-gated recall |
 | `ct-agents acp` / `acp discover` / `acp list` | Agent Commerce Protocol client + local server index |
 | `ct-agents a2a` / `a2a peers` / `a2a send --text "…"` | A2A HTTP+JSON (eliZERO server + Cheshire/ZK Shark client) |
-
-Official Tigris agent skills (SDK, buckets, objects, agent-kit) are **not** vendored. Restore from `skills-lock.json`:
-
-```bash
-npx skills add tigrisdata/skills --skill '*' --agent cursor -y --copy
-```
-
-Project names/env live in [`TIGRIS.md`](./TIGRIS.md). Clawd handoff playbook: `skills/tigris-agent-storage`. Browse: [skills.sh/tigrisdata/skills](https://skills.sh/tigrisdata/skills).
 | `ct-agents registry` | Print on-chain registry index |
 | `ct-agents schema` | Show `clawdAgentSchema` info |
-| `ct-agents serve [--port]` | Local static API from `public/` |
+| `ct-agents serve [--port]` | Local API from `public/` plus ACP/A2A routes |
 | `ct-agents --help` | Usage + live endpoint map |
+
+From this checkout, prefix with `node bin/ct-agents.js` (or `npx .`) unless you have run `npm i -g cheshire-terminal-agents` / `npm link`.
 
 ```bash
 npx cheshire-terminal-agents design --list
@@ -234,8 +244,19 @@ npx cheshire-terminal-agents skills packs
 npx cheshire-terminal-agents dna list
 npx cheshire-terminal-agents knowledge list
 npx cheshire-terminal-agents storage status
+npx cheshire-terminal-agents memory status
+npx cheshire-terminal-agents acp
+npx cheshire-terminal-agents a2a peers
 npx cheshire-terminal-agents serve --port 8080
 ```
+
+Official Tigris agent skills (SDK, buckets, objects, agent-kit) are **not** vendored. Restore from `skills-lock.json`:
+
+```bash
+npx skills add tigrisdata/skills --skill '*' --agent cursor -y --copy
+```
+
+Project names/env live in [`TIGRIS.md`](./TIGRIS.md). Clawd handoff playbook: `skills/tigris-agent-storage`. Browse: [skills.sh/tigrisdata/skills](https://skills.sh/tigrisdata/skills).
 
 ---
 
@@ -436,7 +457,7 @@ Primary product hubs (see `open-source-connection-map.json`):
 ## ⎧ QUICK START ⎫
 
 ```bash
-# 1. Install
+# 1. Install (global bin) — or skip this and use `node bin/ct-agents.js` from the checkout
 npm i -g cheshire-terminal-agents
 
 # 2. Catalog (139 agents · 3 one-shots · 7 featured)
@@ -464,9 +485,14 @@ ct-agents memory status
 ct-agents memory ingest --agent elizero --summary "session note"
 ct-agents memory retrieve --agent elizero --query "what did we decide"
 
-# 8. Schema + local API
+# 8. Schema + local API (ACP/A2A routes included)
 ct-agents schema
 ct-agents serve --port 8080
+
+# 9. Product hubs + ACP/A2A (from checkout: node bin/ct-agents.js …)
+ct-agents connect
+ct-agents acp
+ct-agents a2a send --text 'who are you'
 ```
 
 From any project (after `npm i cheshire-terminal-agents`):
