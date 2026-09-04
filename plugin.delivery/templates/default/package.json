@@ -14,7 +14,7 @@
     "@openclawd/plugin-sdk": "^1.0.0",
     "@openclawd/chat-plugins-gateway": "^1.0.0",
     "antd": "^5.0.0",
-    "next": "^14.0.0",
+    "next": "^16.3.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },
