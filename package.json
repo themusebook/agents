@@ -1,7 +1,7 @@
 {
   "name": "cheshire-terminal-agents",
   "version": "1.48.4",
-  "description": "♾️  Clawd Agents — dual-chain agent catalog + design TUI. Fork any agent as a template, customize against clawdAgentSchema.v1, validate, and ship. 139 catalog agents, scaffolds, characters, skills, Metaplex/Robinhood forge surfaces. npx cheshire-terminal-agents design",
+  "description": "\u267e\ufe0f  Clawd Agents \u2014 dual-chain agent catalog + design TUI. Fork any agent as a template, customize against clawdAgentSchema.v1, validate, and ship. 139 catalog agents, scaffolds, characters, skills, Metaplex/Robinhood forge surfaces. npx cheshire-terminal-agents design",
   "type": "module",
   "sideEffects": false,
   "license": "MIT",
@@ -64,7 +64,7 @@
     "./package.json": "./package.json"
   },
   "scripts": {
-    "build": "node build-catalog.cjs && node scripts/validate-catalog.cjs && echo '✓ catalog built'",
+    "build": "node build-catalog.cjs && node scripts/validate-catalog.cjs && echo '\u2713 catalog built'",
     "validate": "node scripts/validate-catalog.cjs",
     "verify:oss": "node scripts/verify-oss-connection.mjs",
     "test": "node scripts/validate-catalog.cjs && node scripts/smoke-readme-npm.cjs && node scripts/test-dna-generate.cjs && node scripts/test-knowledge-upload.cjs && node scripts/test-eliza-zk-paths.cjs && node scripts/test-skills-tui.cjs && node scripts/test-install-at-birth.cjs && node scripts/test-tigris-storage.cjs && node scripts/test-membrain-memory.cjs && node scripts/test-acp-a2a.cjs && node scripts/verify-oss-connection.mjs && node bin/ct-agents.js design --list --json > /dev/null && node bin/ct-agents.js skills packs --json > /dev/null",
@@ -117,6 +117,8 @@
     "examples/",
     "locales/",
     "minted/",
+    "musebook/",
+    "web/",
     "templates/",
     "public/.well-known/acp.json",
     "public/.well-known/ai-plugin.json",

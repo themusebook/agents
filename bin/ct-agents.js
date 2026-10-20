@@ -5,6 +5,7 @@ import { fileURLToPath, pathToFileURL } from 'url';
 import path from 'path';
 import http from 'http';
 import fs from 'fs';
+import { spawnSync } from 'child_process';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -111,6 +112,17 @@ async function runA2a(argv) {
   const { runA2aCli } = await import(pathToFileURL(modPath).href);
   const code = await runA2aCli(argv, ROOT);
   process.exit(code ?? 0);
+}
+
+async function runMusebook(argv) {
+  // ct-agents musebook <sync|list|show|install> [...] -> robinhood-src/cli.js musebook-*
+  const sub = argv[0] && !argv[0].startsWith('--') ? argv[0] : 'list';
+  const rest = argv[0] === sub ? argv.slice(1) : argv;
+  const cliPath = path.join(ROOT, 'robinhood-src', 'cli.js');
+  const result = spawnSync(process.execPath, [cliPath, `musebook-${sub}`, ...rest], {
+    stdio: 'inherit',
+  });
+  process.exit(result.status ?? 1);
 }
 
 const COMMANDS = {
@@ -500,6 +512,8 @@ if (!cmd) {
   await runStorage(args.slice(1));
 } else if (cmd === 'memory' || cmd === 'membrain') {
   await runMemory(args.slice(1));
+} else if (cmd === 'musebook') {
+  await runMusebook(args.slice(1));
 } else if (cmd === 'acp') {
   await runAcp(args.slice(1));
 } else if (cmd === 'a2a') {

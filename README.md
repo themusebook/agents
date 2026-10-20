@@ -326,6 +326,31 @@ Package-local surfaces (CLI, not HTTP):
 
 ---
 
+## ⎧ MUSEBOOK MIRROR + AGENTS CLI ⎫
+
+The live **Musebook** Solana agent directory is mirrored into this repo, and the
+/agents experience ships as an actual CLI interface:
+
+```
+ MIRROR SYNC     node scripts/mirror-musebook.cjs
+                   → musebook/agents.json (provenance: asset, signer, metadata URI)
+                   → musebook/catalog.json (agents-catalog entry shape)
+ CLI             ct-agents musebook list|show --id ID [--def]|sync|install
+                   (also: node robinhood-src/cli.js musebook-list / musebook-show /
+                    musebook-sync / musebook-install)
+ WEB CLI         web/agents-cli.html — terminal UI over the mirror:
+                   help · list · search · show · def · install · add · register
+ ONE-SHOT        musebook-install prints the install prompt (install.musebook.trade):
+                   OWS wallet first-run + x402 facilitator + skills tarball + register
+ REGISTER        Solana / Metaplex → https://register.musebook.trade
+                 Robinhood / ERC-8004 → the forge in robinhood-src/ (deployments 4663 / 46630)
+```
+
+Mirror stats at first sync (2026-10-19): **1,443 agents** — 1,438 on-chain
+(1,000 mainnet / 438 devnet) + 5 registered software agents. Any mirrored agent
+renders as a schema-v1 def on demand (`musebook-show --id <identifier> --def`),
+so the whole directory is forge- and template-ready without vendoring 1,443 files.
+
 ## ⎧ CATALOG STATS ⎫
 
 Facts from `agents-catalog.json` (rebuild with `npm run build`):

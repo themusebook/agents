@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [Unreleased]
+
+### Added
+
+- **Musebook directory mirror** (`scripts/mirror-musebook.cjs`): syncs the live
+  Musebook Solana agent registry (musebook.trade/live/agents.json +
+  /api/v1/agents) into `musebook/agents.json` (provenance records) and
+  `musebook/catalog.json` (catalog entry shape). First sync: 1,443 agents.
+  `--def <identifier>` renders any mirrored agent as a schema-v1 agent def.
+- **CLI commands** in `robinhood-src/cli.js`: `musebook-sync`, `musebook-list`,
+  `musebook-show [--def]`, `musebook-install` (one-shot install prompt/hub), plus
+  the `ct-agents musebook <sync|list|show|install>` passthrough in `bin/ct-agents.js`.
+- **Web CLI** (`web/agents-cli.html`): a terminal interface over the mirror with
+  list / search / show / def / install / add (schema def generator + download) /
+  register (Solana via register.musebook.trade, Robinhood Chain ERC-8004 via the forge).
+
 ## \[1.1.0] - 2025-12-21
 
 ### Added

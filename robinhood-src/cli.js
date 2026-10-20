@@ -54,6 +54,12 @@ First-class packages (shipped under packages/, installed on npm one-shot):
   packages-install [--force]   # also runs as postinstall; skip with CHESHIRE_SKIP_PACKAGE_INSTALL=1
   package-run --id headless-agent|clawd-agent-tui -- [args…]
 
+Musebook directory mirror (live Solana agent registry, mirrored by scripts/mirror-musebook.cjs):
+  musebook-sync                              # fetch musebook.trade/live/agents.json -> musebook/
+  musebook-list [--network mainnet|devnet] [--limit N]
+  musebook-show --id IDENTIFIER [--def]      # --def prints the schema-v1 agent def
+  musebook-install                           # one-shot install paths (hub, prompt, tarball)
+
 Zero Clawd runtime (external npm: clawdbot-go — not a hard dependency):
   clawdbot-info                              # npm page + install/connect hints
   clawdbot-install [--skills-only] [--global] [--force] [--dry-run]
@@ -111,6 +117,7 @@ function parseArgs(values) {
       name === "no-link-omni" ||
       name === "skills-only" ||
       name === "global" ||
+      name === "def" ||
       name === "local"
     ) {
       flags[name] = true;
@@ -373,6 +380,67 @@ try {
     const relayer = createRelayer({ journalPath: process.env.ZK_OMNI_JOURNAL });
     await relayer.init();
     output = relayer.status();
+  } else if (command === "musebook-sync") {
+    const mirror = path.resolve(
+      path.dirname(fileURLToPath(import.meta.url)),
+      "../scripts/mirror-musebook.cjs",
+    );
+    const result = spawnSync(process.execPath, [mirror], { encoding: "utf8" });
+    output = {
+      ok: result.status === 0,
+      summary: (result.stdout || "").trim(),
+      stderr: (result.stderr || "").trim(),
+    };
+    if (result.status !== 0) process.exitCode = 1;
+  } else if (command === "musebook-list") {
+    const file = path.resolve(
+      path.dirname(fileURLToPath(import.meta.url)),
+      "../musebook/agents.json",
+    );
+    const mirror = JSON.parse(await readFile(file, "utf8"));
+    const network = flags.network || null;
+    const limit = flags.limit ? Number(flags.limit) : 50;
+    const agents = mirror.agents.filter((a) => !network || a.network === network);
+    output = {
+      package: "cheshire-terminal-agents",
+      source: "musebook.trade/agents (mirror)",
+      generatedAt: mirror.generatedAt,
+      count: agents.length,
+      identifiers: agents.slice(0, limit).map((a) => a.identifier),
+    };
+  } else if (command === "musebook-show") {
+    if (!flags.id) throw new Error("musebook-show requires --id IDENTIFIER");
+    if (flags.def) {
+      const mirror = path.resolve(
+        path.dirname(fileURLToPath(import.meta.url)),
+        "../scripts/mirror-musebook.cjs",
+      );
+      const result = spawnSync(process.execPath, [mirror, "--def", flags.id], {
+        encoding: "utf8",
+      });
+      if (result.status !== 0) {
+        throw new Error((result.stderr || "def generation failed").trim());
+      }
+      output = JSON.parse(result.stdout);
+    } else {
+      const file = path.resolve(
+        path.dirname(fileURLToPath(import.meta.url)),
+        "../musebook/agents.json",
+      );
+      const mirror = JSON.parse(await readFile(file, "utf8"));
+      output = mirror.agents.find((a) => a.identifier === flags.id) || null;
+      if (!output) throw new Error(`no mirrored Musebook agent: ${flags.id}`);
+    }
+  } else if (command === "musebook-install") {
+    output = {
+      hub: "https://install.musebook.trade",
+      prompt:
+        "Install Clawd, the Solana-native agent, into this Muse: fetch https://musebook.trade/SKILL.md and follow it exactly. Start with the first-run startup — create my policy-gated OWS Solana wallet (muse-agent), then ask me whether I want to start an x402 facilitator — then install the skill bundle from https://musebook.trade/clawd-skills.tar.gz and register me on Musebook. Sources: github.com/x402agent/solana-clawd · github.com/Solizardking/skills",
+      skill: "https://musebook.trade/SKILL.md",
+      tarball: "https://musebook.trade/clawd-skills.tar.gz",
+      register: "https://register.musebook.trade",
+      directory: "https://musebook.trade/agents",
+    };
   } else {
     throw new Error(`Unknown command: ${command}\n\n${USAGE}`);
   }

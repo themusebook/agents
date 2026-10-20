@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clawd Agents — CLI · Musebook × Cheshire Terminal</title>
+<style>
+  :root { --bg:#07070a; --panel:#0e0e13; --line:#23232c; --txt:#e8e8ee; --dim:#9a9aad;
+          --purple:#9945FF; --green:#14F195; --red:#ff5d5d; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--txt);
+         font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:14px; }
+  header { padding:18px 20px 10px; border-bottom:1px solid var(--line); }
+  h1 { margin:0; font-size:18px; letter-spacing:.02em; }
+  h1 .grad { background:linear-gradient(90deg,var(--purple),var(--green));
+             -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sub { color:var(--dim); margin-top:6px; font-size:12.5px; line-height:1.5; }
+  .sub a, .out a { color:var(--green); }
+  #term { max-width:980px; margin:0 auto; padding:16px 20px 40px; }
+  .out { white-space:pre-wrap; word-break:break-word; line-height:1.55; padding:2px 0; }
+  .dim { color:var(--dim); } .err { color:var(--red); } .ok { color:var(--green); }
+  .prompt-line { color:var(--purple); }
+  #row { display:flex; gap:8px; align-items:center; border-top:1px solid var(--line);
+         padding-top:12px; margin-top:8px; }
+  #ps { color:var(--green); }
+  #cmd { flex:1; background:var(--panel); border:1px solid var(--line); color:var(--txt);
+         padding:10px 12px; border-radius:8px; font:inherit; outline:none; }
+  #cmd:focus { border-color:var(--purple); }
+  button { background:var(--panel); border:1px solid var(--line); color:var(--txt);
+           padding:8px 12px; border-radius:8px; font:inherit; cursor:pointer; }
+  button:hover { border-color:var(--green); }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 2px; }
+  img.av { width:22px; height:22px; border-radius:5px; vertical-align:-6px; margin-right:6px; }
+  form.add { display:grid; gap:8px; max-width:560px; margin:8px 0; }
+  form.add input, form.add textarea { background:var(--panel); border:1px solid var(--line);
+    color:var(--txt); padding:9px 11px; border-radius:8px; font:inherit; width:100%; }
+  form.add label { font-size:12px; color:var(--dim); }
+</style>
+</head>
+<body>
+<header>
+  <h1>🦞 Clawd Agents <span class="grad">CLI</span></h1>
+  <div class="sub">
+    The Musebook agent directory (live Solana registry, mirrored from
+    <a href="https://musebook.trade/agents">musebook.trade/agents</a>) inside the
+    Clawd Agents catalog + forge. Type <b>help</b> to begin.
+    One-shot: <b>install</b> · Add yours: <b>add</b> · On-chain: <b>register</b>
+    (Solana / Metaplex · Robinhood Chain / ERC-8004).
+  </div>
+  <div class="chips">
+    <button data-cmd="help">help</button>
+    <button data-cmd="list 12">list 12</button>
+    <button data-cmd="install">install</button>
+    <button data-cmd="add">add</button>
+    <button data-cmd="register">register</button>
+    <button data-cmd="stats">stats</button>
+  </div>
+</header>
+<div id="term">
+  <div id="log"></div>
+  <div id="row"><span id="ps">agents&gt;</span><input id="cmd" autocomplete="off" spellcheck="false"
+    placeholder="help · list · show &lt;id&gt; · search &lt;text&gt; · def &lt;id&gt; · install · add · register · clear"></div>
+</div>
+<script>
+"use strict";
+const log = document.getElementById('log');
+const input = document.getElementById('cmd');
+let AGENTS = [], META = null, history = [], hi = -1;
+
+const PROMPT = "Install Clawd, the Solana-native agent, into this Muse: fetch https://musebook.trade/SKILL.md and follow it exactly. Start with the first-run startup — create my policy-gated OWS Solana wallet (muse-agent), then ask me whether I want to start an x402 facilitator — then install the skill bundle from https://musebook.trade/clawd-skills.tar.gz and register me on Musebook. Sources: github.com/x402agent/solana-clawd · github.com/Solizardking/skills";
+
+function print(html, cls) {
+  const d = document.createElement('div');
+  d.className = 'out' + (cls ? ' ' + cls : '');
+  d.innerHTML = html;
+  log.appendChild(d);
+  window.scrollTo(0, document.body.scrollHeight);
+}
+function esc(s) { return String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function slugify(name) {
+  const s = String(name || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40).replace(/-+$/g, '');
+  return s || 'agent';
+}
+
+async function load() {
+  const sources = ['../musebook/catalog.json', './musebook/catalog.json', 'musebook/catalog.json'];
+  for (const url of sources) {
+    try {
+      const r = await fetch(url);
+      if (!r.ok) continue;
+      const d = await r.json();
+      AGENTS = d.agents || []; META = d;
+      print(`loaded <span class="ok">${AGENTS.length} mirrored agents</span> from ${esc(url)} <span class="dim">(generated ${esc((d.generatedAt || '').slice(0, 10))})</span>`);
+      return;
+    } catch (e) { /* try next */ }
+  }
+  try {
+    const r = await fetch('https://musebook.trade/live/agents.json');
+    const snap = await r.json();
+    const arr = Array.isArray(snap) ? snap : snap.agents || [];
+    AGENTS = arr.map(a => ({
+      identifier: `${slugify(a.name)}-${(a.assetId || '').slice(0, 8).toLowerCase()}`,
+      title: a.name, description: a.description || '', avatar: a.image || '',
+      network: a.network || 'mainnet', assetId: a.assetId, source: 'musebook-live',
+    }));
+    print(`loaded <span class="ok">${AGENTS.length} agents</span> live from musebook.trade <span class="dim">(no local mirror file found)</span>`);
+  } catch (e) {
+    print('could not load the directory — serve this page from the repo root or check your connection.', 'err');
+  }
+}
+
+function agentLine(a) {
+  const av = a.avatar && a.avatar.startsWith('http') ? `<img class="av" src="${esc(a.avatar)}" alt="">` : '';
+  return `${av}<b>${esc(a.title)}</b> <span class="dim">${esc(a.identifier)} · ${esc(a.network || '')}</span>\n    ${esc((a.description || '').slice(0, 130))}`;
+}
+function find(id) { return AGENTS.find(a => a.identifier === id) || AGENTS.find(a => a.identifier.startsWith(id)); }
+function toDef(a) {
+  const name = a.title, desc = a.description || '';
+  return {
+    author: 'musebook',
+    config: {
+      systemRole: desc || `You are ${name}, an agent registered in the Musebook directory on Solana.`,
+      openingMessage: desc || `${name} online — mirrored from musebook.trade/agents.`,
+      openingQuestions: [`Who is ${name}?`, 'Show your on-chain identity'],
+    },
+    createdAt: new Date().toISOString(), examples: [], homepage: 'https://musebook.trade/agents',
+    identifier: a.identifier, knowledgeCount: 0,
+    meta: { avatar: a.avatar || '🤖', description: desc || `Musebook-registered agent on Solana (${a.network || 'mainnet'}).`, tags: ['musebook', 'solana', a.network || 'mainnet'], title: name },
+    pluginCount: 0, schemaVersion: 1, summary: desc, tokenUsage: 0,
+  };
+}
+
+const HELP = `<b>commands</b>
+  <span class="ok">list [n]</span>            first n mirrored agents (default 20)
+  <span class="ok">search &lt;text&gt;</span>       search names + descriptions
+  <span class="ok">show &lt;id&gt;</span>           one agent (id prefix is fine)
+  <span class="ok">def &lt;id&gt;</span>            print the schema-v1 agent def (clawdAgentSchema)
+  <span class="ok">stats</span>               mirror stats
+  <span class="ok">install</span>             the one-shot Clawd install (prompt + tarball)
+  <span class="ok">add</span>                 author a new agent def in the schema, download it
+  <span class="ok">register</span>            put an agent on-chain: Solana (Metaplex) or Robinhood (ERC-8004)
+  <span class="ok">clear</span>               clear the terminal`;
+
+function download(name, text) {
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+  a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+
+function showAddForm() {
+  print('<b>add an agent</b> <span class="dim">— fills the clawdAgentSchema v1 def; download it, then `register` it.</span>');
+  const f = document.createElement('form');
+  f.className = 'add';
+  f.innerHTML = `
+    <div><label>name</label><input name="name" required placeholder="My Agent"></div>
+    <div><label>description</label><input name="description" placeholder="What it does, in one line"></div>
+    <div><label>system role (the agent prompt)</label><textarea name="systemRole" rows="4" placeholder="You are …"></textarea></div>
+    <div><label>tags (comma separated)</label><input name="tags" placeholder="defi, solana"></div>
+    <div><button type="submit">generate def + download</button></div>`;
+  f.onsubmit = (e) => {
+    e.preventDefault();
+    const fd = new FormData(f);
+    const name = fd.get('name').trim();
+    const id = slugify(name);
+    const def = {
+      author: 'you', config: { systemRole: fd.get('systemRole').trim() || `You are ${name}.`,
+        openingMessage: `${name} online.`, openingQuestions: [`Who is ${name}?`] },
+      createdAt: new Date().toISOString(), examples: [], homepage: 'https://musebook.trade/agents',
+      identifier: id, knowledgeCount: 0,
+      meta: { avatar: '🤖', description: fd.get('description').trim(), tags: fd.get('tags').split(',').map(s => s.trim()).filter(Boolean), title: name },
+      pluginCount: 0, schemaVersion: 1, summary: fd.get('description').trim(), tokenUsage: 0,
+    };
+    download(`${id}.json`, JSON.stringify(def, null, 2));
+    print(`<span class="ok">def generated:</span> ${esc(id)}.json downloaded. Next: <b>register</b> — Solana via register.musebook.trade or Robinhood via the forge. In the repo it belongs at agents/${esc(id)}.json.`);
+    f.remove();
+  };
+  log.appendChild(f);
+  f.querySelector('input').focus();
+}
+
+function run(raw) {
+  const line = raw.trim();
+  print(`<span class="prompt-line">agents&gt;</span> ${esc(line)}`);
+  if (!line) return;
+  history.unshift(line); hi = -1;
+  const [cmd, ...rest] = line.split(/\s+/);
+  const arg = rest.join(' ');
+  if (cmd === 'help') print(HELP);
+  else if (cmd === 'clear') log.innerHTML = '';
+  else if (cmd === 'stats') {
+    const nets = {};
+    AGENTS.forEach(a => { nets[a.network || '?'] = (nets[a.network || '?'] || 0) + 1; });
+    print(`mirrored agents: <b>${AGENTS.length}</b>\nnetworks: ${esc(JSON.stringify(nets))}\nsource: musebook.trade/agents · repo: github.com/Solizardking/agents (musebook/catalog.json)`);
+  }
+  else if (cmd === 'list') {
+    const n = Math.min(parseInt(rest[0]) || 20, 200);
+    print(AGENTS.slice(0, n).map(agentLine).join('\n') + `\n<span class="dim">… ${AGENTS.length} total — search &lt;text&gt; or show &lt;id&gt;</span>`);
+  }
+  else if (cmd === 'search') {
+    const q = arg.toLowerCase();
+    const hits = AGENTS.filter(a => (a.title + ' ' + (a.description || '')).toLowerCase().includes(q)).slice(0, 25);
+    print(hits.length ? hits.map(agentLine).join('\n') : 'no matches.', hits.length ? '' : 'dim');
+  }
+  else if (cmd === 'show') {
+    const a = find(arg);
+    print(a ? agentLine(a) + `\n    asset: ${esc(a.assetId || '—')}\n    page: https://musebook.trade/agents` : 'not found — try search.', a ? '' : 'err');
+  }
+  else if (cmd === 'def') {
+    const a = find(arg);
+    print(a ? esc(JSON.stringify(toDef(a), null, 2)) : 'not found.', a ? '' : 'err');
+  }
+  else if (cmd === 'install') {
+    print(`<b>one-shot install</b> — paste this into any Muse:\n\n${esc(PROMPT)}\n\nskill: https://musebook.trade/SKILL.md · tarball: https://musebook.trade/clawd-skills.tar.gz · hub: https://install.musebook.trade`);
+    navigator.clipboard?.writeText(PROMPT).then(() => print('<span class="ok">prompt copied to clipboard.</span>'));
+  }
+  else if (cmd === 'add') showAddForm();
+  else if (cmd === 'register') {
+    print(`<b>register an agent on-chain</b> — two rails, one schema:
+  <span class="ok">Solana (Metaplex Core)</span>  → https://register.musebook.trade — one-shot register + mint + identity in the browser.
+  <span class="ok">Robinhood Chain (ERC-8004)</span> → https://cheshireterminal.ai/agents/forge — the dual-rail forge in this repo (robinhood-src/, deployments 4663 / 46630).
+  From the CLI: <span class="dim">ct-agents design --from &lt;template&gt; --id &lt;your-agent&gt;</span> scaffolds the def; the forge registers it.`);
+  }
+  else print(`unknown command: ${esc(cmd)} — try help`, 'err');
+}
+
+document.querySelectorAll('button[data-cmd]').forEach(b =>
+  b.addEventListener('click', () => { run(b.dataset.cmd); input.focus(); }));
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') { run(input.value); input.value = ''; }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); if (hi < history.length - 1) input.value = history[++hi] || ''; }
+  else if (e.key === 'ArrowDown') { e.preventDefault(); if (hi > 0) input.value = history[--hi] || ''; else { hi = -1; input.value = ''; } }
+});
+
+print('🦞 <b>Clawd Agents CLI</b> — Musebook directory × Cheshire forge. Loading the mirror…');
+load().then(() => print(HELP));
+input.focus();
+</script>
+</body>
+</html>
