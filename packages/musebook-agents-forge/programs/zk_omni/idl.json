@@ -1,0 +1,92 @@
+{
+  "version": "0.1.0",
+  "name": "zk_omni",
+  "instructions": [
+    {
+      "name": "initStore",
+      "accounts": [
+        { "name": "admin", "isMut": true, "isSigner": true },
+        { "name": "store", "isMut": true, "isSigner": false },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [{ "name": "robinhoodPeer", "type": { "array": ["u8", 32] } }]
+    },
+    {
+      "name": "setPeer",
+      "accounts": [
+        { "name": "admin", "isMut": false, "isSigner": true },
+        { "name": "store", "isMut": true, "isSigner": false }
+      ],
+      "args": [{ "name": "robinhoodPeer", "type": { "array": ["u8", 32] } }]
+    },
+    {
+      "name": "receiveZkOmni",
+      "docs": [
+        "Receive a msgType-4 ZkOmni payload on Solana.",
+        "Enforces peer, ZK nullifier relation, and creates nullifier PDA."
+      ],
+      "accounts": [
+        { "name": "payer", "isMut": true, "isSigner": true },
+        { "name": "store", "isMut": true, "isSigner": false },
+        { "name": "nullifierAccount", "isMut": true, "isSigner": false },
+        { "name": "systemProgram", "isMut": false, "isSigner": false }
+      ],
+      "args": [
+        { "name": "srcEid", "type": "u32" },
+        { "name": "srcSender", "type": { "array": ["u8", 32] } },
+        { "name": "guid", "type": { "array": ["u8", 32] } },
+        { "name": "agentId", "type": { "array": ["u8", 32] } },
+        { "name": "controller", "type": { "array": ["u8", 32] } },
+        { "name": "nullifier", "type": { "array": ["u8", 32] } },
+        { "name": "payloadCommitment", "type": { "array": ["u8", 32] } },
+        { "name": "modelHash", "type": { "array": ["u8", 32] } },
+        { "name": "proofPubkey", "type": { "array": ["u8", 32] } },
+        { "name": "expiresAt", "type": "u64" },
+        { "name": "action", "type": "string" },
+        { "name": "memo", "type": "string" },
+        { "name": "proof", "type": "bytes" }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Store",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "admin", "type": "publicKey" },
+          { "name": "robinhoodPeer", "type": { "array": ["u8", 32] } },
+          { "name": "deliveredCount", "type": "u64" },
+          { "name": "lastNullifier", "type": { "array": ["u8", 32] } },
+          { "name": "lastSrcEid", "type": "u32" },
+          { "name": "bump", "type": "u8" }
+        ]
+      }
+    },
+    {
+      "name": "NullifierAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          { "name": "nullifier", "type": { "array": ["u8", 32] } },
+          { "name": "guid", "type": { "array": ["u8", 32] } },
+          { "name": "srcEid", "type": "u32" },
+          { "name": "agentId", "type": { "array": ["u8", 32] } },
+          { "name": "controller", "type": { "array": ["u8", 32] } },
+          { "name": "payloadCommitment", "type": { "array": ["u8", 32] } },
+          { "name": "modelHash", "type": { "array": ["u8", 32] } },
+          { "name": "proofPubkey", "type": { "array": ["u8", 32] } },
+          { "name": "proofHash", "type": { "array": ["u8", 32] } },
+          { "name": "expiresAt", "type": "u64" },
+          { "name": "bump", "type": "u8" }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "Hfbc3tAGYE5nBUa5UncjSV6hoWd3JoVKdA49jPcreXFJ",
+    "protocol": "zk-omni-v1",
+    "msgType": 4,
+    "ed25519": "requires prior Ed25519Program ix verifying proof over publicInputsHash"
+  }
+}

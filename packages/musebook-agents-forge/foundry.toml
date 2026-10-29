@@ -1,0 +1,22 @@
+[profile.default]
+src = "contracts"
+test = "deploy/test"
+script = "deploy/script"
+out = "out"
+cache_path = "cache"
+libs = ["deploy/lib"]
+solc_version = "0.8.13"
+optimizer = true
+optimizer_runs = 200
+via_ir = true
+ffi = false
+fs_permissions = [{ access = "read", path = "./deployments" }]
+
+# Deployment always uses the explicit RH_RPC_URL. There is intentionally no
+# mainnet public-RPC alias that a broadcast command can select by accident.
+[rpc_endpoints]
+robinhood = "${RH_RPC_URL}"
+
+[etherscan]
+robinhood = { key = "empty", url = "https://robinhoodchain.blockscout.com/api/" }
+robinhood_testnet = { key = "empty", url = "https://explorer.testnet.chain.robinhood.com/api/" }

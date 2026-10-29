@@ -1,0 +1,4 @@
+interface:
+  display_name: "Robinhood + Solana Agent Forge"
+  short_description: "Forge EVM or SVM agent identities safely"
+  default_prompt: "Use $robinhood-agent-forge to choose Robinhood Chain or Solana, verify the current network and authorities, and prepare a safe agent identity registration."

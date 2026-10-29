@@ -1,0 +1,31 @@
+{
+  "name": "Musebook Robinhood Agents skill suite",
+  "id": "musebook-robinhood-agents-skills",
+  "version": 1,
+  "description": "First-class agent skills for Robinhood Chain registries, Agent Forge, dual-rail omni mint (Solana+RH+zk-omni), bonded launch, Launchpad V3, and zk-omni messaging. Hosted as flat hub skill slugs and served via /api/skills.",
+  "product": {
+    "hub": "https://musebook.trade/agents",
+    "forge": "https://musebook.trade/agents/forge",
+    "registry": "https://musebook.trade/agent-registry",
+    "rhLaunch": "https://musebook.trade/rh-launch",
+    "funpump": "https://funpump.ai"
+  },
+  "skills": [
+    "musebook-agent-registries",
+    "musebook-agent-identity-registry",
+    "musebook-agent-reputation-registry",
+    "musebook-agent-validation-registry",
+    "musebook-omni-mint",
+    "musebook-zk-omni",
+    "zk-omni-messaging",
+    "robinhood-agent-forge",
+    "rh-bonded-launch",
+    "rh-launchpad-v3",
+    "rh-crypto-agent"
+  ],
+  "skillCount": 11,
+  "notes": {
+    "rh-crypto-agent": "Pack root (SKILL.md + pack-index.json). Nested RH open-stack skills may live alongside first-class suite entries in this hub.",
+    "canonicalPath": "<skill-id>/SKILL.md"
+  }
+}
