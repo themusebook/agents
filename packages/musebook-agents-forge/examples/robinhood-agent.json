@@ -1,0 +1,1 @@
+{"platform":"robinhood","chainId":46630,"name":"Open Research Agent","description":"Publishes verifiable research.","image":"ipfs://bafy-example","services":[{"name":"MCP","endpoint":"https://example.com/mcp"}],"supportedTrust":["reputation","validation"]}

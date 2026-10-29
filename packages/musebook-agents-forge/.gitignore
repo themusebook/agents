@@ -1,0 +1,11 @@
+node_modules/
+out/
+cache/
+.zk-omni-relayer/
+.env
+.env.local
+*.log
+# Rust / Anchor build artifacts (must not ship or re-commit)
+**/target/
+**/*.rs.bk
+.DS_Store

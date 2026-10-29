@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "standard": "ERC-8004",
+  "namespace": "eip155",
+  "chainId": 4663,
+  "network": "Robinhood Chain mainnet",
+  "explorer": "https://robinhoodchain.blockscout.com",
+  "rpc": "https://rpc.mainnet.chain.robinhood.com",
+  "deployedAt": "2026-07-19T21:06:37Z",
+  "deploymentBlock": 14150372,
+  "deploymentBlockHash": "0x25f924abc0db569131557e7ad7f8bd10b5ca52e8a94372bd0d8fcd6649984b10",
+  "deployer": "0x0d7b25825bf8b932a7475c9a53ed1c7018e813c1",
+  "compiler": {
+    "version": "0.8.13",
+    "optimizer": true,
+    "optimizerRuns": 200,
+    "viaIR": true
+  },
+  "deploymentSource": "script/DeployCheshireAgentRegistries.s.sol",
+  "contracts": {
+    "identity": {
+      "name": "CheshireAgentIdentityRegistry",
+      "address": "0x70361a37951d66f8c44cfb45873df2ba8b9fc950",
+      "createTx": "0xfbd83784276d5463bb0a1cd419dc7634b3aff85a5b66456b1dbb6a3951aa6db0",
+      "deploymentBlock": 14150372,
+      "runtimeCodeHash": "0x1c3c472c561bd5f45b9056fe4716aa57d60fd4d06eef9e8616c926ed744d2aa3",
+      "runtimeBytes": 7667,
+      "sourcePath": "src/CheshireAgentIdentityRegistry.sol",
+      "sourceVerification": "verified"
+    },
+    "reputation": {
+      "name": "CheshireAgentReputationRegistry",
+      "address": "0x8a4154a6c1ee44b4b790948f9613e3fb934628ff",
+      "createTx": "0x7ac254c70427a5f744ddecec5fe90b265ba3d71d018ca227a36ba3a6aa813fa6",
+      "deploymentBlock": 14150372,
+      "runtimeCodeHash": "0xb145a0e76b834446b001d83fb4657c22d53c150983c8076eae8845d484e28a63",
+      "runtimeBytes": 7882,
+      "sourcePath": "src/CheshireAgentReputationRegistry.sol",
+      "identityRegistry": "0x70361a37951d66f8c44cfb45873df2ba8b9fc950",
+      "sourceVerification": "pending"
+    },
+    "validation": {
+      "name": "CheshireAgentValidationRegistry",
+      "address": "0x020d053040da31195e5f9a992b8eda663dbb073b",
+      "createTx": "0x04c7048be36330c91022161375729ce4488abf0815f558376b1ad5fcee1ca179",
+      "deploymentBlock": 14150372,
+      "runtimeCodeHash": "0x9193febb5cb157a71f4043e9cdd3e21bfcb982229ba04669be6a696621a11c89",
+      "runtimeBytes": 4186,
+      "sourcePath": "src/CheshireAgentValidationRegistry.sol",
+      "identityRegistry": "0x70361a37951d66f8c44cfb45873df2ba8b9fc950",
+      "sourceVerification": "verified"
+    }
+  },
+  "verification": {
+    "checkedAt": "2026-07-19T21:41:35Z",
+    "method": "eth_getCode + keccak256",
+    "allRuntimeCodeHashesMatch": true
+  },
+  "broadcastBlockedTargets": [
+    "cheshire-agent-registries"
+  ]
+}
