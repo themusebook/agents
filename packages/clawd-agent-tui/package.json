@@ -35,7 +35,7 @@
     "@openrouter/agent": "^0.4.0",
     "glob": "^13.0.6",
     "tsx": "^4.21.0",
-    "zod": "^4.3.6"
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
